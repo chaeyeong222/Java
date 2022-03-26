@@ -25,6 +25,7 @@ public class MyPoint {
 		//this.y            //this의 첫 번째 용도 : 멤버(필드)를 가리키는 this
 		System.out.println(">MyPoint 1 생성자 호출됨");
 	}
+	
 
 	public MyPoint(MyPoint p) {
 		x = p.x;
