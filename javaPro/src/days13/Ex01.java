@@ -60,7 +60,6 @@ public class Ex01 {
 		      }
 		      System.out.println( Arrays.toString(mn) );
 		      // 남은 [배열을 복사] 코딩 추가
-		      // 10:10 수업시작 + 풀이
 		      /*
 		       if (m.length  == mIdx) {   // n 배열이 남아있다.
 		         for (int i = nIdx; i < n.length; i++) {
