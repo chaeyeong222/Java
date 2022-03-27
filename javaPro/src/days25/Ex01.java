@@ -38,23 +38,7 @@ class ListDescendingComparator implements Comparator{
 	}
 }
 */
-//[문제1] 용어 설명
-//ㄱ. 컬렉션 프레임워크 ( JCF ) ?
-//ㄴ. 프레임워크 ?  
-//ㄷ. 컬렉션 ?  
-//ㄹ. 컬렉션 클래스 ? 
 
-//[문제2]  컬렉션 프레임워크의 핵심 인터페이스와 특징.
-/*
- *  list,set , map
- *  list -> 중복허용, 순서유지, 
- *  set0>증복x, 순서유지x
- *  map->key+value ->key는 중복x, value는 중복ㅇ, 둘다 순서유지x
- */
-
-//[문제3] 
-//ArrayList list 객체에 임의의 정수( 1~100 ) 까지의 정수  5개를 입력하고
-//내림차순으로 정렬해서 출력하세요. 
 
 
 //[문제4]
