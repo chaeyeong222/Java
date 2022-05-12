@@ -15,7 +15,7 @@ import com.util.DBconn;
  * @subject 프로젝트 때 참고할 사항
  * @content
  */
-public class Ex05 {
+public class Ex05_02 {
 
 	public static void main(String[] args) {
 		 
@@ -25,13 +25,19 @@ public class Ex05 {
 					+ " GROUP BY grade , losal, hisal  "
 					+ " ORDER BY grade ASC ";
 		
-		// System.out.println(sql);
-		
+		String empSql = "  SELECT  d.deptno, dname, empno,ename,sal "
+						+ "            ,grade "
+						+ " FROM dept d RIGHT JOIN emp e ON e.deptno= d.deptno "
+						+ "             JOIN salgrade s ON  sal BETWEEN losal AND  hisal "
+						+ "WHERE grade =   ? ";
+		 // System.out.println(sql);
+		 
+		PreparedStatement pstmt = null, empPstmt=null;
+		ResultSet rs = null, empRs = null;
 		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
 		ArrayList<SalgradeDTO> list = null;
 		SalgradeDTO dto = null;
+		EmpdeptsalgradeDTO empDTO = null;
 		 
 		conn = DBconn.getConnection();
 		
@@ -53,6 +59,40 @@ public class Ex05 {
 					 				 
 					list.add(dto);
 					
+					System.out.println(dto);
+					
+					//start
+					// 20   RESEARCH   7369   SMITH   800
+					
+					
+					empPstmt = conn.prepareStatement(empSql);
+					//?
+					empPstmt.setInt(1, grade);
+					empRs = empPstmt.executeQuery();
+					
+					if (empRs.next()) {
+						
+						do {
+							int deptno = empRs.getInt(1);
+							String dname = empRs.getString(2);
+							int empno = empRs.getInt("empno");
+							String ename = empRs.getString("ename");
+							double sal = empRs.getDouble("sal");
+							
+							System.out.printf("\t\t%d\t%s\t%d\t%s\t%.2f\n", deptno, dname, empno, ename, sal);
+							
+						} while (empRs.next());
+						
+						
+					} else {
+						System.out.println("\t\t 사원이 존재하지 않는다.");
+					}
+					
+					empPstmt.close();
+					empRs.close();
+					  
+					//end
+							 
 				}while(rs.next());
 				
 			}//if
@@ -73,7 +113,7 @@ public class Ex05 {
 		 
 		DBconn.close();
 		
-		printsalgrade(list);
+		//printsalgrade(list);
 		 
 		System.out.println("end");
 	}//main
