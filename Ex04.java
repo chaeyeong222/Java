@@ -1,90 +1,58 @@
-package days03;
+package days05;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Iterator;
 
 import com.util.DBconn;
 
-import days02.DeptDTO;
-
+/**
+ * @author 채영
+ * @date
+ * @subject up_updateDept 저장 프로시저: 부서정보를 수정하는 저장프로시저
+ * @content pdeptno
+ *          pdname
+ *          ploc
+ */
 public class Ex04 {
 
 	public static void main(String[] args) {
-		//deptno, dname, empno, ename, hiredate, job, sal, comm, pay, grade 컬럼출력
-		//ArrayList<> list
-		//printEmp(list) {} 출력
-
-		//preparedstatement 사용
-
-		String sql = "  SELECT d.deptno, dname, empno, ename, hiredate, job, sal, comm,  sal+NVL(comm,0) pay, grade  "
-				+ " FROM emp e JOIN dept d ON e.deptno= d.deptno   "
-				+ "  JOIN salgrade s ON  sal BETWEEN losal AND  hisal  ";
-
+		//String sql = "{ call  up_updateDept( pdeptno=>?, ploc=>?) }";   // 원래 부서명은 그대로 유지
+		String sql = "{ call  up_updateDept(pdeptno=>?, pdname=>?) }"; // 원래 지역명은 그대로 유지
+		// String sql = "{ call  up_updateDept(pdeptno=>?, pdname=>?, ploc=>?) }";
+		
 		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		ArrayList<EmpdeptsalgradeDTO> list = null;
-		EmpdeptsalgradeDTO dto = null;
-
-
-		conn = DBconn.getConnection();
+		CallableStatement cstmt = null;
+		int rowCount = 0;
+		
+		conn =  DBconn.getConnection();
 
 		try {
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-
-
-			if(rs.next()) {
-				list = new ArrayList<EmpdeptsalgradeDTO>();
-
-				do {
-					String dname = rs.getString("dname");
-					String ename = rs.getString("ename");
-					int grade = rs.getInt("grade");
-
-					dto = new EmpdeptsalgradeDTO();
-					dto.setDname(dname);
-					dto.setEname(ename);
-					dto.setGrade(grade);
-
-					list.add(dto);
-				}while(rs.next());
-
-			}//if
-
+			cstmt = conn.prepareCall(sql);
+				cstmt.setInt(1, 90);
+				cstmt.setString(2, "SALES"); 
+			
+			rowCount = cstmt.executeUpdate();	
+			
+			if( rowCount == 1 ) {
+				System.out.println("> 부서 수정 완료!!!");
+			}
+			
 		} catch (SQLException e) { 
 			e.printStackTrace();
-		}finally {
+		} finally {
 			try {
-				pstmt.close();
-				rs.close();
+				cstmt.close();
 			} catch (SQLException e) { 
 				e.printStackTrace();
 			}
-
 		}
-
+		
 		DBconn.close();
+		
+		System.out.println(" - END - ");
 
-		printEmp(list);
-
-		System.out.println("end");
-
-	}//main
-
-	private static void printEmp(ArrayList<EmpdeptsalgradeDTO> list) { 
-
-		Iterator<EmpdeptsalgradeDTO> ir = list.iterator();
-
-		while (ir.hasNext()) {
-			EmpdeptsalgradeDTO dto = ir.next();
-			System.out.println(dto);
-		}
+	} // main
 
 
-	}
-}//class 
+}

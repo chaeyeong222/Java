@@ -1,27 +1,63 @@
-package days03;
+package days05;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Date;
+
+import com.util.DBconn;
+
 /**
  * @author 채영
  * @date
- * @subject
+ * @subject CallableStatement sctmt = null; 저장 프로시저 사용
  * @content
  */
 public class Ex03 {
-
+ 
 	public static void main(String[] args) {
-/*
- * [ MS SQL ]
-		create table cstVSBoard (
-				  seq int identity (1, 1) not null primary key clustered, --글번호
-				  writer varchar (20) not null , --작성자
-				  pwd varchar (20) not null ,    --비밀번호
-				  email varchar (100) null ,     --이메일
-				  title varchar (200) not null ,   --제목
-				  writedate smalldatetime not null default (getdate()),--작성일
-				  readed int not null default (0), --조회수
-				  mode tinyint not null ,   -- 모드 1(html 적용), 0 (html 적용x)
-				  content text null 
-				)
-*/
+		//emp테이블에 사원을 추가하는 up_insertemp 저장프로시저를 선언   up_insertemp
+		// CallableStatement 를 사용해서 사원 추가하는 코딩
+		
+		int empno = 9999;
+		String ename = "admin";
+		int mgr = 7369;
+		int deptno =20;
+		Date hiredate = new Date(1981,2,20);
+		String sql = "{call up_insertemp(pempno=>?, pename=>?, pmgr => ?,pdeptno=>?, phiredate=>?)}";
+		Connection conn = null;
+		CallableStatement cstmt = null;
+		int rowCount = 0;
+		
+		conn = DBconn.getConnection();
+
+		try {
+			cstmt = conn.prepareCall(sql);
+			cstmt.setInt(1, empno);
+			cstmt.setString(2, ename);
+			cstmt.setInt(3, mgr);
+			cstmt.setInt(4, deptno);
+			cstmt.setDate(5, hiredate);
+			
+			rowCount = cstmt.executeUpdate();
+			
+			if(rowCount==1) {
+				System.out.println("사원추가완료");
+			}
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				cstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		DBconn.close();
+		
+		System.out.println("=end=");
 	}//main
 
 }//class
