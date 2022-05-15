@@ -1,63 +1,79 @@
-package days05;
+package days06;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Date;
+import java.util.Scanner;
 
 import com.util.DBconn;
 
-/**
- * @author 채영
- * @date
- * @subject CallableStatement sctmt = null; 저장 프로시저 사용
- * @content
- */
 public class Ex03 {
- 
-	public static void main(String[] args) {
-		//emp테이블에 사원을 추가하는 up_insertemp 저장프로시저를 선언   up_insertemp
-		// CallableStatement 를 사용해서 사원 추가하는 코딩
-		
-		int empno = 9999;
-		String ename = "admin";
-		int mgr = 7369;
-		int deptno =20;
-		Date hiredate = new Date(1981,2,20);
-		String sql = "{call up_insertemp(pempno=>?, pename=>?, pmgr => ?,pdeptno=>?, phiredate=>?)}";
-		Connection conn = null;
-		CallableStatement cstmt = null;
-		int rowCount = 0;
-		
-		conn = DBconn.getConnection();
 
+	public static void main(String[] args) { 
+		/*
+		아이디 empno []
+		비밀번호 ename []	
+		  [로그인][회원가입]
+		*/
+		
+		System.out.println("로그인 체크할 ID(empno), PWD(ename)입력하세요");
+		
+		Scanner scan = new Scanner(System.in);
+		int pempno = scan.nextInt();
+		String pename = scan.next();
+		
+		Connection conn= null;
+		CallableStatement cstmt = null;
+		String sql = "{ call UP_LOGON(?,?,?)}";
+		
+		conn= DBconn.getConnection();
+		
 		try {
 			cstmt = conn.prepareCall(sql);
-			cstmt.setInt(1, empno);
-			cstmt.setString(2, ename);
-			cstmt.setInt(3, mgr);
-			cstmt.setInt(4, deptno);
-			cstmt.setDate(5, hiredate);
 			
-			rowCount = cstmt.executeUpdate();
+			// ? in
+			cstmt.setInt(1, pempno);
+			//? out
+			cstmt.setString(2, pename);
 			
-			if(rowCount==1) {
-				System.out.println("사원추가완료");
+			cstmt.registerOutParameter(3, oracle.jdbc.OracleTypes.INTEGER);
+			cstmt.executeQuery();
+			int logonCheck = (int) cstmt.getObject(3);
+			
+			if (logonCheck == 0) {
+				System.out.println("로그인 성공");
+			} else if(logonCheck == 1){
+				System.out.println("로그인 실패- id가 존재하지 않습니다");
+			}else {//-1
+				System.out.println("로그인 실패 - id는 존재, 잘못된 비밀번호 입니다");
 			}
 			
-			
-		} catch (SQLException e) {
+		} catch (SQLException e) { 
 			e.printStackTrace();
 		}finally {
-			try {
-				cstmt.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		DBconn.close();
 		
-		System.out.println("=end=");
+		try {
+			cstmt.close();
+		} catch (SQLException e) { 
+			e.printStackTrace();
+		}
+		}
+		
+		
+		
+		DBconn.close();
+		System.out.println("end");
+
 	}//main
 
 }//class
+
+
+
+
+/*
+ * 7369 SMITH
+ * 7499 ALLEN
+ * 7521 WARD
+ */

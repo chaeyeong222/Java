@@ -1,75 +1,60 @@
-package days05;
+package days06;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Scanner;
 
 import com.util.DBconn;
 
-/**
- * @author 채영
- * @date
- * @subject [트랜잭션 처리 - 자바 jdbc]
- * @content 트랜잭션 처리x상태
- */
 public class Ex02 {
 
 	public static void main(String[] args) {
-		//[트랜잭션 처리 - 자바 jdbc]
-		//하나의 논리적인 작업 단위 모두 완료(성공) - 커밋
-		//                   모두 완료 x - 롤백
-		//예) 계좌이체
-		//  1. A 돈 인출
-		//  2. B 인출된 돈 입급
-		
-		// 1. dept 부서테이블 90/QC/SEOUL 추가 - 성공 -> 추가취소
-		// 2. dept 부서테이블 90/XX/YY 추가 - 실패
-		
-		Connection conn = null;
-		DBconn.getConnection();
 
-		PreparedStatement pstmt = null;
-		int rowCount = 0;
+		System.out.println("중복체크할 id(empno) 입력");
+		Scanner scan = new Scanner(System.in);
+		int pempno = scan.nextInt();
 		
-		String sql = " INSERT INTO dept VALUES (?,?,? )   "; 
+		Connection conn= null;
+		CallableStatement cstmt = null;
+		String sql = "{ call UP_IDCHECK2(?,?)}";
+		
+		conn= DBconn.getConnection();
 		
 		try {
-			// 1. dept 부서테이블 90/QC/SEOUL 추가 - 성공
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, 90);
-			pstmt.setString(2, "QC");
-			pstmt.setString(3, "SEOUL");
-			rowCount = pstmt.executeUpdate();
-			if(rowCount ==1) {
-				System.out.println(" dept 부서테이블 90/QC/SEOUL 추가 - 성공 ");
-			}
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, 90);
-			pstmt.setString(2, "XX");
-			pstmt.setString(3, "YY");
-			rowCount = pstmt.executeUpdate();
-			if(rowCount ==1) {
-				System.out.println(" dept 부서테이블 90/XX/YY 추가 - 성공 ");
-			}
+			cstmt = conn.prepareCall(sql);
 			
+			// ? in
+			cstmt.setInt(1, pempno);
+			//? out
+			cstmt.registerOutParameter(2, oracle.jdbc.OracleTypes.INTEGER);
 			
+			cstmt.executeQuery();
+			int idCheck = (int) cstmt.getObject(2); //1사용x 0사용o
+			
+			if (idCheck == 0) {
+				System.out.println("사용 가능한 id 입니다");
+			} else {
+				System.out.println("이미 사용중인 id 입니다");
+
+			}
 			
 		} catch (SQLException e) { 
 			e.printStackTrace();
 		}finally {
-			 try {
-				pstmt.close();
-			} catch (SQLException e) { 
-				e.printStackTrace();
-			}
+		
+		try {
+			cstmt.close();
+		} catch (SQLException e) { 
+			e.printStackTrace();
+		}
 		}
 		
 		
+		
 		DBconn.close();
-		System.out.println("=END=");
-		
-		
+		System.out.println("end");
+
 	}//main
 
 }//class
