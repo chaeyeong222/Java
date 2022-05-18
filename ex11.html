@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h3>html링크 - a 태그</h3>
+1. 모든 웹 페이지에서 찾을 수 있다.<br>
+2. 링크를 클릭하면 다른 문서로 이동할 수 있다.<br>
+3. 링크위로 마우스를 이동하면 마우스 화살표가 작은 모양으로 바뀐다.<br>
+4. 링크는 텍스트, 이미지 또는 기타 html 요소가 될 수 있다.<br>
+5. html 링크는 하이퍼링크<br>
+6. 가장 중요한 속성 - href 속성(이동할 목적지 주소(url))<br>
+7. naver - 보라색 : 방문한 링크의 색<br>
+   daum - 파란색 : 방문하지 않은 링크<br>
+          빨간색 :  활성상태의 링크<br>
+8. target 속성- 어디에서 링크된 문서를 열지를 결정하는 속성(대상)<br>
+   _self(기본값)  자기자신 창<br>
+   _blank        새 창, 새 페이지<br>
+   _parent      부모(상위) 프레임(frame)<br>
+   _top          창의 전체 본문<br>
+   타겟명<br>
+<hr>
+<!-- 
+A link if the [href attribute] is present, 
+and the target for a link if the [name attribute] is present
+ -->
+
+<a href = "http://www.naver.com" target="_self">naver</a> <br>
+<a href = "http://www.daum.net" target="_blank" >daum </a><br>
+<a href = "http://www.sist.co.kr">sist </a><br>
+
+<!-- http://localhost/webPro/html/days02/ex11.html -->
+
+<h3> 절대주소, 상대주소</h3>
+1. URL(Uniform Resource Locators)<br>
+2. 웹에서 문서의 주소를 지정하는 데 사용<br>
+3. 웹 서버에 URL을 사용해서 요청한 자원(웹페이지)을 응답<br>
+4. URL 구성
+   ㄱ. 통신규약(프로토콜) --인터넷 서비스의 유형
+     http://
+     https://
+     ftp://
+     file://
+     등등
+   ㄴ. 
+    ipaddress
+    localhost
+    127.0.0.1
+    192.168.35.231
+    www.접두사
+    도메인명 naver.com
+   ㄷ. 포트(port)
+    http://기본 포트값:80 생략
+   ㄹ. /webPro
+      이클립스로 웹프로젝트를 생성하면 그 프로젝트명(webPro)이 구분하는 경로명 - Context Root
+   ㅁ. 파일명(리소스명) ex11.html 
+      http://localhost/webPro/html/days02/ex11.html?where=....&test=???
+   
+   물리적으로는 [context directory]/src/main/webapp
+**** URL은 인코딩(ASCII문자셋)을 사용하기 때문에 <br>
+한글 문자 => %16진수값으로 변환해서 URL에 사용된다.<br>
+공백   => + 기호 또는 %20으로 변환<br>
+[URL] 
+https://
+www.
+google.com
+/search
+?
+q=%ED%99%8D%EA%B8%B8%EB%8F%99
+&
+sxsrf=ALiCzsaNEi_gcRzjdDbzbZ-qu1WRopm4Eg%3A1652336702395
+&
+source=hp
+&
+ei=Pqh8Yv2QFtSooATSpYLwCg
+&
+iflsig=AJiK0e8AAAAAYny2Tm-0MPsLzgsNgyWZymFVUsNFqhgR
+&
+ved=0ahUKEwj9p8bxqdn3AhVUFIgKHdKSAK4Q4dUDCAk
+&
+uact=5
+&
+oq=%ED%99%8D%EA%B8%B8%EB%8F%99&gs_lcp=Cgdnd3Mtd2l6EAMyDgguEIAEELEDEIMBENQCMg4ILhCABBCxAxCDARDUAjIFCAAQgAQyBQgAEIAEMgUILhCABDIFCC4QgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOgcIIxDqAhAnOgQIIxAnOgsIABCABBCxAxCDAToRCC4QgAQQsQMQgwEQxwEQ0QM6EQguEIAEELEDEIMBEMcBEKMCOgQILhADOg4ILhCABBCxAxDHARDRA1AlWNsLYOQaaABwAHgBgAHMBYgBsBeSAQkzLTIuMi4xLjGYAQCgAQGwAQo
+&
+sclient=gws-wiz
+ <hr>
+   
+<!-- 현재 페이지와 다른 폴더(경로)에 있는 ex01.html파일 -->
+웹은 경로구분자/ 사용<br>
+<!-- 절대경로 -->
+<!-- 앞으로 만드는 모든 폴더는 webapp안에 만들어야함 그래야 접근 가능 -->
+<a href = "http://localhost/webPro/html/days01/ex01.html">days01.ex01.html</a><br>
+
+<!-- 현재 페이지와 같은 폴더(경로)에 있는 ex01.html파일 -->
+<a href = "http://localhost/webPro/html/days02/ex02.html">days02.ex02.html</a><br>
+
+<hr>
+<!-- 상대경로:(기준) -->
+<!-- 상대경로의 기준: http://localhost/webPro/html/days02-->
+
+<a href = "../days01/ex01.html">days01.ex01.html</a><br>
+<a href = "ex02.html">days02.ex02.html</a><br>
+
+<hr>
+<!-- 절대경로 -->
+<a href = "http://localhost/webPro/index.html">index.html</a><br>
+<!-- 상대경로 -->
+<a href = "../../index.html">index.html</a><br>
+<!-- 무료 도메인 -->
+<a href = "http://localhost/webPro">index.html</a><br>
+
+
+</body>
+</html>
