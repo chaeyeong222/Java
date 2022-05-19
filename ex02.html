@@ -5,17 +5,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!--
-  [브라우저 랜더링 될 때] 
-엔터         -> 공백space 1개로 처리
-공백 10번 입력 -> 공백space 1개로 처리
-탭tab 5번 입력 -> 공백space 1개로 처리
- -->
-백          경					환
-이채영
-김기태
-이동원
-도성한
-박단
+<h3>days03.ex02.html-html 이미지 맵</h3>
+1. 맵(map)을 사용하여 이미지에 클릭 가능한 영역을 만들 수 있다.<br>
+2. map 태그 - 이미지 맵<br>
+   area 태그 - 클릭 가능한 영역<br>
+<hr>
+<!-- u 누르고 ctrl+space -->
+<img alt="workplace" src="../images/workplace.jpg" usemap="#workmap">
+<map name="workmap"> <!-- 사각형, 좌표값 -->
+<area alt="" shape="rect" coords="34,44,270,350" href="ex02_computer.html">
+<area alt="" shape="rect" coords="290,172,333,250" href="ex02_phone.html">
+<area alt="" shape="circle" coords="337,300,44" href="ex02_coffee.html">
+
+</map>
 </body>
 </html>

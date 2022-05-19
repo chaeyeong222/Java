@@ -3,63 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon"href="../images/SiSt.ico">
 <style>
-strong{
-color:red;
-border:1px dotted gray;}
+
+table{
+  border:1px solid black;
+  width:500px;
+  height:500px;
+}
+ td{
+  border:1px solid black;
+  }
 </style>
+
 </head>
 <body>
+	<h3>ex08.html</h3>
+	<!--  table 5행5열 -->
+	<table>
+	<caption>rowspan/colspan 설명</caption>
 
-<h3>html 텍스트 서식 요소 - b(bold)</h3>
-
-안녕하세요. 홍길동입니다.<br>
-<!-- b- 중요성x, 굵은 텍스트 -->
-1.안녕하세요. <b>홍길동</b>입니다.<br>
-
-<!-- Displays text as strongly emphasized (generally bold) -->
-<!-- strong- 중요성 강조 o, 굵은 텍스트 -->
-2.안녕하세요. <strong>홍길동</strong>입니다.<br>
-<!-- Displays text emphasized (generally italicized) -->
-<!-- em: 강조o, 기울임꼴 텍스트-->
-3.안녕하세요. <em>홍길동</em>입니다.<br>
-<!--italic체 기울임꼴 텍스트-->
-4.안녕하세요. <i>홍길동</i>입니다.<br>
-<!--mark = 표시된 텍스트 글꼴 , 노란색 배경-->
-5.안녕하세요. <mark>홍길동</mark>입니다.<br>
-
-<!--small 더 작은 텍스트-->
-6.안녕하세요. <small>홍길동</small>입니다.<br>
-
-<!-- delete 문서에서 삭제된 텍스트 정의, 취소선(가운데줄) 긋다 -->
-7.안녕하세요. <del>홍길동</del>입니다.<br>
-<!--inserted text 문서에 새로 추가된 텍스트 정의, 밑줄(언더라인) 긋다 -->
-8.안녕하세요. <ins>홍길동</ins>입니다.<br>
-
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<h3>sub, sup 태그 설명</h3>
-물 = H<sub>2</sub>O<br>
-2^3 = 2<sup>3</sup> <br>
-
+		<tr>
+			<td align="center">1</td>
+			<td align="center">2</td>
+			<td align="center">3</td>
+			<td align="center">4</td>
+			<td align="center">5</td>
+		</tr>
+		<tr>
+		   <!-- cell(td)가로(열)로 합치기 -->
+			<td colspan="2">6-7</td> 
+			<td>8</td>
+			<td>9</td>
+			<!-- cell(td)세로(열)로 합치기 -->
+			<td rowspan="3">10/15/20</td>
+		</tr>
+		<tr>
+			<td>11</td>
+			<td>12</td>
+			<td>13</td>
+			<td>14</td>
+			
+		</tr>
+		<tr>
+			<td align="right" valign="bottom" rowspan="2" colspan="2">16</td>
+			<td align="right" valign="bottom">18</td>
+			<td align="right" valign="bottom">19</td>
+			
+		</tr>
+		<tr>
+			<td>23</td>
+			<td>24</td>
+			<td>25</td>
+		</tr>
 
 
+	</table>
 </body>
 </html>
-
-
-
-
-
-
-
-
-

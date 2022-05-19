@@ -3,24 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
- span{
-  color:red;
-  border:1px solid gray;
-  display:none; 
- }
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<style type="text/css">
+   body {
+      border: 1px solid red;
+   }
+   p {
+      border : 1px solid gray;
+      /* width : 속성을 주지 않으면 기본은 부모 너비의 100% */
+      width : 400px;
+      /* height : 높이는 지정하지 않으면 콘텐츠 양에 따라 높이가 자동 설정되고, 지정하면 고정 */
+      height : 400px;
+      
+      /* 안쪽 여백 5px */
+      padding : 5px;
+      
+      background-image: url('../images/img_girl.jpg');
+   }
 </style>
 </head>
 <body>
-
-<h3> span요소</h3>
-1. A generic container, which can be used for defining language or
- style for the contents
- 내용에 대해서 언어 또는 [스타일]을 정의하는데 사용할 수 있는 일반 컨테이너(용기)이다.
- <br>
-2. 인라인모드<br>
-
-안녕하세요.<span>홍길동</span> <span>이채영</span>입니다.
+   <h3>ex06.html - 배경이미지</h3>
+   
+   <!-- emmet / zencoding -->
+   <!-- p>lorem -->
+   <p>
+   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+   </p>
 
 </body>
 </html>

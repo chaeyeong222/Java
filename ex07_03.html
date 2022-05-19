@@ -3,31 +3,106 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 </head>
 <body>
-1. 공백, 개행 유지된다<br>
-2. 블럭모드 <br>
-3. 고정 너비 글꼴로 표시<br>
-4. 미리 형식이 지정된 텍스트 정의할 때 사용
+<link rel="shortcut icon" type="image/x-icon"href="../images/SiSt.ico">
+<style>
+table{
+ border : 1px solid black;
+ width: 400px;
+/*  width:100%; */
+ font-size: 12px;
+ 
+  /* 가운데정렬 아래위는 0 양쪽 auto*/
+ margin: 0 auto;
+ /* collapse - 붕괴되다, 무너지다 */
+/*  border-collapse: collapse; */
+}
+/* th{
+ border : 1px solid black;
+ padding: 5px;
+}
 
+td{
+ border : 1px solid black;
+ padding: 5px;
+} */
 
-<pre>
-이 동   원
+th,td{
+ border : 1px solid black;
+ padding: 5px;
+ border-radius:10px;
+}
 
-<h3> 안시은</h3>
-김희진
-박예린
-</pre>
+/* tr:nth-of-type(1){ 각각의 1번째만*/
+tr:nth-child(even){/* 짝수번째 even 홀수odd*/
+
+/*  background-image:url(''); */
+/* background-color:#dddddd;  이거 축약해서 아래처럼 사용가능*/
+background-color:#ddd
+}
+
+</style>
+<h3>ex07_03.html-table 태그</h3>
+
+1. 데이터를 행과 열로 정렬할 수 있는 태그<br>
+2. 예) dept 테이블 <br>
+10   ACCOUNTING   NEW YORK   행<br>
+20   RESEARCH   DALLAS<br>
+30   SALES   CHICAGO<br>
+40   OPERATIONS   BOSTON<br>
+
 <hr>
+<table>
+<!-- 테이블 행(row) -->
+ <theader>
+  <tr>
+    <!-- table header cell -->
+   <!--  input 태그 : 입력용 태그 -->
+    <th><input type="checkbox"></th>
+  <th>deptno</th>
+  <th>dname</th>
+  <th>loc</th>
 
-<xmp>
-이 동   원
-
-<h3> 안시은</h3>
-김희진
-박예린
-</xmp>
-
-
+  </tr>
+ 
+ </theader>
+ <tbody>
+  <tr>
+  <td align="center"><input type="checkbox"></td>
+   <td>10</td>
+   <td>ACCOUNTING</td>
+   <td>NEW YORK</td>
+  </tr>
+  <tr>
+  <td align="center"><input type="checkbox"></td>
+   <td>20</td>
+   <td>RESEARCH</td>
+   <td>DALLAS</td>
+  </tr>
+  <tr>
+  <td align="center"><input type="checkbox"></td>
+   <td>30</td>
+   <td>SALES</td>
+   <td>CHICAGO</td>
+  </tr>
+  <tr>
+  <td align="center"><input type="checkbox"></td>
+   <td>40</td>
+   <td>OPERATIONS</td>
+   <td>BOSTON</td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <tr>
+   <td colspan="4" align="center">
+    <button>추가</button>
+    <button>수정</button>
+    <button>삭제</button>
+   </td>
+  </tr>
+  </tfoot>
+</table>
 </body>
 </html>

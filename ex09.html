@@ -3,35 +3,86 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon"href="../images/SiSt.ico">
+
+<style>
+ table{
+ /*  border:1px solid gray; */
+  width:500px;
+  margin:0 auto;
+  /* background-color: red; */
+  border-collapse: collapse;
+  }
+  td{
+ /*  border:1px solid gray; */
+  }
+</style>
+<style>
+tr{
+  border-bottom: 1px dotted #ddd;
+}
+tr:hover{
+ background-color : #d6eeee;
+}
+/* 짝수행의 tr 배경색 설정 */
+tr:nth-child(even){
+/* background-color:#ddd; */ /* rrggbb 16진수*/
+/* background-color: rgb(150,212,212); */
+/*  a==alpha== 색상의 투명도  (투명)0~1(불투명)*/
+background-color:rgba(150,212,212,0.3);
+}
+</style>
 </head>
 <body>
+  <!-- 임의의 데이터 들어있는 5행5열 -->
+<table>
+<caption> 조 편성표</caption>
+<!-- <colgroup>  
+  colgroup 태그 안에 col안에 style 사용해서 
+  background ,width, border, visibility 제한적 사용 가능
+   <col span="3" style="background-color: #d6eeee">
+  <col style="background-color:#d6eeee">
+  
+</colgroup> -->
+  
+   <!-- <tr style = "background-color: green"> -->
+   <tr>
+      <td>Lorem.</td>
+      <!-- <td style = "background-color: yellow">Dolores.</td> -->
+      <td>Dolores.</td> 
+      <td>Ex.</td>
+      <td>Consectetur?</td>
+      <td>Magni.</td>
+   </tr>
+   <tr>
+      <td>Lorem.</td>
+      <td>Molestiae.</td>
+      <td>Deleniti!</td>
+      <td>Ipsa.</td>
+      <td>Quo.</td>
+   </tr>
+   <tr>
+      <td>Lorem.</td>
+      <td>Harum.</td>
+      <td>Possimus.</td>
+      <td>Quaerat.</td>
+      <td>Labore.</td>
+   </tr>
+   <tr>
+      <td>Lorem.</td>
+      <td>Sit.</td>
+      <td>Quo.</td>
+      <td>Temporibus.</td>
+      <td>Ab.</td>
+   </tr>
+   <tr>
+      <td>Lorem.</td>
+      <td>Sed.</td>
+      <td>Dolores!</td>
+      <td>Eum?</td>
+      <td>Fuga.</td>
+   </tr>
+</table>
 
-<h3>html 인용 요소 - blockquote</h3>
-
-<p>엘버트하버드</p>
-<!-- 자동으로 들여쓰기 -->
-<blockquote cite="http://www.sist.co.kr/sample.html">
-설명하지 마라.
-친구라면 설명할 필요가 없고,
-적이라면 어차피 너를 믿지 않을테니깐.
-</blockquote>
-
-<!-- "짧은 인용"을 위한 q 요소 -->
-마이크 타이슨 명언 : <q>누구나 그럴싸한 계획을 가지고 있다.</q>
-
-<hr>
-<!-- [abbr]eviation  ==약어 -->
-우리는 지금 <abbr title ="Hypte Text Markup Language">html</abbr>을 배웁니다.<br>
-
-<hr>
-<!-- 연락처 정보(이메일, 실제 주소, 전화번호 ...), 기울임꼴, 앞뒤에 줄바꿈 -->
-<address> 서울특별시 강남구 테헤란로 131(역삼동) 한독빌딩 8층</address>
-
-<!-- citation -->
-<cite>어떤 창작물(책, 시, 노래, 영화, 그림)의 제목 정의하는 태그, 사람이름X</cite>
-<br>
-<!-- bdo: 현재 텍스트 방향을 재정의하는 태그 -->
-<!-- Overrides default bidirectional display. For use with bidirectional languages. -->
-<bdo dir="rtl">For use with bidirectional languages.</bdo>
 </body>
 </html>
