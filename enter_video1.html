@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+   
+   *{
+      box-sizing: border-box; 
+    }
+
+    c_body{
+    font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
+    }
+      /*nav부분*/
+    
+    .c_maintheme{
+     display: block;
+    }
+    
+    .c_maintheme ul{
+     list-style-type: none;
+     overflow: hidden;
+     margin:0;
+     padding:0;
+     background-color: #f7f9fa;
+     border: 1px solid #dae1e6;
+    }
+    
+    .c_maintheme ul li{
+    float:left;
+    text-decoration: none;
+    color: black;
+    padding:10px;
+    text-align: center;
+    padding: 11px 18px;
+    }
+    
+     
+     .c_maintheme ul li a.c_theme{
+     display: inline-block;
+     padding: 5px;
+     color: #404040;
+     text-decoration: none;
+     font-size: 13px;
+     font-weight: 700;
+     
+     }
+     .c_maintheme ul li a.c_theme:hover{
+     text-decoration: underline;
+     }
+     .c_maintheme ul li a.c_theme1{
+     display: inline-block;
+     padding: 5px;
+     color: #e65da0;
+     text-decoration: none;
+     font-size: 13px;
+     font-weight: 700;
+     border-right: thin;
+     }
+     .c_maintheme ul li a.c_theme1:hover{
+     text-decoration: underline;
+     }
+     
+    
+  
+    /* 엔터- 동영상9개 부분*/
+    
+    .c_category{
+     color:#e65da0;;
+    }
+    
+    .c_allbox {
+     margin: 0px;
+     padding:5px; 
+     overflow:hidden; 
+     justify-content: space-between;
+    /*  width:900px; */ /* 화면크기 줄어도 위치고정(아래로안내려오게) */
+    }
+
+   .c_boxing{
+     text-decoration: none;
+     color: black;
+     font-weight: bold; 
+     font-size: 13px;
+     line-height: 20px;
+     max-height: 40px;
+     width: 232px
+     
+   }
+   
+   a.c_boxing:hover{
+    text-decoration: underline;
+    
+   } 
+   .c_box span.c_title:hover{
+   text-decoration: underline;
+   }
+   .c_infobox{
+   width: 230px;
+   }
+   .c_box{
+     float: left;
+     width: calc(100%/3); /* -10px 박스사이의 간격 고정 */
+     /* width: 232px ; */
+     height: 230px;
+     padding:10px;
+     border: 20px;
+     overflow: hidden; /*사진확대해도 전체크기안변하게*/
+   }
+    .c_allbox img{
+      width:100%;
+      
+     
+   } 
+   .c_box img{ /*추가*/
+    /* width:232px; */
+    width:100%;
+   /*  height:130px; */
+    transition: all 0.2s linear; /* 마우스올리면 이미지확대-속도 */
+    
+    
+   }
+   .c_imgbox{ /*추가*/
+    overflow: hidden;
+    width:232px;
+    height:130px;
+   }
+   .c_box img:hover{
+   transform: scale(1.2); /* 마우스올리면 이미지확대- 크기 */
+   }
+   .c_box .c_source{
+    color: #505050;
+    font-size: 12px;
+   }
+   .c_box .c_date{
+   color: grey;
+   font-size: 12px;
+   }
+   
+   
+   
+</style>
+
+
+</head>
+<body id="c_body">
+
+ 
+<!-- div>nav+div>(div>img[href]+div>em+a[href])*9 -->
+<div>
+	<nav>
+	  <!-- ul>li[class="c_" href]*7 -->
+	<div class="c_maintheme">
+	  <ul >
+	  	<li> <a style="border-right-width: thin; border-right-color: black;" class="c_theme1" href="https://entertain.naver.com/home">연예 홈</a></li>
+	  	<li> <a class="c_theme" href="https://now.naver.com/">네이버 NOW</a></li>
+	  	<li><a class="c_theme" href="https://tv.naver.com/">네이버 TV홈</a></li>
+	  	<li> <a class="c_theme" href="https://tv.naver.com/r">TOP100</a></li>
+	  	<li> <a class="c_theme" href="https://series.naver.com/broadcasting/home.nhn">시리즈온</a></li>
+	  	<li> <a class="c_theme" href="https://www.vlive.tv/home/">V LIVE</a></li>
+	  	<li> <a class="c_theme" href="https://vibe.naver.com/">VIBE</a></li>
+	  </ul>
+	</div>
+	</nav>
+  <div class="c_allbox">
+	<a class="c_boxing" href="https://tv.naver.com/v/25021698">
+	<div class="c_box">
+		   <div class="c_imgbox">
+			<img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fphinf.pstatic.net%2Ftvcast%2F20220209_39%2Fv7fJd_164438162266270Jhm_PNG%2F1644381616731.png%22&type=nf464_260" alt=""/>
+			</div>
+		<div class="c_infobox">
+			<strong class="c_category">웹예능</strong><br>
+			<span class="c_title">[홀인러브] 차갑게만 보이던 그녀는 스윗한 ‘가죽공방 선생님’?😲<br></span></span>
+			<span class="c_source">홀 인 러브(Hole in Love Part1)</span>
+			<span class="c_date">11분 전</span>
+			</div>
+		</div>
+		</a>
+		<a class="c_boxing" href="https://tv.naver.com/v/15600712">
+		<div class="c_box">
+		<div class="c_imgbox">
+			<img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fphinf.pstatic.net%2Ftvcast%2F20200904_209%2FFLtkn_1599215054282sYvTn_JPEG%2F1599215041926.jpg%22&type=nf464_260">
+			</div>
+		<div class="c_infobox">
+			<strong class="c_category">웹드라마</strong><br>
+			<span class="c_title">(공식) 2020 네이버 웹툰 3번째 대작애니! ‘노블레스’ coming soon<br></span>
+			<span class="c_source">네이버 웹툰</span>
+			<span class="c_date">10분 전</span>
+			</div>
+		</div>
+		</a>
+		<a class="c_boxing"  href="https://g.tivan.naver.com/gfa/-O1pkTM0cCzoej1yL1GOIKLxmUe9aWb0v4NwWD4Kjko3IkzlPzfJ2DE3fvZ3m3gNFdpjMqZmtZWLVo7jzQsWWz245RwvxhjDrhk5pxoPMA5ZHYvaU4iuPBLoHD9nm2u7wN1CWXU8tNRdooceoYLBOzK5_cxqBYU9nHHguJIxPGX44pcJFi1U1oUM2g5l486BguIOOgBTvosSUEwe_dAWYBW8PgOL1_g1ZaKT-OU8G_t86Iowl2Ro5WibVTYxMjAmdH1N-PYzL1im1MyCW-GfalRpJgpKjMwI5UX93XLXuoDswx0H-mxh3-wKeAM_KJmbgOXzE0hZrTwW_DEMhSuIpvXn_Vu1J8A-jAGzwRosecR3fAtjP1xbyuRNj91gRgxWp7cayEHOfh2WnIYg5tEbwaWV23gjBYT7ESbw1QS8pvLYs3RIu9fOp5Y5tknw0cpd35sC8bz431EeNPre9UeHVT-hLMtWIC2bx2g_JdOauPxDCnv0c4esE_FXA5liS_NhOGmY5UHAJv0McERSUdls9twSq7zm3b_cF9lYXikeb3oRMNmqhjsqtgfM6qBzmDVgpunx0VJVvtK8GbOsb50ZLbj3kWFbcmDpM6TOVB3DeGNNj851PWXeNUGaylHPDAIU18LrxKeGoOngTMzovg18xIIcD23Z4WemwuKobePQ_lJcXXutBPUaF0q3cIvqCdwA7R24Q4H6OkinwJCHzvwWIpEb-hRG8eHMhA5K0-aX4PxZl4I9C651dqG2oTF4IIq5LuQAV9Ztct3XJSGg8NeMqj0-AM_3fGZ8VfZTceem7aHXj2eUkwMDeKGCcjsdl33PZE2Y8orDw51okpAFopkC61RqB8x-TqMrCFK0m2yPczcusc1fMRMQlqMaPHzemDIq3cPuntg8lyugtpudogWK3fWeVjGRWO6hsG1D0IdCgr9mmRM3OFzKf8aIOvfyF6dTDlfKXFI0-fzOePYBw3lsb7CblOOfnDMk22ZbWU68P2p3nociQLBEfpFF8js-klE3JxP6yuqMeA_P940l-aHdFeeNM_alZrOjCW5TMcUpr0kFih3hbeCVmXQMh3ptofpXPNHAJumf8pCpkND5bZWmZRCCLsW-VyVuPdGGw4e83uhmXTkCxReVUDDjEGyyPmXYP0KJcUc9XhMjdG2hkvwFzy9DA5BprfWVJKIRKCltSuik0ott0hxUWPsEy-ymVH6NiieVzzUmNcG5JrUbEfmM3rx55jk1ZofoQoKm0ABDbdRCFL2GjYfQVbAogm3zOZMyAaf0Grrg-nBt_hWw6mz2yUjhBWt80ukxfDmKbdnUrFkD_QLpZqiA4XxKGJYK108iykjBhM4c9a-hDv0bWaKdKCyCgPUusxd2iS1eh_rhZm4XPKn6iCBtpKduGr__iOGBcc4FSPBCK_tGAP-NIPOuQqVav-oxA0iSR7x0Pa463qipGyD5a8nNXwQGSBsS6XvwcIaeBwEZMP7hpQvf_B-NN3QjDRsctLjuSkiievRJCf-NgTPBhLdf-eoKhvrKQSNtJwWkJSLumeqKv53GRvDsXTPKm1NZYwImViIXbg7ODZJtjDKkFQqiKjGlhVFS8Ic0dt7pdD1RhNhJDm_PJoVHV6DkfmOHWYbyE-t5OT6-gKJWwOT7GDIILZwj7ww4kJFIphsd5PUPuaQOY_V0kzO--onxjPnS7i31wcIQopOOx3bwpyg7xOha6f81YB54GVoAdOL4eIUbyYWqxV52qjxz91SOprYB4a7POUEBlJc1t9lgJzsPHpc7jlFYEmg50aHzSXk9fsPYgrHoF_bxuNg4ct5fCVxMQSMdXeZO38ttSt4wSO5cOXCCdGMiUGGyChSfXBGAMTMBXgQLh6Btcdhb6OcMDlQT-_EX8EVeXZPBijjSNxBG_mqE68ulA8nnmFkiIr66OcKyogxNDqevrsIWs0IZMoCNPxdGHOGu2cx7Gq9gOAM7ucQOjFRrZoxhuEVRaquHbbRiNRAsXMG4Lq2FIZa3glEOmdY_hhkcK9V0oJjM7rZxVUnSdkFVyvNvD_ykbAfseB9rrWQe4Ofov21fwWOH4A4D7dm8eicwDF5Afvka-vojmjQSurUqeUzAUSb8qtqKMsEfMVhCx8qMMG3lAFmUqPlXcB4BuJE2PnsaMQIw8oCuM3KjxcQvYDCY1pU1NccCD2kPyU2SAeSftqx9Cg==/"><br>
+			
+		<div class="c_box">
+		<div class="c_imgbox">
+			<img src="https://naverpa-phinf.pstatic.net/MjAyMjA1MTJfMTY5/MDAxNjUyMzM1MTQyMTU5.jZ93cwNNF_TpwRooSOLx-9e05kKcXca6MaAjsS3ZWEwg.DXYvWPYBpaBcQZ33vD-dffBl5j9-oRRcCPjpDn6UzbMg.JPEG/1.jpg"
+			  width="232" hegiht="154">
+			</div>
+		<div class="c_infobox"><strong style="color: #8f8f8f;">STL</strong>
+			<button style="background-color: white; border-width:thin; border-color: #8f8f8f; color: #8f8f8f;">
+			AD | X
+			</button><br />
+			<span class="c_title">퀄리티가 달라!스마트한 냉장고바지<br></span>
+			<span>쿨링+땀건조 1만원대</span><br>
+			
+			<span style="color: #8f8f8f;">지금 구매하기></span> </div>
+		</div>
+		</a>
+		<a class="c_boxing"  href="https://tv.naver.com/v/26903914">
+		<div class="c_box">
+		<div class="c_imgbox">
+			<img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Ftvcast.phinf%2F20220521_93%2FoC1US_1653091025076JCSt0_JPEG%2F32228668-0a3a-4117-b681-cac5dfd3fa1e_B.jpg%22&type=nf464_260">
+			</div>
+		<div class="c_infobox">
+			<strong class="c_category">TV드라마</strong><br>
+			<span class="c_title">[13화 선공개] 이정은 위해 방 청소해주는 스윗 엄정화💛 청소하다 발견한..<br></span>
+			<span class="c_source">우리들의 블루스</span>
+			<span class="c_date">5시간 전</span></div>
+		</div>
+		</a>
+		<a  class="c_boxing"  href="https://tv.naver.com/v/25982642">
+		<div class="c_box">
+		<div class="c_imgbox">
+			<img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fphinf.pstatic.net%2Ftvcast%2F20220401_21%2F0Lcap_1648801425201P2zoD_JPEG%2F1648801414942.jpg%22&type=nf464_260">
+			</div>
+		<div class="c_infobox">
+			<strong class="c_category">웹드라마</strong><br>
+			<span class="c_title">'좀비딸' 애니 1분 미리보기 - 🚨좀비수아 깜놀주의🧟‍♀️🧟‍♀️🚨<br></span>
+			<span class="c_source">네이버 웹툰</span>
+			<span class="c_date">10분 전</span></div>
+		</div>
+		</a>
+		<a  class="c_boxing" href="https://tv.naver.com/v/25007383">
+		<div class="c_box">
+		<div class="c_imgbox">
+			<img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fphinf.pstatic.net%2Ftvcast%2F20220208_90%2FZ7uWG_1644314034580RHv4q_PNG%2F1644313896713.png%22&type=nf464_260">
+			</div>
+		<div class="c_infobox">
+			<strong class="c_category">웹예능</strong><br>
+			<span class="c_title">[홀인러브] 등장 한 번에 모든 시선 집중 시킨 그녀의 아우라✨<br></span>
+			<span class="c_source">홀 인 러브(Hole in Love Part1)</span>
+			<span class="c_date">10분 전</span></div>
+		</div>
+		</a>
+		<a  class="c_boxing"  href="https://tv.naver.com/v/25021715">
+		<div class="c_box">
+		<div class="c_imgbox">
+			<img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fphinf.pstatic.net%2Ftvcast%2F20220209_239%2FLcGFB_1644382713037NEMLx_PNG%2F1644382704930.png%22&type=nf464_260">
+			</div>
+		<div class="c_infobox">
+			<strong class="c_category">웹예능</strong><br>
+			<span class="c_title">[홀인러브] 역대급 ‘직진’남 김강열도 반한 매너남의 ‘정.석’ (ft. 티슈)<br></span>
+			<span class="c_source">홀 인 러브(Hole in Love Part1)</span>
+			<span class="c_date">10분 전</span></div>
+		</div>
+		</a>
+		<a  class="c_boxing"  href="https://tv.naver.com/v/26901517">
+		<div class="c_box">
+		<div class="c_imgbox">
+			<img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Ftvcast.phinf%2F20220520_127%2FIh1Dl_16530550247081Ktt7_JPEG%2F62879650aa27a8fab735f13e_upload_1653054004688.jpeg%22&type=nf464_260">
+			</div>
+		<div class="c_infobox">
+			<strong class="c_category">TV예능</strong><br>
+			<span class="c_title">아버지 레시피까지 더해 대구식 매운 찜갈비를 찬원 스타일로♥ 진또갈비..<br></span>
+			<span class="c_source">신상출시 편스토랑</span>
+			<span class="c_date">15시간 전</span></div>
+		</div>
+		</a>
+		<a class="c_boxing" href="https://tv.naver.com/v/26902463">
+		<div class="c_box">
+		<div class="c_imgbox">
+			<img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Ftvcast.phinf%2F20220521_83%2FwDQzy_16530619193389GNME_JPEG%2F20220521_003638_966_1.jpg%22&type=nf464_260">
+			</div>
+		<div class="c_infobox">
+			<strong class="c_category">TV드라마</strong><br>
+			<span class="c_title">[단독 선공개] 이엘 남친 이기우 보고 흐뭇하게 미소 짓는 이경성😊..<br></span>
+			<span class="c_source">나의 해방일지</span>
+			<span class="c_date">4시간 전</span></div>
+		</div>
+		</a>
+	</div>
+</div>
+
+</body>
+</html>

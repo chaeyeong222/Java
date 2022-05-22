@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+   
+   *{
+      box-sizing: border-box; 
+    }
+    c_body{
+    font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
+    }
+    /*nav부분*/
+    
+    .c_maintheme{
+     display: block;
+    }
+    
+    .c_maintheme ul{
+     list-style-type: none;
+     overflow: hidden;
+     margin:0;
+     padding:0;
+     background-color: #f7f9fa;
+     border: 1px solid #dae1e6;
+    }
+    
+    .c_maintheme ul li{
+    float:left;
+    text-decoration: none;
+    color: black;
+    padding:10px;
+    text-align: center;
+    padding: 11px 18px;
+    }
+    
+     
+     .c_maintheme ul li a.c_theme{
+     display: inline-block;
+     padding: 5px;
+     color: #404040;
+     text-decoration: none;
+     font-size: 13px;
+     font-weight: 700;
+     
+     }
+     .c_maintheme ul li a.c_theme:hover{
+     text-decoration: underline;
+     }
+     .c_maintheme ul li a.c_theme1{
+     display: inline-block;
+     padding: 5px;
+     color: #e65da0;
+     text-decoration: none;
+     font-size: 13px;
+     font-weight: 700;
+     border-right: thin;
+     }
+     .c_maintheme ul li a.c_theme1:hover{
+     text-decoration: underline;
+     }
+     
+    
+    /* 엔터- 동영상9개 부분*/
+    
+    .c_category{
+     color:#e65da0;;
+    }
+    
+    .c_allbox {
+     margin: 0px;
+     padding:5px; 
+     overflow:hidden; 
+    /*  width:900px; */ /* 화면크기 줄어도 위치고정(아래로안내려오게) */
+     height:1200px;
+    }
+
+   .c_boxing{
+     text-decoration: none;
+     color: black;
+     font-weight: bold; 
+     font-size: 13px;
+     line-height: 20px;
+     max-height: 40px;
+     width: 232px
+     
+   }
+   
+   a.c_boxing:hover{
+    text-decoration: underline;
+    
+   } 
+   .c_box span.c_title:hover{
+   text-decoration: underline;
+   }
+   .c_infobox{
+   width: 232px;
+   }
+   .c_box{
+     float: left;
+     width: calc(100%/3); /* -10px 박스사이의 간격 고정 */
+     height: 250px;
+     padding:10px;
+     border: 20px;
+     overflow: hidden; /*사진확대해도 전체크기안변하게*/
+   }
+    .c_allbox img{
+      width:100%;
+   } 
+   .c_box img{ /*추가*/ 
+    width:100%; 
+    transition: all 0.2s linear; /* 마우스올리면 이미지확대-속도 */
+    
+    
+   }
+    .c_imgbox{ /*추가*/
+    overflow: hidden;
+    width:232px;
+    height:130px;
+   }
+   .c_box img:hover{
+   transform: scale(1.2);
+   }
+   .c_box .c_source{
+    color: #505050;
+    font-size: 12px;
+   }
+   .c_box .c_date{
+   color: grey;
+   font-size: 12px;
+   }
+  
+   
+</style>
+
+
+</head>
+<body id="c_body">
+
+ 
+<!-- div>nav+div>(div>img[href]+div>em+a[href])*9 -->
+<div>
+	
+  <div class="c_allbox">
+	<a class="c_boxing" href="https://tv.naver.com/v/26901517">
+	<div class="c_box">
+		<div class="c_imgbox">
+			<img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Ftvcast.phinf%2F20220520_127%2FIh1Dl_16530550247081Ktt7_JPEG%2F62879650aa27a8fab735f13e_upload_1653054004688.jpeg%22&type=nf464_260"/>
+			</div>
+			<div class="c_infobox">
+			<strong class="c_category">TV 예능</strong><br>
+			<span class="c_title">아버지 레시피까지 더해 대구식 매운 찜갈비를 찬원 스타일로♥ 진또갈비 | KBS 220520 방송<br></span></span>
+			<span class="c_source">신상출시 편스토랑</span>
+			<span class="c_date">22시간 전</span>
+			</div>
+		</div>
+		</a>
+		<a class="c_boxing" href="https://tv.naver.com/v/26904286">
+		<div class="c_box">
+			<div class="c_imgbox">
+			<img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Ftvcast.phinf%2F20220521_69%2FLvdCn_16530955198400r9CV_JPEG%2Fclip_20220521095734_5.jpg%22&type=nf464_260">
+			</div>
+			<div class="c_infobox">
+			<strong class="c_category">TV 예능</strong><br>
+			<span class="c_title">[선공개] '깍지가 웬 말⁉️' 조나단 & 파트리샤 생애 첫 남매 손깍지 도전?!💗 ＂이거 계약 위반 아니야?＂🤣..<br></span>
+			<span class="c_source">전지적 참견 시점</span>
+			<span class="c_date">11시간 전</span>
+			</div>
+		</div>
+		</a>
+		
+		<a class="c_boxing" href="https://tv.naver.com/v/26901920">
+		<div class="c_box">
+			<div class="c_imgbox">
+			<img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Ftvcast.phinf%2F20220520_128%2FVGmLz_1653057485204H09da_JPEG%2F22384777-3745-4e4e-8523-63f5acf6d97f.jpg%22&type=nf464_260">
+			</div>
+			<div class="c_infobox">
+			<strong class="c_category">TV 드라마</strong><br>
+			<span class="c_title">[14회 선공개] 이준기 설계 적중? “당신을 직권남용 혐의로 긴급체포합니다.”<br></span>
+			<span class="c_source">어게인 마이 라이프</span>
+			<span class="c_date">11시간 전</span>
+			</div>
+		</div>
+		</a>
+		<a class="c_boxing"  href="https://tv.naver.com/v/25026905">
+		<div class="c_box">
+			<div class="c_imgbox">
+			<img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fphinf.pstatic.net%2Ftvcast%2F20220209_64%2Fcp2Jv_16443928382761M5FD_PNG%2F1644392835685.png%22&type=nf464_260">
+			</div>
+			<div class="c_infobox">
+			<strong class="c_category">웹예능</strong><br>
+			<span class="c_title">[홀인러브] 혼란하다 혼란해..ㄷㄷ 첫날밤부터 바로 속마음 퍼팅?<br></span>
+			<span class="c_source">홀 인 러브(Hole in Love Part1)</span>
+			<span class="c_date">5시간 전</span></div>
+		</div>
+		</a>
+		<a  class="c_boxing"  href="https://tv.naver.com/v/14877893">
+		<div class="c_box">
+			<div class="c_imgbox">
+			<img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fphinf.pstatic.net%2Ftvcast%2F20200720_283%2FkQsIn_1595241613695GVJUQ_JPEG%2F1595241519203.jpg%22&type=nf464_260">
+			</div>
+			<div class="c_infobox">
+			<strong class="c_category">웹드라마</strong><br>
+			<span class="c_title">국뽕 차오르는 '갓 오브 하이스쿨' 애니메이션 속 서울 배경<br></span>
+			<span class="c_source">네이버 웹툰</span>
+			<span class="c_date">10분 전</span></div>
+		</div>
+		</a>
+		<a  class="c_boxing" href="https://tv.naver.com/v/25026845">
+		<div class="c_box">
+			<div class="c_imgbox">
+			<img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fphinf.pstatic.net%2Ftvcast%2F20220209_79%2FqHEJO_1644392825468WF2pM_PNG%2F1644392823227.png%22&type=nf464_260">
+			</div>
+			<div class="c_infobox">
+			<strong class="c_category">웹예능</strong><br>
+			<span class="c_title">[홀인러브] 여자가 남자에게 귀엽다고 하는 이유 (ft. 극호 시그널❤)<br></span>
+			<span class="c_source">홀 인 러브(Hole in Love Part1)</span>
+			<span class="c_date">10분 전</span></div>
+		</div>
+		</a>
+		<a  class="c_boxing"  href="https://tv.naver.com/v/26910077">
+		<div class="c_box">
+			<div class="c_imgbox">
+			<img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Ftvcast.phinf%2F20220521_220%2F3h0ZN_1653129481517foz0p_JPEG%2Fclip_20220521192241_18.jpg%22&type=nf464_260">
+			</div>
+			<div class="c_infobox">
+			<strong class="c_category">TV 예능</strong><br>
+			<span class="c_title">팔봉's 궁전에 나타난 테크노 여전사🎶 채정안의 짧지만 강력한 축하(?) 공연🤩, MBC 220521 방송<br></span>
+			<span class="c_source">놀면뭐하니?</span>
+			<span class="c_date">10분 전</span></div>
+		</div>
+		</a>
+		<a  class="c_boxing"  href="https://tv.naver.com/v/26902125">
+		<div class="c_box">
+			<div class="c_imgbox">
+			<img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Ftvcast.phinf%2F20220521_244%2Fg6H8g_1653058926311KxiPj_JPEG%2Fclip_20220520234739_116.jpg%22&type=nf464_260">
+			</div>
+			<div class="c_infobox">
+			<strong class="c_category">TV 드라마</strong><br>
+			<span class="c_title">[마지막회 선공개] 김희선x이수혁, 지옥에서 온 구련과 인도관리팀 박중길의 첫 만남, MBC 220521 방송<br></span>
+			<span class="c_source">내일</span>
+			<span class="c_date">8시간 전</span></div>
+		</div>
+		</a>
+		<a class="c_boxing" href="https://tv.naver.com/v/25026832">
+		<div class="c_box">
+			<div class="c_imgbox">
+			<img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fphinf.pstatic.net%2Ftvcast%2F20220209_107%2F4FLwA_1644392810720YMh5u_PNG%2F1644392800920.png%22&type=nf464_260">
+			</div>
+			<div class="c_infobox">
+			<strong class="c_category">웹예능</strong><br>
+			<span class="c_title">[홀인러브] 여섯 남녀가 함께할 5일간의 숙소는?! 그들만의 갓벽한 숙소 공개✦<br></span>
+			<span class="c_source">홀 인 러브(Hole in Love Part1)</span>
+			<span class="c_date">11분 전</span></div>
+		</div>
+		</a>
+	</div>
+</div>
+
+</body>
+</html>
