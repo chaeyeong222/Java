@@ -3,65 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
-</head>
-<body>
-<link rel="shortcut icon" type="image/x-icon"href="../images/SiSt.ico">
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <style>
-table{
- border : 1px solid black;
- width: 400px;
-/*  width:100%; */
- font-size: 12px;
-}
-
-td{
- border : 1px solid black;
- padding: 5px;
+span{
+ border:1px solid gray;
 }
 </style>
-<h3>ex07_02.html-table 태그</h3>
-
-1. 데이터를 행과 열로 정렬할 수 있는 태그<br>
-2. 예) dept 테이블 <br>
-10   ACCOUNTING   NEW YORK   행<br>
-20   RESEARCH   DALLAS<br>
-30   SALES   CHICAGO<br>
-40   OPERATIONS   BOSTON<br>
+</head>
+<body>
+<h3>ex07_02.html</h3>
+1. 모든 html요소(태그)에는 요소 유형에 따라 기본표시(display)값이 있다.<br>
+2. 표시값에는 2가지가 있다( 블럭모드, 인라인모드)<br>
+ - 블럭모드:요소 전체 너비를 차지 p, div, li, hn, dl,dd,dt,ol,ul,hr, blockquote 등<br>
+ - 인라인모드:새 줄에서 시작x, 필요한 너비 만큼만 차지한다. 
+      span, img, a, map, b, button, i, q, sub, sup, input 등<br>
+    <hr>
+<h3>div요소(태그)</h3>
+1. 웹 페이지의 배치layout<br>
+2. 블럭모드<br>
+3. 일반적으로 컨테이너(다른요소를 자식으로 가짐)의 종류중에 하나<br>
 
 <hr>
-<table>
-<!-- 테이블 행(row) -->
- <theader>
-  <tr>
-   <td align="center"><b>deptno</b></td>
-   <td align="center"><b>dname</b></td>
-   <td align="center"><b>loc</b></td>
-  </tr>
- 
- </theader>
- <tbody>
-  <tr>
-   <td>10</td>
-   <td>ACCOUNTING</td>
-   <td>NEW YORK</td>
-  </tr>
-  <tr>
-   <td>20</td>
-   <td>RESEARCH</td>
-   <td>DALLAS</td>
-  </tr>
-  <tr>
-   <td>30</td>
-   <td>SALES</td>
-   <td>CHICAGO</td>
-  </tr>
-  <tr>
-   <td>40</td>
-   <td>OPERATIONS</td>
-   <td>BOSTON</td>
-  </tr>
-  </tbody>
-</table>
+<button onclick="span_hide();">숨기기(hide)</button>
+<button onclick="span_show();">보이기(show)</button>
+<script> 
+//javascript 코딩
+ function span_hide(){
+	 //window.alert("버튼클릭 이벤트 확인!");
+	 //document.location="이동할 주소 url"
+	 document.getElementById("box01").style.display="none"; 
+ }
+ function span_show(){ 
+	 document.getElementById("box01").style.display="inline"; 
+ }
+</script>
+<br><br>
+
+<div id="box01">
+<span id="sp01">함세강</span>
+<span id="sp02">안시은</span>
+<span id="sp03">김서영</span>
+<span id="sp04">박재영</span>
+<span id="sp05">박민주</span>
+<span id="sp06">김지민</span>
+<span id="sp07">이동원</span>
+   
+</div>
+
 </body>
 </html>

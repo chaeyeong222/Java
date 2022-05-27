@@ -3,61 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="shortcut icon" type="image/x-icon"href="../images/SiSt.ico">
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <style>
+p{
 
-table{
-  border:1px solid black;
-  width:500px;
-  height:500px;
 }
- td{
-  border:1px solid black;
-  }
 </style>
-
 </head>
 <body>
-	<h3>ex08.html</h3>
-	<!--  table 5행5열 -->
-	<table>
-	<caption>rowspan/colspan 설명</caption>
+<!-- 
+[Emmet 설명]
+1. 에밋(Emmet)은 HTML, XML, XSL 문서 등을 편집할 때 빠른 코딩을 위해 사용하는 플러그인
+2. zencoding 으로 부르다가 이름 변경
+3. 실행할때 단축키 ctrl + e (expand abbreviation) 
+ -->
+ 
+ <h3>ex08.html</h3>
+ Emmet은 css 선택자와 유사한 구문을 사용한다.<br> 
+<!--  <ul>
+  <li></li>
+ </ul> -->
+<!-- 중첩연산자 : 
+     ㄱ.a>b(a의 자식 b만들래)  ul>li
+     ㄴ.+ (형제자매 (동일한 수준의 요소) 만들래)
+     ㄷ. ^  상위요소    
+     ㄹ. () 하위요소 그룹화
+<!-- <div>
+	<ul>
+		<li></li>
+	</ul>
+</div> -->
 
-		<tr>
-			<td align="center">1</td>
-			<td align="center">2</td>
-			<td align="center">3</td>
-			<td align="center">4</td>
-			<td align="center">5</td>
-		</tr>
-		<tr>
-		   <!-- cell(td)가로(열)로 합치기 -->
-			<td colspan="2">6-7</td> 
-			<td>8</td>
-			<td>9</td>
-			<!-- cell(td)세로(열)로 합치기 -->
-			<td rowspan="3">10/15/20</td>
-		</tr>
-		<tr>
-			<td>11</td>
-			<td>12</td>
-			<td>13</td>
-			<td>14</td>
-			
-		</tr>
-		<tr>
-			<td align="right" valign="bottom" rowspan="2" colspan="2">16</td>
-			<td align="right" valign="bottom">18</td>
-			<td align="right" valign="bottom">19</td>
-			
-		</tr>
-		<tr>
-			<td>23</td>
-			<td>24</td>
-			<td>25</td>
-		</tr>
-
-
-	</table>
+<!-- div+p+ul>li -->
+<!--  인용구 bq -->
+ <div></div>
+ <p></p>
+ <ul>
+ 	<li></li>
+ </ul>
+ 
+<!--  div+div>p>span+em -->
+ <div></div>
+ <div>
+ 	<p>
+ 	  <span></span>
+ 	  <em></em>
+ 	 </p>
+ 	 <blockquote></blockquote>
+ </div>
+ <!--  div+div>p>span+em^bq -->
+  <!--  div+div>(p>span+em)+bq -->
+ <div></div>
+ <div>
+ 	<p>
+ 	<span></span>
+ 	<em></em>
+ 	</p>
+ 	<blockquote></blockquote>
+ </div>
+ 
+ 
+ 
+ 
 </body>
 </html>

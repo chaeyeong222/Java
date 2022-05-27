@@ -3,15 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<style>
+
+
+body{
+
+ padding: 0;
+ margin: 0;
+ }
+
+
+ ul,li{
+/*   border: 1px solid gray; */
+  
+ }
+ 
+ ul{
+  /* list-style-type:lower-alpha; ul이지만 ol처럼 쓸 수 있음 */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+ /*  border-color: red; */
+  background-color: #333;
+  
+  overflow: hidden;
+ }
+ li{
+  float: left;
+  
+ 
+ }
+ li a{
+  color:  white;
+   display: block;
+   text-align:center;
+   padding: 16px;
+   text-decoration: none;
+/*   background-color: red; */
+/*   width:200px;  */
+
+ 
+ }
+ li a:hover{
+  color:  orange;
+  background-color: #111;
+ }
+ ul li:nth-child(1){
+ background-color: red;
+ }
+ 
+</style>
 </head>
-<!--  favicon 자신만의 파비콘을 제작하는 사이트 -->
 <body>
-<h3> ex05.html - 파비콘 favicon</h3>
-1. 브라우저 탬의 페이지 제목 옆에 표시되는 작은 아이콘<br>
-2. http://favicon.cc <br>
-3. 파이콘 파일 형식: .ico,  .png,   .jpeg,   .svg<br>
-4. 링크 태그 사용해서 파비콘 추가<br>
+<h3>Navigation menu</h3>
+
+<!-- 빠르게 처리, zencoding 또는 emmet엠잇 -->
+<ul>
+  <li><a href="#">Home</a></li>
+  <li><a href="#">News</a></li>
+  <li><a href="#">Contact</a></li>
+  <li><a href="#">About</a></li>
+</ul>
+
 
 </body>
 </html>

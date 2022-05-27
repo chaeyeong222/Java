@@ -3,16 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head> 
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+
+<style>
+table{
+width:100%;
+border-collapse: collapse;
+}
+
+th,td{
+ border-bottom: 1px solid #ddd;
+ padding: 8px;
+ text-align: left;
+}
+/* tbody tr:hover{
+background-color:rgba(150,212,212,0.5);
+
+} */
+tr:hover:not(tr:first-child){
+background-color:rgba(150,212,212,0.5);
+
+}
+</style>
+
+
+</head>
 <body>
+  
+<h2>HTML Table</h2>
+<table>
 
-<h3>days03/ex01.html - img 태그</h3>
+<colgroup>
+  <col span ="2" style="background-color:red">
 
-<img alt="이탈리안 튤립" src="../images/pic_trulli.jpg"> 
-<!-- width 너비속성은 %, px(기본) -->
-<img alt="이탈리안 튤립" src="../images/pic_trulli.jpg" width="250"> 
-<hr><!-- a 태그 안에 img 넣음- 링크누르니 페이지 이동해서 이미지요청해서 뿌린 것 -->
-<a href = "../images/pic_trulli.jpg"><img alt="이탈리안 튤립" src="../images/pic_trulli.jpg" width="250"> </a>
+</colgroup>
 
+
+
+<!-- <thead> -->
+<tr>
+ <th>first name</th>
+ <th>last name</th>
+ <th>points</th>
+
+</tr>
+<!-- </thead>
+<tbody> -->
+ <tr>
+   <td>asdf </td>
+   <td> sdf</td>
+   <td> 100</td>
+  </tr>
+ <tr>
+   <td>sdf </td>
+   <td> dfsa</td>
+   <td>105</td>
+  </tr>
+ <tr>
+   <td>dfd </td>
+   <td>efe </td>
+   <td> 300</td>
+  </tr>
+  <tr>
+   <td>ae </td>
+   <td>fda </td>
+   <td> 250</td>
+  </tr>
+<!--   </tbody> -->
+
+
+</table>   
+
+ 
 </body>
+
 </html>
