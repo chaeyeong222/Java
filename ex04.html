@@ -1,75 +1,47 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<style>
+ div{
+  background-color: black;
+  color:white;
+  padding:20px;
+ }
+ p:hover{
+  color:red;
+ }
+</style>
 </head>
 <body>
-<h3>ex04.html - 목록list</h3>
-1. 순서 있는 목록 태그 - ol 태그 ordered list<br>
-                      li(list item)<br>
-2. 순서 없는 목록 태그 - ul 태그 unordered list<br>
 
-<h4> 1조 - 코린이조</h4>
-1. 첫번째<br>
-2. 두번째<br>
-3. 세번째<br>
-4. 네번째<br>
-5. 오번째<br>
-6. 육번째<br>
-<hr>
+<!-- 임의의 본문 내용 넣기 -  (한글)로렘입숨 -->
 
-<ol>
-<li>첫번째</li>
-<li>두번째</li>
-<li>세번째</li>
-<li>네번째</li>
-<li>오번째</li>
-<li>육번째</li>
-</ol>
-<ol type="A">
-<li>첫번째</li>
-<li>두번째</li>
-<li>세번째</li>
-<li>네번째</li>
-<li>오번째</li>
-<li>육번째</li>
-</ol>
-<ol type="i">
-<li>첫번째</li>
-<li>두번째</li>
-<li>세번째</li>
-<li>네번째</li>
-<li>오번째</li>
-<li>육번째</li>
-</ol>
-<hr>
+<button onclick="div_hide()">숨기기</button>
+<button onclick="div_show()">보이기</button>
+<div id="demo">
+<h2>Lorem</h2>
+<!-- p*2>lorem -->
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quos aliquid maiores illum delectus voluptas dolore sed saepe nobis accusantium culpa id ratione quisquam nesciunt ab cumque ducimus. Sequi explicabo.</p>
+<p>Molestiae aspernatur porro est nam. Similique voluptas dolorem quisquam ipsam laudantium harum beatae optio possimus ad reprehenderit accusantium cupiditate earum. Ratione eaque alias vero itaque adipisci similique earum reiciendis eius.</p>
 
-<ul>
-<li>첫번째</li>
-<li>두번째</li>
-<li>세번째</li>
-<li>네번째</li>
-<li>오번째</li>
-<li>육번째</li>
-</ul>
-<ul type="circle">
-<li>첫번째</li>
-<li>두번째</li>
-<li>세번째</li>
-<li>네번째</li>
-<li>오번째</li>
-<li>육번째</li>
-</ul>
-<ul type="square">
-<li>첫번째</li>
-<li>두번째</li>
-<li>세번째</li>
-<li>네번째</li>
-<li>오번째</li>
-<li>육번째</li>
-</ul>
+</div>
+
+<script>
+function div_hide(){
+	//console.log("숨기기버튼 클릭됨");
+	var demo = document.getElementById("demo");
+	demo.style.display="none";
+}
+function div_show(){
+	//console.log("숨기기버튼 클릭됨");
+	var demo = document.getElementById("demo");
+	demo.style.display="block";
+}
+</script>
+
+
 </body>
 </html>

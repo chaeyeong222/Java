@@ -3,86 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="shortcut icon" type="image/x-icon"href="../images/SiSt.ico">
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
- table{
- /*  border:1px solid gray; */
-  width:500px;
-  margin:0 auto;
-  /* background-color: red; */
-  border-collapse: collapse;
-  }
-  td{
- /*  border:1px solid gray; */
-  }
-</style>
-<style>
-tr{
-  border-bottom: 1px dotted #ddd;
-}
-tr:hover{
- background-color : #d6eeee;
-}
-/* 짝수행의 tr 배경색 설정 */
-tr:nth-child(even){
-/* background-color:#ddd; */ /* rrggbb 16진수*/
-/* background-color: rgb(150,212,212); */
-/*  a==alpha== 색상의 투명도  (투명)0~1(불투명)*/
-background-color:rgba(150,212,212,0.3);
-}
-</style>
 </head>
 <body>
-  <!-- 임의의 데이터 들어있는 5행5열 -->
-<table>
-<caption> 조 편성표</caption>
-<!-- <colgroup>  
-  colgroup 태그 안에 col안에 style 사용해서 
-  background ,width, border, visibility 제한적 사용 가능
-   <col span="3" style="background-color: #d6eeee">
-  <col style="background-color:#d6eeee">
+<h3>html 반응형 웹</h3>
+<pre>
+1. 모든 장치에서 웹 페이지가 보기 좋게 만드는 것
+2. 다양한 화면 크기와 뷰포드에 맞게 자동으로 조정되는 웹페이지
+3. <meta name="viewport" content="width=device-width, initial-scale=1.0"> 코딩 추가
+4. 반응형 웹 디자인
+   1) 반응형 이미지 처리
+  너비width 속성: 퍼센트%
   
-</colgroup> -->
+  커피이미지 크기: 너비 100px, 높이 200px
   
-   <!-- <tr style = "background-color: green"> -->
-   <tr>
-      <td>Lorem.</td>
-      <!-- <td style = "background-color: yellow">Dolores.</td> -->
-      <td>Dolores.</td> 
-      <td>Ex.</td>
-      <td>Consectetur?</td>
-      <td>Magni.</td>
-   </tr>
-   <tr>
-      <td>Lorem.</td>
-      <td>Molestiae.</td>
-      <td>Deleniti!</td>
-      <td>Ipsa.</td>
-      <td>Quo.</td>
-   </tr>
-   <tr>
-      <td>Lorem.</td>
-      <td>Harum.</td>
-      <td>Possimus.</td>
-      <td>Quaerat.</td>
-      <td>Labore.</td>
-   </tr>
-   <tr>
-      <td>Lorem.</td>
-      <td>Sit.</td>
-      <td>Quo.</td>
-      <td>Temporibus.</td>
-      <td>Ab.</td>
-   </tr>
-   <tr>
-      <td>Lorem.</td>
-      <td>Sed.</td>
-      <td>Dolores!</td>
-      <td>Eum?</td>
-      <td>Fuga.</td>
-   </tr>
-</table>
+  장치크기: 너비 400px
+  커피이미지 width:100% 해상도 깨진다
+           max-width:100% 100px 이상 너비가 확대x
+   2) 반응형 텍스트 크기 :vw     [v]iewport [w]idth
+     <h1 style="font-size:10vw"></h1>
+       1vw == 뷰포트1%
+       휴대폰 장치 너비/ 뷰포트 50cm => 1vw  ==0.5cm
+   3) 미디어 쿼리 를 사용해서 텍스트와 이미지의 크기를 조정
+     ex06_02.html      
+     
+     http://192.168.219.101/webPro/html/days05/ex06_02.html
+     //내부 네트워크
+     노트북/와이파이
+     휴대폰/와이파이
+   
 
+</pre>
 </body>
 </html>

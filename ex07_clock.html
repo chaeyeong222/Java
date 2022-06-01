@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+
+<script language="Javascript">
+
+function show(){
+  var now=new Date();
+  var dy=now.getDate();
+  var mt=now.getMonth()+1;
+  var hr=now.getHours();
+  var mn=now.getMinutes();
+  var sc=now.getSeconds();
+  var ampm="<sup>오전</sup>";
+  if (hr>=12) ampm="<sub>오후</sub>";
+  if (hr>12) hr=hr-12;
+  if (hr==0) hr=12;
+//  if (hr<=9) hr="0"+hr;
+  if (mn<=9) mn="0"+mn;
+  if (sc<=9) sc="0"+sc;
+  clock.innerHTML=" <b>"+mt+"</b>/<b>"+dy+"</b> "+ampm+" "+hr+":"+mn+":" +sc;
+  setTimeout("show()",1000);
+}
+// 감춤 끝  -->
+</script>
+</head>
+<body onload="show()" style="margin:0;padding:0">
+<div id="clock" align=center style="margin:0;padding:1px;font-size:9pt;width:9em;color:00f;background-color:cfc;"></div>
+</body>
+</html>

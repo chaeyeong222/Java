@@ -4,43 +4,53 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+ div{
+  background-color: black;
+  color:white;
+  padding:20px;
+ }
+ p:hover{
+  color:red;
+ }
+
+</style>
 </head>
 <body>
-<h3>ex04_02.html - 중첩목록</h3>
-li 태그 안에 새로운 목록 또는 링크 태그가 올 수 있다
 
-<ol type="I">
- <li>1조
-    <ul>
-    <li><a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%EC%9C%A0%ED%99%98%EC%9E%AC">첫번째</a></li>
-    <li>두번째</li>
-    <li>세번째</li>
-    <li>네번째</li>
-    <li>오번째</li>
-    <li>육번째</li>
-    </ul>
-  </li>
- <li>2조
-  <ul>
-    <li>첫번째</li>
-    <li>두번째</li>
-    <li>세번째</li>
-    <li>네번째</li>
-    <li>오번째</li>
-    <li>육번째</li>
-    </ul>
-  </li>
- <li>3조
- <ul>
-    <li>첫번째</li>
-    <li>두번째</li>
-    <li>세번째</li>
-    <li>네번째</li>
-    <li>오번째</li>
-    <li>육번째</li>
-    </ul>
- </li>
-</ol>
+<!-- 임의의 본문 내용 넣기 -  (한글)로렘입숨 -->
 
+<button>숨기기</button>
+<button>보이기</button>
+<div id="demo">
+<h2>Lorem</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quos aliquid maiores illum delectus voluptas dolore sed saepe nobis accusantium culpa id ratione quisquam nesciunt ab cumque ducimus. Sequi explicabo.</p>
+<p>Molestiae aspernatur porro est nam. Similique voluptas dolorem quisquam ipsam laudantium harum beatae optio possimus ad reprehenderit accusantium cupiditate earum. Ratione eaque alias vero itaque adipisci similique earum reiciendis eius.</p>
+</div>
+
+<script>
+ //$("#아이디명")
+ //$("태그명")
+ //jquery method first()
+ //익명함수 - 버튼 클릭할때만 사용되므로 이름 안줌.
+  $("button").first().click(function(){
+	// window.alert("ok");
+	//style 지정하는 jquery method css()
+	 $("#demo").css("display","none");
+ }); 
+/*  $("button").last().click(function(){ */
+    /* $("button:nth-child(2)").click(function(){ */
+ $("button:last-of-type").click(function(){
+		// window.alert("ok");
+		//style 지정하는 jquery method css()
+		 $("#demo").css("display","block");
+	 });
+    
+    //*******중요
+    //바디태그 닫기 전에 스크립트 코딩 넣기
+    
+    
+</script>
 </body>
 </html>

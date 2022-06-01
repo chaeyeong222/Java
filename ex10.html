@@ -2,61 +2,110 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
-<link rel="shortcut icon" type="image/x-icon"href="../images/SiSt.ico">
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <style>
- table, th, td{
- border: 1px solid red;
- }
- 
-/*  cellpadding */
- th,td{
-   padding : 10px;
-  }
-/*  cellspacing */
-table{
- border-spacing:10px;
-} 
- 
- 
+*{
+	box-sizing:border-box;
+}
+body{
+font-family: Ver dana;
+color:#aaa;
+}
+
 </style>
+<style>
+ #header{
+ background-color: #e5e5e5;
+ padding: 15px;
+ text-align: center;
+ }
+ #footer{
+ background-color: #e5e5e5;
+ padding: 10px;
+ text-align: center;
+ 
+ margin-top:7px ;
+ }
+
+</style>
+<style>
+/* .클래스명 */
+.menu{
+ width:20%;
+ float:left;
+}
+.menu a{
+ background-color: #e5e5e5;
+ color:black;
+ display: block;  /* width주기위해 바꿈 */
+ width: 100%;  
+ text-align: center;
+ text-decoration: none;
+ margin-top: 7px;
+}
+.main{
+  width:60%;
+  padding:0 20px;
+   float:left;
+}
+.right{
+ width:20%;
+ background-color: #e5e5e5;
+ text-align: center;
+ margin-top: 7px;
+ padding:15px;
+  float:left;
+}
+
+</style>
+<style>
+/*반응형 웹 디자인 */
+/* 미디어 쿼리 */
+/*  프린트 할때 말고 오직 화면에 출력할때만 */
+@media only screen and (max-width : 620px){
+    .menu, .main, .right{
+     width:100%;
+    }
+    .right{
+    display:none;
+    }
+     
+
+
+}
+  
+ </style>
+
+
+
 </head>
-<!-- cellpadding 셀과 내용 사이의 간격
-cellspacing 셀과 셀 사이의 간격 -->
 <body>
-	<table >
-		<tr>
-			<td>홍길동</td>
-			<td>홍길동</td>
-			<td>홍길동</td>
-		</tr>
-		<tr>
-			<td>홍길동</td>
-			<td>홍길동</td>
-			<td>홍길동</td>
-		</tr>
-		<tr>
-			<td>홍길동</td>
-			<td>홍길동</td>
-			<td>홍길동</td>
-		</tr>
-	</table>
-<!-- 	<table border="1" bordercolor="red" cellpadding="10px" cellspacing="10px">
-		<tr>
-			<td>홍길동</td>
-			<td>홍길동</td>
-			<td>홍길동</td>
-		</tr>
-		<tr>
-			<td>홍길동</td>
-			<td>홍길동</td>
-			<td>홍길동</td>
-		</tr>
-		<tr>
-			<td>홍길동</td>
-			<td>홍길동</td>
-			<td>홍길동</td>
-		</tr>
-	</table> -->
+   <div id="header">
+      <h1>Hello World</h1>
+   </div>
+   <div style="overflow: auto"> 
+   <!-- <div> -->
+      <div class="menu">
+         <a href="#">Link 1</a>
+         <a href="#">Link 2</a>
+         <a href="#">Link 3</a>
+         <a href="#">Link 4</a>
+      </div>   
+      <div class="main">
+         <h2>Lorem ipsum.</h2>
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium rem praesentium ratione iusto. Porro voluptates minima
+            numquam voluptate facere ratione culpa recusandae eos atque
+            assumenda velit at eaque optio est?</p>
+      </div>
+      <div class="right">
+         <h2>About</h2>
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Possimus maiores.</p>
+      </div>      
+   </div>
+   <div id="footer">@ copyright SS16.com</div>
 </body>
 </html>

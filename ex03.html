@@ -5,46 +5,48 @@
 <title>Insert title here</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <style>
-table{
- width:200px;
- height:200px;
+
+ul{
+ border:1px solid #e7e7e7;
+ background-color: #f3f3f3;
+ list-style-type: none; /* 목록표시도형 없어짐 */
+ margin:0;
+ padding:0; /* 마진이랑 패딩 0 주는 이유? 좌표값을 정확하게하기위해 초기화 */
+ 
+ overflow:hidden; /* li를 float줘서 설정하는거 */
 }
- table,th,td{
-  border: 1px solid gray;
- }
+li{
+  float:left;
+}
+li a{
+ display: block;
+ text-align: center;
+ color:#666;
+ padding: 14px 16px; /*  좌우14 위아래16 띄움*/
+ text-decoration: none;
+}
+li a:hover:not(.active){ /* 클래스명이 active인(활성화 된) 애는 변화없도록 */
+ background-color: #ddd;
+}
+li a.active{
+  color: white;
+  background-color: #04AA6D;
+}
+/* li:nth-child(4){ */
+li:last-child{ /* 마지막 자식 */
+ float: right;
+}
+
 </style>
 </head>
 <body>
-<h3> ex03.html</h3>
-<!-- 테이블의 너비, 높이, 셀의 너비, 높이 설정해도
-알파벳, 숫자인 경우에는 설정값 의미없다(깨짐). 
-한글은 괜찮음  -> css수업때 문제 해결-->
-	<table>
-
-		<tr>
-			<td style="width:50%; height:50%;">ㄱ ㄴ ㄷ ㄹ ㅁ ㅂ </td>
-			<!-- <td  style="width:50%; height:50%;">12345678901234567890</td> -->
-			<td  style="width:50%; height:50%;">1234</td>
-		</tr>
-		<tr>
-			<td style="width:50%; height:50%;">abcdefghijklmnopqrstuvwxyz</td>
-			<td style="width:50%; height:50%;">4</td>
-		</tr>
-
-	</table>
-	<hr>
-	<table>
-
-		<tr>
-			<td>1</td>
-			<td>2</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>4</td>
-		</tr>
-
-	</table>
-
+<!-- ul>li*4>a[href="#"] -->
+<ul>
+ <!-- 메뉴가 활성화됨을 나타내기 위해서 class속성 사용 - 클래스명 active설정 -->
+	<li><a href="#" class="active">Home</a></li>
+	<li><a href="#">News</a></li>
+	<li><a href="#">Contact</a></li>
+	<li><a href="#">About</a></li>
+</ul>
 </body>
 </html>

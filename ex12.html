@@ -2,88 +2,27 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 </head>
 <body>
-<h3 id="top"></h3>
-<h3>html 링크- javascript 호출할 수 있다.</h3>
-<!-- <a href="javascript:자바스크립트코딩을 하면 된다.">javascript처리</a> -->
-<a href="javascript:window.alert('경고창띄움!!');">경고창 띄우자</a><br>
-<!-- 버튼 클릭할 때 경고창 띄우자 -->
-<!-- 클릭 이벤트 발생 이벤트 처리 -->
-<!-- <button on이벤트명="javascript 코딩 실행">경고창 띄우자</button> -->
-<button onclick="window.alert('경고창띄움!!')"> 경고창 띄우자</button>
+<h3> html Form(양식) - 사용자 입력 처리 -> 서버전송 처리</h3>
+<!-- 자바서버페이지 서버 처리->응답
+java server page
+JSP
+ex12_ok.jsp -->
 
-<h3>html 링크 - 다른 문서(웹페이지)로 이동</h3>
-<a href="ex01.html">ex01.html</a><br>
-<!-- 버튼을 사용해서 그 버튼을 클릭하면 페이지 이동-->
-<!--BOM(Browser Object Model 브라우저가 제공하는 기본객체모델)-->
-<!--BOM : window -> 기본으로 제공되는 내장객체-->
-<!--BOM : document 내장객체 -->
+<!-- form에 감싸져야 서버에 전송됨. -->
+<form action="ex12_ok.jsp" method="get">
+First Name: <br>
+<input type="text" name="fname" autofocus="autofocus"><br> 
+Last Name: <br>
+<input type="text" name="lname"><br> 
+<br>
+ <!-- 전송하다==submit -->
+<input type="submit">
+</form>
 
-<button onclick="document.location='ex01.html'">ex01.html</button>
-
-
-<h3>html 링크 - 메일보내기</h3>
-<!-- <a href="mailto:메일계정">send mail(admin)</a><br> -->
-<a href="mailto:admin@sist.co.kr">send mail(admin)</a><br>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-
-<h3 id="bookmark">html 링크- 책갈피 만들 수 있다.</h3>
-
-<!--p*30>{.} -->
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-
-<a href="#bookmark">책갈피</a><br>
-<a href="#top">맨위로</a><br>
-<a href="../days01/ex03.html#link">html링크에 대한 설명 days01/ex03.html</a><br>
 </body>
 </html>

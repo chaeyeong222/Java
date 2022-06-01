@@ -4,16 +4,94 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+
+<style>
+*{
+  box-sizing:border-box; /* css에서 자세하게 설명 */
+}
+body{
+ font-family: Arial, Helvetica,sans-serif; /* ',''로 나열:없으면 그 다음 글꼴로 변경 */
+ }
+/* div #header{ */
+#header{
+background-color: #666;
+color: white;
+padding: 30px; /* 셀과 내용물 간의 간격 */
+text-align: center;
+font-size:35px;
+}
+#footer{
+background-color: #777;
+color: white;
+padding: 15px; /* 셀과 내용물 간의 간격 */
+text-align: center;
+font-size:25px;
+}
+</style>
+<style>
+#nav{
+ background-color: #ccc;
+ height: 300px; /*  원래block은 내용물에 맞춰지지만 고정300지정 */
+ width: 30%;
+ padding: 20px;
+ float:left;
+}
+#nav ul{
+/*  background-color: red; */
+ list-style-type: none;
+ padding:0;
+}
+#article{
+ background-color: #f1f1f1;
+ min-height: 300px; /* height는 안에 내용물이 많아지면 의미가 없어짐 내용물이 적을때 지정값 */
+ width: 70%;
+ padding: 20px;
+ 
+ float:left;
+}
+#section:after{ /* footer가 float:left 된 기능을 없애기위한 */
+ content:"";
+ display:table;
+ clear:both;
+ 
+}
+</style>
 </head>
+
 <body>
-<h3>html 설명목록 dl(definition or description list)</h3>
+<h2>div배치(layout)+css(float)</h2>
+<!-- p*2>lorem -->
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque fugit eius natus quisquam odit eligendi et! Voluptatem ipsa enim exercitationem illo fuga aspernatur quis qui a quam! Eius accusantium numquam.</p>
+<p>Iure optio fugit in reprehenderit animi debitis placeat! Maiores ullam suscipit ducimus quis nemo velit libero maxime officiis excepturi commodi debitis earum error accusamus itaque eligendi illum qui deserunt inventore.</p>
 
-<dl>
- <dt>html</dt>
- <dd>hyper text mark language 의 약어</dd>
- <dt>jsp</dt>
- <dd>java server page의 약어</dd>
-</dl>
-
+<!-- #header>h2>{Cites} -->
+<div id="header">
+	<h2>Cites</h2>
+</div> <!-- header -->
+<!-- #section>(#nav>ul>li*3>a[href='#'])+#article>(h1>{London}^p*2>lorem -->
+<div id="section">
+	<div id="nav">
+		<ul>
+			<li><a href="#">London</a></li>
+			<li><a href="#">Paris</a></li>
+			<li><a href="#">Seoul</a></li>
+		</ul>
+	</div> <!-- nav -->
+	<div id="article">
+		<h1>London</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi non fugit nobis quaerat praesentium distinctio quisquam soluta assumenda sit numquam sed veritatis quidem quo consequuntur harum totam nemo architecto saepe?</p>
+		<p>Nemo dolor dolores dolorum assumenda neque ducimus aut id doloribus nesciunt veniam sit reiciendis cupiditate animi molestias sed eos voluptatem. Fugiat perferendis recusandae optio beatae expedita dicta quasi similique culpa.</p>
+		<h1>Paris</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem laudantium vitae voluptatum aspernatur id vero asperiores voluptas iusto in officiis placeat similique aperiam officia expedita repellendus minima obcaecati rerum voluptatibus!</p>
+		<p>Cum libero tempora exercitationem voluptatum alias praesentium possimus aliquam eaque. Harum nam porro accusantium perferendis maxime ex enim a qui delectus quia temporibus deleniti obcaecati vero veniam praesentium. Iure debitis?</p>
+		<h1>Seoul</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi numquam ullam maiores laborum quasi aut at enim aperiam omnis sed necessitatibus aliquam impedit quo non eaque. Non odio cupiditate sit.</p>
+		<p>Voluptates suscipit possimus repudiandae atque ipsa. Quibusdam ipsa modi at aperiam distinctio optio ipsam tempora aspernatur iste molestiae quos deserunt nemo cupiditate dolorem error adipisci molestias fugiat eos perferendis velit.</p>
+	</div><!-- article -->
+</div><!-- section -->
+<!-- <div style="clear:both"></div> --> <!-- float-left 속성 없애기위한 기능 추가 -->
+<div id="footer">
+	<h2>Footer</h2>
+</div> <!-- footer -->
 </body>
 </html>
