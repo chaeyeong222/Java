@@ -1,32 +1,21 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-<h3>html iframe 태그</h3>
- <ul>
- 	<li>[i]nline + frame (윈도우, 창)</li>
- 	<li>인라인프레임 == 현재 html 문서 내에 또 다른 문서를 포함하는데 사용</li>
- 	<li>웹 페이지 내에 웹 페이지를 표하는 데 사용</li>
- 	<li>왜?</li>
- 	<li>http://trio.co.kr/club/public/clock.html</li>
- 	<li>날짜/시간:<iframe title="현재 날짜/시간" src="ex07_clock.html"></iframe></li>
- 	<li>날짜/시간:<iframe title="현재 날짜/시간" src="ex07_clock.html" frameborder="0"
- 	            width="114" height="25"></iframe></li>
- 	<iframe title="현재 날짜/시간" name="iframe_x" src="ex07_clock.html" frameborder="1"></iframe>
-  </ul>
- <hr>
- <a href="http://www.naver.com" target="_self"> naver </a> <br>
- <a href="http://www.daum.net" target="_blank">daum</a> <br>
- <a href="http://www.sist.co.kr" target="iframe_x">sist</a> <br>
- <iframe title="현재 날짜/시간"  name="iframe_x" src="ex07_clock.html" frameborder="1"></iframe>
- <iframe title="현재 날짜/시간"  name="iframe_x" src="ex07_clock.html" style="border:2px solid"></iframe>
- 
+<h3>ex07.html-오디오</h3>
+1. audio 태그 사용<br>
+
+<!-- <audio src="horse.mp4"></audio> -->
+
+<audio controls="controls" autoplay="autoplay" muted="muted"> 
+ <source src="horse.mp4" type="audio/mpeg">
+  <source src="horse.ogg" type="audio/ogg">
+  오디오 지원x
+ </audio>
 </body>
 </html>

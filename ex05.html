@@ -2,21 +2,52 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 </head>
 <body>
+<h3>ex05.html -svg</h3>
 
-텍스트 : {}
-<!-- p>{Click here to Continue} -->
-<p>Click here to Continue</p>
+<pre>
+svg
+ - SVG 그래픽을 위한 컨테이너
+ - SVG ? xml 형식의 [벡터기반]그래픽 정의
+ - 벡터기반? 확장 가능한 그래픽
+ </pre>
+ 
+<!--  <img id="" src="../images/SiSt.ico" alt="" /> -->
+<!-- 원 -->
+<svg style="width:100px; height:100px">
+  <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow"/>
+</svg>
+<!-- 사각형 -->
+<svg style="width:400px; height:100px">
+  <rect width="400" height="100" 
+    style="fill:rgb(0,0,255); strok:rgb(0,0,255); stroke-width:10;" />
+</svg>
+<br />
+<svg width="300" height="200">
+                         <!-- 좌표값 -->
+  <polygon points="100,10 40,198 190,78 10,78 160,198" 
+  style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+</svg>
 
-<!-- a[href]{here} -->
-<a href="">here</a>
+<br />
+<svg height="130" width="500">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+  <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG</text>
+  Sorry, your browser does not support inline SVG.
+</svg>
 
-
-<!-- p{Click }>a[href]>{here}^{to continue} -->
-<p>Click <a href="">here</a>to continue</p>
+캔버스: js+ 그래픽 컨테이너
+svg: xml+ 그래픽 컨테이너
 
 
 

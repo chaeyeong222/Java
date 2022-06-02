@@ -2,46 +2,38 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
-<style>
- div{
-  background-color: black;
-  color:white;
-  padding:20px;
- }
- p:hover{
-  color:red;
- }
-</style>
 </head>
 <body>
-
-<!-- 임의의 본문 내용 넣기 -  (한글)로렘입숨 -->
-
-<button onclick="div_hide()">숨기기</button>
-<button onclick="div_show()">보이기</button>
-<div id="demo">
-<h2>Lorem</h2>
-<!-- p*2>lorem -->
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quos aliquid maiores illum delectus voluptas dolore sed saepe nobis accusantium culpa id ratione quisquam nesciunt ab cumque ducimus. Sequi explicabo.</p>
-<p>Molestiae aspernatur porro est nam. Similique voluptas dolorem quisquam ipsam laudantium harum beatae optio possimus ad reprehenderit accusantium cupiditate earum. Ratione eaque alias vero itaque adipisci similique earum reiciendis eius.</p>
-
-</div>
-
-<script>
-function div_hide(){
-	//console.log("숨기기버튼 클릭됨");
-	var demo = document.getElementById("demo");
-	demo.style.display="none";
-}
-function div_show(){
-	//console.log("숨기기버튼 클릭됨");
-	var demo = document.getElementById("demo");
-	demo.style.display="block";
-}
-</script>
-
-
+<h3>ex04.html - html 그래픽: canvas, svg 태그</h3>
+<pre>
+canvas 태그는
+ - 그래픽을 그리는데 사용되는 태그
+ - [js를 사용해서] 그래픽을 그리는 데 사용되는 컨테이너 역할
+ - 원, 텍스트, 이미지, 등등..
+ - id 속성은 필수 왜? js코딩
+ - width, height 속성 크기 지정
+ </pre>
+ <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000"> </canvas>
+ <script>
+  //1. 캔버스 요소를 얻어오기
+  var c= document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  
+  //선
+  ctx.moveTo(0,0);
+  ctx.lineTo(200, 100);
+  ctx.stroke();
+  //원
+  ctx.beginPath();
+  ctx.arc(95,50,40,0,2*Math.PI);
+  ctx.stroke();
+  //텍스트
+  ctx.font="30px Arial";
+  ctx.strokeText("Hello world", 10, 50);
+ </script>
+ 
 </body>
 </html>

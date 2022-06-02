@@ -2,31 +2,119 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 
 </head>
 <body>
+<h3>days06.ex01.html</h3>
+<!-- 1.form 역할
+2. action 속성 이해
+3. method="get" 방식
+               queryString
+   ex01_ok.jsp?이름=값&name의 속성값=값
+   url 길이 제한 -> 2048자
+   보안취약
+   기본값
+   
+   method="post" 방식
+   http 내부 저장 전송 -보안 안정적
+   크기 제한x(파일업로드 할때 반드시 post 방식 사용) -->
 
-<table style="width:100;">
-	<tr>
-		<td>
-		<h3>정렬되지 않은</h3>
-<ul>
-	<li>안건</li>
-	<li>안건</li>
-	<li>안건</li>
-	<li>안건</li>
-</ul></td>
-		<td><h3>순서가 지정된</h3>
-<ol>
-	<li>첫 번째 항목</li>
-	<li>두 번째 항목</li>
-	<li>세 번째 항목</li>
-	<li>네 번째 항목</li>
-</ol></td>
-	</tr>
-</table>
+<!-- 파라미터 값을 가져가려면 name 속성 필수
+ name 대신에 id를 주면 주소에 ? 뒤에 아무값도 안날라감. 주의하기 -->
+
+<form id="form1" action="ex01_ok.jsp" method="get">
+<label for="name">name</label>: <input type="text" id="name" name="name" value="admin"><br /> <!-- value 초기값 -->
+<!-- required 필수입력항목 -->
+<label for="age">age</label>: <input type="text" id="age" name="age" required="required"/><br />
+ <input type="submit" />  <!-- 입력값을 서버에 제출 -->
+<!-- <button type="submit"> 제출</button> --> <!-- 제출기능이 있는 버튼 -->
+<!-- 현재 submit 기능 없음, 일반버튼  -> 사용자 반응 처리(js)
+<input type="button" value="제출"> -->
+<!-- onclick 속성으로 click 이벤트 처리 -->
+<!-- <input type="button" value="제출" onclick="send();"> -->
+<input type="reset" value="리셋"> <!-- value는 이름 -->
+</form>
+
+<script>
+ function send(){
+	 alert("이벤트 발생 체크 후 코딩~");
+	 var f1=document.getElementById("form1");
+	 //js submit() 함수
+	 //왜 사용? 필수입력항목 체크 후 서브밋 ㅡ 입력값에 대한 유효성 검사
+	 f1.submit();
+ }
+</script>
+
+<form action="ex01_ok_02.jsp">
+<!-- 여러개의 항목중에 하나를 선택할 때 select 태그 사용 -->
+<!-- option의 value속성값을 설정하지 않으면 text값으로 자동 설정된다. -->
+<!-- http://localhost/webPro/html/days06/ex01_ok_02.jsp?
+cars=BMW&cars=Kia&cars=Volvo
+여러개 선택하면 같은 이름으로 여러개 넘어간다 -->
+
+ 소유한 자동차를 선택하세요.<br>
+ <select name="cars" id="cars" multiple="multiple"> <!-- 속성명,값 같으면 생략가능 -->
+  <option selected="selected"> BMW </option> 
+  <option> Kia </option>
+  <option> Volvo </option>
+  <option> Audi </option>
+ </select>
+ <br>
+ <!-- 
+ 10   ACCOUNTING   NEW YORK
+20   RESEARCH   DALLAS
+30   SALES   CHICAGO
+40   OPERATIONS   BOSTON
+  -->
+  부서를 선택하세요.<br>
+  <select name="deptno" id="deptno">
+  <option value="10"> ACCOUNTING </option> <!-- 나중에 value 값 가지고 감. -->
+  <option value="20"> RESEARCH </option>
+  <option value="30" selected="selected"> SALES </option> <!-- 기본값selected 속성 -->
+  <option value="40"> OPERATIONS </option>
+ </select>
+ <br>
+ 하고싶은 말:
+<!--  <input type="text" name="content"/> --> <!-- 한줄밖에 못씀 -->
+<!--  여러 라인의 내용을 입력받고자 한다면? -->
+ <textarea name="content" rows="10" cols="40"></textarea>
+ <!--  input 태그여야 value 속성 있다. textarea에는 없음 적용안됨 -->
+ <br />
+<!--  id 속성은 그 요소의 고유한 이름 -->
+<!-- name 속성은 submit 될때 가지고 가는 값 -->
+<!--  성별 남자/여자 라디오버튼을 하나의 그룹으로 묶어주는 역할 : name -->
+<!-- 주변을 눌러도 선택되도록 label 주고 동기화 for="아이디값"-->
+ 성별:
+ <input type="radio" id="gm" name="gender" checked="checked" value="m"><label for="gm">남자</label> <!-- 기본체크값 -->
+ <input type="radio" id="gw" name="gender" value="w"><label for="gw">여자</label>
+<br>
+
+좋아하는 과목을 모두 선택하세요
+<br>
+
+<input type="checkbox" name="subject" value="kor" checked="checked">국어
+<input type="checkbox" name="subject" value="eng">영어
+<input type="checkbox" name="subject" value="mat" checked="checked">수학
+<input type="checkbox" name="subject" value="pe">체육
+ <br>
+<!--  첨부할 파일을 선택할 뿐, 서버에 파일이 업로드되지 않음.
+ 파일업로드 라이브러리 설치+구현 -->
+ 첨부파일: <input type="file" name="attachFile" multiple="multiple"> <br> <!-- 파일다중선택 -->
+ 
+<!--  첨부파일: <input type="file" name="attachFile"> <br> 
+ 첨부파일: <input type="file" name="attachFile"> <br>  -->
+  
+ <br>
+ <input type="submit">
+</form>
+
+
+
+
+
 
 
 

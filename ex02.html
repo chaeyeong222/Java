@@ -2,10 +2,110 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 </head>
-<body>
+<!-- 바디온로드? 요청받아서 랜딩됨. -->
+<body onload="init()">
+<h3>ex02.html</h3>
+<!-- autocomplete="on" 사용자가 이전에 입력한 값 자동 완성하는 속성 -->
+<!-- 대소문1자, 특수문자1자 숫자1자 입력유효성 검사 -->
+<form action="ex02_ok.jsp" method="get" autocomplete="on">
+비밀번호: 
+<input type="password" name="passwd" maxlength="8" 
+         style="text-align: center;"><br>
+
+<!-- 브라우저 지원에 따라 색생선택 다름 -->
+<input type="color"  id="favcolor" name="favcolor" >
+<br>
+<input type="date" id="birth">
+<button type="button" onclick="btn_date()">선택한 날짜 확인</button>
+<script>
+ function btn_date(){
+	 //window 객체는 모든 객체의 최상위 부모, 생략가능함
+	 //input 태그들의 입력값은 value 속성값으로 설정하기도, 가져오기도 한다.
+	 var birthday= document.getElementById("birth").value;
+	 alert(birthday);
+	 
+ }
+</script>
+<br>
+설문(투표) 기간: <!-- 시작~종료 -->
+<input type="date" min="2022-05-18"  max="2022-05-25">
+
+<br>
+<!-- 날짜+시간 -->
+<input type="datetime-local" />
+<br>
+<input type="datetime" />
+<br>
+<!-- submit 하면 @와 @뒷부분 있는지 자동 유효성 검사 -->
+email: <input type="email" /> 
+<br>
+<input type="month" />
+
+<!-- 입력제한속성: checked, disabled, min, max, maxlength, pattern,
+           readonly, required, size, step, value -->
+<!--    타입속성 생략하면 기본 text -->
+<!-- readonly="readonly" 읽기전용 -->
+<input type="text" value="홍길동" readonly="readonly"><br>
+<!-- size 너비width -->
+<input type="text" value="홍길동" size="50"><br>
+<!--  disabled 사용안함 -->
+<input type="text" value="홍길동" disabled="disabled"><br>
+<br>
+
+휴대폰번호:
+<input type="tel" pattern="[0-9]{3}-\d{4}-\d{4}"><br>
+<!-- 패턴유효성검사 -->
+
+deptno:
+<!-- 10/20/30/40 10씩증가 ~90까지 -->
+<input type="number" min="10" max="90" step="10" value="30"><br>
+
+볼륨조절:
+<!-- 0-100 입력범위-->
+<!--  onchange 이벤트는 value 속성값이 change될때 일어나는 이벤트  -->
+<input type="range" id="volumn" name="volumn" min="0" max="100" 
+     value="10" oninput="volumn_change();">
+<!-- onchange="volumn_change();" -->
+<!--  onchange 마우스 놔야 값 적용
+      oninput 슬라이드(움직이기)할 때마다 값 적용 -->
+
+<!-- div는 value 속성 없음 -->
+<div id="demo" ></div>
+<br>
+<input type="search">
+<br>
+<input type="url">
+<br>
+<input type="week"> <!-- 년도와 주 선택 -->
+<br>
+<input type="text" pattern="\d{5}|\d{3}-[0-9]{3}">
+<br>
+
+<input type="submit">
+<!-- <input type="image" src="../images/SiSt.ico">
+<img src="../images/SiSt.ico" alt="" /> -->
+         
+
+</form>
+<script>
+function init(){
+	 //alert("로딩")
+	 var v=document.getElementById("volumn");
+	 var d=document.getElementById("demo"); 
+	 d.innerText= "value:"+v.value;
+}
+function volumn_change(){
+	 var v=document.getElementById("volumn");
+	 var d=document.getElementById("demo"); 
+	 d.innerText= "value:"+v.value;
+	
+}
+</script>
+
 
 </body>
 </html>

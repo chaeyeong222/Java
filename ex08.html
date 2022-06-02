@@ -2,47 +2,33 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="keywords" content="html,css,javascript">
-<meta name="author" content="kenik">
-<!-- 웹 페이지에 대한 설명을 정의 -->
-<meta name="description" content="head 태그 및 자식 태그 설명">
-<!-- 30초마다 문서 새로고침 새로요청해서 응답받음 -->
-<!-- <meta http-equiv="refresh" content="30"> -->
-<!-- 웹페이지가 모든 기기에서 잘 보이도록 표시 영역 설정 -->
-<!-- 뷰포트 : 웹 페이지에서 사용자가 볼 수 있는 영역-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Insert title here</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
-<script>
-
-</script>
-<base href="http://localhost/webPro/html/" target="_blank" />
 </head>
 <body>
-
 <h3>ex08.html</h3>
-<pre>
-1. head 태그 
-   - 메타데이터(데이터에 대한 데이터)의 컨테이너,
-   - html 태그의 자식
-   - 메타데이터 : 문서 제목, 
-2. head 태그 자식 태그
-   ㄱ. title 태그 : 문서제목, 브라우저의 제목 표시줄 또는 페이지 탭 표시.
-   ㄴ. style 태그: html문서의 스타일 정보 정의
-   ㄷ. link 태그: 외부 리소스 연결, 외부 css 파일(자주 사용)
-   ㄹ. meta 태그 :
-      1) meta charset="UTF-8" 웹 문서에 사용된 인코딩(문자셋) 정의
-      2) 키워드 정의 meta name="keywords" content="html,css,javascript"
-        왜? 검색엔진에 대한 키워드 정의
-   ㅁ. script 태그
-   ㅅ. base 태그: 페이지의 모든 상대 주소에 대한 기본 주소 및 대상을 지정하는 태그
-</pre>
+1.html로 동영상을 재생하는 가장 쉬운 방법? YouTube 동영상<br>
+2.YouTube 동영상 ID
+  https://www.youtube.com/watch?v=  [o7vZa-ttIIM]
+  o7vZa-ttIIM ? Youtube 동영상 ID 값<br>
+  유투브 동영상 id를 이용해서 원하는 html페이지에서 동영상을 참조(재생)할 수 있다.<br>
+3. 웹 사이트에서 필요한 동영상 : 유투브에 업로드<br>
+4. YouTube 동영상 ID 기록해두기<br>
+5. iframe 요소 <br>
 
-<img src="images/mac.jpg" width="200px" alt="커피하우스" />
-<br />
-<img src="images/coffeehouse2.jpg" width="200px" alt="커피하우스" />
-<br />
+<hr>
 
+ <iframe width="420" height="315" 
+       src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+
+<!--  자동재생+음소거(크롬) :?autoplay=1&mute=1 -->
+ <iframe width="420" height="315" 
+       src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1"></iframe>
+ 
+<!--  컨트롤러표시x :?controls=0 (기본값1)-->
+ <iframe width="420" height="315" 
+ src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"></iframe>
+ 
 </body>
 </html>
