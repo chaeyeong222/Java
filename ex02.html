@@ -5,107 +5,95 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<!-- 1.내부(internal) CSS 적용 방법 = 해당 문서(웹페이지) 스타일 적용 어디있든지-->
+<style>
+
+/* body{
+background-color: pink;
+} */
+/* 그룹화선택자 */
+/*  개발자가 바깥, 안, 여백을 초기화해서 간격 설정 */
+h1, h2, h3, h4, h5, h6{
+ margin:0;
+ padding:0;
+}
+
+
+
+/* selector{속성:속성값;} */
+h1{
+ color:blue;
+}
+
+</style>
+<style>
+*{
+ font-family: arial, verdana;
+ color: black;
+}
+p{
+ color:red;
+ border: 1px solid gray;
+}
+/* p:nth-child(2){ */
+/* p:nth-of-type(2){
+  background-color: #e5e5e5;
+ text-align: center;
+}
+div:nth-of-type(2){
+ background-color: #e5e5e5;
+ text-align: center;
+} */
+/* p:nth-of-type(2),div:nth-of-type(2){
+  background-color: #e5e5e5;
+ text-align: center;
+} */
+.second{
+  background-color: #e5e5e5;
+ text-align: center;
+}
+.important{
+ font-weight: bold;
+}
+div.important{
+ text-transform: uppercase ;
+}
+</style>
+<link rel="stylesheet" href="ex03_style.css">
 </head>
-<!-- 바디온로드? 요청받아서 랜딩됨. -->
-<body onload="init()">
+<body>
 <h3>ex02.html</h3>
-<!-- autocomplete="on" 사용자가 이전에 입력한 값 자동 완성하는 속성 -->
-<!-- 대소문1자, 특수문자1자 숫자1자 입력유효성 검사 -->
-<form action="ex02_ok.jsp" method="get" autocomplete="on">
-비밀번호: 
-<input type="password" name="passwd" maxlength="8" 
-         style="text-align: center;"><br>
 
-<!-- 브라우저 지원에 따라 색생선택 다름 -->
-<input type="color"  id="favcolor" name="favcolor" >
-<br>
-<input type="date" id="birth">
-<button type="button" onclick="btn_date()">선택한 날짜 확인</button>
-<script>
- function btn_date(){
-	 //window 객체는 모든 객체의 최상위 부모, 생략가능함
-	 //input 태그들의 입력값은 value 속성값으로 설정하기도, 가져오기도 한다.
-	 var birthday= document.getElementById("birth").value;
-	 alert(birthday);
-	 
- }
-</script>
-<br>
-설문(투표) 기간: <!-- 시작~종료 -->
-<input type="date" min="2022-05-18"  max="2022-05-25">
+<!-- h$*6>{Hello World} -->
+<!-- 인라인(inline)식 css적용방법 - 해당 요소에만 스타일 적용 -->
+<h1 style="color:green;">Hello World</h1>
+<!-- 우선순위
+internal< inline -->
 
-<br>
-<!-- 날짜+시간 -->
-<input type="datetime-local" />
-<br>
-<input type="datetime" />
-<br>
-<!-- submit 하면 @와 @뒷부분 있는지 자동 유효성 검사 -->
-email: <input type="email" /> 
-<br>
-<input type="month" />
+<h2>Hello World</h2>
+<h3>Hello World</h3>
+<h4>Hello World</h4>
+<h5>Hello World</h5>
+<h6>Hello World</h6>
 
-<!-- 입력제한속성: checked, disabled, min, max, maxlength, pattern,
-           readonly, required, size, step, value -->
-<!--    타입속성 생략하면 기본 text -->
-<!-- readonly="readonly" 읽기전용 -->
-<input type="text" value="홍길동" readonly="readonly"><br>
-<!-- size 너비width -->
-<input type="text" value="홍길동" size="50"><br>
-<!--  disabled 사용안함 -->
-<input type="text" value="홍길동" disabled="disabled"><br>
-<br>
+<hr />
+<h1>Hello World</h1>
 
-휴대폰번호:
-<input type="tel" pattern="[0-9]{3}-\d{4}-\d{4}"><br>
-<!-- 패턴유효성검사 -->
+p의 두번째 div의 두번째 원하는 스타일 적용
 
-deptno:
-<!-- 10/20/30/40 10씩증가 ~90까지 -->
-<input type="number" min="10" max="90" step="10" value="30"><br>
+<!-- p*5>lorem7 -->
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+<p class="second important">Quasi eos dolores nihil nisi sapiente voluptatum.</p>
+<!--  얘는 둘다 가짐 -->
+<p>Sapiente atque officia mollitia officiis sunt laborum.</p>
+<p>Accusantium dolorum ad debitis animi ducimus quidem.</p>
+<p>Reprehenderit porro quo voluptatum perspiciatis dolor tempora.</p>
 
-볼륨조절:
-<!-- 0-100 입력범위-->
-<!--  onchange 이벤트는 value 속성값이 change될때 일어나는 이벤트  -->
-<input type="range" id="volumn" name="volumn" min="0" max="100" 
-     value="10" oninput="volumn_change();">
-<!-- onchange="volumn_change();" -->
-<!--  onchange 마우스 놔야 값 적용
-      oninput 슬라이드(움직이기)할 때마다 값 적용 -->
-
-<!-- div는 value 속성 없음 -->
-<div id="demo" ></div>
-<br>
-<input type="search">
-<br>
-<input type="url">
-<br>
-<input type="week"> <!-- 년도와 주 선택 -->
-<br>
-<input type="text" pattern="\d{5}|\d{3}-[0-9]{3}">
-<br>
-
-<input type="submit">
-<!-- <input type="image" src="../images/SiSt.ico">
-<img src="../images/SiSt.ico" alt="" /> -->
-         
-
-</form>
-<script>
-function init(){
-	 //alert("로딩")
-	 var v=document.getElementById("volumn");
-	 var d=document.getElementById("demo"); 
-	 d.innerText= "value:"+v.value;
-}
-function volumn_change(){
-	 var v=document.getElementById("volumn");
-	 var d=document.getElementById("demo"); 
-	 d.innerText= "value:"+v.value;
-	
-}
-</script>
-
-
+<!-- div*5>lorem5 --> 
+<div>Lorem ipsum dolor sit amet.</div>
+<div class="second">Ut quidem consequatur veritatis aliquid?</div>
+<div class="important">Fugit nisi iure animi eaque.</div>
+<div>Quod quia culpa dignissimos unde!</div>
+<div>Eius reiciendis ratione in pariatur!</div>
 </body>
 </html>

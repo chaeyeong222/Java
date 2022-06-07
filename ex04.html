@@ -5,35 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<link rel="stylesheet" href="ex04_style.css" /> <!-- 위치가 중요 마지막에 적용된거 따름 -->
+<style>
+ p.second{
+ 
+  background-color: aqua;
+ }
+.second{
+ background-color: gray;
+}
+p{
+ background-color: red;
+}
+p{
+ background-color: green;
+}
+
+/* 태그명.클래스명>클래스명>태그명 우선순위 높다 */
+</style>
+<style>
+  /* 아이디명.태그명>아이디명>태그명  이거다시보기..*/
+div#box3{
+ background-color: olive;
+}
+ #box3{
+ background-color: green;
+ }
+</style>
+
 </head>
 <body>
-<h3>ex04.html - html 그래픽: canvas, svg 태그</h3>
-<pre>
-canvas 태그는
- - 그래픽을 그리는데 사용되는 태그
- - [js를 사용해서] 그래픽을 그리는 데 사용되는 컨테이너 역할
- - 원, 텍스트, 이미지, 등등..
- - id 속성은 필수 왜? js코딩
- - width, height 속성 크기 지정
- </pre>
- <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000"> </canvas>
- <script>
-  //1. 캔버스 요소를 얻어오기
-  var c= document.getElementById("myCanvas");
-  var ctx = c.getContext("2d");
-  
-  //선
-  ctx.moveTo(0,0);
-  ctx.lineTo(200, 100);
-  ctx.stroke();
-  //원
-  ctx.beginPath();
-  ctx.arc(95,50,40,0,2*Math.PI);
-  ctx.stroke();
-  //텍스트
-  ctx.font="30px Arial";
-  ctx.strokeText("Hello world", 10, 50);
- </script>
- 
+<h3>ex04.html</h3>
+
+<p>Lorem.</p>
+<p class="second">Omnis.</p>
+<p>Illum!</p>
+
+<div>Lorem.</div>
+<div  class="second">Eveniet.</div>
+<div id="box3">Nesciunt.</div>
+
 </body>
 </html>
