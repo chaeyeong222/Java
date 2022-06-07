@@ -6,52 +6,40 @@
 <title>Insert title here</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <style>
-/* body{
-background-color: pink;
-} */
+ /* 내부 internal css 적용방식 */
+  p{
+   /*1. 표준 색상명(140개) */
+   /* background-color: tomato; */
+   /* 5. HSL - hue(색조)/saturation(채도)/lightness(밝기) */
+   background-color: hsl(0,100%,50%);
+   
+   /* 2. RGB(0~255, 0~255,0~255)*/
+   /* color: rgb(255,255,255); */
+   /* 3. #16진수 */
+   color:#fff;
+  }
 </style>
-<!-- 크롬창에서 f12 누르고 network -> ctrl+r 누르면 오류번호 확인가능 -->
-<link rel="stylesheet" href="ex03_style.css">
-<!-- 외부스타일파일 적용방법 -->
-
 </head>
 <body>
-<h3>css/days01/ex01.html</h3>
+<h3> css/days02/ex01.html- 색상지정</h3>
+
+<!-- inline css 적용방식 -->
 <pre>
-1. CSS
-  ㄱ. Cascading Style Sheet 약어
-  ㄴ. html 요소가 표시되는 방법을 설명
-  ㄷ. html 문서의 스타일 지정하는 데 사용되는 언어
-  ㄹ. 많은 작업(유지, 보수, 지정) 절약
-  ㅁ. 여러 웹 페이지의 스타일을 일괄적으로 관리할 수 있다.(장점)
-  ㅂ. 외부 스타일 시트(.css) 사용
-  ㅅ. 다양한 장치(기기) 및 화면에 크기에 대한 출력의 디자인, 레이아웃 및 변경 스타일 정의 처리
-  ㅇ. html 요소가 화면, 종이 또는 기타 미디어에 표시되는 방식 지정
-
-2. CSS 구문(형식)
-  스타일 적용할 대상
-  selector { 속성:속성값;속성:속성값;속성:속성값;} 
-  선택자  
-
-3. CSS 적용하는 방법
-  ㄱ. 내부(internal) CSS 적용 방법- 해당 문서(웹페이지)만 스타일 적용
-    head
-      style
-       /style
-    /head
-   ㄴ. 인라인(inline)식 css적용방법 - 해당 요소에만 스타일 적용
-     시작태그 안에 style 속성으로 스타일 적용
-     p style="스타일 적용"
-   ㄷ. 외부(external) CSS 적용 방법 - 여러 문서(웹페이지)에 스타일 적용/유지보수, 용이
-     외부스타일 적용할 파일
-     style.css
- 4. CSS 선택자(selector)
-  ㄱ. 태그명
-  ㄴ. #아이디명
-  ㄷ. .클래스명 
-  ㄹ.  그룹화
-      태그명,#아이디명,...
-  
+1. 표준 색상명(140개)
+2. RGB(0~255, 0~255,0~255)  - red, green, blue 색의 3원소
+3. #16진수                   - HEX ==16진수
+4. RGBA(alpha 투명도 0.0~1.0)
+5. HSL - hue(색조)/saturation(채도)/lightness(밝기)
+         0-360      0(회색)~100%        0검정~100흰색%
+         0빨강
+         120녹색
+         240파랑 
+6. HSLA(alpha 투명도 0.0~1.0)
 </pre>
+
+<p style="background-color: hsla(9,100%,64%,0.5)">Lorem ipsum dolor sit amet, consectetur.</p>
+<p>Magnam architecto laborum rerum iusto natus.</p>
+<p>Sed nisi cupiditate illo tempora impedit!</p>
+
 </body>
 </html>

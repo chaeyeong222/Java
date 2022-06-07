@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+
+<style>
+
+ /*링크 태그의 상태 4가지  주의: 순서를 지켜야 함 l-v-h-a*/
+  a:link{  /*방문한 적 없는 링크*/
+  color: black;
+  text-decoration: none;
+  }
+  a:visited {/*방문한 적 있는 링크*/
+  color: green;
+  }
+  a:hover { /*마우스를 링크 위에 올릴 때*/
+	color: hotpink;
+	/* text-decoration: underline overline line-through;  */
+	
+	/* 텍스트 변환 */
+	/* text-transform: uppercase; */
+	/* text-transform: lowercase; */
+	
+	/* 각 단어의 첫글자만 대문자로 변환 */
+	text-transform: capitalize;
+  } 
+  a:active { /*마우스를 클릭할 때*/
+	color: blue;
+ }
+
+</style>
+</head>
+<body>
+<h1>텍스트 장식: text-decoration 속성</h1>
+<a href="#">naver</a><br />
+<a href="#">daum</a><br />
+<a href="#">sist</a><br />
+
+
+<h3 style="letter-spacing: 5px">ex09_02.html-텍스트 간격</h3>
+<h3>ex09_02.html-텍스트 간격</h3>
+<h3 style="letter-spacing: -3px">ex09_02.html-텍스트 간격</h3>
+
+<pre>
+ 1. text-indent 속성 :문단 처음 들여쓰기
+ 2. letter-spacing 속성 : 텍스트에서 문자와 문자사이의 간격
+ 3. line-height 속성: 라인과 라인사이의 간격
+ 4. word-spacing 속성: 단어와 단어사이의 간격
+ 5. white-spacing 속성: ex09_03.html
+ 6. word-break 속성: ex09_05.html 
+ 7. word-wrap 속성: 
+ 
+</pre>
+<p style="word-spacing: 10px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+<p style="word-spacing: -10px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+<p style="text-indent: 50px; line-height:1.8;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam voluptates fuga illum quas repudiandae doloremque temporibus quos harum a non nam assumenda ipsam alias minima porro. Quis atque a autem.</p>
+</body>
+</html>

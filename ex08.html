@@ -5,30 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<style>
+ div{
+  border: 1px solid red;
+  padding: 10px;
+  margin: auto;
+  
+  outline: 1px solid blue;
+  
+  /* border + 간격 + outline */
+  outline-offset:15px;
+ }
+</style>
 </head>
 <body>
-<h3>ex08.html</h3>
-1.html로 동영상을 재생하는 가장 쉬운 방법? YouTube 동영상<br>
-2.YouTube 동영상 ID
-  https://www.youtube.com/watch?v=  [o7vZa-ttIIM]
-  o7vZa-ttIIM ? Youtube 동영상 ID 값<br>
-  유투브 동영상 id를 이용해서 원하는 html페이지에서 동영상을 참조(재생)할 수 있다.<br>
-3. 웹 사이트에서 필요한 동영상 : 유투브에 업로드<br>
-4. YouTube 동영상 ID 기록해두기<br>
-5. iframe 요소 <br>
+<h3>ex08.html-윤곽선outline</h3>
 
-<hr>
+<pre>
+1. 윤곽선- 요소의 테두리 외부에 그려지는 선
+</pre>
 
- <iframe width="420" height="315" 
-       src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor nisi deleniti quos quis maiores ea distinctio dolorem nemo aut laudantium cupiditate pariatur vitae dolorum soluta modi officiis necessitatibus ex!</div>
 
-<!--  자동재생+음소거(크롬) :?autoplay=1&mute=1 -->
- <iframe width="420" height="315" 
-       src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1"></iframe>
- 
-<!--  컨트롤러표시x :?controls=0 (기본값1)-->
- <iframe width="420" height="315" 
- src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"></iframe>
- 
 </body>
 </html>

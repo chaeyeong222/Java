@@ -6,106 +6,36 @@
 <title>Insert title here</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <style>
-*{
-	box-sizing:border-box;
-}
-body{
-font-family: Ver dana;
-color:#aaa;
-}
-
-</style>
-<style>
- #header{
- background-color: #e5e5e5;
- padding: 15px;
- text-align: center;
- }
- #footer{
- background-color: #e5e5e5;
- padding: 10px;
- text-align: center;
- 
- margin-top:7px ;
- }
-
-</style>
-<style>
-/* .클래스명 */
-.menu{
- width:20%;
- float:left;
-}
-.menu a{
- background-color: #e5e5e5;
- color:black;
- display: block;  /* width주기위해 바꿈 */
- width: 100%;  
- text-align: center;
- text-decoration: none;
- margin-top: 7px;
-}
-.main{
-  width:60%;
-  padding:0 20px;
-   float:left;
-}
-.right{
- width:20%;
- background-color: #e5e5e5;
- text-align: center;
- margin-top: 7px;
- padding:15px;
-  float:left;
-}
-
-</style>
-<style>
-/*반응형 웹 디자인 */
-/* 미디어 쿼리 */
-/*  프린트 할때 말고 오직 화면에 출력할때만 */
-@media only screen and (max-width : 620px){
-    .menu, .main, .right{
-     width:100%;
-    }
-    .right{
-    display:none;
-    }
-     
-
-
-}
+ p{
+  font-family: Arial,Verdana, "Times New Roman"; /*하나의 글꼴인데 공백잇으면 꼭 ""주기*/
+  /*font-size: xx-large; */
+  font-size: 2.5em; /*엠 16px*2.5*/
+   /* 브라우저 메뉴에서 텍스트 크기를 조정할 수 있도록 하기 위해서 개발자가
+   픽셀 대신 em 단위를 사용한다. 
+   
+   브라우저의 기본 텍스트 크기는 16px
+   1em = 현재글꼴크기=16px
+   브라우저의 크기바꾸면 em의 기준 크기도 달라짐
+   */
+  font-weight: bold; /*100-900 정수값 가능*/
+  font-variant: small-caps; /*모든 소문자는 대문자로 변환(작은대문자)*/
+  font-style: italic; /*기울임텍스트*/
   
- </style>
-
-
-
+        /* style   variant  weight size   family */  
+/*   font: italic small-caps bold 12px Verdana,Arial; */
+  
+ }
+</style>
 </head>
 <body>
-   <div id="header">
-      <h1>Hello World</h1>
-   </div>
-   <div style="overflow: auto"> 
-   <!-- <div> -->
-      <div class="menu">
-         <a href="#">Link 1</a>
-         <a href="#">Link 2</a>
-         <a href="#">Link 3</a>
-         <a href="#">Link 4</a>
-      </div>   
-      <div class="main">
-         <h2>Lorem ipsum.</h2>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Accusantium rem praesentium ratione iusto. Porro voluptates minima
-            numquam voluptate facere ratione culpa recusandae eos atque
-            assumenda velit at eaque optio est?</p>
-      </div>
-      <div class="right">
-         <h2>About</h2>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Possimus maiores.</p>
-      </div>      
-   </div>
-   <div id="footer">@ copyright SS16.com</div>
+<h3>ex10.html</h3>
+<pre>
+1. css글꼴font은 웹 사이트에적합한 글꼴을 선택하는 것이 중요하다.
+2. 읽기쉬운 글꼴, 색상, 크기 선택 중요하다.
+3. 웹 안전 글꼴: 모든 브라우저/장치에 보편적으로 설치되어 있는 글꼴
+</pre>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+<h2>Lorem ipsum dolor sit amet.</h2>
 </body>
 </html>

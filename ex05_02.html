@@ -1,30 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html>div width 300px
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <style>
- /* span태그는 인라인 모드(내용물에 자동크기맞춤)이기때문에 너비, 높이 설정이 안된다.
-        지정하려면 block 모드로 변경해야함. */
-span{
- /* background-color: red; */
- border:1px solid gray;
- width:100px; 
-  display: block; 
-/*  display:inline-block; */ /* 인라인모드 속성 유지하면서 블럭 속성 추가 (너비높이 설정 ) */
- text-align:center;
-
- float:left;
-
-}
+ div{
+ width:300px;
+ 
+ }
+ div.ex1{
+ background-color: pink;
+ }
+ div.ex2{
+ background-color: lightblue;
+ color: white;
+/*  padding:  10px 10px 10px 10px; */
+ padding: 10px;
+ 
+ border:  5px solid black;
+ 
+ /* width 유지 + padding,border x => content 너비 축소 */
+ }
+ *{
+  box-sizing: border-box;
+ }
+ 
+ 
 </style>
 </head>
 <body>
+<h3>ex05_02.html padding & width </h3>
+<!-- padding 속성을 설정하면 width 속성이 영향을 받는다. -->
 
-<h3>ex05_02.html</h3>
-<span>asdf</span>
-<span>ewa</span>
-<span>asdgw</span>
+<div class="ex1">div width 300px</div>
+<div class="ex2">div width 5(b)+10(p)+300+10+5px=330</div>
+
 </body>
+
+
 </html>

@@ -5,32 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<style>
+ div{
+  width:50%;
+  max-width:500px; /* 최대너비 */
+  height:200px;
+  background-color: lightblue;
+ }
+</style>
 </head>
 <body>
- 
-<!-- 1. 웹 상에서의 멀티미디어는 사운드, 음악, 비디오, 영화 및 애니메이션. <br>
-2. 일반적인 비디오 형식 : .mpg , mpeg, .avi, .wmv, .mov, .swf, .webm, .mp4 등등<br>
-   ( *** html 표준: mp4, ogg, .webm 만 지원한다. *** )<br>
-   ( YouTube에서는 mp4 형식을 권장한다. ) <br>
-3. 일반적인 오디오 형식 : .wav, .ogg, .mp3, .wma 등등<br>
-   ( *** html 표준: mp3, ogg, .wav 만 지원한다. *** )   <br> -->
+<h3>ex06.html 너비와 높이</h3>
 
-<h3>비디오</h3>
-1. video 태그 사용<br>
-2. width, height 속성을 설정하지 않으면 동영상이 로드되는 동안 페이지 깜빡일 수 있다<br>
-3. controls 속성 추가 (재생, 일시정지, 볼륨, 등등 비디오를 컨트롤 하기 위해서) 
-
-
-<!-- <video src="movie.mp4" width="320" height="240" controls="controls"></video> -->
-<!--  아래처럼하면 소스 여러개 가능
- source 태그를 사용하면 브라우저에서 선택할 수 있다.
- autoplay 자동 시작
- muted 소리는 묵음
- 크롬은 자동 재생을 지원하지 않음, 묵음 추가하면 자동재생됨.-->
-<video width="320" height="240" autoplay="autoplay" muted="muted">
-  <source src="movie.mp4" type="video/mp4" >
-  <source src="movie.ogg" type="video/ogg" >
-  현재 브라우저는 지원하지 않습니다.
-</video>
+<pre>
+ 1. width, height
+ 2. max-width 속성 : 요소의 최대 너비를 설정
+ 3. 속성값:%,px,cm 등등, inherit 부모의 높이, 너비 상속
+         auto 자동 
+</pre>
+<div>너비 50% 높이 200px</div>
 </body>
 </html>

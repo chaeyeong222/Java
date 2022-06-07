@@ -5,17 +5,50 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<style>
+ body{
+   /* 1. 텍스트 색상 */
+   color: blue;
+ }
+ h3{
+ color: green;
+  /*justify - 인쇄되는 텍스트의 행의 끝을 나란히 맞추다*/
+ 
+ }
+ #p1{
+  border: 1px solid gray;
+  /* text-align: justify; */
+  text-align-last: right;
+ }
+ div{
+ /* 텍스트방향 변경 */
+ direction:rtl;
+ unicode-bidi: bidi-override;
+ }
+</style>
+<style>
+  /*텍스트에서 이미지의 수직정렬 설정*/
+  img.a{vertical-align: baseline;} /*기본값*/
+  img.b{vertical-align: text-top;}
+  img.c{vertical-align: text-bottom;}
+  img.d{vertical-align: sub;}
+  img.e{vertical-align: super;}
+</style>
 </head>
 <body>
-<h3>ex09.html</h3>
 
-html API
-1. 지리적위치
-2. 드래그/드롭
-3. 웹 스토리지(저장소)
-4. 웹 작업자
-5. SSE
+<h3>ex09.html-텍스트text</h3>
+<div>Lorem ipsum dolor sit amet.</div>
+<p id="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolor nisi deleniti quos quis maiores ea distinctio dolorem nemo aut laudantium cupiditate pariatur vitae dolorum soluta modi officiis necessitatibus ex!</p>
 
+<!-- align 수평정렬
+vertical-align 수직정렬 -->
+
+<p>Lorem <img src="../images/sqpurple.gif" class="a" style="width:9px;height:9px;"> ipsum dolor sit amet.</p>
+<p>Assumenda<img src="../images/sqpurple.gif" class="b" style="width:9px;height:9px;"> tenetur voluptates dicta totam!</p>
+<p>Similique<img src="../images/sqpurple.gif" class="c" style="width:9px;height:9px;"> enim nemo hic odio!</p>
+<p>Id fuga<img src="../images/sqpurple.gif" class="d" style="width:9px;height:9px;"> ducimus labore eum.</p>
+<p>Eaque<img src="../images/sqpurple.gif" class="e" style="width:9px;height:9px;"> repudiandae odio officia repellat.</p>
 
 </body>
 </html>

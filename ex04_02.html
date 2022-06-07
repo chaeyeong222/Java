@@ -5,32 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<style>
+ div{
+  border: 1px solid red;
+ margin-left: 50px;
+ }
+ p.ex1{
+  border: 1px solid blue;
+  margin-left: inherit; /* 부모꺼 물러받겠다 */
+ }
+</style>
 </head>
 <body>
-<h3>ex04_02.html</h3>
+<h3> ex04_02.html - inherit 상속</h3>
 
-<img id="scream" src="../images/img_the_scream.jpg" alt="The scream" />
+<!-- div>p.ex1>lorem -->
+<div>
+	<p class="ex1">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+	 Deserunt repellat excepturi maxime libero ut fugit odit saepe 
+	 perferendis sed eius veniam quae sunt dolor deleniti similique 
+	 laborum numquam animi. Sit?
+	 </p>
+</div>
 
-<!-- 선/원/텍스트 그리기 + 이미지 img 그리기-->
 
-<p><button onclick="drawImg()"> 캔버스 </button></p>
-<canvas id="myCanvas" width="240" height="300" 
-       style="border:1px solid black"></canvas>
-       
-<script>
-  function drawImg(){
-	  //alert("체크");
-	  var c=document.getElementById("myCanvas");
-	  var ctx=c.getContext("2d");  /* 그리기 도구 */
-	  
-	  var screamImg=document.getElementById("scream"); /* 그릴 대상가져오기 */
-	  
-	  ctx.drawImage(screamImg, 10, 10)
-	  
-	  ctx.drawImage(image,dx,dy);
-	  
-  }
-</script>
-       
 </body>
 </html>

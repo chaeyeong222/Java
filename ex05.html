@@ -5,51 +5,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<style>
+ div{
+  border: 1px solid black;
+  background-color: lightblue;
+  
+  /* padding:50px; */
+    /* padding-top:50px;
+    padding-right:50px;
+    padding-bottom:50px;
+    padding-left:50px; */
+    /* padding: 50px 50px 50px 50px; */
+    /*         T   R     B    L     */
+   /*  padding: 25px 50px 75px 100px;  */
+   /*         TB   LR     */
+   /*  padding: 25px 50px; */
+   /*         T    LR    B */
+   padding: 25px 50px 100px;
+ }
+</style>
 </head>
 <body>
-<h3>ex05.html -svg</h3>
-
+<h3>ex05.html padding 안쪽 여백 & width 속성</h3>
 <pre>
-svg
- - SVG 그래픽을 위한 컨테이너
- - SVG ? xml 형식의 [벡터기반]그래픽 정의
- - 벡터기반? 확장 가능한 그래픽
- </pre>
- 
-<!--  <img id="" src="../images/SiSt.ico" alt="" /> -->
-<!-- 원 -->
-<svg style="width:100px; height:100px">
-  <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow"/>
-</svg>
-<!-- 사각형 -->
-<svg style="width:400px; height:100px">
-  <rect width="400" height="100" 
-    style="fill:rgb(0,0,255); strok:rgb(0,0,255); stroke-width:10;" />
-</svg>
-<br />
-<svg width="300" height="200">
-                         <!-- 좌표값 -->
-  <polygon points="100,10 40,198 190,78 10,78 160,198" 
-  style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
-</svg>
+ 1. border+[   간격   ]+content
+ 2. padding-top
+    padding-right
+    padding-bottom
+    padding-left
+ 3. 단위: px, %, pt, cm 등등  inherit
+ 4. 음수허용x
+</pre>
 
-<br />
-<svg height="130" width="500">
-  <defs>
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
-      <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
-  <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG</text>
-  Sorry, your browser does not support inline SVG.
-</svg>
-
-캔버스: js+ 그래픽 컨테이너
-svg: xml+ 그래픽 컨테이너
-
-
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est harum tenetur atque dolorum quasi necessitatibus illum. Reprehenderit delectus dolor magnam praesentium ipsa consectetur? Saepe minus voluptatem qui ratione sint exercitationem.</div>
 
 </body>
 </html>
