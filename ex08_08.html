@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022. 5. 23. 채영</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+ .container{
+  position: relative;
+  border: 1px solid black;
+  
+ }
+ .red-box{
+ background-color: red; 
+ height:100px;
+ margin:30px;
+ 
+ position: relative;
+ 
+ z-index:1;  /*숫자클수록 맨 위로올라옴:순서*/
+ }
+ .greed-box{
+ background-color: green;
+ position: absolute;
+ height: 60px;
+ width: 70%;
+ 
+ left: 50px;
+ top: 50px;
+ 
+ z-index:10;
+ }
+ .blue-box{
+ background-color: blue;
+ position: absolute;
+ width: 35%;
+ height: 100px;
+ left: 270px;
+ top: -15px;
+ 
+ z-index:5;
+ }
+</style>
+</head>
+<body>
+<h3>ex08_08.html : z-index속성</h3>
+
+배치된 두 요소가 서로 겹쳐질 때 z-index속성값이 큰 경우 위에 표시된다.
+
+<!-- .container>.box*3 -->
+<div class="container">
+	<div class="red-box">red-box</div>
+	<div class="greed-box">greed-box</div>
+	<div class="blue-box">blue-box</div>
+</div>
+</body>
+</html>

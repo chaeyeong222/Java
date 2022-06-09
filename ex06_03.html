@@ -20,60 +20,55 @@
   width:100%;
  }
 </style>
-<style>
  
-/*  #imgbox1{
- display:none;  전체 다 사라짐
- } */
- 
-/* #imgbox2{
-  visibility:hidden; 영역은 유지,숨김
- } */
-</style>
 </head>
 <body>
 <h3> display:none; 과 visibility:hidden 차이점</h3>
 
-<!-- #imagebox$.imgbox*3>{Box$}+img+button -->
 <div id="imgbox1" class="imgbox">
 Box1
 <img src="../images/img_5terre.jpg" alt="" />
-
 <button onclick="remove();">Remove</button>
 <script>
- function remove(){
-	 //js       ="문자열"; ---> =다음 무조건 문자열 형태
-	 document.getElementById("imgbox1").style.display="none";
-  }
+
 </script>
 </div>
 <div id="imgbox2" class="imgbox">
 Box2
 <img src="../images/img_5terre.jpg" alt="" />
-<!-- <button id="btnHide">Hide</button> -->
 <button>Hide</button>
 <!-- 이벤트 처리 2번째 방법 -->
 <script>
-  /* document.getElementById("btnHide").onclick=function(){
-  document.getElementById("imgbox2").style.visibility="hidden";
-} */
- //document.querySelector(선택자)
-document.querySelector("#imgbox2 button").onclick=function(){ 
-	document.getElementById("imgbox2").style.visibility="hidden" 
-}
+
 </script>
 </div>
 <div id="imgbox3" class="imgbox">
 Box3
 <img src="../images/img_5terre.jpg" alt="" />
 <button>Reset All</button>
-<script>
-document.querySelector("#imgbox3 button").onclick=function(){
-	document.getElementById("imgbox1").style.display="block";
-	document.getElementById("imgbox2").style.visibility="visible" 
-}
-</script>
+
 
 </div>
+<script>
+    $("#imgbox1 button").click(function(event){
+	 //jquery method css()
+	//$("#imgbox1").css("display","none");
+    //hide()==.css("display","none");
+    $("#imgbox1").hide();
+    
+	 });
+ 	$("#imgbox2 button").click(function(event){
+	 //jquery method css()
+	$("#imgbox2").css("visibility","hidden");
+	 });
+ 	$("#imgbox3 button").click(function(event){
+	 //jquery method css()
+	/* $("#imgbox1").css("display","block"); */
+	$("#imgbox1").show();
+	$("#imgbox2").css("display","visible");
+	 });
+ 
+</script>
+
 </body>
 </html>

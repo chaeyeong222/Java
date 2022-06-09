@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022. 5. 23. 채영</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+ #panel, .flip{
+  font-size: 16px;
+  padding: 10px;
+  background-color: #4acf50;
+  color: white;
+  text-align: center;
+  margin: auto;
+  border : 1px solid #6ad8a8;
+ }
+ #panel{
+  display: none;
+ }
+</style>
+</head>
+<body>
+<!-- p.flip>{Click to show panel}^#panel>p*3>lorem -->
+<p class="flip">Click to show panel</p>
+<div id="panel">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero eligendi sapiente molestias nulla ipsa rerum maxime debitis quas natus quam incidunt similique eius excepturi numquam atque repellendus ipsam. Ut porro.</p>
+	<p>Id pariatur itaque et ex alias quae vitae commodi soluta optio error corporis facilis incidunt labore sit hic. Earum expedita vero natus quibusdam facilis et recusandae assumenda nam repudiandae sed.</p>
+	<p>Rem veritatis blanditiis animi aliquam totam reprehenderit maiores repudiandae consequuntur harum exercitationem minus architecto nemo temporibus veniam laborum iusto corrupti dignissimos doloremque odio natus dolorem beatae commodi soluta laboriosam quae?</p>
+</div>
+
+<script>
+  //ex06_05.html
+  //jquery 수정
+  $("p.flip").click(function(event) {
+  //
+	 //$("#panel").toggle();
+	  $("#panel").slideToggle();
+   
+  });
+  
+ /*  $("p.flip").click(function(event) {
+	  //	console.log( $("#panel").css("display") );
+	   if($("#panel").css("display")=="none"){
+		  // $("#panel").css("display","block");
+		  $("#panel").show();
+	   }else{
+		   //$("#panel").css("display")=="none");
+		   $("#panel").hide();
+	   }
+	  }); */
+
+</script>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+

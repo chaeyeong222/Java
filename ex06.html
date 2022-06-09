@@ -3,26 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>2022. 5. 23. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
- div{
-  width:50%;
-  max-width:500px; /* 최대너비 */
-  height:200px;
-  background-color: lightblue;
+ span{
+  display: block;
+ }
+ ul{
+   list-style-type: none;
+   padding:0;
+   margin: 0;
+ }
+ ul li{
+  display:inline;
  }
 </style>
 </head>
 <body>
-<h3>ex06.html 너비와 높이</h3>
 
-<pre>
- 1. width, height
- 2. max-width 속성 : 요소의 최대 너비를 설정
- 3. 속성값:%,px,cm 등등, inherit 부모의 높이, 너비 상속
-         auto 자동 
-</pre>
-<div>너비 50% 높이 200px</div>
+display속성
+1. 레이아웃을 제거하기 위한 가장 중요한 속성 css 속성: display 속성<br />
+2. 기본값: inline /block<br>
+
+
+
+<!-- ul>li*3>a[href=#]>lorem1 -->
+<!--  블럭모드 -->
+<ul>
+	<li><a href="#">Lorem.</a></li>
+	<li><a href="#">Vitae.</a></li>
+	<li><a href="#">Natus.</a></li>
+</ul>
+
+<hr />
+
+<!-- span*3>lorem1 -->
+
+<!-- 인라인모드 -->
+<span>Lorem.</span>
+<span>Voluptatem.</span>
+<span>Rerum!</span>
 </body>
 </html>

@@ -5,41 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
- /* 내부 internal css 적용방식 */
-  p{
-   /*1. 표준 색상명(140개) */
-   /* background-color: tomato; */
-   /* 5. HSL - hue(색조)/saturation(채도)/lightness(밝기) */
-   background-color: hsl(0,100%,50%);
-   
-   /* 2. RGB(0~255, 0~255,0~255)*/
-   /* color: rgb(255,255,255); */
-   /* 3. #16진수 */
-   color:#fff;
-  }
+ a:link,  a:visit{   /*:link >  방문하지 않은 :visit> 방문한*/
+  border: 2px solid green;   
+  text-decoration: none;
+  
+  color: black;
+  background-color: white;
+  padding: 10px 20px;
+ }
+ a:hover, a:active{
+ background-color: pink;
+ color: white;
+ }
+
 </style>
 </head>
 <body>
-<h3> css/days02/ex01.html- 색상지정</h3>
+<h3>days03-ex01.html - css 링크</h3>
 
-<!-- inline css 적용방식 -->
-<pre>
-1. 표준 색상명(140개)
-2. RGB(0~255, 0~255,0~255)  - red, green, blue 색의 3원소
-3. #16진수                   - HEX ==16진수
-4. RGBA(alpha 투명도 0.0~1.0)
-5. HSL - hue(색조)/saturation(채도)/lightness(밝기)
-         0-360      0(회색)~100%        0검정~100흰색%
-         0빨강
-         120녹색
-         240파랑 
-6. HSLA(alpha 투명도 0.0~1.0)
-</pre>
-
-<p style="background-color: hsla(9,100%,64%,0.5)">Lorem ipsum dolor sit amet, consectetur.</p>
-<p>Magnam architecto laborum rerum iusto natus.</p>
-<p>Sed nisi cupiditate illo tempora impedit!</p>
-
+<a href="#" target="_blank">This is a link</a>
 </body>
 </html>

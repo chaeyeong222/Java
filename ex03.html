@@ -3,36 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>2022. 5. 23. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
- h3{
-  /* border: 1px solid gray; */
-  /* top/right/bottom/left */
-  /* border-bottom: 1px solid gray; */
-  
-   /* border-left: 1px solid gray;*/
-   /* border-style을 지정하지 않으면 width, color 적용되지 않는다. */
-  background-color: #ddffff;
-  border-left: 6px solid #2196F3 !important;
-  padding: 15px;
+*{
+ box-sizing: border-box;
+}
+.pagination{
+ overflow: auto;
+ width: 50%;
+ margin: 0 auto;
+}
+.pagination a{
+ color: black;
+ text-decoration: none;
+ float:left;
+ width: 8.3%;
+ text-align: center;
  }
+ .pagination a:hover:not(.active){
+ background-color: #ddd;
+ }
+ .pagination a.active{
+ background-color: dodgerblue;
+ color:white;
+ }
+
 </style>
 </head>
 <body>
-<h3>ex03.html-css테두리 border</h3>
+<h3> 페이징 처리</h3>
+<!-- a[href="#"]*12>{$} -->
+<div class="pagination">
+<a href="#">1</a>
+<a href="#">2</a>
+<a href="#">3</a>
+<a href="#">4</a>
+<a href="#">5</a>
+<a href="#">6</a>
+<a href="#" calss="active">7</a>
+<a href="#">8</a>
+<a href="#">9</a>
+<a href="#">10</a>
+<a href="#">&gt;</a>
+<a href="#">&raquo;</a>
+</div>
 
-<p style="border-style:solid; border-width: 15px;"> 실선테두리</p>
-<p style="border-style:dotted; border-width: thick;">점선테두리</p>
-<p style="border-style:dashed;">점선 테두리</p>
-<p style="border-style:double;">이중 테두리</p>
-<p style="border-style:groove;">3d홈 테두리</p>
-<p style="border-style:ridge;">3d 융기된 테두리</p>
-<p style="border-style:inset;">3d 삽입 테두리</p>
-<p style="border-style:outset;">3d 아웃셋 테두리</p>
-<p style="border-style:hidden;">숨겨진 테두리</p>
-<p style="border-style:none;">테두리 정의x</p>
-
+<script>
+ $(".pagination a").click(function(event){
+	 //jquery method:not()
+	$(".pagination a").not(this).removeClass("active");
+	$(this).addClass("active");
+ })
+</script>
 
 </body>
 </html>

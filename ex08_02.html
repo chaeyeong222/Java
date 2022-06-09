@@ -2,137 +2,66 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022. 5. 23. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+ body{
+  margin:0;
+  padding:0;
+ }
+ div{
+ border: 1px solid gray;
+ width: 100px;
+ height:100px;
+ text-align: center;
+ }
+ /* div:nth-of-type(1){ */
+ div:first-of-type{
+  background-color: red;
+ }
+ div:nth-of-type(2){
+  background-color: green;
+  
+  position: relative; /*상대좌표(기준)*/
+  left:30px;
+  top:30px;
+ }
+ div:nth-of-type(3){
+  background-color: blue;
+  position: fixed;
+  /* right:5px; */
+  top:5px;
+  right:5px;
+  
+ }
+ div:last-of-type{
+  background-color: yellow;
+  position: absolute; /*절대좌표 , 기준  부모body*/
+  left:10px;
+  top:10px;
+ }
+ 
+</style>
 </head>
 <body>
-<!-- h3>{ex08_02.html} -->
 <h3>ex08_02.html</h3>
 
-<!-- emmet * 연산자 -->
+<script>
 
-<ul>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-</ul>   
-
-<!-- ul>li*5>a -->
-<ul>
-	<li><a href=""></a></li>
-	<li><a href=""></a></li>
-	<li><a href=""></a></li>
-	<li><a href=""></a></li>
-	<li><a href=""></a></li>
-</ul>
-
-<!-- div>(header>ul>li*5>a)+footer>p -->
-<div>
-	<header>
-		<ul>
-			<li><a href=""></a></li>
-			<li><a href=""></a></li>
-			<li><a href=""></a></li>
-			<li><a href=""></a></li>
-			<li><a href=""></a></li>
-		</ul>
-	</header>
-	<footer>
-		<p></p>
-	</footer>
-</div>
- 
- <!-- 설명목록: dl, dt, dd -->
- 
-<!-- div>dl>(dt+dd)*5 -->
-<div>
-	<dl>
-		<dt></dt>
-		<dd></dd>
-		<dt></dt>
-		<dd></dd>
-		<dt></dt>
-		<dd></dd>
-		<dt></dt>
-		<dd></dd>
-		<dt></dt>
-		<dd></dd>
-	</dl>
-</div>
- 
- <h3>속성연산자</h3>
- <!-- id 속성 추가해서 div생성 -->
-<!-- div[속성명=속성값]
-div[속성명='속성값']
-div[속성명="속성값"] -->
-<!-- div[id='box1'] -->
-<div id="box1"></div>
-
-<!-- id 속성일 경우 #아이디명 -->
-<!-- div#box1 / #box1 - 태그명이 없으면 자동으로 div태그 붙음-->
-<div id="box1"></div>
-
-<hr>
-<!-- ㄱ. p[속성명=속성값]
-ㄴ. p[class='ss16']
-ㄷ. p.클래스명 -->
-<!-- p.ss16 -->
-<p class="ss16"></p>
-<!-- 클래스명에 공백있으면 반드시 ' 이나 " 붙이기 -->
-<!-- p.ss16.box.cls  .넣으면 공백들어간 이름 만들수 있음-->
-<p class="ss16 box cls"></p>
-<!--  속성 여러개 추가 a[속성명="속성값" 속성명="속성값" 속성명="속성값"]  -->
-<!-- a[href="http://www.sist.co.kr" class="ss16">{쌍용교육센터}] -->
-<a href="http://www.sist.co.kr" class="ss16"></a>
-
-<!--  항목list item 번호 매기기: $ -->
-<!-- ul>li*5>{홍길동-$} -->
-<ul>
-	<li>홍길동-1</li>
-	<li>홍길동-2</li>
-	<li>홍길동-3</li>
-	<li>홍길동-4</li>
-	<li>홍길동-5</li>
-</ul>
-
-<!-- 클래스명 속성도 추가 -->
-<!--  ul>li.item*5>{홍길동-$}  -->
- <ul>
- 	<li class="item">홍길동-1</li>
- 	<li class="item">홍길동-2</li>
- 	<li class="item">홍길동-3</li>
- 	<li class="item">홍길동-4</li>
- 	<li class="item">홍길동-5</li>
- </ul> 
-<!-- 클래스명 속성+$ 추가 -->
-<!--  ul>li.item$*5>{홍길동-$}  -->
-<ul>
-	<li class="item1">홍길동-1</li>
-	<li class="item2">홍길동-2</li>
-	<li class="item3">홍길동-3</li>
-	<li class="item4">홍길동-4</li>
-	<li class="item5">홍길동-5</li>
-</ul>
-<!-- 내림차순 -->
-<!-- ul>li.item$@-*5 -->
-<ul>
-	<li class="item5"></li>
-	<li class="item4"></li>
-	<li class="item3"></li>
-	<li class="item2"></li>
-	<li class="item1"></li>
-</ul>
-<!-- 시작값설정 -->
-<!-- ul>li*5>{홍길동-$@-11} -->
-<ul>
-	<li>홍길동-15</li>
-	<li>홍길동-14</li>
-	<li>홍길동-13</li>
-	<li>홍길동-12</li>
-	<li>홍길동-11</li>
-</ul>
+//js로 div5, p50 추가
+    for (var i = 1; i <=5; i++) {
+	 var divElemt = document.createElement("div" );
+	 divElemt.innerText = "Box"+i;
+	 document.body.appendChild(divElemt);
+    }  
+    for (var i = 1; i <=50; i++) {
+   	 var pElemt = document.createElement("p" );
+   	 pElemt.innerText = "."+i;
+   	 document.body.appendChild(pElemt);
+       } 
+</script>
 
 </body>
 </html>

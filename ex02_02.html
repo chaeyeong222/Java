@@ -3,86 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>2022. 5. 23. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
-<style>
-body{
- /* background-color: pink; */
-  /* 이미지는 전체 요소body를 덮도록 자동 가로/세로 반복 */
-   /* (주의)텍스트의 색상에 방해 되지 않도록 배경 이미지를 사용한다. */
-  
- background-image: url('../images/img_tree.png');
-
-  /* background-repeat: repeat; */ /*기본값 */
-  /* background-repeat: repeat-x; */
-  /* background-repeat: repeat-y; */
-  background-repeat: no-repeat;
-  background-attachment:fixed; /*기본값 */
-  
-  background-position: right top;
- 
-}
-</style>
-
-<style>
- 
-</style>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-<h3>배경이미지</h3>
-<!-- (#top>{TOP})+(h3>{css배경이미지})+lorem+p*50>{.} -->
-<div id="top">TOP</div>
-<h3>css배경이미지</h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ratione iste expedita dicta atque cum ea reiciendis aperiam natus et impedit omnis optio consequatur architecto error repellendus alias debitis totam.
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
+	<h3>ex02.html</h3>
+
+	<button id="btn1">버튼1</button>
+	<p id="demo">
+	</p>
+	
+	<script>
+		//버튼1을 클릭할 때 버튼 10개 생성해서 추가
+		
+		$("#btn1").click(function(event){
+			for (var i = 1; i <=10; i++) {
+				//<button>버튼-2</button>
+				/* $("$#demo").append( $("<button>버튼-"+(i+1)+"</button>"));
+				$("$#demo").append( $("<br>")); */
+				
+				$("$#demo")
+				  .append( $("<button>버튼-"+(i+1)+"</button>"))
+				  .append( $("<br>"));
+				
+				
+				
+			}
+			
+		});
+		
+		//document.getElementById("btn1");
+		document.querySelector("#btn1").onclick = function() {
+			
+			var pelemt=document.querySelector("#demo");
+
+			for (var i = 1; i <= 10; i++) {
+				var btn = document.createElement("button");
+				var txtNode = document.createTextNode("버튼-" + (i + 1));
+				btn.appendChild(txtNode);
+				
+				pelemt.appendChild(btn);
+				pelemt.appendChild( document.createElement("br"));
+			}
+		};
+	</script>
+
+	<script>
+		/* //js 로 버튼 생성
+		var btn=document.createElement("button");
+		//btn.textContent="버튼2";
+		//btn.innerText="버튼3"***
+		
+		var txtNode=document.createTextNode("버튼2");
+		
+		btn.appendChild(txtNode);
+		//생성된 버튼을 body요소의 자식으로 추가
+		document.body.appendChild(btn); */
+	</script>
 </body>
 </html>

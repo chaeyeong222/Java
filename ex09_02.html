@@ -3,61 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>2022. 5. 23. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-
- /*링크 태그의 상태 4가지  주의: 순서를 지켜야 함 l-v-h-a*/
-  a:link{  /*방문한 적 없는 링크*/
-  color: black;
-  text-decoration: none;
-  }
-  a:visited {/*방문한 적 있는 링크*/
-  color: green;
-  }
-  a:hover { /*마우스를 링크 위에 올릴 때*/
-	color: hotpink;
-	/* text-decoration: underline overline line-through;  */
-	
-	/* 텍스트 변환 */
-	/* text-transform: uppercase; */
-	/* text-transform: lowercase; */
-	
-	/* 각 단어의 첫글자만 대문자로 변환 */
-	text-transform: capitalize;
-  } 
-  a:active { /*마우스를 클릭할 때*/
-	color: blue;
+ #mySidenav{
+  border: 1px solid red;
+  position: absolute;
+  bottom: 300px;
  }
-
+ #mySidenav a{
+ background-color: #111;
+ color:white;
+ padding: 13px;
+ text-decoration: none;
+ font-size: 20px;
+ border-radius: 0 5px 5px 0; 
+ 
+ position: absolute; /*절대좌표 기준 부모body*/
+ width: 100px;
+ left: -100px;
+ text-align: right;
+ 
+ 
+ /*left: -88px->0 왼쪽 좌표가 상태가 변환(전환)될때*/
+  transition:0.5s ease;
+ }
+ #mySidenav a:hover{
+   left: 0px;
+   
+ }
+ #home{ top:20px; }
+ #services{ top:80px; }
+ #clients{ top:140px;}
+ #contact{ top:200px; }
+ #content{
+  margin-left: 100px;  }
+ 
+ 
 </style>
+
 </head>
 <body>
-<h1>텍스트 장식: text-decoration 속성</h1>
-<a href="#">naver</a><br />
-<a href="#">daum</a><br />
-<a href="#">sist</a><br />
+
+<!-- (#mySidenav.sidenav>a[id="" href="#"]*4>i[class="fa fa-fw fa-"])+#content>h2>lorem5^p>lorem10 -->
+<div id="mySidenav" class="sidenav">
+	<a href="#" id="home">Home<i class="fa fa-fw fa-home"></i></a>
+	<a href="#" id="services">Services<i class="fa fa-fw fa-wrench"></i></a>
+	<a href="#" id="clients">Clients<i class="fa fa-fw fa-user"></i></a>
+	<a href="#" id="contact">Contact<i class="fa fa-fw fa-envelope"></i></a>
+</div>
+<div id="content">
+	<h2>Lorem ipsum dolor sit amet.</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quisquam.</p>
+</div>
 
 
-<h3 style="letter-spacing: 5px">ex09_02.html-텍스트 간격</h3>
-<h3>ex09_02.html-텍스트 간격</h3>
-<h3 style="letter-spacing: -3px">ex09_02.html-텍스트 간격</h3>
-
-<pre>
- 1. text-indent 속성 :문단 처음 들여쓰기
- 2. letter-spacing 속성 : 텍스트에서 문자와 문자사이의 간격
- 3. line-height 속성: 라인과 라인사이의 간격
- 4. word-spacing 속성: 단어와 단어사이의 간격
- 5. white-spacing 속성: ex09_03.html
- 6. word-break 속성: ex09_05.html 
- 7. word-wrap 속성: 
- 
-</pre>
-<p style="word-spacing: 10px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-<p style="word-spacing: -10px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-
-<p style="text-indent: 50px; line-height:1.8;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam voluptates fuga illum quas repudiandae doloremque temporibus quos harum a non nam assumenda ipsam alias minima porro. Quis atque a autem.</p>
 </body>
 </html>

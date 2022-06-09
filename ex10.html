@@ -3,39 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>2022. 5. 23. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
- p{
-  font-family: Arial,Verdana, "Times New Roman"; /*하나의 글꼴인데 공백잇으면 꼭 ""주기*/
-  /*font-size: xx-large; */
-  font-size: 2.5em; /*엠 16px*2.5*/
-   /* 브라우저 메뉴에서 텍스트 크기를 조정할 수 있도록 하기 위해서 개발자가
-   픽셀 대신 em 단위를 사용한다. 
-   
-   브라우저의 기본 텍스트 크기는 16px
-   1em = 현재글꼴크기=16px
-   브라우저의 크기바꾸면 em의 기준 크기도 달라짐
-   */
-  font-weight: bold; /*100-900 정수값 가능*/
-  font-variant: small-caps; /*모든 소문자는 대문자로 변환(작은대문자)*/
-  font-style: italic; /*기울임텍스트*/
+ #demo{
+  width:50%;
+  height:100px;
+  border: 1px solid red;
+  background-color: #4caf50;
   
-        /* style   variant  weight size   family */  
-/*   font: italic small-caps bold 12px Verdana,Arial; */
+  /* overflow: visible; 기본값*/
+  /* overflow:hidden; */
+  /* overflow: scroll; */
+  /* overflow: auto; */
+  
+  overflow-x: hidden
+  ; 
+  overflow-y: scroll; 
   
  }
 </style>
 </head>
 <body>
-<h3>ex10.html</h3>
+
 <pre>
-1. css글꼴font은 웹 사이트에적합한 글꼴을 선택하는 것이 중요하다.
-2. 읽기쉬운 글꼴, 색상, 크기 선택 중요하다.
-3. 웹 안전 글꼴: 모든 브라우저/장치에 보편적으로 설치되어 있는 글꼴
+ overflow 속성 -영역보다 콘텐츠가 너무커서 맞지 않는 경우 제어하는 속성
+ 
+ visible(기본값) - 영역 외부에 넘치는 콘텐츠가 출력(랜더링)된다.
+  hidden -  넘치는 부분은 안보이게
+  scroll - 스크롤바 생김 : 안넘쳐도 스크롤바 생김
+  auto   - 스크롤바 생김 : 넘칠때만 스크롤 생김
 </pre>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-<h2>Lorem ipsum dolor sit amet.</h2>
+<!-- #demo>lorem10*10 -->
+<div id="demo">
+Lorem ipsum dolor
+</div>
+ sit amet, consectetur adipisicing elit. Non quod!
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quod!
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quod!
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quod!
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quod!
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quod!
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quod!
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quod!
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quod!
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quod! 
+
 </body>
 </html>

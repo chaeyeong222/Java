@@ -3,49 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>2022. 5. 23. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
-<style>
- body{
-  background-color: lightblue;
- }
- h3{
- background-color: yellow;
- }
- /* 블럭모드 width:100% 높이는 내용물에 맞춤 */
- div{
- border:1px solid gray;
- width:200px;
- padding: 10px;
- 
- background-color:rgba(0,255,0,0.1);
- }
- div.first{
- /*  opacity 속성으로 투명도를 설정하면 자식(하위)요소들도 동일한 투명도를 상속한다. */
-  opacity:0.5; /* 투명도만 주기 */
- }
- 
-</style>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-<h3>ex02.html-css배경</h3>
-<pre>
- 배경 배경색
- 배경 이미지
- 배경 반복
- 배경 위치
- 배경 약식 속성
- 
-</pre>
+	<h3>ex02.html</h3>
 
-<!-- div*5>lorem3 -->
-<div class="first">Lorem ipsum dolor.</div>
-<div class="second">Nobis quam cum.</div>
-<div class="third">Officiis reiciendis officia.</div>
-<div style="background-color: rgba(0,255,0,0.3)">Dignissimos eum odio.</div>
-<div>Nesciunt quis voluptate.</div>
+	<button id="btn1">버튼1</button>
+	<p id="demo">
+	</p>
+	
+	<script>
+		//버튼1을 클릭할 때 버튼 10개 생성해서 추가
+		//document.getElementById("btn1");
+		document.querySelector("#btn1").onclick = function() {
+			
+			var pelemt=document.querySelector("#demo");
 
+			for (var i = 1; i <= 10; i++) {
+				var btn = document.createElement("button");
+				var txtNode = document.createTextNode("버튼-" + (i + 1));
+				btn.appendChild(txtNode);
+				
+				pelemt.appendChild(btn);
+				pelemt.appendChild( document.createElement("br"));
+			}
+		};
+	</script>
 
+	<script>
+		/* //js 로 버튼 생성
+		var btn=document.createElement("button");
+		//btn.textContent="버튼2";
+		//btn.innerText="버튼3"***
+		
+		var txtNode=document.createTextNode("버튼2");
+		
+		btn.appendChild(txtNode);
+		//생성된 버튼을 body요소의 자식으로 추가
+		document.body.appendChild(btn); */
+	</script>
 </body>
 </html>

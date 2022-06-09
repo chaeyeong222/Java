@@ -3,54 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>2022. 5. 23. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
- body{
-   margin:0;
-   padding:0;
- }
- div{
-  border: 1px solid black;
-  /* margin-top: 25px;
-  margin-right: 50px;
-  margin-bottom: 75px;
-  margin-left:100px; */
-  /* 약식      위     오   아    왼( 시계방향) */
-  margin : 25px 50px 75px 100px;
+  ul,ol{
+   background-color: yellow;
+   border: 1px solid red;
+  }
+  li{
+  background-color: green;
+  border: 1px solid blue;
+  }
+  ul.first{
+ /*  list-style-type: upper-roman; */
  
-  /* margin : 25px 25px 25px 25px; *//*  아래와 같은 코딩 */
-  /* margin:  25px; 4개 정부 동일*/
-  /* margin: 25px 100px;  위아래25 왼오100; */
-  
-  /*        t  l/r   b   */
-  margin: 25px 50px 100px; 
- }
+  }
+  ol.second{
+  list-style-position: outside;
+  }
+  ul,ol{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  }
 </style>
 </head>
 <body>
-<h3>ex04.html-여백margin</h3>
-<pre>
- 1. border의 외부 요소 주위의 공간(바깥여백)
- 2. margin 속성
- 3. margin-top, margin-bottom, margin-left, margin-right
- 4. margin-auto 설정
-   ? 브라우저가 여백을 자동으로 계산해서 사용
-   예) margin:0 auto,   가운데 정렬
- 5. px, in, pt, cm 등등 + % , inherited 여백 부모 상속.
- 6. margin:음수 -100px;
- 
- 주의
- 1. bottom:75px
- 2. top: 25px
+<h3>css목록</h3>
+<!-- ul.first>li*5>lorem1 -->
+<ul class="first">
+	<li>Lorem.</li>
+	<li>Ea!</li>
+	<li>Soluta!</li>
+	<li>Laborum.</li>
+	<li>Similique!</li>
+</ul>
 
- 1div[여백 25+75=100(x) 둘 중 큰 값인 75px로 적용] 2div
- 
-</pre>
-
-<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente modi recusandae suscipit quas vitae iste itaque mollitia culpa. Dolore voluptate laborum modi cumque excepturi voluptates esse illo architecto cupiditate velit.</div>
-<div>Maxime nemo repellendus cumque et at earum modi ab obcaecati eius ut aliquam quisquam sed commodi laboriosam officia nobis veritatis quibusdam enim voluptatem adipisci! Beatae exercitationem eveniet assumenda vitae ipsam.</div>
-<div>In neque suscipit iusto dolor cumque! Praesentium repellat molestiae laborum quam est consequatur. Facere est similique vitae eius quod tenetur earum libero suscipit ex perferendis doloremque quo eligendi eveniet beatae!</div>
-
+<!-- ol.second>li*5>lorem1 -->
+<ol class="second">
+	<li>Lorem.</li>
+	<li>Doloribus!</li>
+	<li>Esse?</li>
+	<li>Optio!</li>
+	<li>Distinctio!</li>
+</ol>
 </body>
 </html>
