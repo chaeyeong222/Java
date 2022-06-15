@@ -3,86 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 23. 채영</title>
+<title>2022. 5. 24. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<style>
- table{
-  width:100%;
-  border-collapse: collapse;
 
+<style>
+ a{
+  text-decoration: none;
+  padding: 8px 16px;
+  display: inline-block;
  }
- caption{
- font-weight: bold;
- text-transform: uppercase;
- caption-side: bottom;
+
+ a:hover{
+  background-color: #ddd;
+  color:black;
  }
- th,td{
-  border-bottom: 1px dotted red;
+ .previous{
+  background-color: #f1f1f1;
+  color:black;
  }
- th{
- width:100px;
- height:70px;
- }
- td{
-  height:30px;
-  text-align: center;
-  vertical-align: middle;
- }
- tr:nth-child(even){
-  background-color: #f2f2f2;
- }
- tr:hover:not(:first-child){
-  background-color: #4caf50;
+ .next{
+ background-color: #4caf50;
+  color:white;
+  
+  float:right;
  }
  
+ .round{
+ border-radius: 50%;
+ }
 </style>
+
+
+
 </head>
 <body>
-<!-- table>caption+(tr*3>td*4) -->
-<table>
-	<caption>table sample</caption>
-	<tr>
-		<!-- th*4>{컬럼명$} -->
-		<th>컬럼명1</th>
-		<th>컬럼명2</th>
-		<th>컬럼명3</th>
-		<th>컬럼명4</th>
-	</tr>
-	<tr>
-		<td align="left" valign="top">1</td>
-		<td>2</td>
-		<td>3</td>
-		<td>4</td>
-	</tr>
-	<tr>
-		<td>5</td>
-		<td>6</td>
-		<td>7</td>
-		<td>8</td>
-			<tr>
-		<td>1</td>
-		<td>2</td>
-		<td>3</td>
-		<td>4</td>
-	</tr>
-	<tr>
-		<td>5</td>
-		<td>6</td>
-		<td>7</td>
-		<td>8</td>
-			<tr>
-		<td>1</td>
-		<td>2</td>
-		<td>3</td>
-		<td>4</td>
-	</tr>
-	<tr>
-		<td>5</td>
-		<td>6</td>
-		<td>7</td>
-		<td>8</td>
-	</tr>
-</table>
+<h3>previous&next 버튼</h3>
+
+<a href="#" class="previous">&laquo;Previous</a>
+<a href="#" class="next">Next&laquo;</a>
+
+<br />
+<a href="#" class="previous round">&#8249;</a>
+<a href="#" class="next round">&#8250;</a>
+
 </body>
 </html>

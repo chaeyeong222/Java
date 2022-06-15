@@ -3,56 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 23. 채영</title>
+<title>2022. 5. 24. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
- #mySidenav a{
- background-color: #111;
- color:white;
- padding: 13px;
- text-decoration: none;
- font-size: 20px;
- border-radius: 0 5px 5px 0; 
- 
- position: absolute; /*절대좌표 기준 부모body*/
- width: 100px;
- left: -88px;
- text-align: right;
- 
- 
- /*left: -88px->0 왼쪽 좌표가 상태가 변환(전환)될때*/
-  transition:0.5s ease;
- }
- #mySidenav a:hover{
-   left: 0px;
-   
- }
- #home{ top:20px; }
- #services{ top:80px; }
- #clients{ top:140px;}
- #contact{ top:200px; }
- #content{
-  margin-left: 100px;  }
- 
- 
-</style>
+ p.intro{
+ color: red;
+ font-size: small;
+  }
+  p.intro::first-line{
+ color: green;
+ font-size: large;
+  }
+  p.intro::first-letter{
+ color: blue;
+ font-size: xx-large;
+  }
 
+</style>
 </head>
 <body>
+<h3>::의사요소</h3>
+<pre>
+:의사클래스 - 요소의 특정 상태
+::의사요소 - 요소의 지정된 부분에만 스타일 지정
 
-<!-- (#mySidenav.sidenav>a[id="" href="#"]*4>i[class="fa fa-fw fa-"])+#content>h2>lorem5^p>lorem10 -->
-<div id="mySidenav" class="sidenav">
-	<a href="#" id="home">Home<i class="fa fa-fw fa-home"></i></a>
-	<a href="#" id="services">Services<i class="fa fa-fw fa-wrench"></i></a>
-	<a href="#" id="clients">Clients<i class="fa fa-fw fa-user"></i></a>
-	<a href="#" id="contact">Contact<i class="fa fa-fw fa-envelope"></i></a>
-</div>
-<div id="content">
-	<h2>Lorem ipsum dolor sit amet.</h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quisquam.</p>
-</div>
+</pre>
+<!-- p.intro>lorem -->
+<p class="intro">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+Quasi vitae voluptatem necessitatibus officiis cumque dolore 
+harum maxime nulla nemo ad placeat voluptate delectus. 
+Reprehenderit necessitatibus odio quis voluptatibus magnam quia!
+</p>
 
 
 </body>

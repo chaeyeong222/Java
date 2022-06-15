@@ -3,23 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 23. 채영</title>
+<title>2022. 5. 24. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+/*a태그의 특수한 상태 지정*/
+ a:link{}
+ a:visit{}
+ a:hover{}
+ a:active{}
 
+
+input[type='text']:focus{
+ background-color: red;
+ width:500px;
+ border: 1px solid gray;
+}
+
+/*롤오버효과*/
+ pre{
+ border:1px solid red;
+ }
+ 
+ pre:hover{
+  border-color:green;
+ }
+
+
+
+</style>
 </head>
 <body>
 <h3>ex08.html</h3>
 
 <pre>
- [css 레이아웃] position(위치) 속성
+
+ selector:이름
+ selector:pseudo-class(의사 클래스)
+ 요소의 특수상태를 정의할 때 사용한다.
  
- 1. static (기본값) 정적 - top, bottom , left, right속성  변화x
- 2. relative 상대좌표 (기준)
- 3. absolute 절대좌표 , 가장가까운 조상요소를 기준으로 배치
- 4. fixed 고정
- 5. sticky사용자의 스크롤위치에 따라 배치 
+ ex)
+ a:hover{
+ 링크태그에 마우스 올릴때 스타일 지정
+ }
  
+ selector::이름
+ selector::pseudo-element(의사 요소)
+ 
+ ex)
+ #box1::after{
+ }
 </pre>
+
+<a href="#">Sist</a>
+<br />
+<input id="pre"/><br />
+<input type="text" /><br />
+<input type="text" /><br />
+<input type="text" /><br />
+
+
 </body>
 </html>

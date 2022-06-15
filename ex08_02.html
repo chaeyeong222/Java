@@ -3,65 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 23. 채영</title>
+<title>2022. 5. 24. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
 <style>
- body{
-  margin:0;
-  padding:0;
- }
- div{
- border: 1px solid gray;
- width: 100px;
- height:100px;
- text-align: center;
- }
- /* div:nth-of-type(1){ */
- div:first-of-type{
-  background-color: red;
- }
- div:nth-of-type(2){
-  background-color: green;
-  
-  position: relative; /*상대좌표(기준)*/
-  left:30px;
-  top:30px;
- }
- div:nth-of-type(3){
-  background-color: blue;
-  position: fixed;
-  /* right:5px; */
-  top:5px;
-  right:5px;
-  
- }
- div:last-of-type{
+ div>p{
   background-color: yellow;
-  position: absolute; /*절대좌표 , 기준  부모body*/
-  left:10px;
-  top:10px;
+  padding:20px;
+  
+  display:none;
+ }
+ 
+ /*first-child 의사 클래스는 어떤 다른 요소의 첫번째 자식인 p태그*/
+ 
+ div:hover>p:first-child{
+   display: block;
  }
  
 </style>
+
 </head>
 <body>
-<h3>ex08_02.html</h3>
+<h3>ex08_02.html   :요소의 특수한 상태  의사클래스, 간단한 툴킵(마우스올리면 풍선)</h3>
 
-<script>
+<div>
+  
+  Hover Over me
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Expedita a beatae ratione maxime.</p>
+  <p>Iste at quod fugit excepturi.</p>
 
-//js로 div5, p50 추가
-    for (var i = 1; i <=5; i++) {
-	 var divElemt = document.createElement("div" );
-	 divElemt.innerText = "Box"+i;
-	 document.body.appendChild(divElemt);
-    }  
-    for (var i = 1; i <=50; i++) {
-   	 var pElemt = document.createElement("p" );
-   	 pElemt.innerText = "."+i;
-   	 document.body.appendChild(pElemt);
-       } 
-</script>
-
+</div>
 </body>
 </html>

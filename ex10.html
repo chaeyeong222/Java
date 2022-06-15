@@ -3,53 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 23. 채영</title>
+<title>2022. 5. 24. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
- #demo{
-  width:50%;
+ img{
+  width:170px;
   height:100px;
-  border: 1px solid red;
-  background-color: #4caf50;
   
-  /* overflow: visible; 기본값*/
-  /* overflow:hidden; */
-  /* overflow: scroll; */
-  /* overflow: auto; */
   
-  overflow-x: hidden
-  ; 
-  overflow-y: scroll; 
-  
+  /*opacity 속성 -> 자식에도 상속됨 
+   rgb[a]-> 자식태그에는 투명도 상속x*/
+}
+
+ img:hover{
+  opacity:0.8;
  }
+
 </style>
 </head>
 <body>
+<h3>ex10.html -css투명도: opacity= 0 ~ 1</h3>
 
-<pre>
- overflow 속성 -영역보다 콘텐츠가 너무커서 맞지 않는 경우 제어하는 속성
- 
- visible(기본값) - 영역 외부에 넘치는 콘텐츠가 출력(랜더링)된다.
-  hidden -  넘치는 부분은 안보이게
-  scroll - 스크롤바 생김 : 안넘쳐도 스크롤바 생김
-  auto   - 스크롤바 생김 : 넘칠때만 스크롤 생김
-</pre>
-
-<!-- #demo>lorem10*10 -->
-<div id="demo">
-Lorem ipsum dolor
-</div>
- sit amet, consectetur adipisicing elit. Non quod!
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quod!
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quod!
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quod!
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quod!
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quod!
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quod!
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quod!
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quod!
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quod! 
+<img src="../images/img_forest.jpg" alt="" />
+<img src="../images/img_mountains.jpg" alt="" />
+<img src="../images/img_5terre.jpg" alt="" />
 
 </body>
 </html>

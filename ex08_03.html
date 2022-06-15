@@ -3,46 +3,82 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 23. 채영</title>
+<title>2022. 5. 24. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
 <style>
- div:last-of-type {
-	/*스크롤바 생기게하기위해서*/
-	padding-bottom:2000px; 
+div>p {
+	background-color: yellow;
+	padding: 20px;
+	display: none;
 }
- div.sticky_test{ 
- border: 2px solid #4caf50;
- background: #cae8ca;
- padding: 3px;
- text-align: center;
- 
- /*이 div 태그가 스크롤 할 때top=0될때*/
- position: sticky;
- position: -webkit-sticky; /*safari*/
- 
- top:0;
-  
- }
 </style>
+
 </head>
 <body>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores impedit natus molestiae nihil atque ab cupiditate facilis placeat quisquam porro. Blanditiis atque ea cupiditate nesciunt ad ipsam tempora labore sapiente.</p>
+	<h3>ex08_03.html :js 툴킵 구현</h3>
 
+	<!-- js사용할때 필요 -->
+	<!-- <div onmouseover="div_onmouseover()" onmouseout="div_onmouseout()"> -->
 
-<div class="sticky_test">hello world</div>
-<!-- div>p*3>lorem -->
-<div>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos mollitia quia magni optio quo debitis cupiditate labore earum unde vitae ipsum eveniet sunt velit corrupti cumque blanditiis aperiam quae aut.</p>
-	<p>Amet aspernatur unde ipsam odit sit fugiat labore quisquam est itaque laborum placeat assumenda. Id quos sequi tenetur illo impedit nisi voluptate saepe beatae enim nostrum commodi rerum at alias.</p>
-	<p>Commodi voluptate officiis repudiandae rerum aut omnis ipsum amet culpa placeat autem dolore quia consequatur vel. Mollitia quidem ipsa fugiat quam aperiam autem cupiditate quis. Provident praesentium quisquam inventore blanditiis.</p>
-</div>
-<pre>
- position: sticky
-  - IE 지원하지 않는다.
-  - Safari : webkit 접두사 붙인다
-  - left,right,bottom,top 적어도 하나는 지정
-</pre>
+	<div onmouseover="div_onmouseover()" onmouseout="div_onmouseout()">
+		Hover Over me
+		<p>Lorem ipsum dolor sit amet.</p>
+		<p>Expedita a beatae ratione maxime.</p>
+		<p>Iste at quod fugit excepturi.</p>
+
+	</div>
+
+	<script>
+/* function div_onmouseover(){ 	
+	//console.log("onmouseover"); 이벤트 확인
+	//툴팁보이게
+	document.querySelector("div>p:first-child").style.display="block";
+}
+function div_onmouseout(){
+	//console.log("onmouseout"); 
+	//툴팁 안보이게
+	document.querySelector("div>p:first-child").style.display="none";
+} */
+</script>
+
+	<script>
+//jquery사용하기
+/*  $("div").mouseover(function(event) {
+ 	$("div>p:first-child").show();
+ });
+ $("div").mouseout(function(event) {
+	 $("div>p:first-child").hide();	
+ }); */
+ 
+/*
+   $("div")
+  .mouseover(function(event) {
+	 	// $("div>p:first-child").show(); 
+	 $("p:first-child", this).show();
+	 })
+  .mouseout(function(event) {
+		 $("div>p:first-child").hide();	
+	 });
+ 
+ */
+ 
+ $("div").hover(
+	 function(event){ //자동열기함수
+		 $("div>p:first-child").show();
+	 }function(event){ //자동닫기함수
+		 $("div>p:first-child").hide();	
+	 }
+ );
+
+ 
+ 
+ 
+
+</script>
 
 </body>
 </html>

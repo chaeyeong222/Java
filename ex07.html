@@ -3,28 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 23. 채영</title>
+<title>2022. 5. 24. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
- .ex1{
- width: 500px;
- border: solid 1px #73ad21;
+ h3,p{
+  border:1px solid red;
  }
- .ex2{
- max-width: 500px;
- border: solid 1px #73ad21;
+ div>p{
+  background-color: red;
+ }
+ div+p{
+  background-color: green;
  }
 </style>
+
+
+
 </head>
 <body>
-<h3>ex07.html</h3>
-<!-- width/ max-width 속성 차이점 -->
+<h3>ex07.html -css 4 가지 결합자</h3>
 
-<!-- .ex$*2>lorem5 -->
-<div class="ex1">Lorem ipsum dolor sit amet.</div>
-<br>
-<div class="ex2">Lorem ipsum dolor sit amet.</div>
+<pre>
+1. 공백 : div p{} -> div 태그의 직계자손p + 후손p
+2. >   : div>p{} -> div 태그의 직계자손p만
+3. +   : div+p{} -> div 태그에 바로 뒤에 붙은 형제p
+4. ~   : div~p{} -> div 요소의 (인접하지 않아도 되는) 모든 형제p
+</pre>
+
+<p>Lorem ipsum dolor sit amet.</p>
+
+
+<!-- div>p*2+lorem1+(section>p>lorem5) -->
+<div>
+	<p>Lorem.</p>
+	<p>Lorem.</p>
+	<section>
+	<p>Lorem ipsum dolor sit amet.</p>
+	</section>
+</div>
+
+<p>Lorem ipsum dolor sit amet, consectetur.</p>
+
+<section>
+section
+</section>
+
+<p>Lorem ipsum dolor sit amet, consectetur.</p>
+
 
 </body>
 </html>

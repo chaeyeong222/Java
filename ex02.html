@@ -3,48 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 23. 채영</title>
+<title>2022. 5. 24. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+ p{
+  border: 3px solid #4caf50;
+  padding: 5px;
+ }
+ p img{
+  width:170px;
+   float: right;
+  /* float: none; */
+  
+  margin-left: 15px;
+  
+ }
+/*  .clearfix{
+  overflow:auto;
+ } */
+ 
+ .clearfix::after{
+  content:"";
+  clear:both;
+  display:table;
+ }
+ 
 
+</style>
 </head>
 <body>
-	<h3>ex02.html</h3>
+<h3>ex02.html-float 속성</h3>
 
-	<button id="btn1">버튼1</button>
-	<p id="demo">
-	</p>
-	
-	<script>
-		//버튼1을 클릭할 때 버튼 10개 생성해서 추가
-		//document.getElementById("btn1");
-		document.querySelector("#btn1").onclick = function() {
-			
-			var pelemt=document.querySelector("#demo");
+<pre>
+ [float 속성]
+  - 콘텐츠의 [위치를 지정]하고, 형식을 지정하는 사용속성
+  - 요소가 어떻게 떠야하는지를 지정하는 속성
+  - left, right, none(기본값), inherit
+  - clear 속성 
+</pre>
 
-			for (var i = 1; i <= 10; i++) {
-				var btn = document.createElement("button");
-				var txtNode = document.createTextNode("버튼-" + (i + 1));
-				btn.appendChild(txtNode);
-				
-				pelemt.appendChild(btn);
-				pelemt.appendChild( document.createElement("br"));
-			}
-		};
-	</script>
-
-	<script>
-		/* //js 로 버튼 생성
-		var btn=document.createElement("button");
-		//btn.textContent="버튼2";
-		//btn.innerText="버튼3"***
-		
-		var txtNode=document.createTextNode("버튼2");
-		
-		btn.appendChild(txtNode);
-		//생성된 버튼을 body요소의 자식으로 추가
-		document.body.appendChild(btn); */
-	</script>
+<!-- p>img+lorem -->
+<p class="clearfix">
+<img src="../images/pineapple.jpg" alt="" />
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione quo vitae amet consequuntur facere dolor quos aliquam voluptatibus sequi dolorum. Impedit at quia minus cupiditate rerum distinctio atque tenetur recusandae?</p>
 </body>
 </html>

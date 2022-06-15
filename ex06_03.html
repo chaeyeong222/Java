@@ -3,72 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 23. 채영</title>
+<title>2022. 5. 24. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
- .imgbox{
-  width:120px;
-  border: 1px solid gray;
-  padding: 6px;
+ .center{
+  width:50%;
+  /* height:200px; */
+  border: 3px solid green;
+  margin: 0 auto;
   text-align: center;
-  
-  float:left;
-  
+  height:200px;
+  width:400px;
+  /* flexbox를 사용해서 사물을 중앙에 둘 수 있다 */
+  /* flexbox는 InternetExplorer10 이전버전 지원x */
+  display: flex;
+  justify-content: center;
+  align-items:center;
  }
- .imgbox img, .imgbox button{
-  width:100%;
- }
+ 
 </style>
- 
 </head>
-<body>
-<h3> display:none; 과 visibility:hidden 차이점</h3>
-
-<div id="imgbox1" class="imgbox">
-Box1
-<img src="../images/img_5terre.jpg" alt="" />
-<button onclick="remove();">Remove</button>
-<script>
-
-</script>
+<body> 
+<div class="center">
+	<p>Hello World</p>
 </div>
-<div id="imgbox2" class="imgbox">
-Box2
-<img src="../images/img_5terre.jpg" alt="" />
-<button>Hide</button>
-<!-- 이벤트 처리 2번째 방법 -->
-<script>
-
-</script>
-</div>
-<div id="imgbox3" class="imgbox">
-Box3
-<img src="../images/img_5terre.jpg" alt="" />
-<button>Reset All</button>
-
-
-</div>
-<script>
-    $("#imgbox1 button").click(function(event){
-	 //jquery method css()
-	//$("#imgbox1").css("display","none");
-    //hide()==.css("display","none");
-    $("#imgbox1").hide();
-    
-	 });
- 	$("#imgbox2 button").click(function(event){
-	 //jquery method css()
-	$("#imgbox2").css("visibility","hidden");
-	 });
- 	$("#imgbox3 button").click(function(event){
-	 //jquery method css()
-	/* $("#imgbox1").css("display","block"); */
-	$("#imgbox1").show();
-	$("#imgbox2").css("display","visible");
-	 });
- 
-</script>
 
 </body>
 </html>

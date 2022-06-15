@@ -3,60 +3,114 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 23. 채영</title>
+<title>2022. 5. 24. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
-*{
- box-sizing: border-box;
-}
-.pagination{
- overflow: auto;
- width: 50%;
- margin: 0 auto;
-}
-.pagination a{
- color: black;
- text-decoration: none;
- float:left;
- width: 8.3%;
- text-align: center;
+  body{
+     font-family: Arial, Verdana, sans-serif;
+  }
+  *{
+    box-sizing: border-box;
+  }
+ .open-button{
+    background-color: #555;
+    color:white;
+    padding: 16px  20px;
+    border:none;
+    cursor: pointer;
+    opacity: 0.8;
+    
+     position: fixed;
+    bottom:23px;
+    right: 28px;
+       
+    width:280px;
  }
- .pagination a:hover:not(.active){
- background-color: #ddd;
+ 
+ .form-popup{
+   display:none;
+ 
+    /* 12:01 수업 시작 */
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+    
+    position: fixed;
+     bottom:0;
+     right:15px;
  }
- .pagination a.active{
- background-color: dodgerblue;
- color:white;
- }
-
+ 
+ .form-container{
+     max-width: 300px;
+     padding: 10px;
+     background-color: white; 
+  }
+  
+  .form-container input[type='text'] ,  .form-container input[type='password']{
+    width: 100%;
+    margin:5px 0 22px 0;
+    border: none;
+    background-color: #f1f1f1;
+    padding: 15px;
+  }
+  
+   .form-container input[type='text']:focus 
+   ,  .form-container input[type='password']:focus{
+      background-color: #ddd;
+      outline:none;
+   }
+   
+   .form-container .btn{
+    background-color: #4CAF50;
+    color:white;
+    padding: 16px 20px;
+    border:none;
+    cursor:pointer;
+    width:100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+   }
+   
+   .form-container .cancel{
+     background-color: red;
+   }
+   
+   .form-container .btn:hover, .open-button:hover{
+    opacity: 1; 
+  }
 </style>
 </head>
 <body>
-<h3> 페이징 처리</h3>
-<!-- a[href="#"]*12>{$} -->
-<div class="pagination">
-<a href="#">1</a>
-<a href="#">2</a>
-<a href="#">3</a>
-<a href="#">4</a>
-<a href="#">5</a>
-<a href="#">6</a>
-<a href="#" calss="active">7</a>
-<a href="#">8</a>
-<a href="#">9</a>
-<a href="#">10</a>
-<a href="#">&gt;</a>
-<a href="#">&raquo;</a>
+<h3> 팝업popup 폼 form</h3>
+<button class="open-button">Open Form</button>
+
+<div class="form-popup" id="myForm">
+  <form action="" class="form-container">
+    <h1>Login</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit" class="btn">Login</button>
+    <button type="button" class="btn cancel">Close</button>
+  </form>
 </div>
 
 <script>
- $(".pagination a").click(function(event){
-	 //jquery method:not()
-	$(".pagination a").not(this).removeClass("active");
-	$(this).addClass("active");
- })
+
+  document.querySelector("button.open-button".onclick) = function(){
+	  document.getElementById("myForm").style.display="block";
+  }
+  document.querySelector("button.open-button".onclick) = function(){
+	  document.getElementById("myForm").style.display="none";
+  }
+
 </script>
+
+
 
 </body>
 </html>

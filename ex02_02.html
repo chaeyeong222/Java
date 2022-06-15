@@ -3,65 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 23. 채영</title>
+<title>2022. 5. 24. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+  div{
+  padding: 15px;
+  border: 1px solid gray;
+  
+  float: right;
+   }
+   
+   p{
+   background-color: yellow;
+   /* clear:left; */
+   clear:both;
+   }
 
+</style>
 </head>
 <body>
-	<h3>ex02.html</h3>
 
-	<button id="btn1">버튼1</button>
-	<p id="demo">
-	</p>
-	
-	<script>
-		//버튼1을 클릭할 때 버튼 10개 생성해서 추가
-		
-		$("#btn1").click(function(event){
-			for (var i = 1; i <=10; i++) {
-				//<button>버튼-2</button>
-				/* $("$#demo").append( $("<button>버튼-"+(i+1)+"</button>"));
-				$("$#demo").append( $("<br>")); */
-				
-				$("$#demo")
-				  .append( $("<button>버튼-"+(i+1)+"</button>"))
-				  .append( $("<br>"));
-				
-				
-				
-			}
-			
-		});
-		
-		//document.getElementById("btn1");
-		document.querySelector("#btn1").onclick = function() {
-			
-			var pelemt=document.querySelector("#demo");
+<!-- div[class="div$"]*3>{box$} -->
+<div class="div1">box1</div>
+<div class="div2">box2</div>
+<div class="div3">box3</div>
 
-			for (var i = 1; i <= 10; i++) {
-				var btn = document.createElement("button");
-				var txtNode = document.createTextNode("버튼-" + (i + 1));
-				btn.appendChild(txtNode);
-				
-				pelemt.appendChild(btn);
-				pelemt.appendChild( document.createElement("br"));
-			}
-		};
-	</script>
+<p>확인</p>
 
-	<script>
-		/* //js 로 버튼 생성
-		var btn=document.createElement("button");
-		//btn.textContent="버튼2";
-		//btn.innerText="버튼3"***
-		
-		var txtNode=document.createTextNode("버튼2");
-		
-		btn.appendChild(txtNode);
-		//생성된 버튼을 body요소의 자식으로 추가
-		document.body.appendChild(btn); */
-	</script>
+<pre>
+ clear 속성
+ - float 요소 옆에 있는 요소에 어떤일이 발생해야 하는지 지정하는 속성
+ - none (기본값) p요소는 왼쪽 또는 오른쪽 float 요소의 아래로 출력되지 않는다
+ - left : p요소가 왼쪽 float요소의 아래로 출력
+ - right : p요소가 오른쪽 float요소의 아래로 출력
+ - both : p요소가 왼+오른쪽 float요소의 아래로 출력
+ - inherit : 상속
+</pre>
 </body>
 </html>
