@@ -3,42 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 24. 채영</title>
+<title>2022. 5. 25. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
-  div{
-  padding: 15px;
-  border: 1px solid gray;
-  
-  float: right;
+   .dropdown{
+      position:relative; /* 좌표 기준이 되는 부모 */
+      display: inline-block;
    }
    
-   p{
-   background-color: yellow;
-   /* clear:left; */
-   clear:both;
+   .dropdown-content{
+      display:none;
+   
+      position:absolute;
+      right:0;
+      background-color: #f9f9f9;
+      min-width:160px;
+      box-shadow:9px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index:1;
    }
-
+   
+   .dropdown-content a{
+      color:black;
+      padding:12px 16px;
+      text-decoration: none;
+      display:block;
+   }
+   
+   .dropdown-content a:hover{
+      background-color: #f1f1f1;
+   }
+   
+   .dropbtn{
+      background-color: #4caf50;
+      color:white;
+      padding:16px;
+      font-size:16px;
+      border:none;
+      cursor:pointer;
+   }
+   
+   .dropdown:hover .dropdown-content{
+      display: block;
+   }
 </style>
+
 </head>
 <body>
+<h3>css 드롭다운 메뉴2</h3>
 
-<!-- div[class="div$"]*3>{box$} -->
-<div class="div1">box1</div>
-<div class="div2">box2</div>
-<div class="div3">box3</div>
-
-<p>확인</p>
-
-<pre>
- clear 속성
- - float 요소 옆에 있는 요소에 어떤일이 발생해야 하는지 지정하는 속성
- - none (기본값) p요소는 왼쪽 또는 오른쪽 float 요소의 아래로 출력되지 않는다
- - left : p요소가 왼쪽 float요소의 아래로 출력
- - right : p요소가 오른쪽 float요소의 아래로 출력
- - both : p요소가 왼+오른쪽 float요소의 아래로 출력
- - inherit : 상속
-</pre>
+<!-- .dropdown>button.dropbtn+.dropdown-content>a[href="#"]*3>{Link$} -->
+<div class="dropdown" style="float:left;">
+	<button class="dropbtn">Left</button>
+	<div class="dropdown-content" stye="left:0">
+		<a href="#">Link1</a>
+		<a href="#">Link2</a>
+		<a href="#">Link3</a>
+	</div>
+</div>
+<div class="dropdown"  style="float:right;">
+	<button class="dropbtn">Right</button>
+	<div class="dropdown-content">
+		<a href="#">Link1</a>
+		<a href="#">Link2</a>
+		<a href="#">Link3</a>
+	</div>
+</div>
 </body>
 </html>

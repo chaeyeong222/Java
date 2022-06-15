@@ -3,65 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 24. 채영</title>
+<title>2022. 5. 25. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
-/*a태그의 특수한 상태 지정*/
- a:link{}
- a:visit{}
- a:hover{}
- a:active{}
-
-
-input[type='text']:focus{
- background-color: red;
- width:500px;
- border: 1px solid gray;
-}
-
-/*롤오버효과*/
- pre{
- border:1px solid red;
- }
+  a{
+    color:red;
+  }
+  p>a{ /*1+1*/
+   color:green;
+  }
+  div>p>a{ /*1+1+1*/
+   color:blue;
+  }
  
- pre:hover{
-  border-color:green;
- }
-
-
-
-</style>
+  #mydiv p a{ /*100+1+1*/
+   color: aqua;
+  }
+   div#mydiv p a{ /*1+100+1+1*/
+   color: fuchsia;
+  }
+  a{
+  /*!important 이 규칙에 예외있다. 인라인 스타일 시트 적용 무시*/
+    color:yellow !important;
+  }
+ </style>
 </head>
 <body>
 <h3>ex08.html</h3>
 
-<pre>
-
- selector:이름
- selector:pseudo-class(의사 클래스)
- 요소의 특수상태를 정의할 때 사용한다.
+<pre> 
+ css특수성(특이성)?
  
- ex)
- a:hover{
- 링크태그에 마우스 올릴때 스타일 지정
- }
+ 동일한 요소를 가리키는 css 규칙이 두개 이상 있을 경우 
+ 어떤 css규칙을 요소에 적용할 것인지..
+ 점수로 순위가 정해진다.
  
- selector::이름
- selector::pseudo-element(의사 요소)
+ [특이성 수준을 나타내는 점수]
+ 1. 인라인 css 적용 : 1000점 (인라인 스타일 적용 방식이 항상 가장 우선순위가 높다)
+   <h1 style="color:red;"></h1>
+ 2. id 속성으로  :100점
+    #mydiv{ }
+ 3. 태그명, 의사요소 : 1점
+ 4. 클래스명, 의사클래스, 속성 선택자: 10점
+ 5. *  :0점
  
- ex)
- #box1::after{
- }
+ 
+ 예)
+  p{}     1점
+  p.test  1+10점
+  p#demo  1+100점
+  #demo  100점
+  .test   10점
+  p.test  1+10=11점
+  p.test1.test2 1+10+10=21점
+  #navbar p#demo     100+1+100=201점   
 </pre>
 
-<a href="#">Sist</a>
-<br />
-<input id="pre"/><br />
-<input type="text" /><br />
-<input type="text" /><br />
-<input type="text" /><br />
-
+<p><a href="#" class="button">button1</a> </p>
+<div id="mydiv">
+	<p><a href="#" class="button">button2</a></p>
+	<p><a href="#" class="button">button3</a></p>
+</div>
 
 </body>
 </html>

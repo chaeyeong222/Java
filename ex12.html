@@ -3,26 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>2022. 5. 25. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+
+/* #demo{ 100점*/
+  div#demo{
+  background-image: url('../images/img_flwr.gif'), url('../images/paper.gif');
+  background-repeat: no-repeat, repeat;
+  background-position: right bottom, left top;
+  
+/*   background: url('../images/img_flwr.gif') no-repeat  right bottom
+                     , url('../images/paper.gif') repeat left top   ; */
+}
+</style>
 </head>
 <body>
-<h3> html Form(양식) - 사용자 입력 처리 -> 서버전송 처리</h3>
-<!-- 자바서버페이지 서버 처리->응답
-java server page
-JSP
-ex12_ok.jsp -->
+<h3>ex12.html - 배경이미지 추가</h3>
 
-<!-- form에 감싸져야 서버에 전송됨. -->
-<form action="ex12_ok.jsp" method="get">
-First Name: <br>
-<input type="text" name="fname" autofocus="autofocus"><br> 
-Last Name: <br>
-<input type="text" name="lname"><br> 
-<br>
- <!-- 전송하다==submit -->
-<input type="submit">
-</form>
+<pre>
+ 1.background-size
+ 2.background-origin
+ 3.background-clip
+</pre>
+
+<!-- #demo>h1>lorem3^p*2>lorem -->
+<div id="demo">
+	<h1>Lorem ipsum dolor.</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt adipisci qui alias praesentium officia rerum nulla eius soluta explicabo ipsam quaerat fugit eveniet voluptas. Qui accusamus libero possimus excepturi corporis.</p>
+	<p>Debitis saepe fugit quisquam inventore vitae optio quod neque voluptatem consequuntur quo iusto illo autem! Vitae ipsa eum consequatur ullam deserunt voluptatem nulla asperiores laboriosam et tempora fugit nam dolorem!</p>
+</div>
 
 </body>
 </html>

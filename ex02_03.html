@@ -3,120 +3,73 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>2022. 5. 25. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
-/*  배경 약식 속성 */
-body{
-  /* background-color: white; 
-  background-image: url('../images/img_tree.png'); 
-  background-repeat: no-repeat;
-  background-attachment:fixed; 
-  background-position: right top; */
-  
- /*  css배경 약식 순서 :color image repeat attachment  position */
-  background:  url('../images/img_tree.png') no-repeat fixed right top; 
-  
-  /* 두개 같음
-  background: red;
-  background-color: red; */
-  
-}
-</style>
 
-<style>
- #top{
-  /* css 테두리*/
-  /* border: 1px solid gray; */
-  border-width: 1px;
-  border-style: solid;
-  border-color: gray;
-  
-  width: 25px;
-  height: 25px;
-  
-  
-  /**********/
-  position: fixed;
-  /*어디에 고정?*/
-  right: 5px;
-  bottom: 5px;
- }
- 
- #top:hover{
-  background-color: black;
-  color: yellow;
-  font-weight: bold;
-  cursor: pointer; /*커서모양*/
- }
-</style>
+/* 드롭다운 메뉴는 다 css 이런식 */
 
+   
+   ul{
+      list-style-type: none;
+      margin:0;
+      padding:0;
+      overflow:hidden;
+      background-color: #333;
+   }
+   
+   li.dropdown{
+      /* display:inline-block; */
+   }
+   
+   li {
+      float:left;
+   }
+   
+   .dropdown{
+      position:relative; /* 중요  */
+      display:inline-block;
+      left:200px;
+   }
+   
+   
+   .dropdown-content{
+   
+      display: none;
+   
+      position:absolute;
+      background-color:#f9f9f9;
+      min-width:160px;
+      /* 그림자 효과 */
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      padding:12px 16px;
+      z-index:1;
+      
+      
+   }
+   
+   .dropdown:hover .dropdown-content{
+      display:block;
+   }
+   
+   
+   
+</style>
 </head>
 <body>
-<h3>배경이미지</h3>
-<!-- (#top>{TOP})+(h3>{css배경이미지})+lorem+p*50>{.} -->
-<div id="top" onclick="top_click()">TOP</div>
-<h3>css배경이미지</h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ratione iste expedita dicta atque cum ea reiciendis aperiam natus et impedit omnis optio consequatur architecto error repellendus alias debitis totam.
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-
-<script>
-function top_click(){
-	//alert("top_click이벤트 발생");
-	/*스크롤이 맨 위에서부터 떨어진 정도*/
-	/* 두개 같은 코딩이지만 브라우저에 따라 적용되는게 달라지므로 그냥 두개 다 써줌:중복코딩 */
-	document.body.scrollTop= 0; 
-	document.documentElement.scrollTop=0;
-}
-</script>
+<h3>css 드롭다운 메뉴3</h3>
+<!-- .dropdown>span+.dropdown-content>p -->
+<div class="dropdown">
+	<img src="../images/img_5terre.jpg" style="width:100px; height:50px;" >
+	<div class="dropdown-content">
+	<img src="../images/img_5terre.jpg" style="width:300px; height:150px;" >
+	 <div class="desc">이미지설명</div>
+	</div>
+</div>
+<br>
+js <br>
+css <br>
 
 </body>
 </html>

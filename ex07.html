@@ -3,54 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 24. 채영</title>
+<title>2022. 5. 25. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
- h3,p{
-  border:1px solid red;
+ input[type='text']{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  
+  box-sizing: border-box;
+  
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  
+  background-color: white;
+  background: url('../images/searchicon.png');
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  padding-left: 40px;
+  
+  width:150px;
+  
+  transition:width 0.5s ease;
  }
- div>p{
-  background-color: red;
+ input[type='text']:focus{
+ width:80%;
  }
- div+p{
-  background-color: green;
- }
+ 
 </style>
-
-
-
 </head>
 <body>
-<h3>ex07.html -css 4 가지 결합자</h3>
+<h3>ex07.html</h3>
 
-<pre>
-1. 공백 : div p{} -> div 태그의 직계자손p + 후손p
-2. >   : div>p{} -> div 태그의 직계자손p만
-3. +   : div+p{} -> div 태그에 바로 뒤에 붙은 형제p
-4. ~   : div~p{} -> div 요소의 (인접하지 않아도 되는) 모든 형제p
-</pre>
-
-<p>Lorem ipsum dolor sit amet.</p>
-
-
-<!-- div>p*2+lorem1+(section>p>lorem5) -->
-<div>
-	<p>Lorem.</p>
-	<p>Lorem.</p>
-	<section>
-	<p>Lorem ipsum dolor sit amet.</p>
-	</section>
-</div>
-
-<p>Lorem ipsum dolor sit amet, consectetur.</p>
-
-<section>
-section
-</section>
-
-<p>Lorem ipsum dolor sit amet, consectetur.</p>
-
+<!-- 입력값-> 서버전송submit -->
+<form action="" method="get">
+ <input type="text" name="search" placeholder="Search..." >
+</form>
 
 </body>
 </html>

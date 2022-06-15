@@ -3,49 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 24. 채영</title>
+<title>2022. 5. 25. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
 <style>
- a{
-  text-decoration: none;
-  padding: 8px 16px;
-  display: inline-block;
- }
-
- a:hover{
-  background-color: #ddd;
-  color:black;
- }
- .previous{
-  background-color: #f1f1f1;
-  color:black;
- }
- .next{
- background-color: #4caf50;
-  color:white;
+ #navlist{
+  position: relative;
   
-  float:right;
+ }
+ #navlist li{ 
+ position: absolute;
+ top:0;
+ 
+ margin:0;
+ padding:0;
+ 
+ list-style-type: none;
+ }
+ #navlist li, #navlist a{
+ height: 44px;
+ width: 43px;
+/*  border: 1px solid red; */
+ 
+ display:block;
+ }
+ li#home{
+  left:0;
+  background: url("../images/img_navsprites_hover.gif");
+ }
+ li#prev{
+ left:63px;
+ background: url("../images/img_navsprites_hover.gif") -47px 0;
+ }
+ li#next{
+ left:129px;
+ background: url("../images/img_navsprites_hover.gif") -91px 0;
  }
  
- .round{
- border-radius: 50%;
+ li#home:hover{
+ background: url("../images/img_navsprites_hover.gif") 0 -45px;
  }
+ li#prev:hover{
+ background: url("../images/img_navsprites_hover.gif") -47px -45px;
+ }
+ li#next:hover{
+ background: url("../images/img_navsprites_hover.gif") -91px -45px;
+ }
+
 </style>
-
-
-
 </head>
 <body>
-<h3>previous&next 버튼</h3>
+<h3>이미지 스프라이트 image sprites</h3>
+<pre>
+ 이미지 스프라이트: 단일 이미지에 넣은 이미지 모음
+ 이미지가 많이 사용되는 웹 페이지
+ 웹 페이지를 로드하는데 오랜 시간이 걸린다 성능↓
+ 서버 이미지 여러번 요청x 여러이미지가 든 파일 한번만 요청
+</pre>
 
-<a href="#" class="previous">&laquo;Previous</a>
-<a href="#" class="next">Next&laquo;</a>
-
-<br />
-<a href="#" class="previous round">&#8249;</a>
-<a href="#" class="next round">&#8250;</a>
-
+<!-- ul#navlist>li[id]*3>a[href=#] -->
+<ul id="navlist">
+	<li id="home"><a href="#"></a></li>
+	<li id="prev"><a href="#"></a></li>
+	<li id="next"><a href="#"></a></li>
+</ul>
 </body>
 </html>

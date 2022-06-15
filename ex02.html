@@ -3,49 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 24. 채영</title>
+<title>2022. 5. 25. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
- p{
-  border: 3px solid #4caf50;
-  padding: 5px;
+ .dropdown{
+  position: relative; /*중요, 드롭다운 내용의 기준이 되기 위해서.나중에 이동해도 붙어있음*/
+  display: inline-block;
  }
- p img{
-  width:170px;
-   float: right;
-  /* float: none; */
+ .dropdown-content{
+   display: none;
   
-  margin-left: 15px;
-  
- }
-/*  .clearfix{
-  overflow:auto;
- } */
  
- .clearfix::after{
-  content:"";
-  clear:both;
-  display:table;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1; 
+ }
+ .dropdown:hover .dropdown-content{
+ display: block;
  }
  
-
 </style>
 </head>
 <body>
-<h3>ex02.html-float 속성</h3>
+<h3>css 드롭다운 메뉴</h3>
+<!-- .dropdown>span+.dropdown-content>p -->
+<div class="dropdown">
+	<span>Mouse Over me</span>
+	<div class="dropdown-content">
+		<p>Hello world!</p>
+	</div>
+</div>
+<br>
+js <br>
+css <br>
 
-<pre>
- [float 속성]
-  - 콘텐츠의 [위치를 지정]하고, 형식을 지정하는 사용속성
-  - 요소가 어떻게 떠야하는지를 지정하는 속성
-  - left, right, none(기본값), inherit
-  - clear 속성 
-</pre>
-
-<!-- p>img+lorem -->
-<p class="clearfix">
-<img src="../images/pineapple.jpg" alt="" />
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione quo vitae amet consequuntur facere dolor quos aliquam voluptatibus sequi dolorum. Impedit at quia minus cupiditate rerum distinctio atque tenetur recusandae?</p>
 </body>
 </html>

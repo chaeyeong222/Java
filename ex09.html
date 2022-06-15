@@ -3,40 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 24. 채영</title>
+<title>2022. 5. 25. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<style>
- p.intro{
- color: red;
- font-size: small;
-  }
-  p.intro::first-line{
- color: green;
- font-size: large;
-  }
-  p.intro::first-letter{
- color: blue;
- font-size: xx-large;
-  }
-
-</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+<style>
+ table{
+  width: 100%;
+  border: 1px solid #ddd;
+  border-spacing: 0;
+  border-collapse: collapse;
+   }
+   th,td{
+   text-align: center;
+   padding:16px;
+   
+   }
+   th:first-child, td:first-child{
+   text-align: left;
+   }
+   tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+ .fa-check{color:green}
+ .fa-remove{color:red}
+</style>
 <body>
-<h3>::의사요소</h3>
-<pre>
-:의사클래스 - 요소의 특정 상태
-::의사요소 - 요소의 지정된 부분에만 스타일 지정
+<h3>ex09.html</h3>
 
-</pre>
-<!-- p.intro>lorem -->
-<p class="intro">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-Quasi vitae voluptatem necessitatibus officiis cumque dolore 
-harum maxime nulla nemo ad placeat voluptate delectus. 
-Reprehenderit necessitatibus odio quis voluptatibus magnam quia!
-</p>
-
-
+<!-- table>(tr>th*3>lorem1)+tr*5>td>{Sample text}^+td*2>i[class="fa fa-check"] -->
+<table>
+	<tr>
+		<th>Lorem.</th>
+		<th>Voluptas.</th>
+		<th>Quo!</th>
+	</tr>
+	<tr>
+		<td>Sample text</td>
+		<td><i class="fa fa-remove"></i></td>
+		<td><i class="fa fa-check"></i></td>
+	</tr>
+	<tr>
+		<td>Sample text</td>
+		<td><i class="fa fa-check"></i></td>
+		<td><i class="fa fa-check"></i></td>
+	</tr>
+	<tr>
+		<td>Sample text</td>
+		<td><i class="fa fa-remove"></i></td>
+		<td><i class="fa fa-check"></i></td>
+	</tr>
+	<tr>
+		<td>Sample text</td>
+		<td><i class="fa fa-check"></i></td>
+		<td><i class="fa fa-check"></i></td>
+	</tr>
+	<tr>
+		<td>Sample text</td>
+		<td><i class="fa fa-remove"></i></td>
+		<td><i class="fa fa-check"></i></td>
+	</tr>
+</table>
 </body>
 </html>

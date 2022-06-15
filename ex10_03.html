@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022. 5. 25. 채영</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+ .chip{
+  background-color: #f1f1f1;
+ 
+ height:50px;
+ line-height:50px; /*수직 중앙 정렬*/
+ 
+ display: inline-block;
+ padding: 0 25px;
+ 
+ font-size: 18px;
+ 
+ border-radius: 25px;
+ }
+ .chip img{
+  width: 50px;
+  height: 50px;
+  
+  border-radius: 50%;
+  margin-left: -25px;
+  margin-right: 10px;
+  
+  float: left;
+ }
+ .closebtn{ 
+   color:#888;
+   cursor:pointer;
+   font-size:20px;
+   font-weight: bold;
+   padding-left: 10px;
+ }
+ .closebtn:hover{
+  color:#000;
+ } 
+</style>
+</head>
+<body>
+<h3>ex10_03</h3>
+<!-- .chip>img+{Hong Gil Dong}+span.closebtn -->
+<div class="chip">
+  <img src="../images/img_avatar.png" alt="" />
+  Hong Gil Dong
+<!--  <span class="closebtn" onclick="chip_close(this)">&times;</span> -->
+<!--   <span class="closebtn">&times;</span> -->
+<span class="closebtn" onclick="chip_close( )">&times;</span>
+  </div>
+</body>
+
+<script>
+ /*  document.querySelector(".closebtn").onclick=function(){
+	  //alert('xx');
+	  //this?
+	  this.style.display = "none";
+  }
+ */
+
+ function chip_close(spn){ 
+	 
+	 alert(this);
+	 //ex10_03.html:57 Uncaught TypeError: 
+	 // Cannot set properties of undefined (setting 'display')
+	 //this.style.display = "none";
+	 //this?
+	 //spn.style.display = "none";
+	 
+	 //클릭 이벤트를 받은 객체(요소)를 얻어오는 방법
+	 //event.srcElement.style.display = "none";
+	 event.srcElement.parentElement.style.display = "none";
+ }
+ //jquery로 변경
+</script>
+
+</html>
