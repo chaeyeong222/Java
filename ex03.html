@@ -3,114 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 24. 채영</title>
+<title>2022. 5. 26. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
-  body{
-     font-family: Arial, Verdana, sans-serif;
-  }
-  *{
-    box-sizing: border-box;
-  }
- .open-button{
-    background-color: #555;
-    color:white;
-    padding: 16px  20px;
-    border:none;
-    cursor: pointer;
-    opacity: 0.8;
-    
-     position: fixed;
-    bottom:23px;
-    right: 28px;
-       
-    width:280px;
+ h1{
+ /* color: yellow; */
+ /*수평그림자, 수직그림자 지정    blur흐림 그림자색상*/
+ /* text-shadow: 2px 2px red; */
+ /*다중 그림자 효과 설정*/
+/*  text-shadow: 0 0 3px red, 0 0 10px blue; */
+  color: white;
+  text-shadow: -1px 0 black, 0 -1px black;
+ 
  }
- 
- .form-popup{
-   display:none;
- 
-    /* 12:01 수업 시작 */
-    border: 3px solid #f1f1f1;
-    z-index: 9;
-    
-    position: fixed;
-     bottom:0;
-     right:15px;
+ p{
+   width:300px;
+   height:100px;
+   background-color: yellow;
+                        /*흐림 번짐*/
+   box-shadow: 10px 10px 5px 3px gray;
  }
- 
- .form-container{
-     max-width: 300px;
-     padding: 10px;
-     background-color: white; 
-  }
-  
-  .form-container input[type='text'] ,  .form-container input[type='password']{
-    width: 100%;
-    margin:5px 0 22px 0;
-    border: none;
-    background-color: #f1f1f1;
-    padding: 15px;
-  }
-  
-   .form-container input[type='text']:focus 
-   ,  .form-container input[type='password']:focus{
-      background-color: #ddd;
-      outline:none;
-   }
-   
-   .form-container .btn{
-    background-color: #4CAF50;
-    color:white;
-    padding: 16px 20px;
-    border:none;
-    cursor:pointer;
-    width:100%;
-    margin-bottom: 10px;
-    opacity: 0.8;
-   }
-   
-   .form-container .cancel{
-     background-color: red;
-   }
-   
-   .form-container .btn:hover, .open-button:hover{
-    opacity: 1; 
-  }
+
 </style>
 </head>
 <body>
-<h3> 팝업popup 폼 form</h3>
-<button class="open-button">Open Form</button>
-
-<div class="form-popup" id="myForm">
-  <form action="" class="form-container">
-    <h1>Login</h1>
-
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-
-    <button type="submit" class="btn">Login</button>
-    <button type="button" class="btn cancel">Close</button>
-  </form>
-</div>
-
-<script>
-
-  document.querySelector("button.open-button".onclick) = function(){
-	  document.getElementById("myForm").style.display="block";
-  }
-  document.querySelector("button.open-button".onclick) = function(){
-	  document.getElementById("myForm").style.display="none";
-  }
-
-</script>
-
-
-
+<h1>텍스트 그림자효과 text-shadow</h1>
+<p>박스 그림자효과 box-shadow</p>
 </body>
 </html>

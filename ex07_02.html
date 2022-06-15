@@ -2,53 +2,82 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022. 5. 26. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
-<style>
-span{
- border:1px solid gray;
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style> 
+#rotate2D, #rotate3D {
+    width: 80px;
+    height: 70px;
+    color: white;
+          position:relative;
+    font-weight:bold;
+    font-size:15px;
+    padding:10px;
+    float:left;
+    margin-right:50px;
+    border-radius:5px;
+    border:1px solid #000000;
+    background:red;
+    margin:10px;
 }
 </style>
+
 </head>
 <body>
-<h3>ex07_02.html</h3>
-1. 모든 html요소(태그)에는 요소 유형에 따라 기본표시(display)값이 있다.<br>
-2. 표시값에는 2가지가 있다( 블럭모드, 인라인모드)<br>
- - 블럭모드:요소 전체 너비를 차지 p, div, li, hn, dl,dd,dt,ol,ul,hr, blockquote 등<br>
- - 인라인모드:새 줄에서 시작x, 필요한 너비 만큼만 차지한다. 
-      span, img, a, map, b, button, i, q, sub, sup, input 등<br>
-    <hr>
-<h3>div요소(태그)</h3>
-1. 웹 페이지의 배치layout<br>
-2. 블럭모드<br>
-3. 일반적으로 컨테이너(다른요소를 자식으로 가짐)의 종류중에 하나<br>
 
-<hr>
-<button onclick="span_hide();">숨기기(hide)</button>
-<button onclick="span_show();">보이기(show)</button>
-<script> 
-//javascript 코딩
- function span_hide(){
-	 //window.alert("버튼클릭 이벤트 확인!");
-	 //document.location="이동할 주소 url"
-	 document.getElementById("box01").style.display="none"; 
- }
- function span_show(){ 
-	 document.getElementById("box01").style.display="inline"; 
- }
-</script>
-<br><br>
-
-<div id="box01">
-<span id="sp01">함세강</span>
-<span id="sp02">안시은</span>
-<span id="sp03">김서영</span>
-<span id="sp04">박재영</span>
-<span id="sp05">박민주</span>
-<span id="sp06">김지민</span>
-<span id="sp07">이동원</span>
-   
+<div style="height: 80px;">
+<div id="rotate2D" onmouseover="rotateDIV();">2D rotate</div>
+<div id="rotate3D" onmouseover="rotateYDIV();">3D rotate</div>
 </div>
 
+
 </body>
+
+<script>
+
+  var x,y,n=0,ny=0,rotINT,rotYINT;
+
+function rotateDIV()
+{
+   x=document.getElementById("rotate2D");
+   clearInterval(rotINT);
+   rotINT=setInterval("startRotate()",10);
+}
+function rotateYDIV()
+{
+   y=document.getElementById("rotate3D");
+   clearInterval(rotYINT);
+   rotYINT=setInterval("startYRotate()",10);
+}
+function startRotate()
+{
+   n=n+1;
+   //        transform:rotateX(150deg);
+   x.style.transform="rotate(" + n + "deg)";
+   x.style.webkitTransform="rotate(" + n + "deg)";
+   x.style.OTransform="rotate(" + n + "deg)";
+   x.style.MozTransform="rotate(" + n + "deg)";
+   if (n==180 || n==360)
+   {
+      clearInterval(rotINT);
+   if (n==360){n=0}
+   }
+}
+function startYRotate()
+{
+   ny=ny+1
+   y.style.transform="rotateY(" + ny + "deg)"
+   y.style.webkitTransform="rotateY(" + ny + "deg)"
+   y.style.OTransform="rotateY(" + ny + "deg)"
+   y.style.MozTransform="rotateY(" + ny + "deg)"
+   if (ny==180 || ny>=360)
+   {
+      clearInterval(rotYINT)
+      if (ny>=360){ny=0}
+   }
+}
+
+</script>
 </html>

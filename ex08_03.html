@@ -3,82 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 24. 채영</title>
+<title>2022. 5. 26. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
-div>p {
-	background-color: yellow;
-	padding: 20px;
-	display: none;
-}
-</style>
 
+div{
+ width: 100px;
+ height: 100px;
+ background: pink;
+ text-align: center;
+ 
+ transition: width 2s ease, height 2s ease , transform 2s;
+ 
+ 
+}
+ div:hover{
+  width: 300px;
+  height: 300px;
+  transform:rotate(180deg);
+ }
+
+</style>
 </head>
 <body>
-	<h3>ex08_03.html :js 툴킵 구현</h3>
-
-	<!-- js사용할때 필요 -->
-	<!-- <div onmouseover="div_onmouseover()" onmouseout="div_onmouseout()"> -->
-
-	<div onmouseover="div_onmouseover()" onmouseout="div_onmouseout()">
-		Hover Over me
-		<p>Lorem ipsum dolor sit amet.</p>
-		<p>Expedita a beatae ratione maxime.</p>
-		<p>Iste at quod fugit excepturi.</p>
-
-	</div>
-
-	<script>
-/* function div_onmouseover(){ 	
-	//console.log("onmouseover"); 이벤트 확인
-	//툴팁보이게
-	document.querySelector("div>p:first-child").style.display="block";
-}
-function div_onmouseout(){
-	//console.log("onmouseout"); 
-	//툴팁 안보이게
-	document.querySelector("div>p:first-child").style.display="none";
-} */
-</script>
-
-	<script>
-//jquery사용하기
-/*  $("div").mouseover(function(event) {
- 	$("div>p:first-child").show();
- });
- $("div").mouseout(function(event) {
-	 $("div>p:first-child").hide();	
- }); */
- 
-/*
-   $("div")
-  .mouseover(function(event) {
-	 	// $("div>p:first-child").show(); 
-	 $("p:first-child", this).show();
-	 })
-  .mouseout(function(event) {
-		 $("div>p:first-child").hide();	
-	 });
- 
- */
- 
- $("div").hover(
-	 function(event){ //자동열기함수
-		 $("div>p:first-child").show();
-	 }function(event){ //자동닫기함수
-		 $("div>p:first-child").hide();	
-	 }
- );
-
- 
- 
- 
-
-</script>
-
+<h3>transition 전환 + 변환(이동, 회전, 크기, 기울기)transform</h3>
+<div>box</div>
 </body>
 </html>

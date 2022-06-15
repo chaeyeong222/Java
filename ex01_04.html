@@ -3,60 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 23. 채영</title>
+<title>2022. 5. 26. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
- body{
-   margin:0;
+ div{
+  border: 10px dotted black;
+  padding: 35px;
+  background: yellow url('../images/img_flwr.gif') no-repeat;
+  }
+ #demo1{
+ background-origin: padding-box; /*기본값*/
+ background-clip: padding-box;
  }
- .topnav{
- background-color: #333;
- overflow: auto;
+ #demo2{
+ background-origin: border-box;
+ background-clip:  border-box;  /*기본값*/
  }
- .topnav a{
- color: #f2f2f2;
- text-decoration: none;
- 
- float:left;
- padding: 14px 16px;
- text-align: center;
- }
- .topnav a:hover{
- background-color: #ddd;
- color: black;
- }
- .topnav a.active{
- background-color: #4caf50;
- color:white;
+ #demo3{
+ background-origin: content-box;
+ background-clip: content-box;
  }
 </style>
-
 </head>
 <body>
-
-<!-- div>a[href="#"]*4^div>h2+p -->
-<div class="topnav">
-	<a href="#" class="active">Home</a>
-	<a href="#">News</a>
-	<a href="#">Contact</a>
-	<a href="#">About</a>
-</div>
-<div>
-	<h2 id="tne">Top Navigation Example</h2>
-	<p onclick="p_click();">Lorem ipsum dolor sit amet.</p>
-</div>
-
-<script>
-  //ex01_03.html을 jquery로 수정
- /*  $("선택자") */
-  $("div.topnav a").click(function(event) {
-  	alert("div.topnav a").removeClass("active");
-  	$(this).addClass("active");
-  });
+<h3>ex01_04.html background-origin 속성</h3>
+<pre>
+ background-position: 배경 이미지의 위치 지정하는 속성-> left top, center middle~~
+ background-origin: 배경 이미지의 위치 지정하는 속성
+ 두가지의 차이점?
+ 오리진은 다음과 같은 속성값을 가진다.
+ padding-box 패딩 기본값
+ border-box 테두리
+ content-box 콘텐츠
  
-</script>
- 
+</pre>
+<h3>ex01_04.html background-clip 속성</h3>
+<pre>
+ 배경색이 그려질 위치 지정하는 속성
+ padding-box 패딩     테두리제외
+ border-box 기본값    테두리 도 포함
+ content-box         콘텐츠 부분부터
+</pre>
+
+<!-- (#demo$>h1>lorem5^p>lorem15)*3 -->
+<div id="demo1">
+	<h1>Lorem ipsum dolor sit amet.</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vero inventore cum dolorum neque dolores.</p>
+</div>
+<p></p>
+<div id="demo2">
+	<h1>Obcaecati doloribus illum quas cupiditate.</h1>
+	<p>Asperiores eveniet consequatur harum distinctio quidem ut officia suscipit nesciunt at sed nemo amet quae!</p>
+</div>
+<p></p>
+<div id="demo3">
+	<h1>Aut non corporis officia delectus.</h1>
+	<p>Pariatur quo qui illum facilis fuga aperiam voluptatum tempore necessitatibus molestias sed repudiandae cum quibusdam.</p>
+</div>
+
 
 </body>
 </html>

@@ -3,67 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 25. 채영</title>
+<title>2022. 5. 26. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
-  a{
-    color:red;
-  }
-  p>a{ /*1+1*/
-   color:green;
-  }
-  div>p>a{ /*1+1+1*/
-   color:blue;
-  }
+ div{
+  width:100px;
+  height:100px;
+  background-color: red;
+  
+  /* transition:width 2s height 5s; */
+  transition-property: width; /*전환 속성*/
+  transition-duration: 2s;        /*전환 기간*/
+  transition-timing-fuction:ease;  /*전환 속도 곡선(기본값) 천천시작-빨리-천천종료*/
+  
+  
+  /*
+  linear: 처음~끝 등속
+  ease-in :천천히 시작
+  ease-out :천천히 끝
+  ease-in-out : 천천히 시작 끝
+  
+  
+  */
+  
+ }
+ div:hover{
+  width:300px;
+  height:200px;
+ }
  
-  #mydiv p a{ /*100+1+1*/
-   color: aqua;
-  }
-   div#mydiv p a{ /*1+100+1+1*/
-   color: fuchsia;
-  }
-  a{
-  /*!important 이 규칙에 예외있다. 인라인 스타일 시트 적용 무시*/
-    color:yellow !important;
-  }
- </style>
+ 
+</style>
 </head>
 <body>
-<h3>ex08.html</h3>
+<h3>ex08.html - css 2d/3d변환 transform</h3>
+<h3>ex08.html - css 2d/3d전환 transition</h3>
 
-<pre> 
- css특수성(특이성)?
- 
- 동일한 요소를 가리키는 css 규칙이 두개 이상 있을 경우 
- 어떤 css규칙을 요소에 적용할 것인지..
- 점수로 순위가 정해진다.
- 
- [특이성 수준을 나타내는 점수]
- 1. 인라인 css 적용 : 1000점 (인라인 스타일 적용 방식이 항상 가장 우선순위가 높다)
-   <h1 style="color:red;"></h1>
- 2. id 속성으로  :100점
-    #mydiv{ }
- 3. 태그명, 의사요소 : 1점
- 4. 클래스명, 의사클래스, 속성 선택자: 10점
- 5. *  :0점
- 
- 
- 예)
-  p{}     1점
-  p.test  1+10점
-  p#demo  1+100점
-  #demo  100점
-  .test   10점
-  p.test  1+10=11점
-  p.test1.test2 1+10+10=21점
-  #navbar p#demo     100+1+100=201점   
+<pre>
+ 1. 전환? 주어진 기간 동안 속성값을 부드럽게 변경
+ 2.
+ transition 속성
+ transition-delay 속성
+ transition-duration 속성
+ transition-property 속성
+ transition-timing-function 속성
+ 3.
+ 전환효과를 만들려면 2가지 지정
+  1) 효과를 추가하려는 css 속성
+  2) 효과 지속시간
+    (지속시간을 지정하지 않으면 기본값은 0으로 적용된다)
 </pre>
+<div>
 
-<p><a href="#" class="button">button1</a> </p>
-<div id="mydiv">
-	<p><a href="#" class="button">button2</a></p>
-	<p><a href="#" class="button">button3</a></p>
 </div>
 
 </body>

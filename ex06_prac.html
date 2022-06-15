@@ -48,14 +48,13 @@
 //구글: javascript 시간마다 반복
     var angle=1;
     var timer;
-
+    var radioList = document.getElementsByName("direction");
     
     document.querySelector("button:first-of-type").onclick=function(){
-     //일정한 시간 간격으로 반복적으로 실행
-     //setTimeout();
-    timer = setInterval(div_rotate,10); 
-    //this.style.display="none";   클릭하면 안보이도록
-    //this.disabled="true";
+     this.disabled = "disabled";
+     this.nextElementSibling.disabled = false;
+     clearInterval(timer); 
+     timer = setInterval(div_rotate,10);  
      }
     document.querySelector("button:last-of-type").onclick=function(){
         
@@ -64,8 +63,9 @@
     
  function div_rotate(){
 	 var target=document.querySelector("div");
- 	target.style.transform="rotate("+angle+"deg)";
- 	angle += 1;
+ 	 target.style.transform="rotate("+angle+"deg)";
+ 	 if(radioList[0].checked)  angle += 1;
+ 	 else angle -=1;
  }
  
  

@@ -3,67 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 25. 채영</title>
-<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+<title>2022. 5. 26. - 오후 4:28:20</title>
 <style>
- table{
-  width: 100%;
-  border: 1px solid #ddd;
-  border-spacing: 0;
-  border-collapse: collapse;
+   div{
+      width: 100px;
+      height: 100px;
+      background: red;
+      
+      animation-name: example;
+      animation-duration: 4s;
+      animation-timing-function: linear; /* 등속 */
+      /* animation-iteration-count: infinite; */ /* 횟수로 숫자를 줘도 되고, 무한반복해도 됨*/
+      /* animation-direction: alternate; */ /* alternate : 번갈아 나오는*/
+      /* reverse, normal, alternate, alternate-reverse */
+      animation-delay: 1s; /* 애니메이션 효과를 언제 있다가 시작할 것인가 */
+      
+      /* forwards, backwards, both, none */
+      /* forwards는 마지막 키프레임의 스타일 유지하겠다. */
+      /* backwards는 애니메이션 시작 전의 첫번째 키프렘의 스타일 유지 */
+      
+      animation-fill-mode: both; /* 애니메이션이 재생되지 않을 때(시작전, 종료후) 그 요소의 스타일을 지정하는 속성 */
+      /* fill-mode를 안줬을 때 원위치로 돌아갔음 */
+      
+      position: relative; /* 포지션 속성을 주면 위치도 설정 가능 */
    }
-   th,td{
-   text-align: center;
-   padding:16px;
    
-   }
-   th:first-child, td:first-child{
-   text-align: left;
-   }
-   tr:nth-child(even) {
-	background-color: #f2f2f2;
-}
- .fa-check{color:green}
- .fa-remove{color:red}
+   /* @keyframes 프레임이름(내가지어주는것){ */
+   @keyframes example{
+/*       from{ background-color: red; }
+      to{ background-color: yellow; } */
+         
+/*       0%{ background-color: red; left: 0; top: 0;}
+      25%{ background-color: green; left: 200px; top: 0;}
+      50%{ background-color: blue; left: 200px; top: 200px;}
+      75%{ background-color: red; left: 0; top: 200px;}
+      100%{ background-color: yellow; left: 0; top: 0;} */
+      
+      0%{ background-color: red; left: 0; top: 0;}
+      25%{ background-color: green; left: 200px; top: 0;}
+      100%{ background-color: blue; left: 200px; top: 200px;}
+   }      
+   
 </style>
+</head>
 <body>
-<h3>ex09.html</h3>
+<h3>css 애니메이션 효과 - js, flash</h3>
+<pre>
+- 하나의 스타일에서 다른 스타일로 점차적으로 변환되는 것
+- css 속성
+   @keyframes
+   animation-name
+   animation-duration : 애니메이션 효과를 얼마나 유지할 것인가
+   animation-delay
+   animation-iteration-count
+   animation-direction
+   animation-timing-function
+   animation 약식
 
-<!-- table>(tr>th*3>lorem1)+tr*5>td>{Sample text}^+td*2>i[class="fa fa-check"] -->
-<table>
-	<tr>
-		<th>Lorem.</th>
-		<th>Voluptas.</th>
-		<th>Quo!</th>
-	</tr>
-	<tr>
-		<td>Sample text</td>
-		<td><i class="fa fa-remove"></i></td>
-		<td><i class="fa fa-check"></i></td>
-	</tr>
-	<tr>
-		<td>Sample text</td>
-		<td><i class="fa fa-check"></i></td>
-		<td><i class="fa fa-check"></i></td>
-	</tr>
-	<tr>
-		<td>Sample text</td>
-		<td><i class="fa fa-remove"></i></td>
-		<td><i class="fa fa-check"></i></td>
-	</tr>
-	<tr>
-		<td>Sample text</td>
-		<td><i class="fa fa-check"></i></td>
-		<td><i class="fa fa-check"></i></td>
-	</tr>
-	<tr>
-		<td>Sample text</td>
-		<td><i class="fa fa-remove"></i></td>
-		<td><i class="fa fa-check"></i></td>
-	</tr>
-</table>
+- 첫 단계 : @keyframes 지정
+   keyframe(키프레임) 이란? 특정 시간에 요소가 가지는 스타일
+</pre>
+
+<div>
+
+</div>
 </body>
 </html>

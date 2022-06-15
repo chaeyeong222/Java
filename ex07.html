@@ -3,43 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 25. 채영</title>
+<title>2022. 5. 26. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
- input[type='text']{
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  
-  box-sizing: border-box;
-  
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  
-  background-color: white;
-  background: url('../images/searchicon.png');
-  background-repeat: no-repeat;
-  background-position: 10px center;
-  padding-left: 40px;
-  
-  width:150px;
-  
-  transition:width 0.5s ease;
+ div{
+  width: 300px;
+  height: 100px;
+  background-color: yellow;
+  border: 1px solid black;
  }
- input[type='text']:focus{
- width:80%;
+ #demo{
+  transform:rotateX(45deg);
  }
- 
 </style>
 </head>
 <body>
-<h3>ex07.html</h3>
+<h3>css 3D 변환=transform 속성</h3>
+<button>버튼시작</button>
 
-<!-- 입력값-> 서버전송submit -->
-<form action="" method="get">
- <input type="text" name="search" placeholder="Search..." >
-</form>
+<pre>
+2. 요소이동
+  translateX(), translateY(), translateZ(), translate3d(x,y,z)
+1. 요소회전
+  rotate(), rotateY(),rotateZ(),  rotate3d(x,y,z)
+3. 요소 크기
+  scaleX(),scaleY(),scaleZ(),scale3d(x,y,z)
+
+</pre>
+
+
+<div> Lorem ipsum dolor sit amet.</div>
+<div id="demo">Lorem ipsum dolor sit amet.</div>
+
+<script>
+//구글: javascript 시간마다 반복
+    var angle=1;
+    var timer;
+    document.querySelector("button:first-of-type").onclick=function(){
+   
+    timer = setInterval(div_rotate,10);  
+     } 
+    
+ function div_rotate(){
+	 var target=document.querySelector("#demo");
+	/*  target.style.transform="rotateX("+angle+"deg)";
+ 	target.style.transform="rotateY("+angle+"deg)";
+ 	target.style.transform="rotateZ("+angle+"deg)"; */
+ 	target.style.transform="rotate3d("+angle+"deg,"+angle+"deg,"+angle+"deg,)";
+ 	
+ 	angle += 1;
+ }
+ 
+ 
+ 
+ 
+</script>
 
 </body>
 </html>

@@ -3,43 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 25. 채영</title>
+<title>2022. 5. 26. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
- .dropdown{
-  position: relative; /*중요, 드롭다운 내용의 기준이 되기 위해서.나중에 이동해도 붙어있음*/
-  display: inline-block;
- }
- .dropdown-content{
-   display: none;
-  
+ #grad1{
+  width:200px;
+  height:200px;
+ /*  background-color: red; */
+                                      /*color-stop*/
+                                    
+ /*background-image: linear-gradient(그라데이션 방향, 최소한 두개의 색상 지정)*/
  
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1; 
+/*  background-image: linear-gradient(45deg, red, yellow); */
+/*중심으로부터 부드러운 전환*/ /*간격*/
+ background-image: radial-gradient(circle, red 5%, green 15%, blue 60%);
  }
- .dropdown:hover .dropdown-content{
- display: block;
- }
- 
+
 </style>
 </head>
 <body>
-<h3>css 드롭다운 메뉴</h3>
-<!-- .dropdown>span+.dropdown-content>p -->
-<div class="dropdown">
-	<span>Mouse Over me</span>
-	<div class="dropdown-content">
-		<p>Hello world!</p>
-	</div>
-</div>
-<br>
-js <br>
-css <br>
+<h3>css gradient 효과-변화도, 경사도(도로, 철도의)</h3>
+<pre>
+지정된 색상간의 부드러운 전환(빨-노)
+방향: top-bottom(to bottom), to right, to left, to top 또는 각도(숫자+deg)
+
+ 1. 선형 그라데이션
+ 2. 방사형 그라데이션
+ 3. 원추형 그라데이션
+
+</pre>
+<div id="grad1"></div>
 
 </body>
 </html>

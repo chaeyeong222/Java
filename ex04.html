@@ -3,80 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 25. 채영</title>
+<title>2022. 5. 26. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
-*{
- box-sizing: border-box;
-}
- div.gallery{
- border: 1px solid #ccc;
- width: 180px;
- margin: 5px;
- float: left;
+ p{
+  width:200px;
+  border: 1px solid black;
+  
+  white-space:nowrap; /*내가 개행 안하면 하지마*/
  }
- div.gallery:hover{
-  border: 1px solid #777;
+ p.test1{
+  white-space:nowrap;
+  overflow: hidden; /*넘치면 숨겨라*/
+  text-overflow: clip; 
  }
- div.gallery img{
- width:100%;
+p.test2{
+  white-space:nowrap;
+  overflow: hidden; /*넘치면 숨겨라*/
+  text-overflow: ellipsis; /*넘친거...로 바꿈*/
  }
- div.gallery div.desc{
+ p.test2:hover{
+  overflow: visible;
+ }
+ p.test3{ 
  
- padding: 15px;
- text-align: center;
- }
- .clearfix::after{
-  content:"";
-  clear:both;
-  display: table;
+ word-wrap: break-word; /*한 단어가 너무 길어서 overflow 발생*/
+ 
+ word-break: break-all; /*줄바꿈 규칙 지정*/
  }
 </style>
-
-<style>
- @media screen and (max-width:500px){
-  div.gallery{
-   width:100%;
-   
-  }
- }
-  @media screen and (min-width:500px) and (max-width:700px) {
-  div.gallery{
-   width:48%;
-   
-  }
- }
-</style>
-
-
 </head>
 <body>
-<h3>css 반응형 웹 + 이미지갤러리</h3>
+<h3>ex04.html- css 텍스트 효과</h3>
+<pre>
+ word-wrap
+ word-break
+ text-overflow
+ writing-mode
+</pre>
 
-<!-- .gallery*4>a[target="_blank"]>img^.desc>{Add a description of the image here} -->
-<div class="gallery">
-	<a href="../images/img_5terre.jpg" target="_blank"><img src="../images/img_5terre.jpg" alt="" /></a>
-	<div class="desc">Add a description of the image here</div>
-</div>
-<div class="gallery">
-	<a href="../images/img_forest.jpg" target="_blank"><img src="../images/img_forest.jpg" alt="" /></a>
-	<div class="desc">Add a description of the image here</div>
-</div>
-<div class="gallery">
-	<a href="../images/img_lights.jpg" target="_blank"><img src="../images/img_lights.jpg" alt="" /></a>
-	<div class="desc">Add a description of the image here</div>
-</div>
-<div class="gallery">
-	<a href="../images/img_mountains.jpg" target="_blank"><img src="../images/img_mountains.jpg" alt="" /></a>
-	<div class="desc">Add a description of the image here</div>
-</div>
-
-<div class="clearfix"></div>
-
-<div style="">
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium et fuga veritatis harum sunt optio doloremque aliquam reiciendis ratione soluta officia accusantium ad dolorem laboriosam tempore reprehenderit dolor accusamus maiores.</p>
-</div>
+<!-- p.test$*2>lorem10 -->
+<!-- test-overflow 속성: 표시되지 않는 오버플로우 콘텐츠가
+                       사용자에게 어떻게 신호될지 지정 -->
+<p class="test1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem tempore.</p>
+<p class="test2">Nostrum enim facilis iusto corrupti ex unde minima ut debitis!</p>
+<p class="test3">Nostrum enim facilisustocorruptiexunde minima ut debitis!
+</p>
 
 </body>
 </html>

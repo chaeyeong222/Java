@@ -3,69 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 25. 채영</title>
+<title>2022. 5. 26. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
- #navlist{
-  position: relative;
-  
+ @font-face{
+  font-family: myFirstWebFont;
+  src:url('../images/sansation_bold.woff');
+  font-weight: bold;
  }
- #navlist li{ 
- position: absolute;
- top:0;
- 
- margin:0;
- padding:0;
- 
- list-style-type: none;
- }
- #navlist li, #navlist a{
- height: 44px;
- width: 43px;
-/*  border: 1px solid red; */
- 
- display:block;
- }
- li#home{
-  left:0;
-  background: url("../images/img_navsprites_hover.gif");
- }
- li#prev{
- left:63px;
- background: url("../images/img_navsprites_hover.gif") -47px 0;
- }
- li#next{
- left:129px;
- background: url("../images/img_navsprites_hover.gif") -91px 0;
- }
- 
- li#home:hover{
- background: url("../images/img_navsprites_hover.gif") 0 -45px;
- }
- li#prev:hover{
- background: url("../images/img_navsprites_hover.gif") -47px -45px;
- }
- li#next:hover{
- background: url("../images/img_navsprites_hover.gif") -91px -45px;
- }
-
+ /* *{
+  font-family: myFirstWebFont;
+ } */
 </style>
 </head>
 <body>
-<h3>이미지 스프라이트 image sprites</h3>
 <pre>
- 이미지 스프라이트: 단일 이미지에 넣은 이미지 모음
- 이미지가 많이 사용되는 웹 페이지
- 웹 페이지를 로드하는데 오랜 시간이 걸린다 성능↓
- 서버 이미지 여러번 요청x 여러이미지가 든 파일 한번만 요청
-</pre>
+[css 웹 글꼴]
 
-<!-- ul#navlist>li[id]*3>a[href=#] -->
-<ul id="navlist">
-	<li id="home"><a href="#"></a></li>
-	<li id="prev"><a href="#"></a></li>
-	<li id="next"><a href="#"></a></li>
-</ul>
+클라이언트에 설치되지 않은 글꼴->웹 글꼴->자동으로 웹 서버에서 글꼴 다운로드
+->클라이언트 글꼴 사용 가능
+
+글꼴 파일명
+ttf 트루타입글꼴
+otf 오픈타입글꼴
+woff 웹오픈타입글꼴
+
+</pre>
+<h1>@font-face Rule</h1>
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam dolore.</div>
+<p><b>Note:</b>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At soluta saepe officia consequatur sint dolore praesentium libero voluptatem et qui facilis quos nostrum blanditiis deleniti ducimus. Quaerat blanditiis quod quia!</p>
 </body>
 </html>
