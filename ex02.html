@@ -3,37 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 26. 채영</title>
+<title>2022. 5. 27. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
- #grad1{
-  width:200px;
-  height:200px;
- /*  background-color: red; */
-                                      /*color-stop*/
-                                    
- /*background-image: linear-gradient(그라데이션 방향, 최소한 두개의 색상 지정)*/
+ /*드롭다운메뉴*/
  
-/*  background-image: linear-gradient(45deg, red, yellow); */
-/*중심으로부터 부드러운 전환*/ /*간격*/
- background-image: radial-gradient(circle, red 5%, green 15%, blue 60%);
+ .tooltip{
+   position: relative;
+   border-bottom: 1px dotted black;
+   display: inline-block;
  }
+ 
+ .tooltip .tooltiptext{
+  position: absolute;
+  z-index:1;
+/* 1. 툴팁을 오른쪽에 위치
+  left: 105%;
+  top: -5%; 
+  
+  2. 툴팁을 오른쪽에 위치
+  /* left: -115%; 
+  right: 105%;
+  top: -5%; 
+  
+ 3. 툴팁을 위쪽에 위치
+  bottom: 105%;
+  left:50%; 
+  transform: translateX(-50%);
+  
+   4. 툴팁을 아래쪽에 위치*/
+  top:115%;
+  left:50%;  
+  transform: translateX(-50%);
+  
+  
+  width: 120px;
+  background-color:  black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  visibility: hidden;
+ }
+ .tooltip:hover .tooltiptext{
+	visibility: visible;
+}
+ body{
+  text-align: center;
+ }
+ 
 
 </style>
 </head>
 <body>
-<h3>css gradient 효과-변화도, 경사도(도로, 철도의)</h3>
+<h3>ex02.html- 툴팁tooltip</h3>
 <pre>
-지정된 색상간의 부드러운 전환(빨-노)
-방향: top-bottom(to bottom), to right, to left, to top 또는 각도(숫자+deg)
-
- 1. 선형 그라데이션
- 2. 방사형 그라데이션
- 3. 원추형 그라데이션
-
+ 툴팁? 요소 위에 마우스 올리면
+      그 요소의 추가적인 설명 정보를 보여주는 기능
 </pre>
-<div id="grad1"></div>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+
+<div class="tooltip"> Hover over me
+ <span class="tooltiptext">Tooltip Text</span>
+</div>
+
+
 
 </body>
 </html>

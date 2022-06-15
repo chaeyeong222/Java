@@ -3,32 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 26. 채영</title>
+<title>2022. 5. 27. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<style>
- h1{
- /* color: yellow; */
- /*수평그림자, 수직그림자 지정    blur흐림 그림자색상*/
- /* text-shadow: 2px 2px red; */
- /*다중 그림자 효과 설정*/
-/*  text-shadow: 0 0 3px red, 0 0 10px blue; */
-  color: white;
-  text-shadow: -1px 0 black, 0 -1px black;
- 
- }
- p{
-   width:300px;
-   height:100px;
-   background-color: yellow;
-                        /*흐림 번짐*/
-   box-shadow: 10px 10px 5px 3px gray;
- }
 
-</style>
 </head>
 <body>
-<h1>텍스트 그림자효과 text-shadow</h1>
-<p>박스 그림자효과 box-shadow</p>
+<pre>
+ [뷰포트(Viewport)]
+ 1. 웹 페이지에서 사용자가 볼 수 있는 영역
+ 2. 표시 영역은 디바이스 장치에 따라 화면의 크리가 다르다.
+ 3. 테이블, 스마트폰, 컴퓨터화면 - 뷰포트 다름
+   여러 장치에서 브라우저를 사용해서 웹 페이지를 장치 화면에 맞게 축소확대
+ 4. 장치의 크기 배율에 맞게 웹 페이지의 크기 제어
+  뷰포트 설정
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   width=device-width : 장치의 화면 너비에 따라 웹 페이지 너비 설정
+   initial-scale=1.0 : 브라우저에서 페이지 처음 로드할 때 초기 확대/축소 수준 설정
+
+</pre>
+<pre>
+ [미디어쿼리]
+ css2에 도입 @media 규칙- 다양한 미디어 유형에 따라 서로 다른 스타일 적용 정의
+ 
+ 다양한 미디어 유형- 컴퓨터 화면용, 휴대폰, tv, 프린터용
+ 
+ css3 도입- css2 미디어 유형+확장(인쇄)
+ 
+ 미디어 쿼리는
+   - 뷰포트의 너비/높이 확인
+   - 장치의 너비 높이 확인
+   - 방향(가로 세로)
+   - 
+   
+  미디어 쿼리를 사용해서 반응형 웹 구현
+  
+  미디어 쿼리 형식 -  다양한 미디어 유형에 따라 적용할 스타일 구현
+   @media only not mediatype and(expressions){
+   css-code:
+   
+   only, not 생략->all
+   
+   미디어 쿼리 형식2 
+   <link rel="stylesheet" href="print.css" media="mediatype and|not|only (expression)"/>
+   
+</pre>
+<pre>
+ 예
+ body{ background-color: red}
+ 
+ @media screen and (min-width: 480px){
+ body{background-color: blue}
+ }
+ 
+ 480 미만일 경우 배경색 red
+ 480 이상일 경우 배경색 blue
+</pre>
 </body>
 </html>
