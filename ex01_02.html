@@ -3,47 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 26. 채영</title>
+<title>2022. 5. 27. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
- body{
-  margin:0;
-  font-family: Arial;
-  } 
-  .hero-image{
-   height:500px;
-   background: url('../images/img_man.jpg')no-repeat center;
-   background-size: cover; /* ***** */
-   position:relative;
+  .inputcls{
+   padding:5px;
+   border:1px solid gray;
+   width: 400px;
+   background-color: red;
   }
-  .hero-text{
-   
-   text-align:center;
-   color: white;
-   
-   position:absolute;
-   left:50%;
-   top: 50%;
-   
-   transform:translate(-50%, -50%); 
-  }
- 
 </style>
 </head>
 <body>
-<!-- .hero-image>.hero-text>h1+h3+button -->
-<div class="hero-image">
-	<div class="hero-text">
-		<h1>I am Sam</h1>
-		<h3>Lorem ipsum dolor sit.</h3>
-		<button>Hire me</button>
-	</div>
-</div>
+<h3>ex01_02.html</h3>
 
-<p>Lorem ipsum.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
- Recusandae eligendi consequatur et veniam minus repudiandae eum
- ullam deserunt inventore molestiae modi?</p>
+h3태그의 innerText 입력:
+<input type="text" id="txtMsg" name="txtMsg" autofocus="autofocus" value="안녕" >
+<br />
+<button onclick="btn_click()">Click me!</button>
+
+<p id="demo"></p>
+
+<script>
+ var h3elemt= document.querySelector("h3");
+// h3elemt.innerText=h3elemt.innerText + "-html 내용을 js로 변경";
+ h3elemt.innerText += "-html 내용을 js로 변경";
+ 
+ //js로 input 요소에 class 속성 inputcls를 추가
+ //1번째 방법
+ //document.getElementById("txtMsg").classList.add("inputcls");
+ 
+ //2번째 방법 
+ // document.getElementById("txtMsg").className="inputcls";
+ 
+ //3번째 방법 
+ //document.getElementById("txtMsg").setAttribute("class","inputcls");
+ 
+ 
+ function btn_click() {
+	//alert("xx");
+	 //h3elemt.innerText="버튼클릭됨";
+	 var message =document.getElementById("txtMsg").value;
+	 var pdemo=document.getElementById("demo");
+	 pdemo.innerText = message;
+} 
+ 
+ 
+</script>
+
 </body>
 </html>

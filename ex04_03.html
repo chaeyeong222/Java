@@ -2,20 +2,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022. 5. 27. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </head>
 <body>
-<h3>ex04_03.html</h3>
+<h3>ex04_03.html </h3>
 
-<ol start="11">
- <li>item-1</li>
- <li>item-2</li>
- <li>item-3</li>
- <li type="A">item-4</li> <!-- 중간에 타입 속성 바꿀 수 있음 -->
- <li>item-5</li>
- </ol>
+좋아하는 과목 선택
+<br />
 
+<input type="checkbox" value="kor" name="subject" id="s_kor"/><label for="s_kor">국어</label>
+<input type="checkbox" value="kor" name="subject" id="s_eng"  checked="checked"><label for="s_eng">영어</label>
+<input type="checkbox" value="kor" name="subject" id="s_mat"/><label for="s_mat">수학</label>
+<input type="checkbox" value="kor" name="subject" id="s_pe"/><label for="s_pe">체육</label>
+<br />
+<button>과목확인</button> 
+
+<p id="demo">선택한 과목:</p>
 
 </body>
 </html>

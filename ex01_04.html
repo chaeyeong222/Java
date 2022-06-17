@@ -3,65 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 26. 채영</title>
+<title>2022. 5. 27. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<style>
- div{
-  border: 10px dotted black;
-  padding: 35px;
-  background: yellow url('../images/img_flwr.gif') no-repeat;
-  }
- #demo1{
- background-origin: padding-box; /*기본값*/
- background-clip: padding-box;
- }
- #demo2{
- background-origin: border-box;
- background-clip:  border-box;  /*기본값*/
- }
- #demo3{
- background-origin: content-box;
- background-clip: content-box;
- }
-</style>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </head>
 <body>
-<h3>ex01_04.html background-origin 속성</h3>
+	<h3>ex01_04.html - html요소 속성 변경</h3>
 <pre>
- background-position: 배경 이미지의 위치 지정하는 속성-> left top, center middle~~
- background-origin: 배경 이미지의 위치 지정하는 속성
- 두가지의 차이점?
- 오리진은 다음과 같은 속성값을 가진다.
- padding-box 패딩 기본값
- border-box 테두리
- content-box 콘텐츠
- 
+ 하나의 버튼으로 on/off
 </pre>
-<h3>ex01_04.html background-clip 속성</h3>
-<pre>
- 배경색이 그려질 위치 지정하는 속성
- padding-box 패딩     테두리제외
- border-box 기본값    테두리 도 포함
- content-box         콘텐츠 부분부터
-</pre>
+	<button onclick="bulb_on_off( this );">Turn on</button>
+	<img src="../images/pic_bulboff.gif" alt="" id="imgbulb" />
 
-<!-- (#demo$>h1>lorem5^p>lorem15)*3 -->
-<div id="demo1">
-	<h1>Lorem ipsum dolor sit amet.</h1>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vero inventore cum dolorum neque dolores.</p>
-</div>
-<p></p>
-<div id="demo2">
-	<h1>Obcaecati doloribus illum quas cupiditate.</h1>
-	<p>Asperiores eveniet consequatur harum distinctio quidem ut officia suscipit nesciunt at sed nemo amet quae!</p>
-</div>
-<p></p>
-<div id="demo3">
-	<h1>Aut non corporis officia delectus.</h1>
-	<p>Pariatur quo qui illum facilis fuga aperiam voluptatum tempore necessitatibus molestias sed repudiandae cum quibusdam.</p>
-</div>
+	<script>
+		function bulb_on_off( btn) {
+		 //turn on -> 전구 불 켜기 
+		 //turn off-> 전구 불 끄기
+		 //alert(btn.innerText);
+		 //java코딩 equals() 
+		  let bulb = document.getElementById("imgbulb"); 
+		 
+		 if (btn.innerText =="Turn on") {
+			
+			 bulb.src = "../images/pic_bulbon.gif";
+			 btn.innerText="Turn off";
+		} else { 
+			 bulb.src = "../images/pic_bulboff.gif";
+			 btn.innerText="Turn on";
 
-
+		}
+		}
+	</script>
 </body>
 </html>

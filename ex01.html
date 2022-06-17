@@ -6,82 +6,37 @@
 <title>2022. 5. 27. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<style>
- .loader{
-  width:120px;
-  height: 120px;
-  border: 16px solid #f3f3f3;
-  border-top-color: red;
-  border-radius: 50%;
-  
-  animation: spin 1.5s linear infinite;
- 
- }
- @keyframes spin{
-  /* css 2d/3d transform(변환),transition(전환) */
-  from {transform:rotate(0deg);}
-  to{transform:rotate(360deg);}
- }
- 
-</style>
 
-<style>
- img{
- width:150px;
- border: 1px solid gray;
- padding: 5px;
- border-radius: 4px;
- 
- }
- img:hover{
-  box-shadow: 0 0 2px 1px rgba(0,240,186,0.5); /*수평 수직 번짐 흐림 그림자색*/
-  
-  animation:shake 0.5s infinite;
- }
- @keyframes shake{
-  0% {transform: translate (1px, 1px)rotate(0deg);}
-  10% {transform: translate (3px, 2px)rotate(1deg);}
-  20% {transform: translate (-1px, -1px)rotate(-1deg);}
-  30% {transform: translate (1px, 0px)rotate(1deg);}
-  40% {transform: translate (3px, 3px)rotate(0deg);}
-  50% {transform: translate (-2px, 1px)rotate(1deg);}
-  60% {transform: translate (1px, 0px)rotate(-1deg);}
-  70% {transform: translate (1px, -1px)rotate(0deg);}
-  80% {transform: translate (0px, 1px)rotate(1deg);}
-  90% {transform: translate (3px, -2px)rotate(0deg);}
-  100% {transform: translate (1px, 2px)rotate(-1deg);}
- }
- 
-</style>
 </head>
 <body>
-<h3>css 애니메이션 로딩이미지 처리</h3>
-<div class="loader"></div>
-
-
-<h3>이미지(창) 흔들기</h3>
-
-<img src="../images/pineapple.jpg" alt="" />
-<img src="../images/pineapple.jpg" alt="" />
-<img src="../images/pineapple.jpg" alt="" />
-<img src="../images/pineapple.jpg" alt="" />
-<img src="../images/pineapple.jpg" alt="" />
-<img src="../images/pineapple.jpg" alt="" />
-<img src="../images/pineapple.jpg" alt="" />
-<img src="../images/pineapple.jpg" alt="" />
-<img src="../images/pineapple.jpg" alt="" />
-<img src="../images/pineapple.jpg" alt="" />
-
-<img src="../images/pineapple.jpg" alt="" />
-<img src="../images/pineapple.jpg" alt="" />
-<img src="../images/pineapple.jpg" alt="" />
-<img src="../images/pineapple.jpg" alt="" />
-<img src="../images/pineapple.jpg" alt="" />
-<img src="../images/pineapple.jpg" alt="" />
-<img src="../images/pineapple.jpg" alt="" />
-<img src="../images/pineapple.jpg" alt="" />
-<img src="../images/pineapple.jpg" alt="" />
-<img src="../images/pineapple.jpg" alt="" />
-
+<h3> javascript.ex01</h3>
+<pre>
+ [자바스크립트 javascript]
+ 1. 객체 기반의 스크립트 프로그래밍 언어
+ 2. 목적: 웹 페이지에서 사용자의 반응 처리
+         사용자의 특정 이벤트나 입력값을 받아서 동적으로 처리할 목적으로 고안된 언어
+ 3. html - 웹 페이지 구조(내용) 정의
+    css - 웹 페이지의 레이아웃 (스타일) 정의  
+    javascript - 웹 페이지의 동작처리 정의
+       ㄱ. html 내용 변경  ex01_02.html
+       ㄴ. html 속성 변경  ex01_03/04/05.html
+       ㄷ. html 스타일css 변경  ex01_06.html
+       ㄹ. html 요소 숨기기/보이기
+ 4. 사용자 경험(UX) / UI
+ 5. js 는 주로 웹 브라우저(클라이언트)에서 주로 사용되는 언어였으나
+    지금은 서버 측 프로그램 개발 사용(확대)  -node.js
+ 6. js 다운로드/설치x -> 브라우저에 내장 js 엔진
+                      브라우저 종류/버전에 따라 js안되기도 함
+ 7. 자바 스크립트 표준: ECMAScript 에크마 스크립트
+   표준 공식 이름: ECMA-262
+ 8. js는 <script></script>태그 안에 코딩한다.
+ <script type="text/javascript" language=""></script>
+ 9. <script></script> 태그는 원하는 위치에 원하는 수만큼 사용할 수 있다/
+ 10. 동일한 코드가 여러 페이지에서 반복적으로 사용된다면
+ 외부 자바스크립트 파일(???.js)
+ 11. 외부 자바 스크립트 파일 사용(장점)
+   -  html 코딩과 js 코딩 분리 관리 - 유지 보수 확장 용이
+   - 캐싱된 js파일:페이지 로드 속도 향상
+</pre>
 </body>
 </html>

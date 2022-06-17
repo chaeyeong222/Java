@@ -3,53 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 26. 채영</title>
+<title>2022. 5. 27. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<style>
- p{
-  width:200px;
-  border: 1px solid black;
-  
-  white-space:nowrap; /*내가 개행 안하면 하지마*/
- }
- p.test1{
-  white-space:nowrap;
-  overflow: hidden; /*넘치면 숨겨라*/
-  text-overflow: clip; 
- }
-p.test2{
-  white-space:nowrap;
-  overflow: hidden; /*넘치면 숨겨라*/
-  text-overflow: ellipsis; /*넘친거...로 바꿈*/
- }
- p.test2:hover{
-  overflow: visible;
- }
- p.test3{ 
- 
- word-wrap: break-word; /*한 단어가 너무 길어서 overflow 발생*/
- 
- word-break: break-all; /*줄바꿈 규칙 지정*/
- }
-</style>
+
 </head>
 <body>
-<h3>ex04.html- css 텍스트 효과</h3>
-<pre>
- word-wrap
- word-break
- text-overflow
- writing-mode
-</pre>
+<h3>ex04.html</h3>
 
-<!-- p.test$*2>lorem10 -->
-<!-- test-overflow 속성: 표시되지 않는 오버플로우 콘텐츠가
-                       사용자에게 어떻게 신호될지 지정 -->
-<p class="test1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem tempore.</p>
-<p class="test2">Nostrum enim facilis iusto corrupti ex unde minima ut debitis!</p>
-<p class="test3">Nostrum enim facilisustocorruptiexunde minima ut debitis!
-</p>
+<fieldset>
+ <legend>성별</legend>
+ 											<!-- 여자 남자 눌러도 라디오 버튼이랑 체크(동기화) -->												
+ <input type="radio" name="gender" id="g_male" checked="checked" value="male"><label for="g_male">남자</label>
+ <input type="radio" name="gender" id="g_female" value="female"><label  for="g_female">여자</label>
+</fieldset>
+
+<br />
+<button onclick="test()">성별확인</button>
+<pre>라디오 버튼을 남/여 어떤것을 체크했는지 확인</pre>
+
+<p id="demo">성별출력:</p>
+
+<script>
+
+ function test(){
+	 
+  //console.log("남자 라디오 버튼:"+document.getElementById("g_male").checked);
+  //console.log("여자 라디오 버튼:"+document.getElementById("g_female").checked);
+  
+  //if(document.getElementById("g_male").checked)   document.getElementById("demo").innerText="남자";
+  //if(document.getElementById("g_female").checked)  document.getElementById("demo").innerText="여자";
+  //문제점 : 라디오 버튼 100 개일때.
+	
+  
+  //css속성 선택자
+  var genderRadios= document.querySelectorAll("[name='gender']");
+  //alert(genderRadios);
+  for (var i = 0; i < genderRadios.length; i++) {
+	if(genderRadios[i].checked){
+		//document.getElementById("demo").innerText = genderRadios[i].value;
+		document.getElementById("demo").innerText = genderRadios[i].nextElementSibling.innerText;
+		break;
+		
+	}
+}
+ };
+
+ 
+ 
+ 
+
+ /* css/days06/ex06.html js코딩마무리 */
+ 
+ </script>
+
+
 
 </body>
+
+
+
 </html>
