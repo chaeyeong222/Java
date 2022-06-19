@@ -3,62 +3,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 26. 채영</title>
+<title>2022. 5. 30. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
- div{
-  width: 300px;
-  height: 100px;
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+  }
+
+input[type=text] {
+	border: 1px solid gray;
+	padding: 5px;
+	font-size: 20px;
+	margin: 10px;
+	width: 90%;
+  }
+  
+  /*의사클래스 (특정상태)*/
+  input[type=text]:focus {
   background-color: yellow;
-  border: 1px solid black;
- }
- #demo{
-  transform:rotateX(45deg);
- }
+  }
 </style>
 </head>
-<body>
-<h3>css 3D 변환=transform 속성</h3>
-<button>버튼시작</button>
-
-<pre>
-2. 요소이동
-  translateX(), translateY(), translateZ(), translate3d(x,y,z)
-1. 요소회전
-  rotate(), rotateY(),rotateZ(),  rotate3d(x,y,z)
-3. 요소 크기
-  scaleX(),scaleY(),scaleZ(),scale3d(x,y,z)
-
-</pre>
-
-
-<div> Lorem ipsum dolor sit amet.</div>
-<div id="demo">Lorem ipsum dolor sit amet.</div>
-
+<!--body요소 load, unload 이벤트 이해-->
+<!-- 
+focus: 초점 맞출 때 일어나는 이벤트 
+blur: 초점 잃을 때 일어나는 이벤트
+ -->
+<!-- 
+ keydown 키보트 누를 때 ctrl,f1 인식o 대소문자 구분x, 취소 가능
+ keypress press 누르다  ctrl,f1 인식x 대소문자 구분o, ascii 한글x 취소 가능
+ 이벤트 먼저 발생시키고 + 'A'
+ 
+ keyup 키보드 놓을 때
+ 문자+이벤트 발생
+ -->
+<body onload="init()">
+	<h3>ex07.html</h3>
+	<input type="text"  onkeydown="txt1_keydown()"
+	id="txtbox1" tabindex="1"
+	onkeypress="" onkeyup=""
+	 onfocus="" onblur="">
+	          <!-- tab키 누르면서 이동가능하게끔 -->
+<br />
+	<input type="text" id="txtbox2"  tabindex="2">
+	
 <script>
-//구글: javascript 시간마다 반복
-    var angle=1;
-    var timer;
-    document.querySelector("button:first-of-type").onclick=function(){
-   
-    timer = setInterval(div_rotate,10);  
-     } 
-    
- function div_rotate(){
-	 var target=document.querySelector("#demo");
-	/*  target.style.transform="rotateX("+angle+"deg)";
- 	target.style.transform="rotateY("+angle+"deg)";
- 	target.style.transform="rotateZ("+angle+"deg)"; */
- 	target.style.transform="rotate3d("+angle+"deg,"+angle+"deg,"+angle+"deg,)";
- 	
- 	angle += 1;
+
+ function init(){
+	document.getElementById("txtbox1").focus();
+}
+ function txt1_keyup(){ 
+	 document.getElementById("txtbox2").value
+	    = document.getElementById("txtbox1").value
  }
  
  
- 
- 
+/*  function txt1_keydown(){ }*/
+	 function txt1_keypress(){
+	 //event객체
+	 //event.keyCode 13(enter) 16(shift) 38(F1) a/A(65)
+	 document.getElementById("txtbox2").value
+	    = event.keyCode + "("+String.fromCharCode(event.keyCode)+")"
+	    +"/"+event.shiftKey; 
+ }
 </script>
-
+	
 </body>
 </html>

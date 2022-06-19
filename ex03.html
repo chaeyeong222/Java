@@ -3,57 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 27. 채영</title>
+<title>2022. 5. 30. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-<h3> ex03.html </h3>
-<pre>
- [js 데이터 출력 기능]
- 1. document.write();
- 2. window.alert() - 경고창으로 데이터 출력
-    alert()
- 3. console.log() - 브라우저 콘솔 창에 데이터 출력(디버깅 목적)
- 4. innerText  -  div, p html 요소 출력   ==text()
-    innerHTML  -  div, p html 요소 출력   ==html()
-     
-</pre>
+<script>
+let x= 5+3;
 
-<p id="demo">p</p>
+ //alert(x);//8
+
+ //let y = "5"+3; //string +number      53  -> 문자열
+ let y = 2+3+"5"; //+      --------->   55   -> 문자열
+ //alert(y); //
+ 
+ 
+ //$변수 선언할 수 있다.
+ let $money = 5;
+ alert($money);
+
+</script>
 
 <script>
-  /* var html="<p style='color:red;border:1px solid gray'>demo</p>"; */
-  var html="<table border='1' width:'300'>";
-  html +="<tr>";
-  html +="<th>deptno</th><th>dname</th><th>loc</th>";
-  html +="</tr>";
-  html +="<tr>";
-  html +="<td>10</td><td>dname</td><td>loc</td>";
-  html +="</tr>";
-  html +="<tr>";
-  html +="<td>20</td><td>dname</td><td>loc</td>";
-  html +="</tr>";
-  html +="<tr>";
-  html +="<td>30</td><td>dname</td><td>loc</td>";
-  html +="</tr>";
-  html +="<tr>";
-  html +="<td>40</td><td>dname</td><td>loc</td>";
-  html +="</tr>";
-  html +="</table>";
-  
-  //[js는 대소문자 구분한다.]
-  document.getElementById("demo").innerHTML;
-  //document.getElementById("demo").innerText=html; //ctrl+alt+방향키
+  let age = 20;
   
   
-  console.log(html);
+  //에러: uncaught syntaxerror; -> 2015년 부터는 재선언 안됨. let, const...
+  let age;
+  alert(age);
+
 
 
 </script>
 
 
 
+ <script>
+  var name="홍길동";
+  
+  alert(name);
+  
+  var name;
+  
+  //변수를 다시 선언해도 값이 손실되지 않는다
+  
+ </script>
+
+<script>
+ var data;
+ 
+ // alert(data);     undefined 변수만 선언하고 값 할당 안하면 이렇게 뜸
+ 
+// data = "admin";       // admin   10     3.14
+ //alert(typeof(data));  //string, number   number   boolean
+</script>
 </body>
 </html>

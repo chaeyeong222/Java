@@ -3,37 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 26. 채영</title>
+<title>2022. 5. 30. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
- div{
-  width: 100px;
-  background: red;
-  margin-bottom: 3px;
-  
-  transition: width 2s;
-  
-  transition-delay:1s;
+ input[type=text]{
+ text-align: center;
  }
- div:hover{
- width:100%;
- }
- 
-  div:nth-child(1){transition-timing-function:ease;}
-  div:nth-child(2){transition-timing-function:linear;} 
-  div:nth-child(3){transition-timing-function:ease-in;} 
-  div:nth-child(4){transition-timing-function:ease-out;} 
-  div:nth-child(5){transition-timing-function:ease-in-out;}
- 
 </style>
 </head>
 <body>
-<div>ease(default)</div>
-<div>linear</div>
-<div>ease-in</div>
-<div>ease-out</div>
-<div>ease-in-out</div>
+주민등록번호<br>
+
+<input type="text" id="rrn6" onkeyup="rrn6_keyup()" autofocus="autofocus"> 
+-
+<input type="text" id="rrn7" onkeyup="rrn7_keyup()">
+<br />
+<pre>
+ 6자리 입력하면 자동으로 다음 창으로 focus이동하게끔
+ 7자리 입력하면 자동으로 demo로 입력받은 주민등록번호를 출력하도록하기.
+</pre>
+
+<p id="demo"></p>
+<script>
+ function rrn6_keyup(){
+	 //엔터를치면 rrn7텍스트박스로 포커스 입력
+	 //if(event.keyCode==13){
+      //rrn6 텍스트 박스에 입력한 숫자의 길이가 6글자면  
+	if( document.getElementbyId('rrn6').value.length>=6 ){
+		document.getElementById('rrn7').focus(); 
+	 }//if
+	 
+ }//fuc~
+ function rrn7_keyup(){
+	 //엔터를치면 rrn7텍스트박스로 포커스 이동
+	 //if(event.keyCode==13){
+	 if( document.getElementbyId('rrn7').value.length>=7 ){
+		document.getElementById('demo').innerText = 
+			document.getElementById('rrn6').value + 
+			"-" + document.getElementById('rrn7').value;
+	 }//if
+	 
+ }
+</script>
 
 </body>
 </html>

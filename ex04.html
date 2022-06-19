@@ -3,64 +3,85 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 27. 채영</title>
+<title>2022. 5. 30. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-<h3>ex04.html</h3>
+<h3>ex04.html- let 키워드 설명</h3>
+<pre>
+  [let 키워드 ]
+  1. 변수 선언
+  2. ES6(2015년)사용
+  3. let 재선언x
+  4. let 에는 블럭범위를 제공한다.
+  
+  [js const 언제 사용하는가?]
+  새로운 ( 배열, 객체, 함수, 정규표현식)
+</pre>
 
-<fieldset>
- <legend>성별</legend>
- 											<!-- 여자 남자 눌러도 라디오 버튼이랑 체크(동기화) -->												
- <input type="radio" name="gender" id="g_male" checked="checked" value="male"><label for="g_male">남자</label>
- <input type="radio" name="gender" id="g_female" value="female"><label  for="g_female">여자</label>
-</fieldset>
-
-<br />
-<button onclick="test()">성별확인</button>
-<pre>라디오 버튼을 남/여 어떤것을 체크했는지 확인</pre>
-
-<p id="demo">성별출력:</p>
+<script>
+ const PI =3.141592;
+ 
+ //PI=3.14; const라고 선언한 변수에는 값 할당 불가.
+</script>
 
 <script>
 
- function test(){
-	 
-  //console.log("남자 라디오 버튼:"+document.getElementById("g_male").checked);
-  //console.log("여자 라디오 버튼:"+document.getElementById("g_female").checked);
+ // error 남 -> let으로 선언한 변수는 js호이스팅 안됨. 순서대로 해.
+ firstName = "chaeyeong";
+ 
+ let firstName;
+ alert(firstNAme);
+ 
+</script>
+
+
+<script>
+  //js 호이스팅 -> 브라우저가 자동으로 변수를 값 할당하는 곳으로 올리는 것.
+  carName ="volvo";// 1.값 할당
+
+
+  var carName;//2.carName변수 선언
   
-  //if(document.getElementById("g_male").checked)   document.getElementById("demo").innerText="남자";
-  //if(document.getElementById("g_female").checked)  document.getElementById("demo").innerText="여자";
-  //문제점 : 라디오 버튼 100 개일때.
-	
-  
-  //css속성 선택자
-  var genderRadios= document.querySelectorAll("[name='gender']");
-  //alert(genderRadios);
-  for (var i = 0; i < genderRadios.length; i++) {
-	if(genderRadios[i].checked){
-		//document.getElementById("demo").innerText = genderRadios[i].value;
-		document.getElementById("demo").innerText = genderRadios[i].nextElementSibling.innerText;
-		break;
-		
-	}
-}
- };
+  alert(carName);
 
+</script>
+<script>
+ var z=100;
  
+ //블럭범위
+ {
+	 var z = 200;
+	 console.log("1:"+z); //1:200
+	 	 
+ }
  
+ console.log("1:"+z); //1:200
+</script>
+<script>
+ //지역 나누고 let 선언
+ let z=100;
  
+ //블럭범위
+ {
+	 let z = 200;
+	 console.log("1:"+z); //1:200
+	 	 
+ }
+ {
+	 let z = 300;
+	 console.log("1:"+z); //1:300
+	 	 
+ }
+ console.log("1:"+z); //1:100
+</script>
 
- /* css/days06/ex06.html js코딩마무리 */
+<script>
+ let x = "admin";
  
- </script>
-
-
+</script>
 
 </body>
-
-
-
 </html>
