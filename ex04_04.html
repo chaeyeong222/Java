@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022. 6. 3. 채영</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+<select id="cmbyear" onchange="changeDate()"></select>
+<select id="cmbmonth" onchange="changeDate()"></select>
+<select id="cmbdate"></select>
+ 
+ <script>
+ //cmbyear
+ var cmbyear = document.getElementById("cmbyear");
+ for (var y = 1970; y <= 2050; y++) {
+	 //js option 객체
+	//cmbyear.options[0] = new Option(1970,1970); 
+	//cmbyear.options[1] = new Option(1971,1971); 
+	//js 선택된 옵션 객체 Option(text,value,defaultSelected, selected);
+	if(y==2022){
+		cmbyear.options[y-1970] = new Option(y,y,true,true); 
+	}else{
+		cmbyear.options[y-1970] = new Option(y,y); 
+	}
+}//for 
+	 
+	 //cmbmonth
+	var cmbmonth = document.getElementById("cmbmonth");
+	for (var m = 1; m <= 12; m++) {
+		cmbmonth.options[m-1] = new Option(m,m);
+		
+	}
+	cmbmonth.selectedIndex=6-1;
+	
+	 // cmbdate 채우기
+	   function getLastDay(year, month) {
+	      var d = new Date(year, month);
+	      d.setDate(0); // Tip! setDate에 0을 주면 하루를 뺀다.
+	      return d.getDate(); 
+	   }
+
+	
+	
+	//cmbdate
+	var cmbdate = document.getElementById("cmbdate");
+	var lastday = getLastDay(2022,6);
+	for (var d = 1; d <= lastday; d++) {
+		cmbdate.options[d-1] = new Option(d,d);
+		
+	}
+	cmbdate.selectedIndex=3-1;
+	
+
+ </script>
+ <script>
+  function changeDate(){
+	  year= cmbyear.options[cmbyear.selectedIndex].value;
+	  month=cmbmonth.options[cmbmonth.selectedIndex].value;
+	  
+	 // alert(year + "/" + month);
+	  var lastday= getLastDay(year,month);
+	  
+	  
+	  //이전에 있던 option 태그 제거
+	  cmbdate.innerHTML = "";
+	  for (var d = 1; d <=lastday; d++) {
+		cmbdate.options[d-1] = new Option(d,d);
+	}
+  }
+ </script>
+ 
+</body>
+</html>

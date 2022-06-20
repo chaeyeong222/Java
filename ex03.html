@@ -3,60 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 30. 채영</title>
+<title>2022. 6. 3. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-<script>
-let x= 5+3;
+<h3> ex03.html -선택에 따라 배경색 변경</h3>
 
- //alert(x);//8
+<select onchange="test(this);">
+	<option>선택하세요</option>
+	<option value="red">빨강</option>
+	<option value="pink">분홍</option>
+	<option value="skyblue">하늘</option>
+	<option value="gray">회색</option>
+</select>
 
- //let y = "5"+3; //string +number      53  -> 문자열
- let y = 2+3+"5"; //+      --------->   55   -> 문자열
- //alert(y); //
- 
- 
- //$변수 선언할 수 있다.
- let $money = 5;
- alert($money);
-
-</script>
+<p id="demo"> red/빨강</p>
 
 <script>
-  let age = 20;
-  
-  
-  //에러: uncaught syntaxerror; -> 2015년 부터는 재선언 안됨. let, const...
-  let age;
-  alert(age);
+function test( sel  ){
+	// 선택된 옵션의 인덱스값
+	var idx = sel.selectedIndex;
+	//선택된 옵션의 value,text
+	var value = sel.options[idx].value;
+	var text = sel.options[idx].text;
+	
+	$("#demo").html(`value=${value}/text=${text}/index=${idx}`);
+	
+	document.bgColor = value;
+}
 
-
-
-</script>
-
-
-
- <script>
-  var name="홍길동";
-  
-  alert(name);
-  
-  var name;
-  
-  //변수를 다시 선언해도 값이 손실되지 않는다
-  
- </script>
-
-<script>
- var data;
- 
- // alert(data);     undefined 변수만 선언하고 값 할당 안하면 이렇게 뜸
- 
-// data = "admin";       // admin   10     3.14
- //alert(typeof(data));  //string, number   number   boolean
 </script>
 </body>
 </html>

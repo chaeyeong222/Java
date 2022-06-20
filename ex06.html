@@ -3,51 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 30. 채영</title>
+<title>2022. 6. 3. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-<h3> ex06.html - js data type 데이터 유형</h3>
 
-<pre>
-  [js data type 데이터 유형]
-  1. number
-  2. string
-  3. boolean
-  4. object - js array 배열 [], js object 객체 {}
-  5. function
-
-</pre>
-
-
+<h3> math 객체 - 수학관련된 속성, 메서드</h3>
 <script>
-
-  /* age = 123e5; //12300000
-
- let age = 20;
-  //alert(typeof age); 똑같음
- alert(typeof (age));
-  //js배열은 대괄호 사용한다.
-  const cars = [];  //js배열 => 타입은 object
-  alert(typeof cars); */
-  
-  const m = [1,2,3];
-  
-  alert(m[0]);
-  alert(m[1]);
-  alert(m[2]);
-  
-  //js객체는 중괄호 사용한다 {}
-  //const person = {};
-  //alert(typeof person);
-  const person = {name: "admin", age:20};
-  alert(person.name);
-  
-  
-
-</script>
-
+ document.write(Math.PI + "<br>");
+ document.write(Math.abs(-100) + "<br>");
+ document.write(Math.sqrt(2) + "<br>");
+ document.write(Math.pow(2,3) + "<br>");
+ document.write((2**3) + "<br>");
+ 
+ document.write(Math.round(3.1415) + "<br>");
+ document.write(Math.ceil(3.1415) + "<br>");
+ document.write(Math.floor(3.1415) + "<br>");
+ 
+ //es6도입 - 정수부분 반환
+ document.write(Math.trunc(3.1415) + "<br>");
+ document.write(Math.trunc(-4.2) +"/"+Math.floor(-4.2)+ "<br>");
+ 
+ document.write(Math.sign(3.1415) + "<br>");
+ 
+ document.write(Math.max(0,5,8,100,12) + "<br>");
+ document.write(Math.min(0,5,8,100,12) + "<br>");
+ 
+</script> 
 </body>
 </html>

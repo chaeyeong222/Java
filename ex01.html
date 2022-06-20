@@ -3,70 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 30. 채영</title>
+<title>2022. 6. 3. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
- <pre>
- 1. javascript 누가 실행? html 문서 안에 <script></script> => 웹브라우저에서 실행
- 2. 작성된 순서대로 하나씩 실해오딘다.
- 3. 실행문(명령문) 뒤에 세미콜론을 추가.
-    js는 세미콜론 안붙여도 무관. 붙이는 걸 권장
- 4. js는 여러 공백은 무시한다.
- 5. js 예약어( 키워드)
-   var
-   let
-   const
-   if
-   for
-   function
-   
-    abstract   arguments   await*   boolean
-	break   byte   case   catch
-	char   class*   const   continue
-	debugger   default   delete   do
-	double   else   enum*   eval
-	export*   extends*   false   final
-	finally   float   for   function
-	goto   if   implements   import*
-	in   instanceof   int   interface
-	let*   long   native   new
-	null   package   private   protected
-	public   return   short   static
-	super*   switch   synchronized   this
-	throw   throws   transient   true
-	try   typeof   var   void
-	volatile   while   with   yield
-	
-	java 상수, 리터럴 구분
-	final double PI=3.14
-	
-	6. 리터럴(고정값)  3.14
-	7. java 문자 char 'A' 문자열 String "admin"
-	    js 문자/문자열 쌍/홑따옴표 구분안함
-	    (안에 문자열에 ' 포함돼있으면 바깥에는 "  권장)
-	8. 대소문자 구분함
-	9. js 변수 선언할 때 
-	   firstName
+   <p id="demo"></p>
+<pre>
+ indexOf() 
+ lastIndexOf()
+</pre>
+<script> 
+var m = [45, 4, 9, 16, 25];
+/* for in
+ for (var idx in m) {
+	console.log(idx + "/" + m[idx]); //인덱스, 값
+} */
 
-
- </pre>
-
-<script>
- var x;
- var y;
- var z;
+//각요소 반복문 for of
+/*  for (let elt of m) {
+	console.log(elt);
+}
+ */
  
- x=10;
- y=20;
- z=x+y;
+ m.entries();
+ for (let x of e) {
+	 console.log(x); // [0,45]
+	
+}
+
+ //m.indexOf(16,0); //0번째 요소부터 16 찾기 //3
  
- document.write(z);
+ 
+ 
  
 </script>
- 
- 
 </body>
 </html>

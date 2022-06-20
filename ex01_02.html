@@ -3,54 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 27. 채영</title>
+<title>2022. 6. 3. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<style>
-  .inputcls{
-   padding:5px;
-   border:1px solid gray;
-   width: 400px;
-   background-color: red;
-  }
-</style>
+
 </head>
 <body>
 <h3>ex01_02.html</h3>
 
-h3태그의 innerText 입력:
-<input type="text" id="txtMsg" name="txtMsg" autofocus="autofocus" value="안녕" >
-<br />
-<button onclick="btn_click()">Click me!</button>
-
-<p id="demo"></p>
-
 <script>
- var h3elemt= document.querySelector("h3");
-// h3elemt.innerText=h3elemt.innerText + "-html 내용을 js로 변경";
- h3elemt.innerText += "-html 내용을 js로 변경";
+
  
- //js로 input 요소에 class 속성 inputcls를 추가
- //1번째 방법
- //document.getElementById("txtMsg").classList.add("inputcls");
- 
- //2번째 방법 
- // document.getElementById("txtMsg").className="inputcls";
- 
- //3번째 방법 
- //document.getElementById("txtMsg").setAttribute("class","inputcls");
- 
- 
- function btn_click() {
-	//alert("xx");
-	 //h3elemt.innerText="버튼클릭됨";
-	 var message =document.getElementById("txtMsg").value;
-	 var pdemo=document.getElementById("demo");
-	 pdemo.innerText = message;
-} 
- 
- 
-</script>
+ </script>
 
 </body>
 </html>

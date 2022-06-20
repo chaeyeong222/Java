@@ -3,38 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 26. 채영</title>
+<title>2022. 6. 3. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<style>
-.card{
- width:250px;
- text-align: center;
 
- box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-.header{
- background: #4caf50;
- color: white;
- padding: 10px;
- font-size: 40px;
- 
-}
-.container{
- padding: 10px;
-}
-</style>
 </head>
 <body>
-<!-- .card>.header>h1>{7}^^img+.container>p -->
-<div class="card">
-<!-- 	<div class="header">
-		<h1>26</h1>
-	</div> -->
- 	<img src="../images/rocks.jpg" style="width:100%" alt="" />  
-	<div class="container">
-		<p>2022.05</p>
-	</div>
-</div>
+<h3>ex03_02.html - 동적으로 만들기</h3>
+<script>
+//jquery -> select, p,.. 전부 동적으로 만들기
+//1. 배경색을 선택할 수 있는 select 요소를 동적으로 생성하기
+ var $sel = $("<select></select>"); //jquery 객체에 담아둠
+ $("body").append($sel);
+
+ var colors = ["white","pink","green","skyblue"];
+ //배열명.forEach()
+ colors.forEach(function(elt, i, array) {
+ 	$sel.append( "<option value="+ elt +">"+ elt +"</option>"  );
+ })
+ 
+ $sel.change(function(event){
+	document.bgColor = $(this).val();
+	//$(this options:selected).text() == var text = sel.options[idx].text
+ })
+ 
+ </script>
+
 </body>
 </html>

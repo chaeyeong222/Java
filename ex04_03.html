@@ -3,25 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 27. 채영</title>
+<title>2022. 6. 3. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-<h3>ex04_03.html </h3>
-
-좋아하는 과목 선택
-<br />
-
-<input type="checkbox" value="kor" name="subject" id="s_kor"/><label for="s_kor">국어</label>
-<input type="checkbox" value="kor" name="subject" id="s_eng"  checked="checked"><label for="s_eng">영어</label>
-<input type="checkbox" value="kor" name="subject" id="s_mat"/><label for="s_mat">수학</label>
-<input type="checkbox" value="kor" name="subject" id="s_pe"/><label for="s_pe">체육</label>
-<br />
-<button>과목확인</button> 
-
-<p id="demo">선택한 과목:</p>
-
+<h3>ex04_03.html</h3>
+ <script>
+  //java 달력
+  //1. 마지막 날짜? 30
+  //2. 1일이 무슨 요일? 수
+	var year = 2022;
+    var month = 6;
+    
+    function getLastDay(year, month){
+     	var d = new Date(year,month); //일 값 제공안하면 1일 (6월을 구하려면 7월첫날에서 -1)
+     	d.setDate(0); //이렇게하면 하루를 뺌(암기)
+     	return d.getDate();
+    }
+    function getDayOfWeek(year, month, day){ 
+    	//주의) 월  1월(0) ~ 12월(11)
+    	var d = new Date(year, month-1, day);
+    	return d.getDay(); //0일1월2화3수4목~
+    	
+    }
+    //alert(getDayOfWeek(2022, 6, 3))
+    
+		  
+ </script>
 </body>
 </html>

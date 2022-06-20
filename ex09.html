@@ -3,43 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 30. 채영</title>
+<title>2022. 6. 3. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<style>
- input{
-  text-align: center;
- }
 
-</style>
 </head>
 <body>
-<input type="text" autofocus="autofocus"> 
-+ 
-<input type="text"> 
-= 
-<input type="text" disabled="disabled">
+<h3> ex09.html</h3>
 <script>
-	document.querySelector("input:first-of-type").onkeydown= function(){
-	if(event.keyCode==13){
-		document.querySelector("input:nth-of-type(2)").focus();
-		document.querySelector("input:nth-of-type(2)").select();
-	 }	
-    }
-	document.querySelector("input:nth-of-type(2)").onkeydown= function(){
-		if(event.keyCode==13){
-			var x = document.querySelector("input:first-of-type").value;
-			var y = document.querySelector("input:nth-of-type(2)").value;
-			//document.querySelector("input:nth-of-type(3)").value = x+y; 12+25 =1225 문자열로 인식함
-			//문자열 숫자 형변환하는 법? parseFloat(), parseInt()
-			document.querySelector("input:nth-of-type(3)").value = parseInt(x)+parseInt(y);
-			
-			document.querySelector("input:nth-of-type(1)").focus();
-			document.querySelector("input:nth-of-type(1)").select();
-			
-			
-		 }	
-	    }
-</script> 
+ var person={
+		 name:"hong",
+		 age:20,
+		 bloodType:"A"
+		 
+ };
+ for (let key in person) {
+	document.write(key +"/"+person[key]+ "<br>")
+}
+</script>
+<script>
+
+ var name ="hong gil dong";
+ //document.write( name.charAt(0) +"<br>");
+ document.write( name[0] +"<br>");
+ for (let c of name) {
+	 document.write( c +"<br>");
+}
+ 
+</script>
+<script>
+
+  //
+  var fruits = new Map([
+	  ["apple",500],
+	  ["banana",300],
+	  ["orange",100]
+	  
+  ]);
+
+  for (let f of fruits) {
+	document.write(f+"<br>");
+}
+</script>
+<script>
+ var letters = new Set(["a","b","c"]);
+ for (let x of letters) {
+	 document.write(x+"<br>");
+}
+</script>
 </body>
 </html>

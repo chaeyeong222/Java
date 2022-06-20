@@ -3,67 +3,179 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 30. 채영</title>
+<title>2022. 6. 3. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+<style>
+  *{ box-sizing: border-box;}
+  body{
+    margin: 0;
+    font-family: Verdana, sans-serif;
+  }
+  .slideshow-container{
+     max-width: 1000px;
+     position: relative;
+     margin: auto;
+  }
+  
+  .text{
+    color:#2f2f2f;
+    font-size: 15px;
+    text-align: center;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width:100%;    
+  }
+  .numbertext{
+    color:#2f2f2f;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top:0;
+  }
+  /* 
+  .mySlides{
+    display: none;
+  } */
+  img{
+     vertical-align: middle;
+  }
+</style>
+<style>
+   .prev, .next{
+      position: absolute;
+      cursor: pointer;
+      top:50%;
+      color:white;
+      width:auto;
+      padding: 16px;
+      margin-top: -22px;
+      font-weight: bold;
+      font-size:18px;
+      border-radius: 0 3px 3px  0;
+     /*  text-decoration: none; */
+     
+     transition:0.6s ease;
+   }
+   .next{
+      right:0;
+      border-radius: 3px 0 0 3px;
+   }
+   
+   .prev:hover, .next:hover{
+     background-color: rgba(0,0,0, 0.8);
+   }
+</style>
+<style>
+   .dots{
+     position: absolute;
+     top:10px;
+     width:100%;
+     text-align: center;
+   }
+   
+   .dot{
+     cursor: pointer;
+     height: 15px;
+     width: 15px;
+     margin:0 2px;
+     background-color: #bbb;
+     border-radius: 50%;
+     display: inline-block;
+     transition:background-color 0.6s ease;
+   }
+   
+   .active, .dot:hover{
+     background-color: #717171;
+   }
+   
+   .fade{
+      animation-name:fade;
+      animation-duration:1.5s;
+      
+      -webkit-animation-name:fade;
+      -webkit-animation-duration:1.5s;      
+   }
+</style>
+<style>
+   /* 애니메이션 효과 */
+   @keyframes fade{
+     from{ opacity: 0.4 }
+     to{ opacity:1}
+   }
+   @-webkit-keyframes fade{
+     from{ opacity: 0.4 }
+     to{ opacity:1}
+   }
+</style>
 </head>
 <body>
-
-<h3>ex05.html - js operator(연산자)</h3>
+<h3>슬라이드 메뉴 만들기</h3>
+<div class="slideshow-container">
+   <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="../images/img_mountains_wide.jpg" style="width:100%" alt="" />
+      <div class="text">Caption One</div>
+   </div>
+   <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="../images/img_nature_wide.jpg" style="width:100%" alt="" />
+      <div class="text">Caption Two</div>
+   </div>
+   <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="../images/img_snow_wide.jpg" style="width:100%" alt="" />
+      <div class="text">Caption Three</div>
+   </div>
+     
+   <a class="prev"  onclick="changeSlide(-1)">&#10094;</a>
+   <a class="next"  onclick="changeSlide(1)">&#10095;</a>
+    
+   <div class="dots" style="text-align:center">
+      <span class="dot" onclick="dotSlide(1)"></span>
+      <span class="dot"  onclick="dotSlide(2)"></span>
+      <span class="dot" onclick="dotSlide(3)"></span>
+   </div>
+</div>
 <script>
-
- // js 논리연산자 &&  ||  !
- // js 타입연산자   typeof  instanceof
- // js 비트연산자
- 
- //js Math 내장객체 있다.
- //console.log( 2**3);
- //== 
- //console.log(Math.pow(2,3));
-</script>
-<script>
- //js 비교 연산자 ==  != > < >= <=     (타입까지비교) ===    !==
+  var slideIndex = 1; 
+  
+  function showSlides(n){
+	/*  var slides = document.getElementsByClassName("mySlides");
+	 var dots = document.getElementsByClassName("dot");
 	 
+	 for (var i = 0; i < slides.length; i++) {
+		slides[i].style.display="none"; //처음에 다 숨겨놨다가
+		dots[i].classList.remove("active");
+		
+		 slides[n-1].style.display="block"; //원하는 것만 보이게
+		 dots[n-1].classList.add("active");
+	} */
+	$(".mySlides")
+	      .css("display","none")
+	      .eq(n-1).css("display","block");
+	$(".dot")
+	      .removeClass("active") 
+	      .eq(n-1).addClass("active"); 
+  }
+  showSlides(slideIndex); 
+</script>
+<script>
+ function changeSlide(value){
+	 slideIndex += value;
 	 
-// document.write( 3==5 ) //true/false
-</script>
-
-
-<script>
- // js 문자열 연결 연산자 +
- let a = 'xxx';
- let b = 'yyy';
- let c = a+b;
-</script>
-
-<script>
- //3. 대입연산자 =
- //4. 복합대입 연산자 += -= *= /= %= **=  
-</script>
-
-<script>
- //2. 증감연산자 ++ --
- 
- var x =10;
- x++;
- document.write(x+"<br>")
- 
-</script>
-
-<hr />
-<script>
- //1. js 산술 연산자
- let x = 20, y=6;
- document.writer(x+y);
- document.writer(x-y);
- document.writer(x*y);
- document.writer(x/y);
- document.writer(x**y); //x의y승
- 
+	 if(slideIndex ==0) slideIndex =3;
+	 else if(slideIndex ==4) slideIndex =1;
+	 
+	 showSlides(slideIndex); 
+ }
+ function dotSlide(n){
+	 slideIndex = n;
+	 showSlides(slideIndex);
+	 
+ }
 
 </script>
-
-
 </body>
 </html>

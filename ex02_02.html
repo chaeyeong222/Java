@@ -3,35 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 27. 채영</title>
+<title>2022. 6. 3. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<style>
- div{
-  box-sizing: border-box;
-  width: 40px;
-  /* 
-  border-top: 20px solid red;
-  border-right : 20px solid green;
-  border-bottom : 20px solid blue;
-  border-left: 20px solid yellow;
-   */
-   border-style: solid;
-   border-width: 20px;
-   
-  /*  border-top-color: red;
-   border-right-color: green;
-   border-bottom-color: blue;
-   border-left-color: yellow; */
- 
-   border-color: red transparent transparent transparent;
- }
-</style>
+
 </head>
 <body>
-<h3>ex02_02.html</h3>
+<p id="demo"></p>
+<script>
 
-<div></div>
+ var now = new Date();
+ 
+ 
+ $("#demo").html( now.getYear() + 1900  );
+ $("#demo").html( now.getFullYear()  );
+ $("#demo").html( now.getMonth()+1  ); //5+1 6월
+ $("#demo").html( now.getDate() ); 
+ 
+ //시간
+ now.getHours();
+ //분
+ now.getMinutes();
+ //초
+ now.getSeconds();
+ //ms초
+ now.getMilliseconds();
+ 
+ //요일
+ //now.getDay();
+ $("#demo").html("일월화수목금토".charAt(  now.getDay()  ));
+ 
 
+</script>
+<script>
+
+ //ms
+ //1.number
+ //2. Date.parse("MM/DD/YYYY") 날짜문자열 형식
+ 
+ var now = new Date();
+ var ms = now.getTime();
+ 
+</script>
 </body>
 </html>

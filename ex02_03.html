@@ -3,74 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 27. 채영</title>
+<title>2022. 6. 3. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<style> 
- 
- .tooltip{
-   position: relative;
-   border-bottom: 1px dotted black;
-   display: inline-block;
- }
- /*::의사요소*/
- .tooltip .tooltiptext::after{
- 
-  content: "";
-  border-style: solid;
-  border-width: 5px;
-  border-color: black transparent transparent transparent;
-  
-  position: absolute;
-  top:100%;
-  left:50%;
-  transform: translateX(-50%);
- }
- 
- .tooltip .tooltiptext{
-  position: absolute;
-  z-index:1; 
-  bottom: 150%;
-  left: 50%;
-  transform: translateX(-50%);
-  
-  
-  width: 120px;
-  background-color:  black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  
-/*   visibility: hidden; */
- }
- .tooltip:hover .tooltiptext{
-	visibility: visible;
-}
- body{
-  text-align: center;
- }
- 
 
-</style>
 </head>
 <body>
-<h3>ex02.html- 툴팁tooltip</h3>
-<pre>
- 툴팁? 요소 위에 마우스 올리면
-      그 요소의 추가적인 설명 정보를 보여주는 기능
-</pre>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
 
-<div class="tooltip"> Hover over me
- <span class="tooltiptext">Tooltip Text Sample</span>
-</div>
-
-
+<input type="date">
+<button>확인</button>
+<p id="demo"></p>
+<script>
+ //만나이 : 오늘날짜 = 주민등록번호 생일  -1
+ //오늘날짜 대비 before/ after/ equal
+ 
+ //Date()생성 + 값얻어오기 + 설정
+ 
+ //document.querySelector("button").onclick = function (){}
+ document.querySelector("button").addEventListener("click", function(e) {
+ 	//alert("x");
+ 	
+ 	var date = document.querySelector("input[type=date]").value;
+ 	//alert(typeof date); //"2022-06-14" string
+ 	//string-date
+ 	var d= new Date(date);
+ 	//alert(d); //Thu Jun 09 2022 09:00:00 GMT+0900 (한국 표준시)
+ 	
+ 	var today = new Date();
+ 	//alert(today);
+ 	today.setHours(9);
+ 	today.setMinutes(0);
+ 	today.setSeconds(0);
+ 	today.setMilliseconds(0);
+ 	
+ 	// d->ms
+ 	var dms = d.getTime();
+ 	//todays -> ms
+ 	var tdms = Number(today);
+ 	
+ 	if(tdms<dms)
+ 		alert("After");
+ 	else if(tdms>dms)
+ 		alert("Before");
+ 	else alert("Equal");
+ },true);
+ 
+ 
+</script>
 
 </body>
 </html>
