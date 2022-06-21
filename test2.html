@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022. 6. 8. 채영</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+  td{
+   border: 1px solid gray;
+  }
+
+</style>
+</head>
+<body>
+<!-- <button onclick="gugudan();">구구단 출력 버튼</button> -->
+<button>구구단 출력 버튼</button>
+<p id="demo"></p>
+
+<script>
+  $("button").click(function(event) { 
+	 //<table border='1' style='width:100%'></table>
+	var tbl = document.createElement("table"); 
+	tbl.setAttribute("border", "1");
+	tbl.setAttribute("style", "width:100%");
+	
+	//var tr = document.createElement("tr"); 
+	
+	
+	//<tr></tr>
+	//document.getElementById("demo").appendChild(tbl);
+	//tbl.appendChild(tr);
+	//위 2줄 한번에 ↓
+	var tr = tbl.insertRow( tbl.rows.length );  //insertRow 안의 숫자는 계속 증가해야함 그래서 length 넣음
+	for (var i = 2; i <= 9; i++) {
+		//<th>2단</th>  ..  <th>9단</th>
+		var th = tr.insertCell(i-2);
+		th.setAttribute("align", "center");
+		th.innerHTML = i+"단";
+	}
+	for (var i = 1; i <=9; i++) {
+		var tr = tbl.insertRow(tbl.rows.length);
+		for (var j = 2; j <= 9; j++) { 
+			var td = tr.insertCell(j-2); 
+			td.setAttribute("align", "center");
+			td.innerHTML= j+" * " +i +"="+(j*i);
+		}
+	}
+	document.getElementById("demo").appendChild(tbl);
+});
+
+
+</script>
+
+
+<!-- <table>
+<script>
+
+function gugudan(){
+	//alert("d");
+    document.write("<tr>"); 
+	for (var i = 2; i <= 9; i++) {
+		document.write("<td>"+i+"단</td>");
+	}
+	document.write("</tr>");
+	for (var i = 2; i <= 9; i++) {
+		 document.write("<tr>");
+		for (var j = 1; j <= 9; j++) { 
+		  //  console.log( i + "*"+ j + "=" + (i*j));
+		  document.write("<td>"+i + "*"+ j + "="+ (i*j) +"</td>");
+		 }//for
+		document.write("</tr>");
+	}//for
+	
+	
+}//gugudan 
+</script>
+</table>
+ -->
+
+</body>
+</html>

@@ -3,161 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 25. 채영</title>
+<title>2022. 6. 8. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<style>
- *{
-  box-sizing: border-box;
- }
-  body{
-   font-family:Arial;
-   border: 1px solid red;
-   padding:20px;
-   
-   max-width:800px;
-   margin: 0 auto;
-   height: 100%; 
-  }
-  
-  .row::after{
-   content:"";
-   clear:both;
-   display:table;
-  
-  }
-  .side{
-  float:left;
-  width:15%;
-  margin-top: 10px;
-  }
-  .middle{
-  float:left;
-  width:70%;
-  margin-top: 10px;
-  }
-  .middle .bar-container{
-   width: 100%;
-   background-color: #f1f1f1;
-   text-align: center;
-   color: white;  
-  }
-  .right{
-  text-align: right;
-  }
-  /*막대그래프*/
-  /*<div class="bar-1"></div>*/
-  .bar-1{
-   background-color: #f44336;
-   height:18px;
-   width:20%;
-  }
-  .bar-2{
-   background-color: #3296F3;
-   height:18px;
-   width:15%;
-  }
-  .bar-3{
-   background-color: pink;
-   height:18px;
-   width:75%;
-  }
-  .bar-4{
-   background-color: #00BCD4;
-   height:18px;
-   width:86%;
-  }
-  .bar-5{
-   background-color: orange;
-   height:18px;
-   width:20%;
-  } 
-</style>
 
-<style>
- @media (max-width:400px){
-  .side, .middle{
-   width:100%;
-   }
-   .right{
-   display:none;
-   }
- }
-</style>
 </head>
 <body>
-<h3> ex10_02.html - 막대그래프</h3>
-<div class="row">
-<!-- bar start -->
- <div class="side">
-  <div>1star</div>
- </div>
- <!-- 막대그래프 -->
- <div class="middle">
- 	<div class="bar-container">
- 		<div class="bar-1"></div>
- 	</div>
- </div>
- <div class="side right">
- 	<div>20</div>
- </div>
- <!-- bar end -->
- <!-- bar start -->
- <div class="side">
-  <div>2star</div>
- </div>
- <!-- 막대그래프 -->
- <div class="middle">
- 	<div class="bar-container">
- 		<div class="bar-2"></div>
- 	</div>
- </div>
- <div class="side right">
- 	<div>15</div>
- </div>
- <!-- bar end -->
- <!-- bar start -->
- <div class="side">
-  <div>3star</div>
- </div>
- <!-- 막대그래프 -->
- <div class="middle">
- 	<div class="bar-container">
- 		<div class="bar-3"></div>
- 	</div>
- </div>
- <div class="side right">
- 	<div>75</div>
- </div>
- <!-- bar end -->
- <!-- bar start -->
- <div class="side">
-  <div>4star</div>
- </div>
- <!-- 막대그래프 -->
- <div class="middle">
- 	<div class="bar-container">
- 		<div class="bar-4"></div>
- 	</div>
- </div>
- <div class="side right">
- 	<div>86</div>
- </div>
- <!-- bar end -->
- <!-- bar start -->
- <div class="side">
-  <div>5star</div>
- </div>
- <!-- 막대그래프 -->
- <div class="middle">
- 	<div class="bar-container">
- 		<div class="bar-5"></div>
- 	</div>
- </div>
- <div class="side right">
- 	<div>40</div>
- </div>
- <!-- bar end -->
-</div>
+<h3>ex10_02.html - js 객체</h3>
+<script>
+//중첩된 객체배열
+ var person={
+		name:"hong",
+		age:20, 
+		cars:[
+			{name:"Ford", models:["aa","bb","cc"]},
+			{name:"BMW", models:["xx","yy"]},
+			{name:"Kia", models:["s1","s2","s3"]} 
+		]//js 객체배열
+ 
+ }
+ console.log(person.cars[0].name); //Ford
+ 
+
+</script>
+
+<!-- <script>
+//[중첩된 객체]
+var person={
+	name:"hong",
+	age:20,
+	//중첩객체(객체의 속성값으로 객체가 옴)
+	cars:{   
+		car1:"BMW",
+		car2:"KIA",
+		car3:"Ford" 
+	} 
+ };
+ console.log(person.cars.car1); //"bmw"
+ console.log(person.cars["car1"]);  //"bmw"
+ console.log(person["cars"]["car1"]); //"bmw"
+// console.log(person.name);
+ console.log(person["name"]);
+</script> -->
 </body>
 </html>

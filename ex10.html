@@ -3,17 +3,83 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 3. 채영</title>
+<title>2022. 6. 8. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-<h3>ex10.html - 제어문</h3>
+<h3> js 객체</h3>
 
-<script> 
-//if, else if, switch, for, while, do-while, break, continue; 자바랑 똑같음
+<script>
+//1. js 객체는 기본형을 제외하면 모두 js 객체이다
+//2. js 기본형? stirng, number, boolean, null, undefined
+//3. js 객체? new Number(), new String() , new Boolean(), 
+//		     new Date, Math, 배열, 함수, object 등등..
+//4. js 객체도 변수이다
+/*  var person = {
+		이름:값,
+		이름:값,
+		이름:값,
+		이름:값,
+		이름:값,
+		메서드:function(){}	
+}; */
+</script>
+<!-- <script>
+ var person = {
+		 firstname:"john",
+		 lastname:'Doe',
+		 age:40,
+		 eyecolor:'blue',
+		 fullName:function(){
+			 return this.firstname+" "+this.lastname;
+		 }
+ };
+ 
+ //1. 새로운 속성(필드) 추가
+ // person.새로운 속성명 =속성값;
+  person.nationality="Korea";
+  //2. 속성 제거
+  delete person.eyecolor; //delete person['eyecolor']
+  
+  //3. 메서드 호출
+  var name = person.fullName();
+  //console.log(name);
+  
+  //4. 새로운 메서드 추가
+  //person.메서드명 = function(){}
+  person.name = function(){
+	  return this.firstname + "" + this.lastname;
+	  }
+  //5. 모든 속성 출력
+  for ( var p in person) {
+	console.log(p +"/"+ person[p]);
+}
+  /* 5번 결과
+firstname/john
+lastname/Doe
+age/40
+fullName/function(){
+			 return this.firstname+" "+this.lastname;
+		 }
+nationality/Korea
+name/function(){
+	  return this.firstname + "" + this.lastname;
+	  }
+  */
+</script> -->
+<script>
+  // var m=[];
+  // var m = new Array();
 
+
+ //var person = {}
+ var person = new Object(); //권장x
+ //속성 추가
+ person.firstname = "john";
+ person.age = 40;
+ person.eyecolor="blue";
 </script>
 </body>
 </html>

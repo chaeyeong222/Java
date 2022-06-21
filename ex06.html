@@ -3,34 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 3. 채영</title>
+<title>2022. 6. 8. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-
-<h3> math 객체 - 수학관련된 속성, 메서드</h3>
+<h3>ex06.html-js 화살표 함수(람다식)</h3>
+<pre>
+ 화살표 함수는 es6 도입
+ 더 짧은 함수 구문을 작성, 사용
+</pre>
 <script>
- document.write(Math.PI + "<br>");
- document.write(Math.abs(-100) + "<br>");
- document.write(Math.sqrt(2) + "<br>");
- document.write(Math.pow(2,3) + "<br>");
- document.write((2**3) + "<br>");
+ //방법1
+/*  var hello = function(){
+	 return "hello world";
+ }; */
+ //방법2
+/*  var hello = () =>{
+	 return "hello world~";
+ }; */
+
+ //방법3
+  //함수 안에 코딩(명령문)이 하나이고 명령문이 값을 반환하는 경우
+ //{} 생략가능, return 키워드 생략가능
+ //var hello = () => "hello world!";
  
- document.write(Math.round(3.1415) + "<br>");
- document.write(Math.ceil(3.1415) + "<br>");
- document.write(Math.floor(3.1415) + "<br>");
+ // 방법a
+ //test 함수명, name 파라미터 존재
+ /* var hello = function test(name){
+	 return name + " hi~";
+ } */
+ // 방법b
+/*  var hello =(name) => {
+ return name + " hi~";
+} */
+ // 방법c
+/*  var hello =(name) => name + " hi~!!!";*/
+ //name 매개변수가 1개라면 () 생략가능하다
+ // var hello = name=> name+"hi!";
+ //alert(typeof hello);//function
+ //alert(hello("admin")); 
+
+/*  function (a,b){
+	 return a+b;
+ }
+ */
  
- //es6도입 - 정수부분 반환
- document.write(Math.trunc(3.1415) + "<br>");
- document.write(Math.trunc(-4.2) +"/"+Math.floor(-4.2)+ "<br>");
+ var result = (a,b)=> a+b;
+ alert(result(10,20));//30
  
- document.write(Math.sign(3.1415) + "<br>");
  
- document.write(Math.max(0,5,8,100,12) + "<br>");
- document.write(Math.min(0,5,8,100,12) + "<br>");
- 
-</script> 
+</script>
 </body>
 </html>

@@ -3,79 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 25. 채영</title>
+<title>2022. 6. 8. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<style>
- .card{
-  width: 30%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  border-radius: 5px;
- }
- .card:hover{
- box-shadow: 0 4px 16px 0 rgba(0,0,0,0.2);
- }
- .card img{
- width: 100%;
- border-radius: 5px 5px 0 0;
- }
- .container{
- padding: 2px 16px;
- text-align: center;
- }
-</style>
+
 </head>
 <body>
-<h3>ex10_04.html</h3>
-<!-- .card>img+.container>h4>b^p -->
-<div class="card">
-	<img src="../images/img_avatar.png" alt="" />
-	<div class="container">
-		<h4><b>Hong Gil Dong</b></h4>
-		<p>Java Developer</p>
-	</div>
-</div>
-<div class="card">
-	<img src="../images/img_avatar.png" alt="" />
-	<div class="container">
-		<h4><b>Hong Gil Dong</b></h4>
-		<p>Java Developer</p>
-	</div>
-</div>
-<div class="card">
-	<img src="../images/img_avatar.png" alt="" />
-	<div class="container">
-		<h4><b>Hong Gil Dong</b></h4>
-		<p>Java Developer</p>
-	</div>
-</div>
-<div class="card">
-	<img src="../images/img_avatar.png" alt="" />
-	<div class="container">
-		<h4><b>Hong Gil Dong</b></h4>
-		<p>Java Developer</p>
-	</div>
-</div>
-<div class="card">
-	<img src="../images/img_avatar.png" alt="" />
-	<div class="container">
-		<h4><b>Hong Gil Dong</b></h4>
-		<p>Java Developer</p>
-	</div>
-</div>
-<div class="card">
-	<img src="../images/img_avatar.png" alt="" />
-	<div class="container">
-		<h4><b>Hong Gil Dong</b></h4>
-		<p>Java Developer</p>
-	</div>
-</div>
-<div class="card">
-	<img src="../images/img_avatar.png" alt="" />
-	<div class="container">
-		<h4><b>Hong Gil Dong</b></h4>
-		<p>Java Developer</p>
-	</div>
-</div>
+<h3>js 객체 생성자</h3>
+<script>
+ //객체를 만들때 사용되는 함수 = 객체 생성자
+ // 대문자로 이름 짓는다
+ //js 함수
+ //function 함수명(){
+ //}
+ 
+ //js 객체 생성자
+ function Person(fname, lname, age, eyecolor){
+	 this.firstname = fname ;
+	 this.lastname = lname;
+	 this.age = age;
+	 this.eyecolor = eyecolor;
+	 
+	 this.name = function(){
+		 return this.firstname + " " + this.lastname;
+	 }
+ }
+  var myFather = new Person("john","Doe",40,"blue");
+  
+  //1.객체생성자를 통해서 속성추가 xx
+  // Person.nationality = "Korea"; -> 불가능
+  //아예불가능은 아님 ↓ prototype 이용하면 추가 가능
+  Person.prototype.nationality = "Korea";
+  //1-2. 객체생성자를 사용해 생성된 객체를 통해서 속성 추가 가능oo
+  myFather.nationality= "Korea";
+  
+  //2. 메서드 추가
+  myFather.name = function (){ 
+  }
+</script>
+<script>
+ function Car(name,year){
+	 this.name = name;
+	 this.year = year;
+ }
+</script>
 </body>
 </html>

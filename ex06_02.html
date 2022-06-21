@@ -3,36 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 26. 채영</title>
+<title>2022. 6. 8. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<style>
- div{
-  width:300px;
-  height:50px;
-  background-color: yellow;
-  border: 1px solid black;
-  
-  
-  /*3. 요소 크기 조정*/
-/*   transform:scaleX(1.2);
-  transform:scaleY(1.5); */
- /*  transform:scale(2,0.5); */
- 
- /*skewX() , skewY(), skew() 요소를 지정된 각도만큼 x축,y축으로 기울인다*/
- /*  transform:skewY(30deg); */
-  
-  /*5.matrix*/
-  
-/*   matrix(scaleX(), skewY(), skewX(), scaleY(),translateX(), translateY()  ) */
- }
-</style>
-
 </head>
 <body>
+<h3>ex06_02. js 화살표 함수에서의 this 의미</h3>
 
-<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure ut!</div>
+<button id="btn">클릭</button>
+<p id=demo></p>
 
+<script>
+  var hello;
+  
+ /*  hello = function (){
+	  documen
+	  t.getElementById("demo").innerHTML += this ;
+  } */
+  
+/*   hello =()=>{ 
+	  document.getElementById("demo").innerHTML += this;
+	  //Object Window)
+  }; */
+  hello =()=>{ 
+	  document.getElementById("demo").innerHTML += this;
+	  //Object Window)
+  };
+  
+  window.addEventListener("load", hello);
+ 
+</script>
+<!-- 
+<script>
+ //[js 화살표 함수에서의 this 의미]
+ //화살표 함수를 사용할때 this는 항상 화사표 함수를 정의한 객체를 나타낸다.
+ 
+ //일반 함수 test의 this 의미
+ 
+ function test(){
+	 alert(this);//
+	 
+ }
+ var hello=() => alert(this);
+ 
+ hello();
+ 
+
+</script> -->
 </body>
 </html>

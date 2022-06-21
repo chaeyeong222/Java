@@ -3,37 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 3. 채영</title>
+<title>2022. 6. 8. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-<h3> ex03.html -선택에 따라 배경색 변경</h3>
-
-<select onchange="test(this);">
-	<option>선택하세요</option>
-	<option value="red">빨강</option>
-	<option value="pink">분홍</option>
-	<option value="skyblue">하늘</option>
-	<option value="gray">회색</option>
-</select>
-
-<p id="demo"> red/빨강</p>
+<h3>ex03.html</h3>
 
 <script>
-function test( sel  ){
-	// 선택된 옵션의 인덱스값
-	var idx = sel.selectedIndex;
-	//선택된 옵션의 value,text
-	var value = sel.options[idx].value;
-	var text = sel.options[idx].text;
-	
-	$("#demo").html(`value=${value}/text=${text}/index=${idx}`);
-	
-	document.bgColor = value;
-}
+"use strict"
+//엄격 모드 사용 -> 반드시 변수 선언하고 js에서 사용하겠다
+ var form = "admin";
+ 
+ function test(){
+	 //ex03.html:20 Uncaught ReferenceError: from is not defined
+	 //맨 위에 "use strict" 오류 띄워줌
+	 
+	 from = "hong"; //오타났을 때
+	 
+	 document.write(form);
+ }
+ test();
 
 </script>
+<!-- <script>
+//js 호이스팅
+//변수 선언 부분을 자동으로 맨 위로 이동.
+ n=400;
+ var n;
+ console.log(n);
+
+ function test(){
+	 console.log(">test()~");
+ }
+</script> -->
 </body>
 </html>

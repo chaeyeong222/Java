@@ -3,37 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 25. 채영</title>
+<title>2022. 6. 8. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<style>
 
-/* #demo{ 100점*/
-  div#demo{
-  background-image: url('../images/img_flwr.gif'), url('../images/paper.gif');
-  background-repeat: no-repeat, repeat;
-  background-position: right bottom, left top;
-  
-/*   background: url('../images/img_flwr.gif') no-repeat  right bottom
-                     , url('../images/paper.gif') repeat left top   ; */
-}
-</style>
 </head>
 <body>
-<h3>ex12.html - 배경이미지 추가</h3>
-
+<h3>ex12.html</h3>
+ 
+<h1 id="demo"></h1>
+<button onclick="timer_start()">setTimeout</button>
+<button onclick="timer_stop()">clearTimeout</button>
 <pre>
- 1.background-size
- 2.background-origin
- 3.background-clip
+ setTimeout()/ clearTimeout()
+ setinterval()/ clearinterval() 
 </pre>
-
-<!-- #demo>h1>lorem3^p*2>lorem -->
-<div id="demo">
-	<h1>Lorem ipsum dolor.</h1>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt adipisci qui alias praesentium officia rerum nulla eius soluta explicabo ipsam quaerat fugit eveniet voluptas. Qui accusamus libero possimus excepturi corporis.</p>
-	<p>Debitis saepe fugit quisquam inventore vitae optio quod neque voluptatem consequuntur quo iusto illo autem! Vitae ipsa eum consequatur ullam deserunt voluptatem nulla asperiores laboriosam et tempora fugit nam dolorem!</p>
-</div>
-
+<script>
+ var demo; //전역변수
+ 
+//body onload=""
+ window.onload= function(){
+  window.demo = document.getElementById("demo"); 
+ }
+ 
+ var timer;
+ function dispDT(){
+	 var now = new Date();
+	 demo.innerHTML = now.toLocaleString();
+	 //setTimeout():  1초 후에 dispDT() 1번호출
+	 timer = setTimeout(dispDT, 1000);	 //재귀호출->반복
+ }
+ 
+ function timer_start(){
+	 dispDT();
+ }
+ function timer_stop(){
+	 claerTimeout(timer);
+	 
+ }
+</script>
 </body>
 </html>

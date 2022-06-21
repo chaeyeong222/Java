@@ -3,53 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 3. 채영</title>
+<title>2022. 6. 8. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-<h3> ex09.html</h3>
-<script>
- var person={
-		 name:"hong",
-		 age:20,
-		 bloodType:"A"
-		 
- };
- for (let key in person) {
-	document.write(key +"/"+person[key]+ "<br>")
-}
-</script>
-<script>
+<h3>ex09.html</h3>
 
- var name ="hong gil dong";
- //document.write( name.charAt(0) +"<br>");
- document.write( name[0] +"<br>");
- for (let c of name) {
-	 document.write( c +"<br>");
-}
- 
-</script>
-<script>
+<form name ="form1" action="ex09_ok.jsp" method="get" 
+   onsubmit="return validate()">
+ Name : <input type="text" name="name" autofocus="autofocus"><br />
+ Age : <input type="text"  name="age"><br />
+ <input type="submit" />
+ <button type="button" onclick="btn_submit();">전송</button>
+</form>
 
-  //
-  var fruits = new Map([
-	  ["apple",500],
-	  ["banana",300],
-	  ["orange",100]
-	  
-  ]);
+<form></form>
+<form></form>
+<form></form>
+<form></form>
+<form></form>
+<form></form>
 
-  for (let f of fruits) {
-	document.write(f+"<br>");
-}
-</script>
 <script>
- var letters = new Set(["a","b","c"]);
- for (let x of letters) {
-	 document.write(x+"<br>");
-}
+ function btn_submit(){
+	 //입력값에 대한 유효성 검사
+	 //js 함수 : submit()
+	document.forms["form1"]["name"].submit();
+ }
+
+</script>
+
+<script>
+ function validate(){
+	// alert("d");
+	 
+	 var name = document.forms["form1"]["name"].value;
+	 if(name.trim().length==0){
+		 alert("이름 필수 입력 항목");
+		 document.forms["form1"]["name"].focus();
+		 return false; //이벤트 취소 
+	 }//if
+	 
+	 var age = document.forms["form1"]["age"].value;
+	 if(age.trim().length==0){
+		 alert("나이 필수 입력 항목");
+		 document.forms["form1"]["age"].focus();
+		 return false; //이벤트 취소 
+	 }//if
+	 
+ }
 </script>
 </body>
+
 </html>

@@ -3,305 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 3. 채영</title>
+<title>2022. 6. 8. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<style>
-select {
-   width: 100px;
-   text-align: center;
-}
 
-* {
-   box-sizing: border-box;
-}
-
-ul {
-   list-style-type: none;
-}
-
-body {
-   font-family: Verdana, sans-serif;
-}
-
-.month {
-   padding: 70px 25px;
-   width: 100%;
-   background: #1abc9c;
-   text-align: center;
-}
-
-.month ul {
-   margin: 0;
-   padding: 0;
-}
-
-.month ul li {
-   color: white;
-   font-size: 20px;
-   text-transform: uppercase;
-   letter-spacing: 3px;
-}
-
-.month .prev {
-   float: left;
-   padding-top: 10px;
-}
-
-.month .next {
-   float: right;
-   padding-top: 10px;
-}
-
-.weekdays {
-   margin: 0;
-   padding: 10px 0;
-   background-color: #ddd;
-}
-
-.weekdays li {
-   display: inline-block;
-   width: 13.6%;
-   color: #666;
-   text-align: center;
-}
-
-.days {
-   padding: 10px 0;
-   background: #eee;
-   margin: 0;
-}
-
-.days li {
-   list-style-type: none;
-   display: inline-block;
-   width: 13.6%;
-   text-align: center;
-   margin-bottom: 5px;
-   font-size: 12px;
-   color: #777;
-}
-
-.days li .active {
-   padding: 5px;
-   background: #1abc9c;
-   color: white !important
-}
-</style>
 </head>
 <body>
-<select id="cmbyear" onchange="changeDate()"></select>
-    <select id="cmbmonth" onchange="changeDate()"></select>
-    <select id="cmbdate"></select>
-   <br>
-   <div class="month">
-      <ul>
-         <li class="prev" onclick="changeCalendar(-1)">&#10094;</li>
-         <li class="next" onclick="changeCalendar(1)">&#10095;</li>
-         <li><span id="month">August</span><br> <span id="year"
-            style="font-size: 18px">2017</span></li>
-      </ul>
-   </div>
-   <ul class="weekdays">
-      <li>Su</li>
-      <li>Mo</li>
-      <li>Tu</li>
-      <li>We</li>
-      <li>Th</li>
-      <li>Fr</li>
-      <li>Sa</li>
-   </ul>
-   <ul class="days">
- <!-- 
-  <li>1</li>
-  <li>2</li>
-  <li>3</li>
-  <li>4</li>
-  <li>5</li>
-  <li>6</li>
-  <li>7</li>
-  <li>8</li>
-  <li>9</li>
-  <li><span class="active">10</span></li>
-  <li>11</li>
-  <li>12</li>
-  <li>13</li>
-  <li>14</li>
-  <li>15</li>
-  <li>16</li>
-  <li>17</li>
-  <li>18</li>
-  <li>19</li>
-  <li>20</li>
-  <li>21</li>
-  <li>22</li>
-  <li>23</li>
-  <li>24</li>
-  <li>25</li>
-  <li>26</li>
-  <li>27</li>
-  <li>28</li>
-  <li>29</li>
-  <li>30</li>
-  <li>31</li>  
- -->
-   </ul>
-   
-   <script>
-   //현재 날짜 2022 6
-   var now = new Date();
-   var nowYear= now.getFullYear();
-   var nowMonth= now.getMonth()+1;
-   var nowDate = now.getDate();
-   
-   var spanYear = document.getElementById("year");
-   var spanMonth = document.getElementById("month");
-   spanYear.innerHTML = nowYear;
-   spanMonth.innerHTML = nowMonth;
-   
-   var ulDays= document.querySelector("ul.days");
-   
-   
-   
-   </script>
-   <script> 
-   function getDayOfWeek(year, month, day){ 
-   	//주의) 월  1월(0) ~ 12월(11)
-   	var d = new Date(year, month-1, day);
-   	return d.getDay(); //0일1월2화3수4목~
-   	
-   }
-   function getLastDay(year, month){
-    	var d = new Date(year,month); //일 값 제공안하면 1일 (6월을 구하려면 7월첫날에서 -1)
-    	d.setDate(0); //이렇게하면 하루를 뺌(암기)
-    	return d.getDate();
-   }
-   //달력 그리기 함수
-   function printCalendar(year,month){
-	   //이전에 생성된 li태그 제거
-	   ulDays.innerHTML="";
-	   
-	   var lastDay = getLastDay(year, month);
-	   var dayOfWeek = getDayOfWeek(year, month, 1);
-	   
-	   for (var i = 0; i <dayOfWeek; i++) {
-		var liDay=document.createElement("li");
-		ulDays.appendChild(liDay);
-	}
-	   //1일~ 마지막날짜 lastday
-	   for (var d = 1; d <=31; d++) {
-			var li_day = document.createElement("li"); 
-			var li_day_text = document.createTextNode(d);
-			
-			if(d==nowDate){ //오늘날짜 
-				var li_span =document.createElement("span"); 
-				li_span.setAttirbute("class","active"); 
-				li_span.appendChild(li_day_text);
-				li_day.appendChild(li_span);
-		
-			}else{
-				li_day.appendChild(li_day_text); //<li>1</li>
-			}
-			 ulDays.appendChild(li_day);
-			//document.querySelector("ul.days").appendChild(li_day);
-		}
-	   
-   }//function
-   
-   printCalendar(nowYear,nowMonth);
-   </script>
-   <script>
-   
-   function changeCalendar(value){
-	   
-	   var year = parseInt( spanYear.innerHTML);
-	   var month = parseInt( spanMonth.innerHTML) + value;
-	   
-	   
-	   if(month ==0){
-		   year -=1;
-		   month = 12;		   
-	   }else if(month==13){
-		   year+=1;
-		   month =1;
-	   }
-	   
-	   
-	   spanYear.innerHTML = year;
-	   spanMonth.innerHTML= month;
-	   
-	   printCalendar(year, month);
-   }
-   
-   </script>
-  <script>
- //cmbyear
- var cmbyear = document.getElementById("cmbyear");
- for (var y = 1970; y <= 2050; y++) {
-	 //js option 객체
-	//cmbyear.options[0] = new Option(1970,1970); 
-	//cmbyear.options[1] = new Option(1971,1971); 
-	//js 선택된 옵션 객체 Option(text,value,defaultSelected, selected);
-	if(y==2022){
-		cmbyear.options[y-1970] = new Option(y,y,true,true); 
-	}else{
-		cmbyear.options[y-1970] = new Option(y,y); 
-	}
-}//for 
-	 
-	 //cmbmonth
-	var cmbmonth = document.getElementById("cmbmonth");
-	for (var m = 1; m <= 12; m++) {
-		cmbmonth.options[m-1] = new Option(m,m);
-		
-	}
-	cmbmonth.selectedIndex=6-1;
-	
-	 // cmbdate 채우기
-	   function getLastDay(year, month) {
-	      var d = new Date(year, month);
-	      d.setDate(0); // Tip! setDate에 0을 주면 하루를 뺀다.
-	      return d.getDate(); 
-	   }
+<h3>ex04</h3>
+<pre>
+[js 5개의 자료형]
+string
+number
+boolean
+object
+function
 
-	
-	
-	//cmbdate
-	var cmbdate = document.getElementById("cmbdate");
-	var lastday = getLastDay(2022,6);
-	for (var d = 1; d <= lastday; d++) {
-		cmbdate.options[d-1] = new Option(d,d);
-		
-	}
-	cmbdate.selectedIndex=3-1;
-	
+[js 객체의 종류 6가지]
+Object       => new Object()
+Date         => new Date()
+Array        => new Array()
+String       => new String("")
+Number
+Boolean
 
- </script>
- <script>
-  function changeDate(){
-	  year= cmbyear.options[cmbyear.selectedIndex].value;
-	  month=cmbmonth.options[cmbmonth.selectedIndex].value;
-	  
-	 // alert(year + "/" + month);
-	  var lastday= getLastDay(year,month);
-	  
-	  
-	  //이전에 있던 option 태그 제거
-	  cmbdate.innerHTML = "";
-	  for (var d = 1; d <=lastday; d++) {
-		cmbdate.options[d-1] = new Option(d,d);
-	}
-	 var year =  cmbyear.value;
-	  var month = cmbmonth.value;
-	  
-	  spanYear.innerHTML = year;
-	   spanMonth.innerHTML= month;
-	   
-	   printCalendar(year, month);
-	  
-	  
-  }
- </script>  
-   
+[js 값을 포함할 수 없는 2가지 자료형]
+ null
+ undefined
+ 
+ [js 형 변환]
+ 문자열 → 숫자        Number(), parseInt(), parseFloat()
+ 숫자 → 문자열        숫자+"", String(200) 메서드   , (123).toString()
+ 날짜 → 숫자          var d = new Date();
+                    Number(d);    == d.getTime()
+                    
+ 숫자 → 날짜          String(d);    d.toString()
+ boolean형 → 숫자     
+ 숫자 → boolean형
+</pre>
 </body>
 </html>

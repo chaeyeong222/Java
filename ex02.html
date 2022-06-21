@@ -3,60 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 3. 채영</title>
+<title>2022. 6. 8. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-<pre>
- [js 날짜 객체 Date]
-   1. 새로운 날짜 객체를 생성하는 4가지 방법
-     ㄱ. new Date() 현재 날짜+시간
-     ㄴ. new Date(y,m,d,h,m,s,ms)
-     ㄷ. new Date(ms) 1970.1.1 00:00:00
-     ㄹ. new Date(String date)
-</pre>
-<p id="demo"></p>
+<h3>ex02.html</h3>
 
 <script>
- //var now = new Date( 2018,12,24,00,33,30,0);
- //js 1월(0) 12월(11)
- //만약 월 값에 12 넣으면 년도 하나 증가
- //var now = new Date( 2018,11,24); 
- //var now = new Date( 2018,11);//1일 00:00:00
+ //js Map
+ //key -value 한쌍 entry
+ //1. new Map();
+ //2. set, get, delete, forEach, size
+ //3. entries()
+
+  var fruits = new Map();
+  fruits.set("apple",10); 
+  fruits.set("banana",20); 
+  fruits.set("orange",15); 
  
- //년도만 넣으면 ㄷ(ms)으로 인식함 월까지는 넣어주자
- //var now = new Date( 2018)
- 
- 
- //$("#demo").html(now); 
- 
+ console.log(fruits.size); //3
+ //console.log(fruits.get("banana") );  //20
+ //console.log(fruits.has("apple") );
+ //fruits.delete("apple");
+/*  
+ fruits.forEach(function(value, key, map) {
+   console.log(key + "/"+value);	
+ }); */
+
+  for (let entry of fruits.entries) {
+	console.log(entry);
+}
+
 </script>
- <script>
- //var d = new Date(99,11,24); //2자리년도 1900년도로 인식
- 
- //$("#demo").html(d); 
- </script>
- <script>
- //yyyy-mm-dd-  js 표준
- //var d = new Date("2015-03-25");
- //var d = new Date("2015-03"); //1일
- //var d = new Date("2015"); //1월1일
- //$("#demo").html(d); 
- 
- //ISO 표준 ㅣ 날짜+시간
-  //var d = new Date("2015-03-25T12:00:00Z");//UTC 시간
-  
-  //짧은 날자 mm/dd/yyyy
- // var d = new Date("03/25/2015");
-  
-  
- //유효한 날짜형의 문자열 ms: Date.parse()
- 
- var d = Date.parse("03/25/2015");
-  var d = new Date("03/25/2015");
-  $("#demo").html(d);
- </script>
 </body>
 </html>

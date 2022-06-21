@@ -2,22 +2,147 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022. 6. 8. 채영</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+  body{
+    margin: 0;
+    font-size: 28px;
+  }
+  .header{
+    position: fixed;
+    top:0;
+    z-index: 1;
+    width:100%;
+    background-color: #f1f1f1;
+  }
+  .header h2 { text-align: center;}
+  .process-container{
+    width:100%;
+    height:8px;
+    background:#ccc;
+  }
+  .progress-bar{
+    height:8px;
+    background-color: red;
+    width:0;
+  }
+  .content{
+    padding:100px 0;
+    margin:50px  auto 0 auto;
+    width:80%;
+  }
+</style>
+<style>
+  #btnTop{
+    position: fixed;
+    bottom:20px;
+    right:30px;
+    z-index: 99;
+    outline: none;
+    background: red;
+    color:white;
+    padding:15px;
+    border-radius: 10px;
+    
+    display: none;
+    border:none;   /* 버튼은  기본적으로 테두리가 있다.. */
+  }
+  #btnTop:hover{
+    background: #555;
+  }
+</style>
 </head>
 <body>
-<h3>html이미지-img</h3>
+<div class="header">
+   <h2>스크롤 표시하기</h2>
+   <div class="process-container">
+      <div class="progress-bar" id="myBar"></div>
+   </div>
+</div>
+<!-- .content>p*40>lorem8 -->
+<div class="content">
+   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+   <p>Repellat praesentium ex animi eos in excepturi quod?</p>
+   <p>Quas a commodi labore quidem nihil ipsum reiciendis.</p>
+   <p>Eum quisquam laboriosam modi impedit ipsam iste consectetur.</p>
+   <p>Minima accusantium architecto minus ex odit exercitationem similique.</p>
+   <p>Modi dolores quo ipsa voluptate eius ratione eum!</p>
+   <p>Rem vel tempora repudiandae quod consequatur fugit sequi.</p>
+   <p>Expedita assumenda eius molestias eum quas nisi aliquam!</p>
+   <p>Tempora deleniti magnam minus ullam officiis tempore dolor!</p>
+   <p>Molestias obcaecati eum impedit facere vel. Dolorem quod.</p>
+   <p>Autem mollitia dolores vitae aspernatur consequatur ratione quis?</p>
+   <p>Neque veritatis ut iste sequi debitis ex iure?</p>
+   <p>Aliquam corporis dolore voluptatibus quas dolorum maxime animi.</p>
+   <p>Officiis odit temporibus non assumenda laudantium quam labore.</p>
+   <p>Id eum explicabo nulla quidem necessitatibus eos sapiente.</p>
+   <p>Est quibusdam aliquid doloribus voluptatum iusto quis doloremque.</p>
+   <p>Doloremque rem non voluptas quaerat rerum veniam odit?</p>
+   <p>Dicta libero ab est incidunt accusantium voluptatum praesentium.</p>
+   <p>Cumque est culpa provident distinctio consectetur voluptatem nobis.</p>
+   <p>Explicabo ex error similique est magni nihil deleniti!</p>
+   <p>Doloribus repellendus quos deleniti debitis delectus reprehenderit fuga!</p>
+   <p>Consequatur quia architecto impedit aspernatur tempore alias dolores.</p>
+   <p>Ea temporibus cumque laudantium autem similique distinctio omnis.</p>
+   <p>Harum eligendi iusto saepe cumque tenetur delectus praesentium.</p>
+   <p>Laborum culpa iure aspernatur omnis ipsum unde deserunt?</p>
+   <p>Debitis voluptatibus distinctio maiores accusamus nesciunt facere voluptate!</p>
+   <p>Eum dignissimos ut delectus ab atque tempore quaerat.</p>
+   <p>Dicta ipsum esse quam modi eligendi possimus excepturi.</p>
+   <p>Nobis velit culpa reprehenderit sit ut unde voluptatibus.</p>
+   <p>Hic nostrum natus dolore laudantium odio aut et?</p>
+   <p>Officiis autem voluptatem eveniet neque veniam accusantium corporis.</p>
+   <p>Dolore eius id magni sint a quos ipsum.</p>
+   <p>Dignissimos blanditiis aliquid inventore tempora ratione dolore ab.</p>
+   <p>Officia aut ea cupiditate cumque non quae blanditiis.</p>
+   <p>Officiis nemo sit eos dicta necessitatibus incidunt aliquid.</p>
+   <p>Qui et libero nesciunt quia dolor quae optio.</p>
+   <p>Ipsam itaque reprehenderit blanditiis quam dignissimos magni delectus!</p>
+   <p>Amet officia dolorum temporibus maiores quos voluptates ea.</p>
+   <p>Voluptas omnis soluta culpa fuga cupiditate sunt iure.</p>
+   <p>Aut voluptas illo assumenda sed provident quod cupiditate!</p>
+</div>
 
-<!-- img 쓰고 ctrl+space누르면 자동완성 -->
-<!-- src 주소 잘못됐을 땐 alt에 적은 이름이 뜬다/ 이미지 깨지면 경로 확인하기  -->
+<!-- button#btnTop[title="Go  To Top"]>{Top} -->
+<button id="btnTop" title="Go To Top">Top</button>
+<script>
+ window.onscroll = function(){
+	                    /*브라우저에 따라 적용안될 수도 있어서 둘 다 사용*/
+	 var scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+	 var scrollHeight = document.documentElement.scrollHeight;
+	 var clientHeight = document.documentElement.clientHeight;
+	 console.log( scrollHeight+"/"+ clientHeight +"/"+ scrollTop);
+	 
+	 var hiddenHeight = scrollHeight - clientHeight;
+	 
+	 //100:x = hH:sT
+	 //x = 100 * sT /hH
+	 var widthPercent = (100*scrollTop)/hiddenHeight;
+	 
+	 document.getElementById("myBar").style.width = widthPercent+"%";
+	 
+	 if(scrollTop >= clientHeight){
+		 document.getElementById("btnTop").style.display="block";
+	 }else{
+		 document.getElementById("btnTop").style.display="none";
+	 }
+	 
+	 document.getElementById("btnTop").onclick=function(){
+		 document.body.scrollTop =0;
+		 
+		 document.documentElement.scrollTop =0;
+		 
+	 }
+	 
+	 
+ }
 
-인라인모드<br>
-html에서 단위 생략하면 :px<br>
-(주의하자) 이미지 로딩되는 동안 웹페이지가 깜박일 수 있다.
-         반드시 이미지의 너비, 높이는 지정을 하자<br>
+</script>
 
-<img alt="이탈리안 튤립" src="../images/pic_trulli.jpg">
-<img alt="이탈리안 튤립" src="../images/pic_trulli.jpg"width="250px" height="">
-<!-- 이미지 너비 500,높이333 (원래크기) -->
+
 
 </body>
 </html>

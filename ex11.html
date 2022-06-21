@@ -3,100 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 3. 채영</title>
+<title>2022. 6. 8. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<style>
- .container{
-    width: 500px;
-  }
-  
-  .collapsible{
-    background-color: #777;
-    color:white;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline:none;
-    font-size: 15px;
-  }
-  
-   /* ::가상 요소 선택자*/
-  .collapsible::after{
-    content:'\002B';  /*   +  */
-    color:white;
-    float: right;
-    font-weight: bold;
-    margin-left: 5px;
-  }
-  
-  .collapsible:hover ,  .active{
-    background-color: #555;
-  }
-  
-  .content{
-    padding: 0 18px;
-    background-color: #f1f1f1;
-    max-height: 0;  /* 오버플로우가 발생.. */
-    overflow: hidden; /* 숨기기 */
-    
-    transition:max-height  0.2s ease-out;
-  }
-  
-  .active::after{
-      content:'\2212';   /*  -  */
-   }
-</style>
+
 </head>
 <body>
-<div class="container">
-
-<button class="collapsible">Section 1</button>
-<div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla iure aliquam soluta minima impedit ratione laboriosam autem omnis. Doloribus eius incidunt totam iure deleniti a officia blanditiis rem recusandae officiis.</div>
-
-<button class="collapsible">Section 2</button>
-<div class="content">
- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla iure aliquam soluta minima impedit ratione laboriosam autem omnis. Doloribus eius incidunt totam iure deleniti a officia blanditiis rem recusandae officiis.
- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla iure aliquam soluta minima impedit ratione laboriosam autem omnis. Doloribus eius incidunt totam iure deleniti a officia blanditiis rem recusandae officiis.
- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla iure aliquam soluta minima impedit ratione laboriosam autem omnis. Doloribus eius incidunt totam iure deleniti a officia blanditiis rem recusandae officiis.
- </div>
-
-<button class="collapsible">Section 3</button> 
-<div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla iure aliquam soluta minima impedit ratione laboriosam autem omnis. Doloribus eius incidunt totam iure deleniti a officia blanditiis rem recusandae officiis.</div>
-
-</div>
+<h3>ex11.html - call()/apply()</h3>
+<pre>
+ call()
+  - 다른 객체의 메서드를 불러서call 처리
+</pre>
 <script>
-/*  var btns=document.getElementsByClassName("collapsible");
- for (var i = 0; i < btns.length; i++) {
-	 btns[i].addEventListener("click",function(e){
-		 
-		 this.classList.toggle("active"); //클래스 있으면 없애고 없으면 만들어줌
-		 var content = this.nextElementSibling; //<div class="content">
-		 
-		 if (content.style.maxHeight) { //0false
-			 content.style.maxHeight=null;
-		} else {
-			content.style.maxHeight = content.scrollHeight+"px";
-		} 
-	 },true); */
-	 
- $(".collapsible").click(function(event){
-   $(this).toggleClass("active");
-  
-   if ($(this).next().css("max-height")!="0px") { //0false
-	   $(this).next().css("max-height","0px");
-	} else {
-		$(this).next().css("scrollHeight"
-				,$(this).next().prop("scrollHeight")+"px"); 
-	} 
-});
-   
-
+ var person1={
+		 name:"hong",
+		 age:20,
+		 /*  print:function(){
+		 return this.name+"/"+this.age; 
+	 } */
+ };
+ var person2={
+		 name:"admin",
+		 age:40,
+		/*  print:function(){
+			 return this.name+"/"+this.age; 
+		 } */  
+ };
  
-
+ var person= {
+		 print:function(){
+			 return this.name+"/"+this.age; 
+		 }
+ }
+ //js 모든 함수는 객체메서드 이다
+ 
+ //console.log( person1.print()  );
+ //console.log( person2.print()  );
+ 
+ console.log(  person.print.call(person1) );
+ console.log(  person.print.apply(person2) );//같은의미
+ 
+ function test(){
+	 
+ }
 </script>
-
 </body>
 </html>

@@ -3,33 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 3. 채영</title>
+<title>2022. 6. 8. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-<button onclick="test1();">확인1</button>
-<button onclick="test2();">확인2</button>
-
+<h3>ex07/ js 클래스</h3>
 <script>
-	//var value = 100;  //전역변수
-   value =100;  //전역변수
+//js 도 class 키워드를 사용해서 클래스를선언할 수 있다.
+// 객체 설계도(xpavmfflt)
 
+class Car{
+	//멤버변수 - 필드
+	//private String name;
+	
+	//속성
+	//생성자:객체 생성할때 자동으로 호출되는 함수
+	//      속성 초기화
+	//생성자 이름은 반드시 constructor 이어야 한다! **
+	//class키워드 사용
+	constructor(name, year){ 
+		this.name=name;
+		this.year = year;
+	}
+	//메서드
+	age(year){
+		return year - this.year;
+		
+	}//
+}//car
+ var myCar = new Car("BMW", 2019);
+ console.log(myCar.name)+"/"+myCar.year + "/" + myCar.age(2022);
 
- function test1(){
-	// var value = 100; //지역변수
-	//value =100;  //전역변수
-	 alert(value); 
-	
-	//window 생략가능
-	window.alert(window.value);
-	
- }
- function test2(){ 
-	 alert(value); //지역변수로 선언했을 때는 인식못해서 오류난다.
- }
 </script>
-
 </body>
 </html>

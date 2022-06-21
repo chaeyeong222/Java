@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022. 6. 8. 채영</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+<button>TypeWriter</button>
+<p id="demo"></p>
+<script>
+ var content;
+ var contentLength;
+ var demo = document.getElementById("demo");
+ var i = 0;
+ var timer;
+
+ $("button").click(function(event) {
+	 //html 루트엘리먼트
+	content = document.documentElement.innerHTML;
+	 //alert(content);
+	 contentLength = content.length;
+	 
+	 typeWriter();
+	 timer = setInterval(typeWriter, 10)
+});
+ function typeWriter(){
+	 if(i<= contentLength){
+		 var oneChar = content.charAt(i++);
+		 demo.innerHTML += (oneChar =='\n'?"<br>":oneChar);
+		 
+		 window.scrollTo(0,0); //맨위로 스크롤 올리기
+		 window.scrollTo(0, document.body.scrollHeight); //스크롤 내리기
+	 }else{
+		 clearInterval(timer);
+		 alert("출력완료");
+	 }
+ }
+
+</script>
+</body>
+</html>
