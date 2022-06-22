@@ -3,39 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 8. 채영</title>
+<title>2022. 6. 9. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+ #out{
+  background-color: coral;
+  padding: 50px;
+ }
+ #in{
+  background: white;
+  font-size: 20px;
+  border: 1px solid;
+  padding: 20px;
+ }
 
+</style>
 </head>
 <body>
-<h3>ex02.html</h3>
+<h3>이벤트 버블링, 캡처링</h3>
+<pre>
+ 1. 이벤트 버블링[기본]
+     - 자식 요소 이벤트가 발생하면 부모요소에 그 이벤트가 전달(전파)
+ 2. 이벤트 캡처링
+     - 부모 요소 이벤트가 발생하면 자식요소에 그 이벤트가 전달(전파)
 
+</pre>
+<!-- #out>h2+p#in -->
+<div id="out">
+	<h2>이벤트버블링 체크</h2>
+	<p id="in">자식 p 태그 클릭</p>
+</div>
 <script>
- //js Map
- //key -value 한쌍 entry
- //1. new Map();
- //2. set, get, delete, forEach, size
- //3. entries()
 
-  var fruits = new Map();
-  fruits.set("apple",10); 
-  fruits.set("banana",20); 
-  fruits.set("orange",15); 
- 
- console.log(fruits.size); //3
- //console.log(fruits.get("banana") );  //20
- //console.log(fruits.has("apple") );
- //fruits.delete("apple");
-/*  
- fruits.forEach(function(value, key, map) {
-   console.log(key + "/"+value);	
- }); */
-
-  for (let entry of fruits.entries) {
-	console.log(entry);
+document.getElementById("out").onclick = function(){
+	alert("out div click");
 }
-
+document.getElementById("in").onclick = function(){
+	alert("in p click");
+	event.cancelBubble = true; //이벤트 버블링 취소
+}
 </script>
 </body>
 </html>

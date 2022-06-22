@@ -3,37 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 3. 채영</title>
+<title>2022. 6. 9. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-<ul class="days">
-</ul>
-
- <script>
- for (var d = 1; d <=31; d++) {
-	var li_day = document.createElement("li");
-	//li_day.innerText = d;
-	//오늘 날짜가 3일이라면 <li><span class="active">3</span></li>
-	
-	var li_day_text = document.createTextNode(d);
-	
-	if(d==3){
-		//span태그 만들고 active 효과 줌 <span class="active">3</span>
-		var li_span =document.createElement("span");
-		//li_span.className = "active";
-		li_span.setAttirbute("class","active"); 
-		li_span.appendChild(li_day_text);
-		li_day.appendChild(li_text);
-	}else{
-		li_day.appendChild(li_day_text); //<li>1</li>
-	}
-	 
-	document.querySelector("ul.days").appendChild(li_day);
-}
+<p id ="demo"></p>
+<h3>ex04.html - js 함수 closure(클로저)***</h3>
+<!-- <script>
+ let counter = 0; //전역변수
  
- </script>
+ function add(){
+	 counter +=1;
+ }
+ 
+ add();
+ add();
+ add();
+ 
+ document.getElementById("demo").innerHTML = counter;
+ 
+ //[가정] counter 변수 1증가시킬때는 add() 함수 통해서만 1증가..
+ 
+ counter +=10;
+ document.getElementById("demo").innerHTML = counter; //전역변수라 그냥 이렇게 증가시켜버릴 수 있음
+ 
+ 
+</script> -->
+<!-- 버튼 클릭할때마다 counter 변수의 값이 1씩 증가해서 p#demo 출력 -->
+<button onclick="incCounter()">counter 증가</button>
+<script>
+  //let counter=0; //전역변수로 하면 계속증가함
+  
+  //**계속 증가하는게 아니라 1만 나오는 이유? 지역변수를 생성할때마다 0 초기화 매번 일어나기 때문에
+		  //-> 중첩함수 사용하면 해결 가능 -> ex04_03
+ function add(){
+	  //closure == 폐쇄 
+	//** 
+	 let counter=0; //지역변수   -> 안으로 넣은 이유는 add를 통해서만 증가하도록 하기위해서
+	 
+	 counter +=1;
+	 return counter;
+ }
+ 
+ //add();
+ //add();
+ //add(); 
+ 
+ function incCounter(){
+	  document.getElementById("demo").innerHTML = add();
+ }
+ 
+</script>
 </body>
 </html>

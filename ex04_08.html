@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022. 6. 9. 채영</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+  .myDiv{
+    background-color: #f1f1f1;
+    text-align: center;
+    border:1px solid #d3d3d3;
+    
+    position: absolute;
+    
+    z-index:9;
+  }
+  .myDivHeader{
+    padding: 10px;
+    cursor: move;
+    z-index:10;
+    background-color: #2396F3;
+    color:#fff;
+  }
+</style>
+</head>
+<body>
+<!-- #myDiv1.myDiv>#myDiv1Header.myDiv1Header -->
+<div id="myDiv1" class="myDiv">
+	<div id="myDiv1Header" class="myDivHeader">Click Here</div>
+	<!-- p*3>lorem1 -->
+	<p>Lorem.</p>
+	<p>Reprehenderit.</p>
+	<p>Enim!</p>
+</div>
+
+<div id="myDiv2" class="myDiv">
+	<div id="myDiv2Header" class="myDivHeader">Click Here</div>
+	<!-- p*3>lorem1 -->
+	<p>Lorem.</p>
+	<p>Reprehenderit.</p>
+	<p>Enim!</p>
+</div>
+
+<div id="myDiv3" class="myDiv">
+	<div id="myDiv3Header" class="myDivHeader">Click Here</div>
+	<!-- p*3>lorem1 -->
+	<p>Lorem.</p>
+	<p>Reprehenderit.</p>
+	<p>Enim!</p>
+</div>
+<script>
+//ex04_08 실행안됨
+ function draggable( elemt ){
+	 //js 클로저
+	 var moveX = 0, moveY=0; //이동한x,y좌표
+	 var elemtX = 0, elemtY=0; 
+	 
+	 //myDiv
+	 if( document.getElementById(elemt.id +"Header")){
+		 document.getElementById(elemt.id +"Header").onmousedown = dragMouseDown;
+	 }//if
+	 
+	 //중첩함수
+	 function dragMouseDown(e){
+		 e=e||window.event;
+		 //alert(e.button); //어떤 마우스 눌렀는지 확인 : 마우스 왼쪽0 오른쪽2 휠1
+		//console.log( e.clientX + "/" + e.clientY);
+		 elemtX = e.clientX;
+		 elemtY = e.clientY;
+		 
+		 //마우스 관련 이벤트 등록
+		 document.onmousemove = elementDrag;
+		 document.onmouseup = closeDragElement;
+	 }//dragMouseDown
+	 
+	 //마우스 무브
+	 function elementDrag(e){
+		 e=e||window.event;
+		 
+		 //이동한 거리
+		 moveX = elemtX-e.clientX;
+		 moveY = elemtY-e.clientY;
+		 
+		 //elemt.left ->"10px" 문자
+		 //elemt.offsetLeft -> 10 숫자
+	     elemt.style.left = (offsetLeft - moveX) + "px";
+	     elemt.style.top = (offsetTop - moveY) + "px";
+	     
+	     elemtX = e.clientX;
+		 elemtY = e.clientY; //이동한 곳에서 다시 이동
+		 
+	 }//elementDrag
+	 
+	 //마우스 업
+	 function closeDragElement(e){
+		 //마우스 관련 이벤트 제거
+		 document.onmousemove = null;
+		 document.onmouseup = null;
+		 
+		 
+	 }//closeDragElement 
+ }//draggable
+ 
+ draggable(document.getElementById("myDiv1"));
+ draggable(document.getElementById("myDiv2"));
+ draggable(document.getElementById("myDiv3"));
+</script>
+</body>
+</html>

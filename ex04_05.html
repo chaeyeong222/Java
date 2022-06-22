@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022. 6. 9. 채영</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+<h3>js클로저 예제</h3>
+
+<script>
+ var counterObject = (function (){ //자체 호출 함수
+	               let counter = 0;
+	               function changeBy(value){
+	            	   counter += value;
+	               }
+	               
+                   return{
+                	   increment:function(){
+                		   changeBy(1);
+                	   },
+                       decrement:function(){
+                    	   changeBy(-1);
+                       },
+                       value:function(){
+                    	   return counter;
+                       }
+                   }	 
+ 				})();
+  counterObject.increment();
+  counterObject.increment();
+  counterObject.increment();
+  document.write(counterObject.value()+"<br />");//3
+  counterObject.decrement();
+  document.write(counterObject.value()+"<br />");//2
+
+</script>
+</body>
+</html>

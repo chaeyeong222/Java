@@ -3,81 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 26. 채영</title>
+<title>2022. 6. 9. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<style> 
-#rotate2D, #rotate3D {
-    width: 80px;
-    height: 70px;
-    color: white;
-          position:relative;
-    font-weight:bold;
-    font-size:15px;
-    padding:10px;
-    float:left;
-    margin-right:50px;
-    border-radius:5px;
-    border:1px solid #000000;
-    background:red;
-    margin:10px;
-}
-</style>
 
 </head>
 <body>
-
-<div style="height: 80px;">
-<div id="rotate2D" onmouseover="rotateDIV();">2D rotate</div>
-<div id="rotate3D" onmouseover="rotateYDIV();">3D rotate</div>
-</div>
-
-
-</body>
-
+<h3>ex07_02</h3>
+<button onclick="windowOpen()">새창열기</button>
+<button onclick="windowClose()">창 닫기</button>
 <script>
+ var newWin; 
+ function windowOpen(){
+	 newWin = window.open("ex07_03.html","","width=600,height=500,top=100,left=200");
+ }
+ function windowClose(){
+	 newWin.close();
+ }
 
-  var x,y,n=0,ny=0,rotINT,rotYINT;
-
-function rotateDIV()
-{
-   x=document.getElementById("rotate2D");
-   clearInterval(rotINT);
-   rotINT=setInterval("startRotate()",10);
-}
-function rotateYDIV()
-{
-   y=document.getElementById("rotate3D");
-   clearInterval(rotYINT);
-   rotYINT=setInterval("startYRotate()",10);
-}
-function startRotate()
-{
-   n=n+1;
-   //        transform:rotateX(150deg);
-   x.style.transform="rotate(" + n + "deg)";
-   x.style.webkitTransform="rotate(" + n + "deg)";
-   x.style.OTransform="rotate(" + n + "deg)";
-   x.style.MozTransform="rotate(" + n + "deg)";
-   if (n==180 || n==360)
-   {
-      clearInterval(rotINT);
-   if (n==360){n=0}
-   }
-}
-function startYRotate()
-{
-   ny=ny+1
-   y.style.transform="rotateY(" + ny + "deg)"
-   y.style.webkitTransform="rotateY(" + ny + "deg)"
-   y.style.OTransform="rotateY(" + ny + "deg)"
-   y.style.MozTransform="rotateY(" + ny + "deg)"
-   if (ny==180 || ny>=360)
-   {
-      clearInterval(rotYINT)
-      if (ny>=360){ny=0}
-   }
-}
 
 </script>
+</body>
 </html>

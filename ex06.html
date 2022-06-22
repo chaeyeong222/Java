@@ -3,57 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 8. 채영</title>
+<title>2022. 6. 9. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-<h3>ex06.html-js 화살표 함수(람다식)</h3>
+<h3>ex06.html-DOM</h3>
 <pre>
- 화살표 함수는 es6 도입
- 더 짧은 함수 구문을 작성, 사용
+ 1.DOM?
+   - Document Object Model 의 약자
+   - 웹 페이지를 요청 → 응답 → 브라우저에 응답된 웹페이지가 로딩할때 DOM 객체를 생성
+   - 
+ 2. DOM 사용
+   - html 요소 추가, 수정, 삭제
+   - html 속성 추가, 수정, 삭제
+   - css 스타일 변경
+   - html 이벤트 추가, 수정, 삭제
+   등등
+ 3. W3C DOM 종류
+   1) Core DOM → 모든 문서 유형에 대한 표준 DOM
+   2) ex05.html → html DOM
+   3) test.xml → xml DOM 
+ 4. DOM 메서드
+  ㄱ. html 요소를 찾는 메서드
+	  document.getElementbyId()
+	  document.getElementsByTagName(tagname)
+	  document.getElementsByClassName(classNAme)
+	  document.getElementsByName(name)
+  ㄴ. html 요소 변경
+      element.innerHTML =
+      element.innerText =
+      element.속성명 =
+      element.style.속성명 = 
+      element.setAttirbute(속성명, 속성값);
+      element.getAttirbute(속성명);
+  ㄷ. html요소 동적 추가, 수정, 삭제
+      document.createElement();
+      document.appendChild();
+      
+      document.removeElement();
+      document.removeChild();
+      document.replace(new, old);
+  ㄹ. 이벤트 처리
+     element.on이벤트명 = function(){}
+     element.onmousemove = function(){}
+       :
+       :
+  ㅁ.
+     document.links / document.images
+     document.script 컬렉션
+     
+     document.body   ==<body>요소
+**** document.documentElement == <html> 요소
+     document.doctype <!DOCTYPE>선언문
+     document.head ==<head></head>요소
+     document.title == <title>요소
+     
 </pre>
-<script>
- //방법1
-/*  var hello = function(){
-	 return "hello world";
- }; */
- //방법2
-/*  var hello = () =>{
-	 return "hello world~";
- }; */
-
- //방법3
-  //함수 안에 코딩(명령문)이 하나이고 명령문이 값을 반환하는 경우
- //{} 생략가능, return 키워드 생략가능
- //var hello = () => "hello world!";
- 
- // 방법a
- //test 함수명, name 파라미터 존재
- /* var hello = function test(name){
-	 return name + " hi~";
- } */
- // 방법b
-/*  var hello =(name) => {
- return name + " hi~";
-} */
- // 방법c
-/*  var hello =(name) => name + " hi~!!!";*/
- //name 매개변수가 1개라면 () 생략가능하다
- // var hello = name=> name+"hi!";
- //alert(typeof hello);//function
- //alert(hello("admin")); 
-
-/*  function (a,b){
-	 return a+b;
- }
- */
- 
- var result = (a,b)=> a+b;
- alert(result(10,20));//30
- 
- 
-</script>
 </body>
 </html>

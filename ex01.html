@@ -3,41 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 3. 채영</title>
+<title>2022. 6. 9. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-   <p id="demo"></p>
+<h3>days07_ex01.html : 클릭이벤트 처리</h3>
+<h1 onclick="this.innerHTML"='OopPs!'>클릭</h1>
 <pre>
- indexOf() 
- lastIndexOf()
+ 1. onclick="" on이벤트명 속성
+ 2. 
 </pre>
-<script> 
-var m = [45, 4, 9, 16, 25];
-/* for in
- for (var idx in m) {
-	console.log(idx + "/" + m[idx]); //인덱스, 값
-} */
-
-//각요소 반복문 for of
-/*  for (let elt of m) {
-	console.log(elt);
-}
- */
+<script>
+ //1. document.getElementById(id)
+ //2.document.querySelector("h1")
+ //3. document.getElement[s]ByClassName(name)
+ //4.document.getElement[s]ByName(name)
+ /*5. document.getElementsByTagName("h1")[0].onclick=function(){
+	 alert("test");
+ } */
+ //6
+/*  document.getElementsByTagName("h1")[0].addEventListener("click", function(e) {
+	 alert("test");
+ }) */
+ //7. removeEventListener(){} 이벤트 등록취소
  
- m.entries();
- for (let x of e) {
-	 console.log(x); // [0,45]
+ $("h1").click(function(event) {
 	
-}
+})
 
- //m.indexOf(16,0); //0번째 요소부터 16 찾기 //3
- 
- 
- 
- 
+
 </script>
+
+
 </body>
 </html>

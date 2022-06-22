@@ -3,31 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 24. 채영</title>
+<title>2022. 6. 9. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<style>
- .center{
-  width:50%;
-  /* height:200px; */
-  border: 3px solid green;
-  margin: 0 auto;
-  text-align: center;
-  height:200px;
-  width:400px;
-  /* flexbox를 사용해서 사물을 중앙에 둘 수 있다 */
-  /* flexbox는 InternetExplorer10 이전버전 지원x */
-  display: flex;
-  justify-content: center;
-  align-items:center;
- }
- 
-</style>
-</head>
-<body> 
-<div class="center">
-	<p>Hello World</p>
-</div>
 
+</head>
+<body>
+<h3> ex06_03.html</h3>
+<h1 id="id01">My First Page</h1>
+<p id="id02"></p>
+
+<script>
+ // 각각의 노드에는 속성..
+ //1. nodeName 속성
+	 //요소노드 : 태그명 H1
+	 //속성노드 : 속성명
+	 //텍스트노드: #text
+	 //주석노트 : #comment
+ //2. nodeType 속성
+	 //요소노드 : 1
+	 //속성노드 : 2
+	 //텍스트노드: 3
+	 //주석노드: 4
+	 //루트노트 = html:5
+	 //선먼문노드 : 6
+	 
+ //3. nodeValue 속성
+	 //요소노드 : null
+	 //속성노드 : 속성값
+	 //텍스트노드: 문자열 그 자체 
+ var h1 = document.getElementById("id01");
+ alert(h1.nodeName);//H1
+ 
+ //alert(h1.nodeType);  //1
+  alert(h1.firstChild.nodeType)//3
+ //alert(h1.firstChild); //[object Text]
+ //** 텍스트노드일 경우 nodeValue 값은 문자열 그 자체 
+ //alert(h1.firstChild.nodeValue); //My First Page
+ //** 속성노드일 경우 nodeValue 값은 속성값
+ // id ="id01"
+ //** 요소노드일 경우 nodeValue 값은 null
+ //alert(h1.nodeValue);
+</script> 
 </body>
 </html>

@@ -3,112 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 23. 채영</title>
+<title>2022. 6. 9. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<style>
- table{
- width:100%;
- border-collapse: collapse;
- }
- tr:nth-child(even){
- background-color: #f2f2f2;
- }
- th,td{
-  text-align: left;
-  padding: 8px;
- }
- div{
- border: 1px solid red;
- overflow-x:auto;
- }
- 
-</style>
+
 </head>
-<h3>반응형테이블</h3>
-<pre>
-화면이 너무 작아 전체 콘텐츠를 표시할 수 없는 경우
-반응형테이블에 가로스크롤 바가 표시된다.
-</pre>
-
 <body>
-<div>
-<!--  table>(tr>th*10>lorem1)+(tr*5>td*10>lorem1) -->
- <table>
- 	<tr>
- 		<th>Lorem.</th>
- 		<th>Eligendi.</th>
- 		<th>Consequatur.</th>
- 		<th>Ullam.</th>
- 		<th>Totam!</th>
- 		<th>Perferendis.</th>
- 		<th>Ducimus!</th>
- 		<th>A.</th>
- 		<th>Ut.</th>
- 		<th>Laboriosam.</th>
- 	</tr>
- 	<tr>
- 		<td>Lorem.</td>
- 		<td>Mollitia?</td>
- 		<td>Iusto!</td>
- 		<td>Iste.</td>
- 		<td>Inventore!</td>
- 		<td>Placeat!</td>
- 		<td>Fugiat!</td>
- 		<td>Numquam!</td>
- 		<td>Itaque.</td>
- 		<td>Atque?</td>
- 	</tr>
- 	<tr>
- 		<td>Lorem.</td>
- 		<td>Odio.</td>
- 		<td>Dolor.</td>
- 		<td>A!</td>
- 		<td>Dolore!</td>
- 		<td>Cum.</td>
- 		<td>Inventore!</td>
- 		<td>Placeat.</td>
- 		<td>Laboriosam?</td>
- 		<td>Sit.</td>
- 	</tr>
- 	<tr>
- 		<td>Lorem.</td>
- 		<td>Ipsam.</td>
- 		<td>Aspernatur.</td>
- 		<td>Expedita.</td>
- 		<td>Repellendus?</td>
- 		<td>Modi.</td>
- 		<td>Eaque!</td>
- 		<td>Rerum?</td>
- 		<td>Consequuntur!</td>
- 		<td>Illum.</td>
- 	</tr>
- 	<tr>
- 		<td>Lorem.</td>
- 		<td>Quas?</td>
- 		<td>Omnis.</td>
- 		<td>Ea.</td>
- 		<td>Totam!</td>
- 		<td>Odio.</td>
- 		<td>Iure!</td>
- 		<td>Sit.</td>
- 		<td>Esse.</td>
- 		<td>Saepe!</td>
- 	</tr>
- 	<tr>
- 		<td>Lorem.</td>
- 		<td>Aliquam.</td>
- 		<td>Iste.</td>
- 		<td>Minus?</td>
- 		<td>Placeat!</td>
- 		<td>Reiciendis.</td>
- 		<td>Neque?</td>
- 		<td>Quisquam.</td>
- 		<td>Numquam?</td>
- 		<td>Illum.</td>
- 	</tr>
- </table>
-</div>
+<script>
+//naver 메인페이지에 link 태그 확인
 
+ var cnt = document.links.length;
+ for (var i = 0; i < cnt; i++) {
+	var href = document.links[i].href;
+	var text = document.links[i].text;
+	document.write((i+1)+":"+href+"/"+text+"<br />");
+}
+
+</script>
+
+<!-- <script>
+//naver 메인페이지에 image 태그 확인
+
+var cnt = document.images.length;
+//alert(cnt); //82
+for (var i = 0; i < cnt; i++) {
+	console.log( document.images[i].src);
+	document.images[i].src ="#";
+}
+</script> -->
 </body>
 </html>

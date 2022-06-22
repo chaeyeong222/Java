@@ -3,53 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 8. 채영</title>
+<title>2022. 6. 9. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-<h3>ex06_02. js 화살표 함수에서의 this 의미</h3>
+<h3>ex06_02.html-HTML DOM 탐색</h3>
+<pre>
+ 1. html 문서의 모든 것은 node 노드 이다
+ 2. 전체 문서 == 문서 노드
+     요소노드 element node
+     속성노드 attribute node
+     텍스트노드 text node
+     주석노드 comment node
+ 3. 모든 노드들은 관계가 있다
+    ▶ 부모 - 자식 관게
+    parent - child
+    ▶ 형제관계
+    nextElementSibling 다음 형제 요소
+    nextSibling        다음 형제 노드
+    previousElementSibling 이전 형제 요소
+    previousSibling 이전 형제 노드
+   
+    ▶ 자식노드
+      첫번째 자식노드:firstChild
+      마지막 자식노드:lastChild
+ 4. 노드들 간에 탐색할 때 자주 사용되는 속성
+    ㄱ. parentNode 속성: 부모노드
+    ㄴ. childNodes 속성: 자식노드 목록   (nodeList)
+    ㄷ. firstChild 속성
+    ㄹ. lastChild 속성
+    ㅁ. nextSibling 속성
+    ㅂ. previousSibling 속성
+    
 
-<button id="btn">클릭</button>
-<p id=demo></p>
-
-<script>
-  var hello;
-  
- /*  hello = function (){
-	  documen
-	  t.getElementById("demo").innerHTML += this ;
-  } */
-  
-/*   hello =()=>{ 
-	  document.getElementById("demo").innerHTML += this;
-	  //Object Window)
-  }; */
-  hello =()=>{ 
-	  document.getElementById("demo").innerHTML += this;
-	  //Object Window)
-  };
-  
-  window.addEventListener("load", hello);
- 
-</script>
-<!-- 
-<script>
- //[js 화살표 함수에서의 this 의미]
- //화살표 함수를 사용할때 this는 항상 화사표 함수를 정의한 객체를 나타낸다.
- 
- //일반 함수 test의 this 의미
- 
- function test(){
-	 alert(this);//
-	 
- }
- var hello=() => alert(this);
- 
- hello();
- 
-
-</script> -->
+</pre>
 </body>
 </html>

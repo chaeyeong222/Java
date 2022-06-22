@@ -3,55 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 8. 채영</title>
+<title>2022. 6. 9. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-<h3> ex05 - js에서 this 의미</h3>
+<h3>ex05.html</h3>
+<form id="form1" name="form1" action="">
+  Name : <input type="text" name="name" value="admin" />
+  <br>
+  Age : <input type="text" name="age" value="20" />
+  <br>
+  Email : <input type="email" name="email" value="admin@naver.com" />  
+  <button type="button" value="ok">확인</button>
+</form>  
+
+<p id="demo"></p>
 <script>
-// 클릭이벤트가 발생할 때 호출되는 익명 함수 == 이벤트 핸들러
- document.querySelector("h3").onclick = function(){
-	 alert(this); //[Object HTMLHeadingElement]
-	 //이때 this 는 클릭이벤트를 발생한(수신한) 객체
- }
-
-
-</script>
- <script>
-  function test(){
-	  //3.함수 안에 있는 this? [object Window]
-	//alert(this);
-	 // return this;
-	  
-  }
-  //test();  
+ //js 컬렉션
+ // 1.arguments
+ // 2.options
+ // 3.forms
+ // 4.element
+ // 5.links 
+ // 6.images
+ 
+ $("button").click(function(event) {
+ 	var form1 = document.forms["form1"];
+ 	var cnt = form1.elements.length; //4
+ 	for (var i = 0; i < cnt; i++) {
+		$("#demo").html(
+		$("#demo").html() + "<br>" + form1.elements[i].value		
+		);
+	}
+ });
  
  
- </script>
-
-<script>
-//2. [object Window]
- var x = this;
- //alert(x); //[object Window]
+ 
 
 </script>
-<script>
 
-  //var m= [];
-  //person 객체{}
-  //1. Object 안에서의 this 는 person 객체 자신을 나타낸다
-  var person = {
-		 name:"hong",
-		 age:20,
-		 disp: function() {
-			return this.name+"/"+this.age;
-		}
-		  
-  }
-  
-
-</script>
 </body>
 </html>

@@ -3,40 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 8. 채영</title>
+<title>2022. 6. 9. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-<h3>ex03.html</h3>
-
+<h3>ex03</h3>
+<pre>
+ 1. js function (함수) 정리
+ 2. js closure() 클로저 ***
+</pre>
 <script>
-"use strict"
-//엄격 모드 사용 -> 반드시 변수 선언하고 js에서 사용하겠다
- var form = "admin";
+ /*
+ 1.함수선언
+ function 함수명(){
+	 //
+	 //
+ }
+ */
  
- function test(){
-	 //ex03.html:20 Uncaught ReferenceError: from is not defined
-	 //맨 위에 "use strict" 오류 띄워줌
-	 
-	 from = "hong"; //오타났을 때
-	 
-	 document.write(form);
+/*  function sum(a,b=1){
+	 return a+b;  //실행문 뒤에 세미콜론 찍는다
  }
- test();
 
-</script>
-<!-- <script>
-//js 호이스팅
-//변수 선언 부분을 자동으로 맨 위로 이동.
- n=400;
- var n;
- console.log(n);
-
- function test(){
-	 console.log(">test()~");
+ //document.write( sum(10,20) )
+ document.write( sum(10) ) //b입력안하면 NaN, b=1초기화하면 11
+ */
+  //2.익명함수
+ /*  var hap = function (a,b ){
+	 return a+b;
  }
-</script> -->
+ document.write(hap(1,2)); */
+
+ //3.Function() 객체 생성자
+/*   var myHap = new Function("a","b","return a+b");
+   document.write(myHap(1,2)); */
+   
+ // js호이스팅: 변수, 함수 선언 자동으로 맨 위로 코딩 올리는 것 
+ </script>
+ <script>
+ //[자체호출함수]
+ // 1+2 동시에
+ //1. 함수 선언 부분
+/*  function test(){
+	 //
+ } */
+ //2. 함수 호출 부분
+ // test()
+/*  
+ (function(){
+	  alert("hello world");
+ })();
+  */
+ //js 함수도 객체이다
+ function sum(a,b){
+	 return a+b;
+ }
+ 
+ var str = sum.toString();
+ alert(str);  //함수 자체가 문자열로 경고창뜸
+ </script>
 </body>
 </html>

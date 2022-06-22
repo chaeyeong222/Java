@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 9. - 오후 3:46:12</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<style>
+   *{
+      box-sizing: border-box;
+   }
+   .alert{
+      padding: 20px;
+      background-color: #f44336;
+      color:white;
+      opacity: 1; 
+      transition:opacity 0.6s, height 0.6s;
+      margin-bottom: 15px;
+   }
+   .alert.success{     background-color: #4caf50;   }
+   .alert.info{      background-color: #2196f3;   }
+   .alert.warning{     background-color: #ff9800;   }
+   .closebtn{
+     margin-left: 15px;
+     color:white;
+     font-weight: bold;
+     float:right;
+     font-size: 22px;
+     line-height: 20px;
+     cursor:pointer;
+     transition:0.3s;
+   }
+   .closebtn:hover{
+      color:black;
+   }
+</style>
+</head>
+<body>
+
+<h3>ex06_06.html</h3>
+
+<h2>알림(공지사항)</h2>
+공지사항 타입 : 
+<select name="type" id="type">
+   <option>type 없음</option>
+   <option>success</option>
+   <option>warning</option>
+   <option>info</option>
+</select>
+<br>
+내용  : <input type="text" />
+<button>공지사항 추가</button>
+<hr>
+<!-- 동적 공지사항을 추가.
+<div class="alert">
+  <span class="closebtn">&times;</span>
+  <strong>Danger!</strong>
+  Lorem ipsum dolor sit amet, consectetur adipisicing.
+</div>
+<div class="alert success">
+  <span class="closebtn">&times;</span>
+  <strong>Success!</strong>
+  Lorem ipsum dolor sit amet, consectetur adipisicing.
+</div>
+<div class="alert warning">
+  <span class="closebtn">&times;</span>
+  <strong>Warning!</strong>
+  Lorem ipsum dolor sit amet, consectetur adipisicing.
+</div>
+<div class="alert info">
+  <span class="closebtn">&times;</span>
+  <strong>Info!</strong>
+  Lorem ipsum dolor sit amet, consectetur adipisicing.
+</div> 
+ -->
+ 
+ <script>
+   window.onload = function (){
+      // 공지사항 객체{} * 4 배열
+      var data = [
+           {type:"success", message:" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestias."},
+           {type:"warning", message:" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestias."},
+           {type:"info", message:" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestias."},
+           {type:"success", message:" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestias."}
+        ];
+      
+      // 동적으로 공지사항 웹페이지 로딩될 때 추가
+      for (var i = 0; i < data.length; i++) {
+         /* 
+         <div class="alert info">
+         <span class="closebtn">&times;</span>
+         <strong>Info!</strong>
+         Lorem ipsum dolor sit amet, consectetur adipisicing.
+       </div>
+         */
+         
+         // <div class="alert success">
+         var  alertDiv = document.createElement("div");
+         alertDiv.classList.add("alert"); 
+          alertDiv.classList.add( data[i].type );    
+          
+          // <span class="closebtn">&times;</span>
+          var spanbtn = document.createElement("span");
+          spanbtn.classList.add("closebtn"); 
+          spanbtn.innerHTML = "&times;";
+          spanbtn.onclick = function (){
+                                  var div =   this.parentElement;
+                                 div.style.opacity = "0";
+                                 setTimeout(function() {
+                                    div.style.display = "none";
+                                 }, 600);
+                              };
+        alertDiv.appendChild(spanbtn)   
+        
+        // <strong>Info!</strong>
+        var strong = document.createElement("strong");
+        strong.innerHTML =  data[i].type.toUpperCase() ;
+        alertDiv.appendChild(strong)   ;
+        
+        // Lorem ipsum dolor sit amet, consectetur adipisicing.            텍스트노드
+        var content =  data[i].message;
+        var message = document.createTextNode(content);
+         alertDiv.appendChild( message );
+         
+         
+         //
+         var hr = document.querySelector("hr");
+         var before= hr.nextSibling;
+         document.body.insertBefore(alertDiv, before)
+           
+      } // for
+       
+   } // onload
+ </script>
+ 
+ <script>
+   $("button").click(function(event) {
+      
+      // <div class="alert success">
+      var  alertDiv = document.createElement("div");
+      alertDiv.classList.add("alert"); 
+       alertDiv.classList.add(   $("#type").val()   );    
+       
+       // <span class="closebtn">&times;</span>
+       var spanbtn = document.createElement("span");
+       spanbtn.classList.add("closebtn"); 
+       spanbtn.innerHTML = "&times;";
+       spanbtn.onclick = function (){
+                               var div =   this.parentElement;
+                              div.style.opacity = "0";
+                              setTimeout(function() {
+                                 div.style.display = "none";
+                              }, 600);
+                           };
+     alertDiv.appendChild(spanbtn)   
+     
+     // <strong>Info!</strong>
+     var strong = document.createElement("strong");
+     strong.innerHTML =  $("#type").val().toUpperCase() ;
+     alertDiv.appendChild(strong)   ;
+     
+     // Lorem ipsum dolor sit amet, consectetur adipisicing.            텍스트노드
+     var content =  $("input").val();
+     var message = document.createTextNode(content);
+      alertDiv.appendChild( message );
+      
+      
+      //
+      var hr = document.querySelector("hr");
+      var before= hr.nextSibling;
+      document.body.insertBefore(alertDiv, before)
+      
+   });
+ </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

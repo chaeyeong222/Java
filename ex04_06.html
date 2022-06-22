@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022. 6. 9. 채영</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+  .myProgress{
+    width:100%;
+    background-color: #ddd;
+    border:solid 1px gray;
+  }
+  .myBar{
+    width:1%;
+    height: 30px;
+    background-color: #4CAF50;
+    text-align: right;
+    color:red;
+  }
+</style>
+</head>
+<body>
+<!-- (#myProgress$.myProgress>#myBar$.myBar+button#btn$>{진행})*5 -->
+<div id="myProgress1" class="myProgress">
+	<div id="myBar1" class="myBar"></div>
+	<button id="btn1">진행</button>
+</div>
+<div id="myProgress2" class="myProgress">
+	<div id="myBar2" class="myBar"></div>
+	<button id="btn2">진행</button>
+</div>
+<div id="myProgress3" class="myProgress">
+	<div id="myBar3" class="myBar"></div>
+	<button id="btn3">진행</button>
+</div>
+<div id="myProgress4" class="myProgress">
+	<div id="myBar4" class="myBar"></div>
+	<button id="btn4">진행</button>
+</div>
+<div id="myProgress5" class="myProgress">
+	<div id="myBar5" class="myBar"></div>
+	<button id="btn5">진행</button>
+</div>
+<!-- <script>
+
+ var btns= document.getElementsByTagName("button");
+ for (var i = 0; i < btns.length; i++) {
+	 btns[i].onclick=function(){
+		 //this==event.srcElement
+		 var btn = event.srcElement;
+		 var width =1;
+		 var timer = setInterval(function() {//중첩함수
+			if(width < 100){
+	
+				width++;
+				btn.previousElementSibling.style.width = width+"%";
+				btn.previousElementSibling.innerHTML = width+"%";
+				
+			}else{
+				clearInterval(timer);
+			}
+		},30);
+	 }
+}//for
+
+</script> -->
+<script>
+    //각각의 div
+
+    $(".myProgress button").click(function (event) {
+        var btn = $(this);
+        console.log(btn)
+        var width = 1;
+        var timer = setInterval(function () { //중첩 함수
+            if(width < 100){
+                width++;
+                btn.prev().css("width", width+"%");
+                btn.prev().html(width+"%");
+            } else {
+                clearInterval(timer);
+            }
+        }, 30)
+    });
+</script> 
+</body>
+</html>
