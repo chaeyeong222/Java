@@ -3,66 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 9. 채영</title>
+<title>2022. 6. 10. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+ .box{
+  position: absolute;
+  
+ }
 
+</style>
 </head>
 <body>
-<h3>ex03</h3>
+<h3>ex03.html</h3>
 <pre>
- 1. js function (함수) 정리
- 2. js closure() 클로저 ***
+마우스로 클릭하면 이미지가 생기도록 하기
+오른쪽 마우스를 클릭할 때 뜨는 메뉴 :  컨텍스트 메뉴context menu
 </pre>
+<img src="../images/item01.gif" alt="" />
 <script>
- /*
- 1.함수선언
- function 함수명(){
-	 //
-	 //
- }
- */
- 
-/*  function sum(a,b=1){
-	 return a+b;  //실행문 뒤에 세미콜론 찍는다
- }
-
- //document.write( sum(10,20) )
- document.write( sum(10) ) //b입력안하면 NaN, b=1초기화하면 11
- */
-  //2.익명함수
- /*  var hap = function (a,b ){
-	 return a+b;
- }
- document.write(hap(1,2)); */
-
- //3.Function() 객체 생성자
-/*   var myHap = new Function("a","b","return a+b");
-   document.write(myHap(1,2)); */
-   
- // js호이스팅: 변수, 함수 선언 자동으로 맨 위로 코딩 올리는 것 
- </script>
- <script>
- //[자체호출함수]
- // 1+2 동시에
- //1. 함수 선언 부분
-/*  function test(){
-	 //
- } */
- //2. 함수 호출 부분
- // test()
-/*  
- (function(){
-	  alert("hello world");
- })();
-  */
- //js 함수도 객체이다
- function sum(a,b){
-	 return a+b;
- }
- 
- var str = sum.toString();
- alert(str);  //함수 자체가 문자열로 경고창뜸
- </script>
+  document.ontextmenu =function (){
+	  //alert("오른쪽 마우스 사용할 수 없음");
+	  return false;
+  }
+  function getRandom(min,max){ 
+	  return Math.floor(Math.random()*(max-min+1)+min);
+  }
+  
+  document.onmousedown = function (){
+	  //마우스의 왼쪽버튼 클릭 왼0 오2 휠1
+	  if(event.button == 0){
+		 //$("img").width() == 122px
+		  document.title = event.clientX + "," +event.clientY+"/"+ $("img").width();
+		 //<img src="../images/item01.gif" alt="" /> 동적생성하기
+		 //DOM
+		 var img = document.createElement("img");
+		 //
+		 var no = getRandom(1,21).toString().padStart(2,0);
+		 var imgUrl = "../images/item"+no+".gif";
+		 img.setAttribute("src",imgUrl);
+		 img.classList.add("box");
+		 var left = event.clientX - ($("img").width()/2);
+		 var top = event.clientY - ($("img").height()/2);
+		 img.setAttribute("style","left:"+left+"px;top:"+top+"px");
+		 
+		 document.body.appendChild(img);
+			 
+	  }else if(event.button ==2){ //오른쪽 마우스 클릭
+		  //클릭한 이미지 제거
+		  document.body.removeChild(event.srcElement);
+		  
+	  }else if(event.button ==1){ //휠클릭
+		  //모든 이미지 제거
+		 var imgs = document.body.querySelectorAll("img");
+	     for (var i = 0; i < imgs.length; i++) {
+	    	 document.body.removeChild(imgs[i]);
+		}
+		  //document.images 컬렉션
+		  //localhost.webPro/javascript/sample/exam15.html~~예제 많음
+	  }
+	  
+  }//function
+  
+  </script>
 </body>
 </html>

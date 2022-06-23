@@ -3,39 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 9. 채영</title>
+<title>2022. 6. 10. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-<h3>days07_ex01.html : 클릭이벤트 처리</h3>
-<h1 onclick="this.innerHTML"='OopPs!'>클릭</h1>
+<h3>days08-ex01.html</h3>
 <pre>
- 1. onclick="" on이벤트명 속성
- 2. 
+ [js BOM]
+ window
+ window.screen = 사용자 화면에 대한 정보를 가지공 ㅣㅆ는 객체
+ screen.width
+ screen.height
+ screen.availWidth 사용가능 너비(작업표시줄 제외한 화면너비)
+ screen.availHeight
+ screen.colorDepth 색농도  
+     16비트 : 65536가지
+     32비트 : 42억가지
 </pre>
+<p id="demo"></p>
 <script>
- //1. document.getElementById(id)
- //2.document.querySelector("h1")
- //3. document.getElement[s]ByClassName(name)
- //4.document.getElement[s]ByName(name)
- /*5. document.getElementsByTagName("h1")[0].onclick=function(){
-	 alert("test");
- } */
- //6
-/*  document.getElementsByTagName("h1")[0].addEventListener("click", function(e) {
-	 alert("test");
- }) */
- //7. removeEventListener(){} 이벤트 등록취소
- 
- $("h1").click(function(event) {
-	
-})
 
-
+  var output ="";
+  output += screen.width + "/" + screen.height + "<br />"
+  output += screen.availWidth + "/" + screen.availHeight + "<br />"
+  output += colorDepth + "<br />"
+  
 </script>
-
-
 </body>
 </html>

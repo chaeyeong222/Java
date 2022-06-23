@@ -3,63 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 9. 채영</title>
+<title>2022. 6. 10. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="cookie.js"></script>
 
 </head>
 <body>
-<h3>ex06.html-DOM</h3>
+<h3>ex06.html - js 마지막 예제</h3>
 <pre>
- 1.DOM?
-   - Document Object Model 의 약자
-   - 웹 페이지를 요청 → 응답 → 브라우저에 응답된 웹페이지가 로딩할때 DOM 객체를 생성
-   - 
- 2. DOM 사용
-   - html 요소 추가, 수정, 삭제
-   - html 속성 추가, 수정, 삭제
-   - css 스타일 변경
-   - html 이벤트 추가, 수정, 삭제
-   등등
- 3. W3C DOM 종류
-   1) Core DOM → 모든 문서 유형에 대한 표준 DOM
-   2) ex05.html → html DOM
-   3) test.xml → xml DOM 
- 4. DOM 메서드
-  ㄱ. html 요소를 찾는 메서드
-	  document.getElementbyId()
-	  document.getElementsByTagName(tagname)
-	  document.getElementsByClassName(classNAme)
-	  document.getElementsByName(name)
-  ㄴ. html 요소 변경
-      element.innerHTML =
-      element.innerText =
-      element.속성명 =
-      element.style.속성명 = 
-      element.setAttirbute(속성명, 속성값);
-      element.getAttirbute(속성명);
-  ㄷ. html요소 동적 추가, 수정, 삭제
-      document.createElement();
-      document.appendChild();
-      
-      document.removeElement();
-      document.removeChild();
-      document.replace(new, old);
-  ㄹ. 이벤트 처리
-     element.on이벤트명 = function(){}
-     element.onmousemove = function(){}
-       :
-       :
-  ㅁ.
-     document.links / document.images
-     document.script 컬렉션
-     
-     document.body   ==<body>요소
-**** document.documentElement == <html> 요소
-     document.doctype <!DOCTYPE>선언문
-     document.head ==<head></head>요소
-     document.title == <title>요소
-     
+ item01.gif,[item02.gif],item03.gif
+ 라디오버튼 선택하면
+ 1) 배경이지로 설정
+ 2) 쿠키저장   +10 일동안 살아있게
+     쿠키이름: bgimg, 쿠키값 item02
+
+
 </pre>
+<table border="1" style="background-color:white;width:400px;margin:0 auto;">
+
+<tr>
+	<td><img src="../images/item01.gif" alt="" /></td>
+	<td><img src="../images/item02.gif" alt="" /></td>
+	<td><img src="../images/item03.gif" alt="" /></td>
+</tr>
+<tr>
+	<td><input type="radio" checked="checked" name="bgImages" id="item01" value="item01" />item01</td>
+	<td><input type="radio" name="bgImages" id="item02" value="item02" />item02</td>
+	<td><input type="radio" name="bgImages" id="item03" value="item03"  />item03</td>
+</tr>
+
+
+</table>
+<script>
+
+ var cname = "bgimg"; //쿠키이름
+ var cvalue = "item01";//쿠키값
+ var expdays = 10; //쿠키 만료시점
+ 
+ window.onload = function (){ //페이지 로딩될때
+	 //bgimg 쿠키값 얻어오는 코딩
+	 //cookie.js
+	 cvalue = getCookie(cname);
+	 if (cvalue) {
+		 document.body.style.backgroundImage="url(../images/"+cvalue+".gif)";
+		 document.getElementById(cvalue).checked="checked";
+	} else { //false == null
+       document.body.style.backgroundImage="url(../images/item01.gif)";
+	}
+ 
+    //라디오 버튼을 클릭할때 배경이미지도 변경, 쿠기도 저장
+    var rdbs = document.getElementsByName("bgImages");
+    for (var i = 0; i < rdbs.length; i++) {
+    	rdbs[i].onclick = function(){
+    		var ImgName = event.srcElement.value;
+    	document.body.style.backgroundImage="url(../images/"+ImgName+".gif)";
+    		//console.log(rdbs[i].value);	
+    		setCookie(cname, imgName, expdays);
+    	}//onclick
+	}
+ 
+ }//onload
+ 
+ 
+ 
+
+</script>
+
+
+
+
 </body>
 </html>

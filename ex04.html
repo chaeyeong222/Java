@@ -3,40 +3,112 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 9. 채영</title>
+<title>2022. 6. 10. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-</head>
-<body>
-<h3>ex04.html - js 함수 closure(클로저)***</h3>
-<pre>
- 1. js변수 - 지역(로컬)변수 : 함수 호출될 때 생성 -> 종료 시 삭제
-            전역변수 : 다른페이지로 이동, 창이 닫힐 때 사라짐(페이지가 유지되는 동안만 존재)
- 2. 클로저 - 전역변수를 로컬(지역)에 비공개적으로 만들 수 있다
-</pre>
-<p id="demo"></p>
-
-<script>
-
-  var a;//전역변수
-  let b;//전역변수
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+.modal-header, .modal-footer{
+    background-color: #5CB85C;
+    padding: 2px 16px;
+    color:white;
+  }
   
-  function test(x){ //x 지역변수, 매개변수
-	  var c;//지역변수
-	  y = 200; //전역변수
-	  {
-		  let d; //이 블럭에서만 사용할 수 있는 지역변수
-	  }
+  .modal-body{
+    padding: 2px 16px;
+  }
+  
+ .close{
+    color:white;
+    float:right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover, .close:focus{
+    color:#000;
+    text-decoration: none;
+    cursor: pointer;
   }
 
+  .modal{
+/*     display:none;    */
+  
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left:0;
+    top:0;
+       width:100%;   
+       height:100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color:rgba(0,0,0,0.4);
+  }
+  
+  .modal-content{
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding:0;
+    border:1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 9px 0  rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    
+    animation-name:animatetop;
+    animation-duration: 0.4s;
+    
+    -webkit-animation-name:animatetop;
+    -webkit-animation-duration: 0.4s;
+  }
+   /* 애니메이션 효과 */
+  @keyframes animatetop{
+     from{ top:-300px; opacity: 0; }
+     to{ top:0; opacity: 1; }
+  }
+  @-webkit-keyframes animatetop{
+     from{ top:-300px; opacity: 0; }
+     to{ top:0; opacity: 1; }
+  }
+  
+</style>
+</head>
+<body>
+<h3>ex04.html - 모달modal 창</h3>
+<button id="myBtn">Open Modal</button>
+<div id="myModal" class="modal">
+	<div class="modal-content">
+		<div class="modal-header">
+			<span class="close">&times;</span>
+			<h2>Modal Header</h2>
+		</div>
+		<div class="modal-body">
+			<p>Lorem ipsum dolor sit.</p>
+			<p>Lorem ipsum dolor sit amet.</p>
+		</div>
+		<div class="modal-footer">
+		<h3>Modal Footer</h3>
+	    </div>
+  </div>
+</div>
 
+<script>
+  var modal = document.getElementById("myModal");
+  
+  document.getElementById("myBtn").onclick = function (){
+	  modal.style.display="block";
+  }
+  document.querySelector(".modal-header span.close").onclick = function(){
+	  modal.style.display="none";
+  }
+
+   window.onclick = function(event) {
+	if(event.target ==modal){
+		modal.style.display="none";
+	}
+}
 
 </script>
-
-
-
-
 
 </body>
 </html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>채영/2022/06/10-11:15 AM</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="cookie.js"></script>
+</head>
+<body>
+<!-- 쿠키 추가 수정 삭제 확인 -> 모듈 (라이브러리) cookie.js 파일  -->
+
+
+<h3>ex05_03.html - </h3>
+
+쿠키이름 : <input type="text" id="cookieName"><br>
+쿠키값 : <input type="text" id="cookieValue"><br>
+<br>
+<button onclick="btn_setCookie()">쿠키 생성</button>
+<button onclick="btn_getAllCookies()">모든 쿠키 확인</button>
+<button onclick="btn_getCookie()">쿠키 확인</button>
+<button onclick="btn_delCookie()">쿠키 삭제</button>
+<p id="demo"></p>
+
+<script> 
+    function btn_delCookie(){
+      var cname = document.getElementById("cookieName").value;
+      delCookie(cname);
+    	
+    }
+
+    function btn_getCookie() {
+        var cname = document.getElementById("cookieName").value;
+        var cvalue = getCookie(cname);
+        if (cvalue) {
+			$("#demo").html(cvalue);
+		} else {
+			alert("쿠키 존재x");
+		} 
+    }
+
+    function btn_setCookie() {
+        var cname = document.getElementById("cookieName").value;
+        var cvalue = escape(document.getElementById("cookieValue").value);
+        
+        setCookie(cname, cvalue, 10);
+
+        document.getElementById("cookieName").value = "";
+        document.getElementById("cookieValue").value = "";
+
+    }
+    function btn_getAllCookies() {
+         
+        var cookies = getAllCookies();
+        if (cookies) {
+            document.getElementById("demo").innerHTML = cookies;
+        } else {
+            document.getElementById("demo").innerHTML = "쿠키는 존재하지 않습니다";
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

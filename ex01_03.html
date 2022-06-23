@@ -3,50 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 27. 채영</title>
+<title>2022. 6. 10. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-	<h3>ex01_03.html - html요소 속성 변경</h3>
+<pre>
+ [js BOM]
+ 1. window
+ 2. window.screen
+ 3. location 
+ 4. history
+    브라우저의 기록 포함하고 있는 객체
 
-	<button onclick="bulb_on();">Turn on</button>
-	<!-- 비활성화 disabled -->
-	<button onclick="bulb_off();" disabled="disabled">Turn off</button>
 
-
-	<img src="../images/pic_bulboff.gif" alt="" id="imgbulb" />
-	<!-- <img src="../images/pic_bulbon.gif" alt="" id="imgbulbon"/> -->
-
-	<pre>
-Turn on 버튼을 클릭하면 전구에 불이 켜지도록 하고 싶다.
-img 요소의 src 속성값을 "../images/pic_bulbon.gif"로 변경(js)
 </pre>
-
-	<script>
-		function bulb_on() {
-			let bulb = document.getElementById("imgbulb");
-			/* bulb.속성명=속성값 */
-			bulb.src = "../images/pic_bulbon.gif";
-
-			//turn on 버튼 비활성
-			/* document.querySelector("button:") */
-			/* document.querySelector("button:nth-of-type(1)") */
-			document.querySelector("button:first-of-type").disabled = true;
-
-			//turn off 버튼 활성화
-			document.querySelector("button:last-of-type").disabled = false;
-		}
-
-		function bulb_off() {
-			let bulb = document.getElementById("imgbulb");
-			/* bulb.속성명=속성값 */
-			bulb.src = "../images/pic_bulboff.gif";
-			document.querySelector("button:first-of-type").disabled = false;
-			document.querySelector("button:last-of-type").disabled = true;
-		}
-	</script>
 </body>
 </html>

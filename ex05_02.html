@@ -1,35 +1,110 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 9. 채영</title>
-<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>채영/2022/06/10-11:15 AM</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-<script>
-//naver 메인페이지에 link 태그 확인
+<h3>ex05_02.html - </h3>
 
- var cnt = document.links.length;
- for (var i = 0; i < cnt; i++) {
-	var href = document.links[i].href;
-	var text = document.links[i].text;
-	document.write((i+1)+":"+href+"/"+text+"<br />");
-}
+쿠키이름 : <input type="text" id="cookieName"><br>
+쿠키값 : <input type="text" id="cookieValue"><br>
+<br>
+<button onclick="setCookie()">쿠키 생성</button>
+<button onclick="getAllCookies()">모든 쿠키 확인</button>
+<button onclick="getCookie()">쿠키 확인</button>
+<button onclick="delCookie()">쿠키 삭제</button>
+<p id="demo"></p>
+
+<script>
+
+    function delCookie(){
+ //쿠키값을 삭제하고자 한다면 그 쿠키의 만료시점을 과거로 설정해서 다시 쿠키 저장해서 삭제
+    var cname = document.getElementById("cookieName").value;
+    
+ //만료시점
+    var now = new Date();
+    var day = now.getDate() - 10;
+    now.setDate(day); 
+ 
+    document.cookie = cname + "=; expires="+now.toUTCString();
+   	
+    	
+    }
+
+    function getCookie() {
+        var cname = document.getElementById("cookieName").value;
+        var cookies = document.cookie; // 모든 쿠키 정보
+        var pattern=/;\s/;
+        var cookieArray = cookies.split(pattern);
+        //"id=%uD64D%uAE38%uB3D9"
+        //"age=20"
+        //forEach 함수는 무조건 끝까지 반복 break; return 무시한다.
+       /*  cookieArray.forEach(function (elt, i, array) {
+            var cnv = elt.split("=");
+            cn = cnv[0];
+             console.log(cn);
+            cv = cnv[1];
+            console.log(cn+"-ok");
+            if(cn == cname){
+                $("#demo").html(unescape(cv));
+                return;
+            }
+        }); */
+        
+        for (var i = 0; i < cookieArray.length; i++) {
+        	var cnv = cookieArray[i].split("=");
+            cn = cnv[0];
+             console.log(cn);
+            cv = cnv[1];
+            console.log(cn+"-ok");
+            if(cn == cname){
+                $("#demo").html(unescape(cv));
+                return;
+            }//if
+		}
+        
+        $("#demo").html("찾는 쿠키 값은 존재하지 않습니다");
+    }
+
+    function setCookie() {
+        var cname = document.getElementById("cookieName").value;
+        var cvalue = escape(document.getElementById("cookieValue").value);
+        //홍길동 > js escape() > %uD64D%uAE38%uB3D9 (%가붙은 16진수 값)
+        //%uD64D%uAE38%uB3D9>홍길동 : js unescape()
+        //alert(cvalue);
+
+        //만료시점
+        var now = new Date();
+        var day = now.getDate() + 10;
+        now.setDate(day);
+        //alert(now.toLocaleString())
+
+        //쿠키저장
+        document.cookie = cname + "=" + cvalue + "; expires="+now.toUTCString();
+        //; 뒤 공백 -문법
+        //날짜는 .toUTCString()
+
+        document.getElementById("cookieName").value = "";
+        document.getElementById("cookieValue").value = "";
+
+    }
+    function getAllCookies() {
+        //id=%uD64D%uAE38%uB3D9; age=20; name=admin
+        //;_ (세미콜론+공백)
+        var cookies = document.cookie;
+        if (cookies) {
+            document.getElementById("demo").innerHTML = cookies;
+        } else {
+            document.getElementById("demo").innerHTML = "쿠키는 존재하지 않습니다";
+        }
+    }
+
 
 </script>
 
-<!-- <script>
-//naver 메인페이지에 image 태그 확인
-
-var cnt = document.images.length;
-//alert(cnt); //82
-for (var i = 0; i < cnt; i++) {
-	console.log( document.images[i].src);
-	document.images[i].src ="#";
-}
-</script> -->
 </body>
 </html>
