@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022. 6. 13. 채영</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+<h3>ex01_07.html :only-child, only-of-type</h3>
+
+<div>
+	<p>Lorem ipsum dolor.</p>
+	<p>Commodi quis impedit!</p>
+</div>
+<br />
+<div>
+	<p>Lorem ipsum dolor.</p> 
+</div>
+<br />
+<div>
+	<span>Lorem ipsum dolor.</span>
+	<p>Commodi quis impedit!</p>
+</div>
+<script>
+  $("div").css("border","1px solid black");
+  
+  //부모의 유일한 자식이 p태그인 선택자
+  //$("p:only-child").css("background-color","red");
+  
+  //다른 요소 있어도 됨 p태그만 하나면 가능
+   $("p:only-of-type").css("background-color","red");
+  </script>
+</body>
+</html>

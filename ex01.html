@@ -3,33 +3,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 10. 채영</title>
+<title>2022. 6. 13. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-<h3>days08-ex01.html</h3>
 <pre>
- [js BOM]
- window
- window.screen = 사용자 화면에 대한 정보를 가지공 ㅣㅆ는 객체
- screen.width
- screen.height
- screen.availWidth 사용가능 너비(작업표시줄 제외한 화면너비)
- screen.availHeight
- screen.colorDepth 색농도  
-     16비트 : 65536가지
-     32비트 : 42억가지
+  [jquery selector]
+  1. *  모든 요소를 ex01_02.html
+  2. #아이디명  ex01_02.html
+  3. .클래스명
+       <li class="a b"></li> 클래스가 a b..여러개 가질 때
+       $("li.a.b") .으로 둘다 선택가능
+  4. 태그명 선택자로 사용
+  5.:first    ex01_03.html
+    :last
+  6 :even  짝수  ex01_04.html
+    :odd   홀수
+  7 :first-child :last-child    ex01_06.html
+     :first-of-child
+  8 :nth-child(n)  
+    :nth-of-type(n)
+  9 :nth-last-child(n)  끝에서부터 카운팅
+    :nth-last-of-type(n)
+  10  :only-child    ex01_07.html
+      :only-of-type  
+  11 parent>child     ex01_08.html
+     parent child
+     parent+child
+     parent~child
+  12.  :eq(index)   ex01_09.html
+       :gt(no)
+       :lt(no)
+  13.  :not(selector)  ex01_10.html
+  14.  :header   ex01_11.html
+  15.  :animated    ex01_12.html
+  16.  :focus    ex01_13.html
+  17.  :has(selector)    ex01_14.html
+  18.  :contains(문자열)    ex01_14.html
+  19.  :empty    ex01_15.html
+       :parent    ex01_15.html
+  20.  :hidden    ex01_16.html
+       :visible
+  21.  :root    ex01_16.html
+  22.  [attribute]  ex01_17.html
+       [attribute=value]  
+       [attribute*=value]
+       [attribute$=value]
+       [attribute^=value]
+       [attribute~=value]
+       [attribute!=value]
+   23. 모든 input 태그
+      :input        input 
+      :text         input[type=text]
+      :password     input[type=password]
+      :radio        input[type=radio]
+      :check        input[type=check]
+      :submit        input[type=submit]
+      :reset        input[type=reset]
+      :button        input[type=button]
+      :image        input[type=image]
+      :file        input[type=file]
+   
+   24.  :selected  선택된 요소
+        :disabled   비활성화된 요소
+        :enabled    활성화된 요소
+        :checked    모든 체크된 요소
+      
 </pre>
-<p id="demo"></p>
-<script>
-
-  var output ="";
-  output += screen.width + "/" + screen.height + "<br />"
-  output += screen.availWidth + "/" + screen.availHeight + "<br />"
-  output += colorDepth + "<br />"
-  
-</script>
 </body>
 </html>

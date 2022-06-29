@@ -3,64 +3,86 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 9. 채영</title>
+<title>2022. 6. 13. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+ .ancestors *{
+  display:block;
+  border:2px solid lightgray;
+  color:lightgray;
+  padding:5px;
+  margin:15px;
+ }
 
+</style>
 </head>
-<body onload="" onunload="win_unload()">
-<table border="1" style="width:100%">
-  <tr>
-    <td>
-        검색할 동 입력 :
-        <input type="text" id="dong" name="dong" />
-        <input type="button" value="검색"  onclick="search_dong();"/> 
-    </td>
-  </tr>
-  <tr>
-     <td>
-       <div id="searchResult" class="box" style="visibility: hidden;">
-         <a href="javascript:sendAddr('123','451','서울 영등포구 당산 1동')">123-451</a>서울 영등포구 당산 1동<br>
-         <a href="javascript:sendAddr('123','452','서울 영등포구 당산 2동')">123-452</a>서울 영등포구 당산 1동<br>
-         <a href="javascript:sendAddr('123','453','서울 영등포구 당산 3동')">123-453</a>서울 영등포구 당산 1동<br>
-         <a href="javascript:sendAddr('123','454','서울 영등포구 당산 4동')">123-454</a>서울 영등포구 당산 1동<br>
-         <a href="javascript:sendAddr('123','455','서울 영등포구 당산 5동')">123-455</a>서울 영등포구 당산 1동<br>
-         <a href="javascript:sendAddr('123','456','서울 영등포구 당산 6동')">123-456</a>서울 영등포구 당산 1동<br>
-         <a href="javascript:sendAddr('123','457','서울 영등포구 당산 7동')">123-457</a>서울 영등포구 당산 1동<br>
-         <a href="javascript:sendAddr('123','458','서울 영등포구 당산 8동')">123-458</a>서울 영등포구 당산 1동<br>
-         <a href="javascript:sendAddr('123','459','서울 영등포구 당산 9동')">123-459</a>서울 영등포구 당산 1동<br>
-         <a href="javascript:sendAddr('123','461','서울 영등포구 당산 10동')">123-461</a>서울 영등포구 당산 1동<br>
-       </div>
-     </td>
-  </tr>
-  <tr>
-    <td>
-      <div class="box" style="visibility: hidden;">
-         '당산' 검색 결과 10개 검색되었습니다. 
-      </div>
-    </td>
-  </tr>
-</table>
+<body>
+<h3>ex08_02.html</h3>
+
+<pre>
+ parent()
+ parents()
+ parentsUntill()
+</pre>
+<!-- <script>
+//<div class="foo></div>
+  $("div.foo").click(function(){
+	  //this == div.foo
+	  //div.foo 안에 자식 span
+	  $("span", this).addClass("bar");
+	  // 같은 코딩 => $("div.foo span").addClass("bar");
+  }) 
+</script> -->
+
+<div class="ancestors">
+  <div style="width:500px;">div (great-grandparent)
+    <ul>ul (grandparent)  
+      <li>li (direct parent)
+        <span>span</span>
+      </li>
+    </ul>   
+  </div>
+
+  <div style="width:500px;">div (grandparent)   
+    <p>p (direct parent)
+      <span>span</span>
+    </p> 
+  </div>
+</div>
 <script>
- function win_unload(){
-	 opener.zipWin = null; //버튼 계속 누르기 가능해짐.
- }
+  //parent(직계부모 )
+/*  $("span").parent().css({  
+	 "color":"red",
+	 "border":"2px solid red"
+ })*/
 
- function sendAddr(zip1,zip2,addr1){
-	 //self
-	 opener.document.getElementById("zip1").value=zip1;
-	 opener.document.getElementById("zip2").value=zip2;
-	 opener.document.getElementById("addr1").value=addr1;
-	 
-	 self.close();
-	 opener.document.getElementById("addr2").focus();
- }
-
- function search_dong(){
-	 document.getElementById("searchResult").style.visibility="visible";
-	 document.getElementsByClassName("box")[1].style.visibility="visible";
- }
-
+  //parents(모든 조상 부모)
+/* $("span").parents().css({  
+	 "color":"red",
+	 "border":"2px solid red"
+ })*/
+</script> -->
+<!--  <script>
+  //parents(~~`) 특정부모
+ $("span").parents("ul").css({  
+	 "color":"red",
+	 "border":"2px solid red"
+ })
+</script> -->
+<script>
+  //parents(~~`) 특정부모까지
+  /*
+    //$("span").parents() - 조상 div까지
+    $("span").parentsUntil("div").css({
+        "color":"red",
+        "border":"2px solid red",
+    })
+  */
+ $("span").parentsUntil("ul").css({  
+	 "color":"red",
+	 "border":"2px solid red"
+ })
 </script>
 </body>
 </html>

@@ -3,21 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 10. 채영</title>
+<title>2022. 6. 13. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-<pre>
- [js BOM]
- 1. window
- 2. window.screen
- 3. location 
- 4. history
-    브라우저의 기록 포함하고 있는 객체
+
+<h3>ex01_03.html</h3>
+
+<p>Lorem ipsum dolor sit amet.</p>
+<p>Enim ea provident praesentium obcaecati?</p>
+<p>Ducimus assumenda eligendi optio pariatur.</p>
+<p>Ipsam non tenetur ad numquam.</p>
+<p>Eius voluptas dignissimos veritatis molestiae?</p>
+
+<script>
+ $(document).ready(function(){
+	//모든 p태그
+	// $("p").css("background-color","yellow");
+	
+	//첫번째 p태그
+	 $("p:first").css("background-color","pink");
+	
+	//마지막 p태그
+	 $("p:last").css("background-color","lightblue");
+ });
+
+</script>
 
 
-</pre>
+
 </body>
 </html>

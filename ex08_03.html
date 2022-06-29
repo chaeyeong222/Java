@@ -1,50 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SiSt16 2022. 5. 27.-오후 3:46:54</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <style>
-        input[type=text]{
-            text-align: center;
-        }
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022. 6. 13. 채영</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+ .descendants *{
+  display:block;
+  border: 2px solid lightgray;
+  color: light gray;
+  margin: 15px;
+  padding:5px;
+ }
+</style>
 </head>
 <body>
-
-주민등록번호 : <br>
-
-<input type="text" id="rrn6" onkeyup="rrn6_keyup()" autofocus="autofocus">
--
-<input type="text" id="rrn7" onkeyup="rrn7_keyup()">
-<br>
-
-<p id="demo"></p>
-
-
+<pre>
+ parent();
+ parents();
+ parentUntil();
+ 
+ 후손(자손)
+ children() - 선택한 요소의 모든 직계 자식을 반환한다
+ find() -
+</pre>
+<div class="descendants" style="width:500px">
+ <p class="first">p
+ <span>span</span>
+ </p>
+ <p class="second">p
+ <span>span</span>
+ </p>
+</div>
 <script>
-    function rrn6_keyup() {
-        //rrn6 텍스트 박스에 입력한 주민번호의 길이가 6이라면
-        //문자열 길이 구하는 것
-        if (document.getElementById('rrn6').value.length>=6) {
-            document.getElementById('rrn7').focus();
-        }
-        //문제점
-        //주민번호 문자를 입력하면 입력 취소하고 경고창 띄우기
-    }
-
-    function rrn7_keyup() {
-        if (document.getElementById('rrn7').value.length>=7) {
-            document.getElementById("demo").innerText =
-                document.getElementById("rrn6").value
-                + " - "
-                + document.getElementById("rrn7").value
-        }
-    }
+  /* $("div")
+     //.children() 직계자식
+    .children()
+       .css({
+    	   "color":"red",
+    	   "border":"2px solid red"
+       }); */
+       //직계자식 중 특정 요소
+       $("div")
+      .children("p.first")
+       .css({
+    	   "color":"red",
+    	   "border":"2px solid red"
+       })
+       .end() //앞에것 끝내고 다시 $("div")에서 이어짐
+       .find("span")  //모든 span 찾음(모든 하위 자식을 검색해서 반환)
+          .css({
+        	  "color":"blue",
+       		  "border":"2px solid blue"
+          });
 </script>
-
 </body>
 </html>

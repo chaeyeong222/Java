@@ -9,20 +9,19 @@
 
 </head>
 <body>
-<h3>ex03</h3>
-<p id="p1">jquery is null</p>
+<h3>ex01_13.html</h3>
 
-<button>Click me</button>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
 <script>
- //jquery 체이닝
- $(document).ready(function(){
-	 $("button").click(function(){
-		 $("#p1").css("color","red").slideUp(2000).slideDown(2000);
-	 })
- });
+ //$("input[type=text]")
+  $(":text:eq(2)").focus();
  
-
+ //현재 포커스를 가진 요소를 선택자로 사용
+   $(":focus").css("background-color","yellow");
 </script>
-
 </body>
 </html>

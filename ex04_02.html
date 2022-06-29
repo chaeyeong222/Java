@@ -3,57 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 9. 채영</title>
+<title>2022. 6. 13. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-<p id ="demo"></p>
-<h3>ex04.html - js 함수 closure(클로저)***</h3>
-<!-- <script>
- let counter = 0; //전역변수
- 
- function add(){
-	 counter +=1;
- }
- 
- add();
- add();
- add();
- 
- document.getElementById("demo").innerHTML = counter;
- 
- //[가정] counter 변수 1증가시킬때는 add() 함수 통해서만 1증가..
- 
- counter +=10;
- document.getElementById("demo").innerHTML = counter; //전역변수라 그냥 이렇게 증가시켜버릴 수 있음
- 
- 
-</script> -->
-<!-- 버튼 클릭할때마다 counter 변수의 값이 1씩 증가해서 p#demo 출력 -->
-<button onclick="incCounter()">counter 증가</button>
+<h3>ex04_02.html</h3>
+
+<p>Lorem ipsum dolor sit amet.</p>
+<p>Nemo perspiciatis mollitia exercitationem ipsum.</p>
 <script>
-  //let counter=0; //전역변수로 하면 계속증가함
+ $("p").append("<b> Append Text</b>")
+</script>
+
+<ol>
+	<li>Lorem ipsum dolor.</li>
+	<li>Deserunt hic minima.</li>
+	<li>Soluta saepe a?</li>
+</ol>
+<!-- <script>
+  //$("ol").append("<li>New item 4</li>"); //마지막 자식으로 추가
+  $("ol").prepend("<li>New item 4</li>"); //첫번째 자식으로 추가
   
-  //**계속 증가하는게 아니라 1만 나오는 이유? 지역변수를 생성할때마다 0 초기화 매번 일어나기 때문에
-		  //-> 중첩함수 사용하면 해결 가능 -> ex04_03
- function add(){
-	  //closure == 폐쇄 
-	//** 
-	 let counter=0; //지역변수   -> 안으로 넣은 이유는 add를 통해서만 증가하도록 하기위해서
-	 
-	 counter +=1;
-	 return counter;
- }
+ //  $("<li>New item 5</li>").appendTo($("ol")); //마지막 자식으로 추가
+  $("<li>New item 5</li>").prependTo($("ol")); //첫번째 자식으로 추가
+</script> -->
+<script>
+  //<li>New Item 3</li>
+  
+  //alert($("ol>li").eq(2).html());
+ // $("ol>li").eq(2).before("<li>NEW Item3</li>");
+ // $("ol>li").eq(1).after("<li>NEW Item3</li>");
  
- //add();
- //add();
- //add(); 
- 
- function incCounter(){
-	  document.getElementById("demo").innerHTML = add();
- }
+ //모든 li 태그 제거
+ //$("ol").html("");
+ //$("ol").empty("");
+
+  //$("ol").remove(""); //ol태그 자체를 모두 제거
+  
+  var txt1 = "<p>Text1</p>";
+  var txt2 = $("<p></p>").text("Text2");
+  var txt3 = document.createElement("p");
+  txt3.innerHTML = "Text 3";
+  
+  $("body").append(txt1, txt2, txt3);
+  
+  //필터링
+  //$("body>p").remove(".box");
+  
  
 </script>
 </body>

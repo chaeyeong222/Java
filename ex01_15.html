@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022. 6. 13. 채영</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+<h3>ex01_15.html</h3>
+<!-- table>tr*5>td*4>lorem1 -->
+<table border="1">
+	<tr>
+		<td>Lorem.</td>
+		<td>Deserunt.</td>
+		<td>Pariatur.</td>
+		<td>Enim.</td>
+	</tr>
+	<tr>
+		<td>Lorem.</td>
+		<td>Atque?</td>
+		<td></td>
+		<td>Quo.</td>
+	</tr>
+	<tr>
+		<td>Lorem.</td>
+		<td></td>
+		<td>Sequi.</td>
+		<td>Rem?</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>Et.</td>
+		<td>A.</td>
+		<td>Quia!</td>
+	</tr>
+	<tr>
+		<td>Lorem.</td>
+		<td></td>
+		<td>Illo.</td>
+		<td>Eum?</td>
+	</tr>
+</table>
+<script>
+  /*<td></td>*/
+  //$("td:empty").css("background-color","orange");
+  //비어있지 않은 td?
+  //$("td:not(:empty)").css("background-color","yellow");
+
+  
+  //문자열을 포함한 자식이 있는 모든 td
+   $("td:parent").css("background-color","red");
+
+</script>
+</body>
+</html>

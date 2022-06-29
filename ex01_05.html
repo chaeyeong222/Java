@@ -3,45 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 27. 채영</title>
+<title>2022. 6. 13. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
+
 <body>
-	<h3>ex01_05.html - html요소 속성 변경</h3>
-<pre>
- 하나의 버튼으로 on/off
-</pre>
-	<button onclick="bulb_on_off( this );">Turn on</button>
-	<img src="../images/pic_bulboff.gif" alt="" id="imgbulb" />
 
-	<script>
-	    var sw=false;
-	    
-		function bulb_on_off( btn) {
-		 //turn on -> 전구 불 켜기 
-		 //turn off-> 전구 불 끄기
-		 //alert(btn.innerText);
-		 //java코딩 equals() 
-		  let bulb = document.getElementById("imgbulb"); 
-		 
-		 //js 연산자: 삼항연산자  ?;
-		  bulb.src = "../images/pic_bulb"+(sw?"off":"on")+".gif";
-		  btn.innerText=sw?"Turn on":"Turn off";
-		 
-		/*  if (!sw) {
-			
-			 bulb.src = "../images/pic_bulbon.gif";
-			 btn.innerText="Turn off";
-		} else { 
-			 bulb.src = "../images/pic_bulboff.gif";
-			 btn.innerText="Turn on";
+<h3>ex01_05</h3>
 
-		}*/
-		 sw=!sw; 
-		}
-	</script>
+<!-- 
+  :first -> 첫번째 요소
+  :first-of-child : 어떤 요소 안에서 첫번째 요소가 p태그 인 것
+  :first-of-type : 몇번째인지 상관없이 가장 먼저 나오는 p태그
+
+ -->
+
+<button id="btn1">:first</button>
+<button id="btn2">:first-child</button>
+<button id="btn3">:first-of-type</button>
+
+<p>The first paragraph in body.</p>
+  <div style="border:1px solid">
+  	<p>The first paragraph in div.</p>
+  	<p>The last paragraph in div.</p>
+  </div>
+ <br />
+  <div style="border:1px solid">
+  <span>This is a span element.</span> <br />
+   <span>The first paragraph in another div.</span><br />
+  	<span>The last paragraph in another div.</span>
+  </div>
+  <p>The last paragraph in body</p>
+  
+  <script>
+  $("#btn1").click(function(){
+	  //모든 p태그 중 첫번째
+	  $("p:first").css("background-color","yellow");
+  })
+  $("#btn2").click(function(){
+	  //어떤 요소의 첫번째 자식 요소가 p태그 인 것
+	 $("p:first-child").css("background-color","pink");
+  })
+  $("#btn3").click(function(){
+	  //어떤 요소의 첫번째 자식 요소가 p태그 인 것
+	 $("p:first-of-type").css("background-color","lightblue");
+  })
+  </script>
+  
 </body>
 </html>

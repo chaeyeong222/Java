@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022. 6. 13. 채영</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+<h3> ex01_10.html</h3>
+
+<p>Lorem ipsum dolor sit amet.</p>
+<p class="intro">Fugit officiis pariatur neque nisi.</p>
+<p>Cupiditate id perspiciatis debitis perferendis.</p>
+<p>Optio in ab aspernatur mollitia.</p>
+
+<script>
+   //class 속성값이 intro 라는 p 태그는 제외하고
+   //$("p:not(.intro)").css("background-color","red"); 
+
+   //jquery method not() 
+   $("p").not(".intro").css("background-color","pink");
+
+   // 두개 다 결과는 같음
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022. 6. 13. 채영</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+div{
+ position:absolute;
+ background-color: #abc;
+ left: 0px;
+ top: 130px;
+ width: 60px;
+ height:160px;
+ margin: 5px;
+}
+</style>
+</head>
+<body>
+<h3>ex02_07</h3>
+<button id="go">go</button>
+<button id="stop">stop</button>
+<button id="back">back</button>
+<button id="slideToggle">slideToggle()</button>
+
+<div class="block"></div>
+
+<script>
+ $("#go").click(function(){
+	 $(".block")
+	    .stop(true, false)  //현재 div 태그 실행중인 큐+애니메이션 중지, 그 자리
+	    .animate({
+	    	left:"+=100px"
+	    },5000);
+ });
+ $("#stop").click(function(){
+	 $(".block").stop(true, false);
+ });
+ $("#back").click(function(){
+	 $(".block")
+	    .stop(true, false)
+	    .animate({
+	    	left:"-=100px"
+	    },5000)
+ });
+ $("#slideToggle").click(function(){
+	 $(".block")
+	    .stop(true, false)
+	    .slideToggle(5000);
+ });
+</script>
+</body>
+</html>

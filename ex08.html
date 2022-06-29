@@ -3,46 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 9. 채영</title>
+<title>2022. 6. 13. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
- <h3>ex08.html</h3>
- <table border="1" style="width: 500px;margin: 0 auto">
-  <tr>
-    <td>우편번호</td>
-    <td>
-          <!-- 우편번호 input 태그는  zip1/zip2  readonly 속성에 의해 읽기 전용 -->
-        <input type="text" id="zip1" name="zip1" size="3" readonly="readonly" />-
-        <input type="text" id="zip2" name="zip2" size="3" readonly="readonly"/>
-        <input type="button" value="우편번호 검색"  onclick="search_zipcode();"  />
-    </td>
-  </tr>
-  <tr>
-    <td>주소</td>
-    <td><input type="text" id="addr1" name="addr1" style="width:90%" /></td>
-  </tr>
-  <tr>
-    <td>상세주소</td>
-    <td><input type="text" id="addr2" name="addr2" style="width:90%" /></td>
-  </tr>
-</table>
+<h3>ex08</h3>
+<pre>
+ jquery Traversing(횡단)
+ - 부모, 조무보, 증조부모
+ - 자손, 증손자
+ - 형제
+</pre>
+<button id="hider">Hide</button>
+<button id="shower">Show</button>
+
+<div>
+	<span>Lorem.</span>
+	<span>Nihil!</span>
+	<span>Sed.</span>
+	<span>Earum!</span>
+	<span>Dicta.</span>
+	<span>Adipisci.</span>
+	<span>Enim.</span>
+	<span>Enim.</span>
+	<span>Odit.</span>
+</div>
 <script>
- var zipWin;
- function search_zipcode(){
-	if(!zipWin){
-		 zipWin = window.open("ex08_02.html","","width=600,height=500,top=100,left=200");
-	}else{
-		zipWin.focus();
-	}
-	}
-	
-	 
-
-
-
+ $("#hider").click(function(){
+	 $("span:last-child").hide("fast",function(){
+		 $(this).prev().hide(); 
+	 });
+ });
+$("#shower").click(function(){
+	 $("div > span").show();
+ });
 </script>
 </body>
 </html>

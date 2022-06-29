@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022. 6. 13. 채영</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+ 	.container{
+ 	width: 400px;
+    height:200px;
+    border:1px solid gray;
+    position:relative;
+    overflow:hidden;
+ 	}
+ 	
+ 	.container div{
+ 	width: 100%;
+    height:100%;
+    position:absolute;
+    color: white;
+    text-align: center
+ 	}
+ 	#box1{background-color:pink}
+ 	#box2{background-color:lightblue}
+</style>
+<script>
+//실행안됨
+ $("#box2").css("left",$("#box2").width());
+ 
+ $("button").click(function(){
+	 //2초마다 함수 실행
+	 setInterval(function(){
+		 $(".container div:first")//box1
+		    .stop(false, true)
+		    .animate({left:"-=400px"},{queue:false})
+		    .next()//box2
+		       .stop(false,true)
+		       .animate({left:"-=400px"},function(){
+		    	   //애니메이션 처리 완료 된 후 호출되는 콜백함수
+		    	   var box = $(this).prev().detach();
+		    	   $(".container").append(box);
+		    	   box.css("left","400px");
+		       })
+	 },2000)
+ });
+</script>
+</head>
+<body>
+<h3>ex02_08.html</h3>
+<button>start</button>
+<div class="container">
+<div id="box1">A</div>
+<div id="box2">B</div>
+</div>
+</body>
+</html>

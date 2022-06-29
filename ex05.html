@@ -3,43 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 10. 채영</title>
+<title>2022. 6. 13. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+<style>
+ .blue{
+ color: blue;
+ }
+ .important{
+ font-weight: bold;
+ }
+</style>
 </head>
 <body>
-<h3>ex05.html - 쿠키(cookie)</h3>
- <pre>
- [쿠키(cookie)]
- 1. 본인 컴퓨터에 작은 텍스트 파일로 저장되는 데이터를 쿠키라고 한다.
- 2. 웹 클라이언트(전용브라우저) → 요청 → 웹 서버
-                         ← 응답
-    모든 정보 사라진다.
- 3. 서버 :오라클 서버, session ... 저장
-    클라이언트에 저장 → 쿠키 
- 4. [장바구니]정보 → [쿠키], DB, 세션
-    이전에 로그인했던 정보 → 방문했던 기록(마지막 방문)
-    [로그인] 인증받고나면 → 다른 웹 페이지를 요청, 응답
-              인증정보 계속 저장 유지
- 5. 브라우저에서 쿠키 x
- 6. js 쿠키
-    document.cookie 속성 사용해서 데이터 쓰기(저장)/읽기
- 7. 쿠키 사용형식
-   ㄱ.쿠키명 = 쿠키값; //필수입력사항**
-   ex) id = chaeyeong22;
-   ㄴ. 만료시점(언제까지 쿠키 저장?) 
-    만료시점="날짜형";  //브라우저 닫히면 쿠키값은 자동으로 삭제
-     expires="날짜형"
-          new Date() +10일
-          toGMTString()
-   ㄷ. 경로 =
-        path=/
-   ㄹ. 도메인
-      domain=localhost
-   ㅁ. 보안
-     secure
-   
- </pre>
+<h3>ex05.html </h3>
+<pre>
+ [jquery로 css 를 조작하는 방법]
+ ㄱ. css()
+ ㄴ. addClass()
+ ㄷ. removeClass()
+ ㄹ. toggleClass()
+ 
+</pre>
+<h1>Lorem ipsum dolor.</h1>
+<h1>Officia deleniti culpa!</h1>
+
+<p>Lorem ipsum dolor sit amet.</p>
+<p>Dicta voluptatum animi nisi ex!</p>
+<p>Saepe omnis a est debitis?</p>
+
+<div>Lorem ipsum dolor sit.</div>
+<button>ADD CLASS</button>
+<script>
+  $("button").click(function(){
+	  //$("h1").css("color","red")
+	  $("h1,h2,p").addClass("blue");
+	  $("p").removeClass("blue");
+	  $("p").toggleClass("important");
+	  
+	  
+  })
+
+</script>
 </body>
 </html>

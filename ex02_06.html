@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022. 6. 13. 채영</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+<h3>ex02_06</h3>
+<pre>
+ stop(stopAll, goToEnd)
+</pre>
+<button id="start">start</button>
+<button id="stopff">stop(f,f)</button>
+<button id="stopft">stop(f,t)</button>
+<button id="stoptf">stop(t,f)</button>
+<button id="stoptt">stop(t,t)</button>
+
+<div style="background-color:pink; width:200px;
+        height:100px;position:absolute;">HELLO</div>
+
+<script>
+ $("#start").click(function(){
+	 //대기열(큐)
+	 $("div")
+	     .animate({left:"200px"}, 5000)
+	     .animate({fontSize:"3em"},5000);
+ }) 
+ $("#stopff").click(function(){
+	              //stopAll , goToEnd
+	 $("div").stop(false,false);
+	       //애니메이션 처리할때 stopff 클릭-> 1중지, 2는 큐에 남아있음() , 멈춘자리에서 2번시작
+ });
+ $("#stopft").click(function(){
+	 $("div").stop(false,true);
+	 //중지누르면 1번작업의 끝으로 바로 보낸 후 2번작업 시작
+ });
+ $("#stoptf").click(function(){
+	//애니메이션 처리할때 stoptf 클릭-> 다 멈춤
+	 $("div").stop(true,false);
+ });
+ $("#stoptt").click(function(){
+	 $("div").stop(true,true);
+	//중지누르면 1번작업의 끝(완료위치)으로 바로 보낸 후 2번작업 안함.
+ });
+</script>
+</body>
+</html>

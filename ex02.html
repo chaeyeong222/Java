@@ -3,46 +3,87 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 9. 채영</title>
+<title>2022. 6. 13. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
- #out{
-  background-color: coral;
-  padding: 50px;
- }
- #in{
-  background: white;
-  font-size: 20px;
-  border: 1px solid;
-  padding: 20px;
+ div{
+  width:100px;
+  height:100px;
+   position: absolute;
+  background-color: yellow;
  }
 
 </style>
 </head>
 <body>
-<h3>이벤트 버블링, 캡처링</h3>
-<pre>
- 1. 이벤트 버블링[기본]
-     - 자식 요소 이벤트가 발생하면 부모요소에 그 이벤트가 전달(전파)
- 2. 이벤트 캡처링
-     - 부모 요소 이벤트가 발생하면 자식요소에 그 이벤트가 전달(전파)
+ <h3>ex02/html</h3>
+ <pre>
+  jquery 애니메이션 =animate 메서드
+  $(selector).animate({params}, speed, callback);
+    ㄱ. {params} → css속성 정의
+    ㄴ.  speed  → 효과의 지속시간을 정의 "slow", "fast", ms
+    ㄷ.  callback  → 애니메이션 효과가 완료된 후에 실행 
+ </pre>
+ <button >Run</button>
+ <div></div>
+ 
 
-</pre>
-<!-- #out>h2+p#in -->
-<div id="out">
-	<h2>이벤트버블링 체크</h2>
-	<p id="in">자식 p 태그 클릭</p>
-</div>
 <script>
+ //미리 정의된 값을 사용할 수 있다
+ //show, hide, toggle
+ $("button").click(function(){ 
+	 
+	 $("div").animate({
+		/* height:"hide"  */
+		height:"toggle"
+	 });
+ })
+  
+ 
 
-document.getElementById("out").onclick = function(){
-	alert("out div click");
-}
-document.getElementById("in").onclick = function(){
-	alert("in p click");
-	event.cancelBubble = true; //이벤트 버블링 취소
-}
+
 </script>
+
+ 
+<!--  <script> 
+ //상대값을 정의하는 것도 가능하다
+ //기준: 현재 요소의 값
+  $("button").click(function(){ 
+	  $("div").animate({
+		  left:"+=50px",
+		  opacity:"0.5",
+		  height:"+=150px",
+		  width:"+=150px"
+		  });   
+  }); 
+  </script> -->
+  
+  
+<!-- <script>
+//여러 속성 동시에 animate 처리
+  $("button").click(function(){ 
+	  $("div").animate({
+		  left:"250px",
+		  opacity:"0.5",
+		  height:"150px",
+		  width:"150px"
+		  });   
+  }); 
+  </script> -->
+  
+  
+<!--  <script>
+  $("button").click(function(){
+	  //div 오른쪽으로 이동 250px   X좌표로 이동: 애니메이션 처리
+	  $("div").animate({left:"250px"});  
+  
+  //html :  position :static 이동x
+ //           position : absolute 이동o
+  }); -->
+ 
+ 
+ 
+ </script>
 </body>
 </html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022. 6. 13. 채영</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+<h3>ex01_16.html</h3>
+<p>Lorem ipsum dolor sit amet.</p>
+<p>Odit illum quidem labore recusandae.</p>
+<p style="display:none">3. Vitae alias rerum id molestiae.</p>
+<p>In fugit similique dolore consequuntur.</p>
+<p>Delectus assumenda alias error explicabo.</p>
+
+<script>
+$(":root").css("background-color","pink");
+ //보이지 않는 모든 p태그
+ $("p:hidden").show(5000,function(){
+	 //5초동안 보이기 작업 완료된 후 호출되는 콜백함수
+	 $("p:visible").css("background-color","orange");
+ });
+</script>
+
+
+</body>
+</html>

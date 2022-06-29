@@ -3,75 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 10. 채영</title>
+<title>2022. 6. 13. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="cookie.js"></script>
-
+<style>
+ div{
+  width:300px;
+  height:100px;
+  padding:10px;
+  border:1px solid blue;
+  margin: 3px;
+  
+  background-color:lightblue;
+ }
+</style>
 </head>
 <body>
-<h3>ex06.html - js 마지막 예제</h3>
+<h3>ex06.html</h3>
 <pre>
- item01.gif,[item02.gif],item03.gif
- 라디오버튼 선택하면
- 1) 배경이지로 설정
- 2) 쿠키저장   +10 일동안 살아있게
-     쿠키이름: bgimg, 쿠키값 item02
-
-
+ [jquery method]
+ 1.width()           -요소 너비
+ 2.innerWidth()      -요소 너비 + 패딩
+ 3.outerWidth()      -요소 너비 + 패딩+보더border
+ 4.outerWidth(true)   -요소 너비 + 패딩+보더border
+ 
+ 
+ 1.height()           -요소 높이
+ 2.innerHeight()      -요소 높이 + 패딩
+ 3.outerHeight()      -요소 높이 + 패딩+보더border
+ 4.outerHeight(true)  -요소 높이 + 패딩+보더border
 </pre>
-<table border="1" style="background-color:white;width:400px;margin:0 auto;">
-
-<tr>
-	<td><img src="../images/item01.gif" alt="" /></td>
-	<td><img src="../images/item02.gif" alt="" /></td>
-	<td><img src="../images/item03.gif" alt="" /></td>
-</tr>
-<tr>
-	<td><input type="radio" checked="checked" name="bgImages" id="item01" value="item01" />item01</td>
-	<td><input type="radio" name="bgImages" id="item02" value="item02" />item02</td>
-	<td><input type="radio" name="bgImages" id="item03" value="item03"  />item03</td>
-</tr>
-
-
-</table>
+<div id="demo"></div>
+<button>확인</button>
 <script>
-
- var cname = "bgimg"; //쿠키이름
- var cvalue = "item01";//쿠키값
- var expdays = 10; //쿠키 만료시점
- 
- window.onload = function (){ //페이지 로딩될때
-	 //bgimg 쿠키값 얻어오는 코딩
-	 //cookie.js
-	 cvalue = getCookie(cname);
-	 if (cvalue) {
-		 document.body.style.backgroundImage="url(../images/"+cvalue+".gif)";
-		 document.getElementById(cvalue).checked="checked";
-	} else { //false == null
-       document.body.style.backgroundImage="url(../images/item01.gif)";
-	}
- 
-    //라디오 버튼을 클릭할때 배경이미지도 변경, 쿠기도 저장
-    var rdbs = document.getElementsByName("bgImages");
-    for (var i = 0; i < rdbs.length; i++) {
-    	rdbs[i].onclick = function(){
-    		var ImgName = event.srcElement.value;
-    	document.body.style.backgroundImage="url(../images/"+ImgName+".gif)";
-    		//console.log(rdbs[i].value);	
-    		setCookie(cname, imgName, expdays);
-    	}//onclick
-	}
- 
- }//onload
- 
- 
- 
-
+ $("button").click(function(){
+	 var width=$("div").width();
+	 var height=$("div").height();
+	 var innerWidth=$("div").innerWidth();
+	 var innerHeight=$("div").innerHeight();
+	 var outerWidth=$("div").outerWidth();
+	 var outerHeight=$("div").outerHeight();
+	 var outerWidth2=$("div").outerWidth(true);
+	 var outerHeight2=$("div").outerHeight(true);
+	 
+	 $("div").append("<li>width:"+width+"</li>");
+	 $("div").append("<li>height:"+height+"</li>");
+	 $("div").append("<li>innerWidth:"+innerWidth+"</li>");
+	 $("div").append("<li>innerHeight:"+innerHeight+"</li>");
+	 $("div").append("<li>outerWidth:"+outerWidth+"</li>");
+	 $("div").append("<li>outerHeight:"+outerHeight+"</li>");
+	 $("div").append("<li>outerWidth2:"+outerWidth2+"</li>");
+	 $("div").append("<li>outerHeight2:"+outerHeight2+"</li>");
+	 
+ })
 </script>
-
-
-
 
 </body>
 </html>

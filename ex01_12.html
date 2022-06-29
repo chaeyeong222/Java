@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2022. 6. 13. 채영</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+<h3>ex01_12.html</h3>
+<button class="btn1">change color</button>
+
+<div>Div 1</div>
+<div>Div 2</div>
+<div>Div 3</div>
+
+<script>
+ $("div:first-of-type").css("background-color","red");
+ $("div:eq(1)").css("background-color","green");
+ $("div:last-of-type").css("background-color","blue"); 
+</script>
+<script>
+ function aniDiv(){
+	 $("div:eq(0)")
+	    .animate({width:"50%"},"slow")
+	    .animate({width:"100%"},"slow",aniDiv);
+ }
+ aniDiv();
+
+</script>
+<script>
+ $(".btn1").click(function(){
+	$(":animated").css("background-color","yellow");
+});
+  
+
+</script>
+</body>
+</html>

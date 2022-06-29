@@ -3,55 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 5. 27. 채영</title>
+<title>2022. 6. 13. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<style>
 
-  .demostyle{
-  color:"red";
-  font-size:35px; 
-  border:1px solid gray;
-  }
-</style>
 </head>
 <body>
-	<h3>ex01_06.html - html 스타일css 변경 (js)</h3>
-<pre>
- "스타일 변경"버튼을 클릭하면
- demo라는 아이디의 p태그의 스타일이 속성을
- 1. 글자색 빨강
- 2. 글자크기 35px
- 3. 테두리 1px solid gray로 변경
-</pre>	
-	
-<button>스타일 변경</button>	
+<h3>ex01_06</h3>
 
-<p id="demo" onclick="style_change();"> Lorem ipsum dolor sit amet, 
-consectetur adipisicing elit. Cupiditate itaque debitis 
-minima iure iste alias ipsam id obcaecati error nulla maiores
- nemo architecto. Assumenda aliquid cum accusamus eius veritatis
-  odit.</p>
-	
+<!-- h1>lorem5^p*2>lorem5 -->
+<h1>Lorem ipsum dolor sit amet.</h1>
+<p>Lorem ipsum dolor sit amet.</p>
+<p>Lorem ipsum dolor sit amet, consectetur.</p>
 
- <script>
-    
- document.querySelector("button").onclick=function(){
-	 var demo = document.querySelector("#demo")
-	 /* 방법1
-	 demo.style.color="red";
-	 demo.style.fontSize="35px";
-	 demo.style.border="1px solid gray";
-	  */
-/*    방법2
-     demo.style="color:red; font-size:35px; border:1px solid gray;";
-  */
-  /*방법3*/
-     demo.className ="demostyle";
- }
+<!-- div>p*4>lorem5 -->
+<div>
+	<p>Lorem ipsum dolor sit amet.</p>
+	<span>Optio voluptatibus incidunt voluptas amet.</span>
+	<p>Commodi voluptates nemo voluptatem quis.</p>
+	<p>Suscipit laborum quam voluptatum quod.</p>
+</div>
+<br />
+<div>
+    <span>Optio voluptatibus incidunt voluptas amet.</span>
+	<p>Lorem ipsum dolor sit amet.</p>
+	<p>Commodi voluptates nemo voluptatem quis.</p>
+	<p>Suscipit laborum quam voluptatum quod.</p>
+</div>
+
+<p>Lorem ipsum dolor sit amet, consectetur.</p>
+
+<script>
+ $("div").css("border","1px solid black");
  
-  
- </script>	
-	
+ //nth-child(n)와 nth-of-type(n) 차이점 이해
+ //$("p").css("background-color","red");
+ 
+ //각 요소 안의 두번째 요소가 p이면 적용
+   $("p:nth-child(2)").css("background-color","red");
+ 
+ //각 요소 안의 두번째 요소가 p이면 적용
+   $("p:nth-of-type(2)").css("background-color","blue");
+</script>
+
 </body>
 </html>

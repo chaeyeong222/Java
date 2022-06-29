@@ -3,37 +3,79 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2022. 6. 10. 채영</title>
+<title>2022. 6. 13. 채영</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/Sist.ico">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
-<pre>
- [js BOM]
- 1. window
- 2. window.screen
- 3. location 객체-윈도우창 위치
-   ㄱ. 현재 페이지의 주소url 얻기
-   ㄴ. 현재 페이지의 주소를 새로 설정 -> 이동
-</pre>
-<button onclick = "move()">쌍용교육센터</button>
-<script>
+	<h3>ex01_02.html</h3>
 
-  var url = location.href; //ㄱ
-  
-  document.write(url + "<br />");
-//http://localhost/webPro/javascript/days08/ex01_02.html
+	<p id="ptag"></p>
+	<p class="box"></p>
+	<p></p>
+	<p></p>
+	<p></p>
 
-  document.write(location.hostname + "<br>"); //도메인 이름 반환 localhost
-  document.write(location.protocol + "<br>"); //사용된 웹 프로토콜 반환 http:
-  document.write(location.port + "<br>"); // 기본 80
+	<div></div>
+	<div class="demo"></div>
+	<div></div>
+	<div></div>
+	<div></div>
 
- function move(){
-	//새로운 페이지로 브라우저를 [리다이렉션]
-	location.href = "http://www.sist.co.kr"; //ㄴ.href 속성
-	locatioin.assign("http://www.sist.co.kr"); //assing()함수
-}
-</script>
+	<hr>
+	<p>...</p>
+	<div>1</div>
+	<div>2</div>
+	<div>
+		<p>3</p>
+		<p>4</p>
+	</div>
+	<hr>
+	<h3>5</h3>
+	<script>
+		$(function() {
+			/* 
+			$("*").css("border","1px solid red");
+			$("*").css("padding",20);
+			$("*").css("color","blue"); */
+
+			/* jquery 체이닝 */
+			/*  $("*")
+			    .css("border","1px solid red")
+			    .css("padding",20)
+			    .css("color","blue");
+			 
+			 */
+			$("*").css({
+				"border" : "1px solid red",
+				"padding" : 20,
+				"color" : "blue"
+			});
+
+			$("div *").css({
+				"background-color" : "green",
+				"color" : "red"
+			});
+			//#아이디명 jquery selector 사용
+			$("#ptag").hide();
+
+			//.클래스명 jquery selector 사용
+			$(".box").hide();
+
+			//.클래스명, .클래스명 jquery selector 사용
+			$(".box, .demo").hide();
+
+			//태그명 jquery selector 사용
+			$("p").toggle();
+
+			//p또는 h3또는div jquery selector 사용
+			$("p, h3, div").toggle();
+
+		});
+	</script>
+
+
 </body>
 </html>
