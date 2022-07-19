@@ -1,0 +1,38 @@
+[1일차복습.txt]
+
+1. 스프링?
+2. 스프링 사용하는 방법
+3. applicationContext.xml 파일이 무엇이고,
+   안에 있는 코딩의 의미?
+4. Ex02.java  main(){
+     String xml파일 경로 ="";
+     GenericXmlApplicationContext ctx = new Generix~~
+     
+  }
+  
+  
+  스프링 컨테이너(공장) == 스프링 빈 객체를 생성 + 조립(DI)
+    5가지 종류 == 
+        우리는 xml 파일 사용 -> GenericXmlApplicationContext ctx 사용
+        
+        //스프링 컨테이너 객체 생성 + 조립
+        rvi = ctx.getBean();
+        rvi.input();
+        rvi.output(); 
+  
+  첫번째 DI방법 <constructor-arg ref="record"></>
+  두번째 DI방법 <property name="record"~></>
+  
+  =================
+  Car <- Engine
+       DI
+       의존성 주입
+       
+       
+  스프링 컨테이너 5가지
+  ?? ApplicationContext   <- xml
+  ?? ApplicationContext   <- java                
+  (공장)
+  
+  
+  
