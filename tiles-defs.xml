@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+  <!-- 
+  <definition name="myapp.homepage" template="/layouts/classic.jsp">
+    <put-attribute name="title" value="Tiles tutorial homepage" />
+    <put-attribute name="header" value="/tiles/banner.jsp" />
+    <put-attribute name="menu" value="/tiles/common_menu.jsp" />
+    <put-attribute name="body" value="/tiles/home_body.jsp" />
+    <put-attribute name="footer" value="/tiles/credits.jsp" />
+  </definition>
+   -->
+   
+  <definition name="home.*" template="/WEB-INF/views/inc/layout.jsp"> 
+    <put-attribute name="header" value="/WEB-INF/views/inc/header.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp" /> 
+    <put-attribute name="content" value="/WEB-INF/views/{1}.jsp" />
+    
+     <put-attribute name="title" value="Sist5 Class"/> 
+  </definition> 
+   
+  <definition name="*.*" template="/WEB-INF/views/{1}/inc/layout.jsp"> 
+    <put-attribute name="header" value="/WEB-INF/views/inc/header.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp" />
+    <put-attribute name="visual" value="/WEB-INF/views/{1}/inc/visual.jsp" />
+    <put-attribute name="aside" value="/WEB-INF/views/{1}/inc/aside.jsp" />
+    <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
+    
+    <put-attribute name="title" value="Sist5 Class"/>
+    <put-attribute name="css" value="{2}.css"/>
+  </definition> 
+  
+   <!-- 
+   <definition name="joinus.*" template="/joinus/inc/layout.jsp"> 
+    <put-attribute name="header" value="/inc/header.jsp" />
+    <put-attribute name="footer" value="/inc/footer.jsp" />
+    <put-attribute name="visual" value="/joinus/inc/visual.jsp" />
+    <put-attribute name="aside" value="/joinus/inc/aside.jsp" />
+    <put-attribute name="content" value="/joinus/{1}.jsp" />
+  </definition> 
+   
+   <definition name="customer.*" template="/customer/inc/layout.jsp"> 
+    <put-attribute name="header" value="/inc/header.jsp" />
+    <put-attribute name="footer" value="/inc/footer.jsp" />
+    <put-attribute name="visual" value="/customer/inc/visual.jsp" />
+    <put-attribute name="aside" value="/customer/inc/aside.jsp" />
+    <put-attribute name="content" value="/customer/{1}.jsp" />
+  </definition> 
+   -->
+   <!-- 
+  <definition name="customer.notice" template="/customer/inc/layout.jsp"> 
+    <put-attribute name="header" value="/inc/header.jsp" />
+    <put-attribute name="footer" value="/inc/footer.jsp" />
+    <put-attribute name="visual" value="/customer/inc/visual.jsp" />
+    <put-attribute name="aside" value="/customer/inc/aside.jsp" />
+    <put-attribute name="content" value="/customer/notice.jsp" />
+  </definition>  
+  
+  <definition name="customer.noticeDetail" template="/customer/inc/layout.jsp"> 
+    <put-attribute name="header" value="/inc/header.jsp" />
+    <put-attribute name="footer" value="/inc/footer.jsp" />
+    <put-attribute name="visual" value="/customer/inc/visual.jsp" />
+    <put-attribute name="aside" value="/customer/inc/aside.jsp" />
+    <put-attribute name="content" value="/customer/noticeDetail.jsp" />
+  </definition> 
+  
+  <definition name="customer.noticeReg" template="/customer/inc/layout.jsp"> 
+    <put-attribute name="header" value="/inc/header.jsp" />
+    <put-attribute name="footer" value="/inc/footer.jsp" />
+    <put-attribute name="visual" value="/customer/inc/visual.jsp" />
+    <put-attribute name="aside" value="/customer/inc/aside.jsp" />
+    <put-attribute name="content" value="/customer/noticeReg.jsp" />
+  </definition>  
+  
+  <definition name="customer.noticeEdit" template="/customer/inc/layout.jsp"> 
+    <put-attribute name="header" value="/inc/header.jsp" />
+    <put-attribute name="footer" value="/inc/footer.jsp" />
+    <put-attribute name="visual" value="/customer/inc/visual.jsp" />
+    <put-attribute name="aside" value="/customer/inc/aside.jsp" />
+    <put-attribute name="content" value="/customer/noticeEdit.jsp" />
+  </definition> 
+   -->
+  
+</tiles-definitions>
+
+
+
+
+
+
+
+
