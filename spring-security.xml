@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--   시큐리티와 관련된 코딩들만 있을 예정 -->
+ <!-- auto-config="true" 속성은 로그인이  필요한 경우 스프링이 제공하는 전용 로그인 페이지를 사용합니다-->
+ <!--  특정 요청 url 이 들어오면 특정 사용자만이 접근이 가능하다 -->
+<http auto-config="true" >
+
+ <!-- 사용자가 지정한 로그인 폼(페이지)를 위한 설정태그  -->
+ <form-login
+   login-page="/joinus/login.htm" 
+   authentication-failure-url="/joinus/login.htm?error"
+   default-target-url="/customer/notice.htm"
+ />
+<!--  로그아웃을 성공했을 때 이동할 페이지 경로 -->
+ <logout
+   logout-success-url="/customer/notice.htm"
+ />
+
+
+  <intercept-url pattern="/customer/noticeDetail.htm" access="ROLE_USER"/>
+  <intercept-url pattern="/customer/noticeReg.htm" access="ROLE_ADMIN"/>
+  <intercept-url pattern="/customer/noticeEdit.htm" access="ROLE_ADMIN"/>
+</http>
+
+ <!--  인증을 관리하는 태그 -->
+ <!--  Oracle / member 테이블 안에 회원o -> -->
+ <!--  가상 메모리 상에 (in-memory)방식으로 계정생성 + 역할role 부여 -->
+<!-- <authentication-manager>
+ <authentication-provider>
+  <user-service>
+   <user name="hong" authorities="ROLE_USER" password="1111"/>
+   <user name="admin" authorities="ROLE_ADMIN" password="2222"/>
+   <user name="park" authorities="ROLE_USER, ROLE_ADMIN" password="3333"/> 
+  </user-service>
+ </authentication-provider> 
+</authentication-manager>
+
+ -->
+ 
+<!-- DB 연동  -->
+ <authentication-manager>
+     <authentication-provider>
+        <jdbc-user-service 
+            data-source-ref="dataSource"
+            users-by-username-query="select id as username, pwd as password, 1 as enabled from member where id = ?"
+            authorities-by-username-query="select id as  username , case when id='admin' then 'ROLE_ADMIN' else 'ROLE_USER' end as authority from member where id = ?"
+        />
+     </authentication-provider>
+  </authentication-manager>
+
+ 
+
+
+</beans:beans>
+
+
+

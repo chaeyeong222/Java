@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		
+		    <!-- dispatcher-service.xml -->
+    
+    <!-- p 482  DriverManagerDataSource 개발 목적의 테스트 용도-->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		    <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+		    <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"></property>
+		    <property name="username" value="scott"></property>
+		    <property name="password" value="tiger"></property>
+	 </bean>
+	 
+   <bean id="jdbcTemplate"  class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+      <!-- NamedParameterJdbcTemplate setter 존재 X ( setDataSource) -->
+       <!-- <property name="dataSource" ref="dataSource"></property> -->
+       <constructor-arg ref="dataSource"></constructor-arg>
+   </bean>
+  
+    <!-- p507 스프링 트랜잭션을 처리할 트랜잭션 매니져 등록 -->
+   <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+     <property name="dataSource"  ref="dataSource" />
+   </bean>
+   
+   <!-- 트랜잭션 템틀릿 -->
+   <bean id="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
+      <property name="transactionManager"  ref="transactionManager" />
+   </bean>
+  
+		
+		
+</beans>
